@@ -1,0 +1,20 @@
+BEGIN
+	INPUT a, b, c
+	max = a
+	IF max >= b 
+		IF max >= c
+			PRINT max
+		ELSE 
+			max = c
+			PRINT max
+	ELSE
+		max = b
+		IF max >= c
+			PRINT max
+		ELSE 
+			max = c
+			PRINT max
+	END IF
+END
+
+		

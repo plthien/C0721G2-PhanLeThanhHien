@@ -1,0 +1,7 @@
+BEGIN 
+	INPUT math
+	INPUT physics
+	INPUT chemistry
+	average = (math + physics + chemistry)/3  
+	PRINT average
+END

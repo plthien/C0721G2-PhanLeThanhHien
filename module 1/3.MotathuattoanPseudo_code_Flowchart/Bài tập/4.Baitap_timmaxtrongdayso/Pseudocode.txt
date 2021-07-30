@@ -1,0 +1,16 @@
+BEGIN
+	INPUT n
+	INPUT a1, a2, a3,..., an
+	max = a1
+	i = 2
+	WHILE i <= n
+	DO 
+		IF max < ai
+			max = ai
+		END IF
+		i = i + 1
+	END DO
+	PRINT max
+END
+
+	

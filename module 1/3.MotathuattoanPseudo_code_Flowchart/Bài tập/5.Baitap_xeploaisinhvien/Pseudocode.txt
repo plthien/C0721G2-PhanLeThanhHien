@@ -1,0 +1,16 @@
+BEGIN
+	INPUT scores
+	IF scores >= 75 
+		PRINT A
+	ELSE 
+		IF scores >= 60
+			PRINT B
+		ELSE
+			IF scores >= 45
+				PRINT C
+			ELSE
+				IF scores >=35 
+					PRINT D
+				ELSE PRINT E
+	END IF
+END

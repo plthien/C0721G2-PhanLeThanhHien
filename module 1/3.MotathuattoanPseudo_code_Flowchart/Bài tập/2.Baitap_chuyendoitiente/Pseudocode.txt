@@ -1,0 +1,5 @@
+BEGIN
+	INPUT dolar
+	vnd = dolar*23000
+	PRINT vnd
+END

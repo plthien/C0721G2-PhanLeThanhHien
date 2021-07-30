@@ -1,0 +1,9 @@
+BEGIN
+	INPUT a //so ngau nhien tu 0--->9//
+	INPUT b
+	IF a==b
+		PRINT TRUE
+	ELSE 
+		PRINT FALSE
+	END IF
+END
