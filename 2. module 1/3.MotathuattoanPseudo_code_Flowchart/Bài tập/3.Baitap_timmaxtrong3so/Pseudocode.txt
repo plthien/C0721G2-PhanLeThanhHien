@@ -1,0 +1,14 @@
+BEGIN
+	INPUT a, b, c
+	max = a
+	IF max < b 
+		max = b
+	END IF
+	IF max < c
+		max = c
+	END IF
+	PRINT max
+	
+END
+
+			
