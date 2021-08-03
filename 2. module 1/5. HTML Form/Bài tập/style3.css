@@ -1,0 +1,22 @@
+body{
+    font-family: Arial;
+    font-size: 80%;
+}
+form div{
+    margin: 0px 0px 10px 0px;
+    font-size: 1.1em;
+
+}
+td{
+    text-align: center;
+    width: 200px;
+    height: 40px;
+}
+table, td, th{
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+th {
+    height: 40px;
+}
+

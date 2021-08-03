@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Đăng ký học viên</title>
+    <link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+<div>
+<form action="" name="group">
+    <fieldset>
+        <legend>ĐĂNG KÝ HỌC VIÊN</legend>
+        <div>
+            <div>
+                <label for="yourname">Họ và tên</label>
+                <input type="text" id="yourname" name="yourname" style="width: 300px">
+            </div>
+            <div>
+                <label for="birthday">Ngày sinh</label>
+                <input type="text" id="birthday" name="birthday">
+            </div>
+            <div>
+                <label>Giới tính</label>
+                <input type="radio" name="gender" id="male" value="male"><span style="color: black">Nam</span>
+                <input type="radio" name="gender" id="female" value="female"><span style="color: black">Nữ</span>
+
+            </div>
+            <div>
+                <label for="address">Địa chỉ</label>
+                <textarea name="address" cols="30" rows="10" id="address"></textarea>
+            </div>
+            <div>
+                <label for="class">Lớp</label>
+                    <select name="class" id="class">
+                        <option value="pick">--Chọn lớp--</option>
+                        <option value="C01">C01</option>
+                        <option value="C02">C02</option>
+                        <option value="C03">C03</option>
+                        <option value="C04">C04</option>
+                        <option value="C05">C05</option>
+                    </select>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div>
+                <label for="phonenumber">Điện thoại</label>
+                <input type="text" id="phonenumber" name="phonenumber">
+            </div>
+            <div>
+                <button type="submit" name="register"style="margin-left: 100px">Đăng ký</button>
+                <button type="reset" name="clear">Nhập lại</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+</div>
+</body>
+</html>

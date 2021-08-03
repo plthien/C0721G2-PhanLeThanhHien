@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 80%;
+
+}
+form {
+    width: 600px;
+    margin: 80px auto;
+    background:lemonchiffon;
+    padding: 10px;
+}
+fieldset {
+    border: none;
+}
+form div {
+    margin: 0px 0px 10px 0px;
+    font-size: 1em;
+    color: blue;
+}
+legend {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 0px 0px 10px 0px;
+    color: blue;
+    background: lightblue;
+}
+label {
+    width:100px;
+    display: block;
+    float: left;
+    clear: left;
+}
+

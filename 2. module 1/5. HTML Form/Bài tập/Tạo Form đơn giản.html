@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Form sở thích</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
 </head>
 <body>
-$END$
+<div>
+    <form  action="" name="yourHobby">
+        <fieldset>
+            <p align="center" class="legend">SỞ THÍCH CỦA BẠN</p>
+            <div>
+                <div>
+                    <label for="yourName" align="right">Họ và tên</label>
+                    <input type="text" name="youEname" id="yourName" class="resized">
+                </div>
+                <div>
+                    <label for="yourEmail" align="right">Email</label>
+                    <input type="text" name="yourEmail" id="yourEmail" class="margin2"></div>
+                <div>
+                <label align="right">Sở thích</label>
+                    <input type="checkbox" name="hobby" value="sport" class="margin2"><span>Thể thao</span>
+                    <input type="checkbox" name="hobby" value="music" class="margin2"><span>Âm nhạc</span>
+                    <input type="checkbox" name="hobby" value="reading" class="margin3"><span>Đọc sách</span><br>
+                    <input type="checkbox" name="hobby" value="surfing" class="margin1"><span>Lướt web</span>
+                    <input type="checkbox" name="hobby" value="playGame"><span>Chơi game</span>
+                    <input type="checkbox" name="hobby" value="cinema"><span>Điện ảnh</span><br>
+                    <input type="checkbox" name="hobby" value="Travel" class="margin1"><span>Du lịch</span>
+                </div>
+                <div>
+                    <button type="submit" name="register" class="margin1">Gửi thông tin</button>
+                    <button type="reset" name="clear">Nhập lại</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+</div>
+
 </body>
 </html>
