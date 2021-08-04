@@ -12,3 +12,17 @@ span{
     line-height: 1.5;
     padding: 20px;
 }
+.margin-h1 {
+    color: blue;
+    margin-left: 280px;
+}
+.margin-lop{
+    margin-left: 460px;
+}
+.margin-giaovien {
+    margin-left:400px ;
+}
+.background-th-dong1 {
+    background-color: yellow;
+    width: 130px;
+}
