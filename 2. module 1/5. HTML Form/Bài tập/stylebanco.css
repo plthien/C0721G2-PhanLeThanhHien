@@ -1,0 +1,20 @@
+table, td, th{
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+td {
+    width: 70px;
+    height: 70px;
+}
+.hang-le td:nth-child(even){
+    background-color: black;
+}
+.hang-le td:nth-child(odd){
+    background-color: white;
+}.hang-chan td:nth-child(even){
+    background-color: white;
+}
+.hang-chan td:nth-child(odd){
+    background-color: black;
+}
