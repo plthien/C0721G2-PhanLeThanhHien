@@ -3,8 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <title>Máy tính</title>
+    <style>
+        caption{
+            text-align: left;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        td {
+            padding: 5px;
+        }
+        #result{
+            width: 300px;
+            border: none;
+        }
+    </style>
 </head>
 <body>
+<table>
+    <caption>Calculator</caption>
+    <tr>
+        <td colspan="2"><input type="text" id="inputA"></td>
+        <td colspan="2"><input type="text" id="inputB"></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="addition()">Addition(+)</button>
+        </td>
+        <td>
+            <button type="button" onclick="subtraction()">Subtraction(-)</button>
+        </td>
+        <td>
+            <button type="button" onclick="multiplication()">Multiplication(X)</button>
+        </td>
+        <td>
+            <button type="button" onclick="division()">Division(/)</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" ><input type="text" id="result"></td>
+    </tr>
+</table>
+<script>
+    function addition() {
+        let a = document.getElementById("inputA").value;
+        let b = document.getElementById("inputB").value;
+        let sum = Number(a) + Number(b);
+        let str = "Result Addition:";
+        let kq = document.getElementById("result");
+        kq.value = str + sum;
+    }
 
+    function subtraction() {
+        let a = document.getElementById("inputA").value;
+        let b = document.getElementById("inputB").value;
+        let sum = Number(a) - Number(b);
+        let str = "Result Subtraction:";
+        let kq = document.getElementById("result");
+        kq.value = str + sum;
+    }
+
+    function multiplication() {
+        let a = document.getElementById("inputA").value;
+        let b = document.getElementById("inputB").value;
+        let sum = Number(a) * Number(b);
+        let str = "Result Multiplication:";
+        let kq = document.getElementById("result");
+        kq.value = str + sum;
+    }
+
+    function division() {
+        let a = document.getElementById("inputA").value;
+        let b = document.getElementById("inputB").value;
+        let sum = Number(a) / Number(b);
+        let str = "Result Division:";
+        let kq = document.getElementById("result");
+        kq.value = str + sum;
+    }
+
+</script>
 </body>
 </html>
