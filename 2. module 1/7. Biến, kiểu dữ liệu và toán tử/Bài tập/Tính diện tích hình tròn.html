@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình tròn</title>
+    <style>
+        th {
+            text-align: right;
+        }
+        table {
+            padding: 20px;
+            margin: 40px auto;
+        }
+        caption{
+            font-weight: bold;
+            color: red;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <caption>TÍNH DIỆN TÍCH HÌNH TRÒN</caption>
+        <tr>
+            <th>Bán kính hình tròn (mm):</th>
+            <td><input type="text" name="radius" id="radius" onkeyup="tinhDienTich()"></td>
+        </tr>
+        <tr>
+            <th> Diện tích hình tròn (mm<sup>2</sup>):</th>
+            <td><input type="text" name="area" id="area"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="reset" name="clear">Nhập lại</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<script>
+    function tinhDienTich() {
+        let a = document.getElementById("radius").value;
+        let s = Number(a) ** 2 * 3.14;
+        s = s.toFixed(2);
+        let kq = document.getElementById("area");
+        kq.value = s;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+    <style>
+        th {
+            text-align: right;
+        }
+        caption{
+            font-weight: bold;
+            font-size: 1.3em;
+            color: red;
+        }
+        table{
+            padding: 20px;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+<form>
+<table>
+    <caption>CHUYỂN ĐỔI NHIỆT ĐỘ</caption>
+    <tr>
+        <th>Độ C - Celsius (<sup>0</sup>C)</th>
+        <td><input type="text" id="doC" onkeyup="chuyenDoi()"></td>
+    </tr>
+    <tr>
+        <th>Độ F - Fahrenheit (<sup>0</sup>F)</th>
+        <td><input type="text" id="doF"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type="reset" name="clear" id="clear">Nhập lại</button> </td>
+    </tr>
+</table>
+</form>
+<script>
+    function chuyenDoi() {
+        let c = document.getElementById("doC").value;
+        let f = (9*Number(c)/5) +32;
+        let kq=document.getElementById("doF");
+        kq.value=f;
+    }
+</script>
+</body>
+</html>

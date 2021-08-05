@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chu vi hình tròn</title>
+    <style>
+        th {
+            text-align: right;
+        }
+        table {
+            padding: 20px;
+        }
+        caption {
+            font-weight: bold ;
+            font-size: 1.5em;
+            color: red;
+        }
+        form {
+            border: 10px solid lightskyblue;
+            width: 400px;
+            margin: 40px auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <caption>TÍNH CHU VI HÌNH TRÒN</caption>
+        <tr>
+            <th>Bán kính hình tròn (mm):</th>
+            <td><input  type="text" id="radius" onkeyup="tinhChuVi()"></td>
+        </tr>
+        <tr>
+            <th>Chu vi hình tròn (mm):</th>
+            <td><input type="text" id="circumference"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="reset">Nhập lại</button> </td>
+        </tr>
+    </table>
+</form>
+<script>
+    function tinhChuVi() {
+        let r = document.getElementById("radius").value;
+        let c = 2*Number(r)*3.14;
+        c = c.toFixed(2);
+        let kq = document.getElementById("circumference");
+        kq.value = c;
+    }
+</script>
+</body>
+</html>

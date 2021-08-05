@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+    <style>
+        th, td {
+            text-align: center;
+            width: 200px;
+            padding: 5px;
+        }
+        #myResult {
+            text-align: left;
+            color: blue;
+        }
+        #result {
+            border: none;
+            width: 250px;
+            color: blue;
+        }
+        button {
+            background-color: blueviolet;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" name="amout" id="amount"></td>
+        <td>
+            <select name="fromCurrency" id="fromCurrency">
+                <option>VND</option>
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <select name="toCurrency" id="toCurrency">
+                <option>VND</option>
+                <option>USD</option>
+            </select>
+        </td>
+        <td>
+            <button type="button" onclick="convert()">Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" id="myResult">Result:<input type="text" id="result"></td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let a = document.getElementById("amount").value;
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        if (a <= 0 || isNaN(a)) {
+            let str = "Nhập lại số tiền";
+            let kq = document.getElementById("result");
+            kq.value=str;
+        } else if (fromCurrency == "VND" && toCurrency == "USD") {
+            let b = Number(a) / 23000;
+            b = b.toFixed(6);
+            let c ="USD";
+            let kq = document.getElementById("result");
+            kq.value = b + c ;
+        } else if (fromCurrency == "USD" && toCurrency == "VND") {
+            let b = Number(a) * 23000;
+            let c = "VND"
+            let kq = document.getElementById("result");
+            kq.value = b + c;
+        } else {
+            let str = "Loại tiền bạn lựa chọn không đúng"
+            let kq = document.getElementById("result");
+            kq.value=str;
+
+        }
+    }
+</script>
+</body>
+</html>

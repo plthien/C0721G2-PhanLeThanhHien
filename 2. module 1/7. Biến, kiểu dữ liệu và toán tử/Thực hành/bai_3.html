@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bội số</title>
+</head>
+<body>
+<button type="button" onclick="timBoiSo()">Nhập a, b</button>
+<script>
+    function timBoiSo() {
+        let a = prompt("Nhập a:");
+        let b = prompt("Nhập b:");
+        let c = a % b;
+        if (c == 0) {
+            alert(a + " là bội số của " + b);
+        } else alert(a + " không phải là bội số của" + b);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm</title>
+    <style>
+        td, th {
+            text-align: right;
+        }
+
+        caption {
+            font-weight: bold;
+            color: blue;
+            font-size: 1.6em;
+        }
+
+        table {
+            padding: 15px;
+            margin: auto;
+        }
+        input {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>TÍNH ĐIỂM</caption>
+    <tr>
+        <th>Vật lý:</th>
+        <td><input type="text" name="vatLy" id="vatLy"></td>
+    </tr>
+    <tr>
+        <th>Hóa học:</th>
+        <td><input type="text" name="hoaHoc" id="hoaHoc"></td>
+    </tr>
+    <tr>
+        <th>Sinh học:</th>
+        <td><input type="text" name="sinhHoc" id="sinhHoc"></td>
+    </tr>
+    <tr>
+        <th>Tổng điểm:</th>
+        <td><input type="text" name="diemTong" id="diemTong"></td>
+    </tr>
+    <tr>
+        <th>Điểm trung bình:</th>
+        <td><input type="text" name="diemTB" id="diemTB"></td>
+    </tr>
+</table>
+<button type="button" id="tinhTong" onclick="tinhTong()" style="margin-left: 630px">Tính tổng</button>
+<button type="button" id="tinhTB" onclick="tinhTB()">Tính điểm TB</button>
+<script>
+    function tinhTong() {
+        let diemVL = document.getElementById("vatLy").value;
+        let diemHH = document.getElementById("hoaHoc").value;
+        let diemSH = document.getElementById("sinhHoc").value;
+        let sum = Number(diemVL) + Number(diemHH) + Number(diemSH);
+        let kq = document.getElementById("diemTong");
+        kq.value = sum;
+    }
+
+    function tinhTB() {
+        let diemVL = document.getElementById("vatLy").value;
+        let diemHH = document.getElementById("hoaHoc").value;
+        let diemSH = document.getElementById("sinhHoc").value;
+        let sum = Number(diemVL) + Number(diemHH) + Number(diemSH);
+        let average = sum / 3;
+        let kq = document.getElementById("diemTB");
+        kq.value = average;
+
+    }
+
+</script>
+</body>
+</html>
