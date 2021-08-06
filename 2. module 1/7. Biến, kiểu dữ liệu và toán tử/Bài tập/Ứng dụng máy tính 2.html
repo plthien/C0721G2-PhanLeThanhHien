@@ -24,8 +24,8 @@
 <table>
     <caption>Calculator</caption>
     <tr>
-        <td colspan="2"><input type="text" id="inputA"></td>
-        <td colspan="2"><input type="text" id="inputB"></td>
+        <td colspan="2"><input type="text" id="number_1"></td>
+        <td colspan="2"><input type="text" id="number_2"></td>
     </tr>
     <tr>
         <td>
@@ -45,32 +45,27 @@
 </table>
 <script>
     function calculation() {
-        let a = document.getElementById("inputA").value;
-        let b = document.getElementById("inputB").value;
-        let c = document.getElementById("yourSelect").value;
-        if ( c == "Addition(+)"){
-            let sum = Number(a) + Number(b);
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById("number_2").value;
+        let calculate = document.getElementById("yourSelect").value;
+        if (calculate == "Addition(+)") {
+            let result = Number(number1) + Number(number2);
             let str = "Result Addition:";
-            let kq = document.getElementById("result");
-            kq.value = str + sum;
-        }
-        else if ( c == "Subtraction(-)"){
-            let sub = Number(a) - Number(b);
+            document.getElementById("result").value = str + result;
+        } else if (calculate == "Subtraction(-)") {
+            let result = Number(number1) - Number(number2);
             let str = "Result Subtraction:";
-            let kq = document.getElementById("result");
-            kq.value = str + sub;
-        }
-        else if ( c == "Multiplication(X)" ) {
-            let mul = Number(a) * Number(b);
+            document.getElementById("result").value = str + result;
+        } else if (calculate == "Multiplication(X)") {
+            let result = Number(number1) * Number(number2);
             let str = "Result Multiplication:";
-            let kq = document.getElementById("result");
-            kq.value = str + mul;
-        }
-        else {
-            let divs = Number(a) / Number(b);
+            document.getElementById("result").value = str + result;
+        } else if (number2 == 0) {
+            document.getElementById("result").value = "Nhập lại số hạng";
+        } else {
+            let result = Number(number1) / Number(number2);
             let str = "Result Division:";
-            let kq = document.getElementById("result");
-            kq.value = str + divs;
+            document.getElementById("result").value = str + result;
         }
     }
 

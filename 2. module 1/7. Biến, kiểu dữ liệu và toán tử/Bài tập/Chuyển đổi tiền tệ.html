@@ -9,15 +9,18 @@
             width: 200px;
             padding: 5px;
         }
+
         #myResult {
             text-align: left;
             color: blue;
         }
+
         #result {
             border: none;
             width: 250px;
             color: blue;
         }
+
         button {
             background-color: blueviolet;
         }
@@ -55,28 +58,24 @@
 </table>
 <script>
     function convert() {
-        let a = document.getElementById("amount").value;
+        let amount = document.getElementById("amount").value;
         let fromCurrency = document.getElementById("fromCurrency").value;
         let toCurrency = document.getElementById("toCurrency").value;
-        if (a <= 0 || isNaN(a)) {
+        if (amount <= 0 || isNaN(amount)) {
             let str = "Nhập lại số tiền";
-            let kq = document.getElementById("result");
-            kq.value=str;
+            document.getElementById("result").value = str;
         } else if (fromCurrency == "VND" && toCurrency == "USD") {
-            let b = Number(a) / 23000;
-            b = b.toFixed(6);
-            let c ="USD";
-            let kq = document.getElementById("result");
-            kq.value = b + c ;
+            let result = Number(amount) / 23000;
+            result = result.toFixed(6);
+            let str = "USD";
+            document.getElementById("result").value = result + str;
         } else if (fromCurrency == "USD" && toCurrency == "VND") {
-            let b = Number(a) * 23000;
-            let c = "VND"
-            let kq = document.getElementById("result");
-            kq.value = b + c;
+            let result = Number(amount) * 23000;
+            let str = "VND"
+            document.getElementById("result").value = result + str;
         } else {
             let str = "Loại tiền bạn lựa chọn không đúng"
-            let kq = document.getElementById("result");
-            kq.value=str;
+            document.getElementById("result").value = str;
 
         }
     }

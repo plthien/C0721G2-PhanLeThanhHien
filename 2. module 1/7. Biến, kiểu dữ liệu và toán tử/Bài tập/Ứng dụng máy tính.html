@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Máy tính</title>
     <style>
-        caption{
+        caption {
             text-align: left;
             font-weight: bold;
             font-size: 1.3em;
         }
+
         td {
             padding: 5px;
         }
-        #result{
+
+        #result {
             width: 300px;
             border: none;
         }
@@ -22,8 +24,8 @@
 <table>
     <caption>Calculator</caption>
     <tr>
-        <td colspan="2"><input type="text" id="inputA"></td>
-        <td colspan="2"><input type="text" id="inputB"></td>
+        <td colspan="2"><input type="text" id="number_1"></td>
+        <td colspan="2"><input type="text" id="number_2"></td>
     </tr>
     <tr>
         <td>
@@ -40,44 +42,45 @@
         </td>
     </tr>
     <tr>
-        <td colspan="3" ><input type="text" id="result"></td>
+        <td colspan="3"><input type="text" id="result"></td>
     </tr>
 </table>
 <script>
     function addition() {
-        let a = document.getElementById("inputA").value;
-        let b = document.getElementById("inputB").value;
-        let sum = Number(a) + Number(b);
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById("number_2").value;
+        let result = Number(number1) + Number(number2);
         let str = "Result Addition:";
-        let kq = document.getElementById("result");
-        kq.value = str + sum;
+        document.getElementById("result").value = str + result;
+        // kq.value = str + sum;
     }
 
     function subtraction() {
-        let a = document.getElementById("inputA").value;
-        let b = document.getElementById("inputB").value;
-        let sum = Number(a) - Number(b);
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById("number_2").value;
+        let result = Number(number1) - Number(number2);
         let str = "Result Subtraction:";
-        let kq = document.getElementById("result");
-        kq.value = str + sum;
+        document.getElementById("result").value = str + result;
     }
 
     function multiplication() {
-        let a = document.getElementById("inputA").value;
-        let b = document.getElementById("inputB").value;
-        let sum = Number(a) * Number(b);
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById("number_2").value;
+        let result = Number(number1) * Number(number2);
         let str = "Result Multiplication:";
-        let kq = document.getElementById("result");
-        kq.value = str + sum;
+        document.getElementById("result").value = str + result;
     }
 
     function division() {
-        let a = document.getElementById("inputA").value;
-        let b = document.getElementById("inputB").value;
-        let sum = Number(a) / Number(b);
-        let str = "Result Division:";
-        let kq = document.getElementById("result");
-        kq.value = str + sum;
+        let number1 = document.getElementById("number_1").value;
+        let number2 = document.getElementById("number_2").value;
+        if (number2 == 0) {
+            document.getElementById("result").value = "Nhập lại số hạng"
+        } else {
+            let result = Number(number1) / Number(number2);
+            let str = "Result Division:";
+            document.getElementById("result").value = str + result;
+        }
     }
 
 </script>

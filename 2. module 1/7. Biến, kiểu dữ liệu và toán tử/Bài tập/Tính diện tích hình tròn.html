@@ -24,11 +24,11 @@
         <caption>TÍNH DIỆN TÍCH HÌNH TRÒN</caption>
         <tr>
             <th>Bán kính hình tròn (mm):</th>
-            <td><input type="text" name="radius" id="radius" onkeyup="tinhDienTich()"></td>
+            <td><input type="text" name="radius" id="radius" onkeyup="calculateArea()"></td>
         </tr>
         <tr>
             <th> Diện tích hình tròn (mm<sup>2</sup>):</th>
-            <td><input type="text" name="area" id="area"></td>
+            <td><input type="text" name="result" id="result"></td>
         </tr>
         <tr>
             <td></td>
@@ -39,12 +39,11 @@
     </table>
 </form>
 <script>
-    function tinhDienTich() {
-        let a = document.getElementById("radius").value;
-        let s = Number(a) ** 2 * 3.14;
-        s = s.toFixed(2);
-        let kq = document.getElementById("area");
-        kq.value = s;
+    function calculateArea() {
+        let radius = document.getElementById("radius").value;
+        let area = Number(radius) ** 2 * 3.14;
+        area = area.toFixed(2);
+        document.getElementById("result").value = area;
     }
 
 </script>

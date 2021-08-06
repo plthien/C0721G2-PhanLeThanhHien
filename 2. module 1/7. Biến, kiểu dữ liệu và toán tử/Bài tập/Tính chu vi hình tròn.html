@@ -29,11 +29,11 @@
         <caption>TÍNH CHU VI HÌNH TRÒN</caption>
         <tr>
             <th>Bán kính hình tròn (mm):</th>
-            <td><input  type="text" id="radius" onkeyup="tinhChuVi()"></td>
+            <td><input  type="text" id="radius" onkeyup="calculateCircumference()"></td>
         </tr>
         <tr>
             <th>Chu vi hình tròn (mm):</th>
-            <td><input type="text" id="circumference"></td>
+            <td><input type="text" id="result"></td>
         </tr>
         <tr>
             <td></td>
@@ -42,12 +42,11 @@
     </table>
 </form>
 <script>
-    function tinhChuVi() {
-        let r = document.getElementById("radius").value;
-        let c = 2*Number(r)*3.14;
-        c = c.toFixed(2);
-        let kq = document.getElementById("circumference");
-        kq.value = c;
+    function calculateCircumference() {
+        let radius = document.getElementById("radius").value;
+        let circumference = 2*Number(radius)*3.14;
+        circumference = circumference.toFixed(2);
+        document.getElementById("result").value = circumference;
     }
 </script>
 </body>
