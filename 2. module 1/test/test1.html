@@ -2,9 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        select {
+            height: 21px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<input type="number" id="number1">
+<select id="equal">
+    <option value="1">+</option>
+    <option value="2">-</option>
+    <option value="3">x</option>
+    <option value="4">÷</option>
+</select>
+<input type="number" id="number2">
+<button onclick="kq()">Kết quả</button>
+<br>
+<p id="result"></p>
+<script>
+    function kq() {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        let result;
+        let choose = document.getElementById("equal").value;
+        if (choose == "1") {
+            result = a + b;
+            document.getElementById("result").innerHTML = "Kết quả: " + result;
+        } else if (choose == "2") {
+            result = a - b;
+            document.getElementById("result").innerHTML = "Kết quả: " + result;
+        } else if (choose == "3") {
+            result = a * b;
+            document.getElementById("result").innerHTML = "Kết quả: " + result;
+        } else {
+            result = a / b;
+            document.getElementById("result").innerHTML = "Kết quả: " + result;
+        }
+    }
+</script>
 </body>
 </html>
