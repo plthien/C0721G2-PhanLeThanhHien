@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <style>
+        table, td, th {
+            border-collapse: collapse;
+            border: 1px solid gray;
+        }
+        td,th {
+            width: 60px;
+            height: 60px;
+            text-align: center;
+        }
+        input {
+            border: none;
+            width: 250px;
+            height: 60px;
+            font-size: 2.0em;
+            text-align: right;
+        }
+        button {
+            border: none;
+            background: none;
+            width: 60px;
+            height: 60px;
+            font-size: 1.2em;
+        }
+        .toantu
+    </style>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th colspan="4"><input type="text" id="screen" readonly></th>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number('1')">1</button></td>
+            <td><button type="button" onclick="number('2')">2</button></td>
+            <td><button type="button" onclick="number('3')">3</button></td>
+            <td><button type="button" onclick="number('+')">&plus;</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number('4')">4</button></td>
+            <td><button type="button" onclick="number('5')">5</button></td>
+            <td><button type="button" onclick="number('6')">6</button></td>
+            <td><button type="button" onclick="number('-')">&minus;</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="number('7')">7</button></td>
+            <td><button type="button" onclick="number('8')">8</button></td>
+            <td><button type="button" onclick="number('9')">9</button></td>
+            <td><button type="button" onclick="number('*')">*</button></td>
+        </tr>
+        <tr>
+            <td><button type="reset">C</button> </td>
+            <td><button type="button" onclick="number('0')">0</button> </td>
+            <td><button type="button" onclick="calculate()">&equals;</button> </td>
+            <td><button type="button" onclick="number('/')">/</button> </td>
+
+        </tr>
+    </table>
+</form>
+<script>
+    function number(num) {
+        document.getElementById("screen").value += num;
+    }
+    function calculate() {
+        document.getElementById("screen").value = eval(document.getElementById("screen").value);
+
+    }
+
+</script>
+</body>
+</html>

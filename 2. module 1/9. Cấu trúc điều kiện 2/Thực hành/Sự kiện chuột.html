@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+<img src="imagesBall.jpg" id="myImage" style="position: relative; left: 0">
+<p>Click button below to move the image to right</p>
+<button type="button" onclick="moveBall()">Click Me</button>
+<script>
+    let imgObj = document.getElementById("myImage");
+    // function init() {
+    //     imgObj.style.position = "relative";
+    //     imgObj.style.left = "0px";
+    // }
+    function moveBall() {
+        imgObj.style.left = parseInt(imgObj.style.left) + 30 + "px";
+    }
+
+    // window.onload = init();
+</script>
+</body>
+</html>

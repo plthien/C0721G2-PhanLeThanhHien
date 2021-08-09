@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let diemKT = Number(prompt("Nhập điểm bài kiểm tra:"));
+    let diemGK = Number(prompt("Nhập điểm bài thi giữa kỳ:"));
+    let diemCK = Number(prompt("Nhập điểm bài thi cuối kỳ:"));
+    let diemTB = (diemKT * 0.1 + diemGK * 0.3 + diemCK * 0.6);
+    if (diemTB >= 8.5) {
+        alert("Giỏi");
+    } else if (diemTB >= 7) {
+        alert("Khá");
+    } else if (diemTB >= 5.5) {
+        alert("Trung bình");
+    } else {
+        alert("Yếu")
+    }
+</script>
+</body>
+</html>

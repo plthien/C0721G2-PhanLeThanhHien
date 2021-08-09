@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bậc	Thu nhập tính thuế/tháng (triệu đồng)	Thuế suất-->
+<!--1	Đến 05	5 %-->
+<!--2	Trên 05 đến 10	10 %-->
+<!--3	Trên 10 đến 18	15 %-->
+<!--4	Trên 18 đến 32	20 %-->
+<!--5	Trên 32 đến 52	25 %-->
+<!--6	Trên 52 đến 80	30 %-->
+<!--7	Trên 80	35 %-->
+
+<h3>TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+<p>Thu nhập tính thuế/tháng (triệu đồng): <input type="text" id="thuNhap"> <button type="button" onclick="tinhThue()">Tính thuế</button> </p>
+<p><span id="result" style="color: blue"></span></p>
+<script>
+    function tinhThue() {
+        let thuNhap = document.getElementById("thuNhap").value;
+        let thue ;
+        let str ="Thuế TNCN phải nộp: ";
+        if (thuNhap <= 5000000) {
+            thue = 0.05*thuNhap;
+            document.getElementById("result").innerText = str + thue;
+        } else if (thuNhap <= 10000000) {
+            thue = 0.05*5000000 + (thuNhap - 5000000)*0.1;
+            document.getElementById("result").innerText = str + thue;
+
+        } else if (thuNhap <= 18000000) {
+            thue = 0.05 * 5000000 + 0.1 * 5000000 + (thuNhap - 10000000) * 0.15;
+            document.getElementById("result").innerText = str + thue;
+        } else if (thuNhap <= 32000000) {
+            thue = 0.05 * 5000000 + 0.1 * 5000000 + 0.15*8000000 + (thuNhap - 18000000) * 0.2;
+            document.getElementById("result").innerText = str + thue;
+        } else if (thuNhap <= 52000000) {
+            thue = 0.05 * 5000000 + 0.1 * 5000000 + 0.15*8000000 + 0.2*14000000 +(thuNhap - 32000000) * 0.25;
+            document.getElementById("result").innerText = str + thue;
+        } else if (thuNhap <= 80000000) {
+            thue = 0.05 * 5000000 + 0.1 * 5000000 + 0.15*8000000 + 0.2*14000000 + 0.25*20000000 +(thuNhap - 52000000) * 0.3;
+            document.getElementById("result").innerText = str + thue;
+        } else {
+            thue = 0.05 * 5000000 + 0.1 * 5000000 + 0.15*8000000 + 0.2*14000000 + 0.25*20000000 + 0.3*28000000 +(thuNhap - 80000000) * 0.35;
+            document.getElementById("result").innerText = str + thue;
+        }
+
+    }
+</script>
+
+</body>
+</html>

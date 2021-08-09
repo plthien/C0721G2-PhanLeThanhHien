@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DoYouLoveMe</title>
+</head>
+<body>
+<h2>Do you love me ?</h2>
+<button type="button" onclick="selectYes()">YES</button>
+<button type="button" id="no" onmouseenter="selectNo()" style="position: relative; left: 0; top: 0">NO</button>
+<script>
+
+    function selectYes() {
+        alert("<3");
+    }
+    function selectNo() {
+        let limitLeft = window.innerWidth;
+        let limitTop = window.innerHeight;
+        let findNo = document.getElementById("no");
+        findNo.style.left = Math.floor(Math.random() * limitLeft ) +"px";
+        findNo.style.top = Math.floor(Math.random() * limitTop ) + "px";
+    }
+</script>
+
+</body>
+</html>

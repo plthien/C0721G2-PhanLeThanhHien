@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bậc 1: Cho kWh từ 0 – 50 1.549-->
+<!--Bậc 2: Cho kWh từ 51 – 100	1.600-->
+<!--Bậc 3: Cho kWh từ 101 – 200	1.858-->
+<!--Bậc 4: Cho kWh từ 201 – 300	2.340-->
+<!--Bậc 5: Cho kWh từ 301 – 400	2.615-->
+<!--Bậc 6: Cho kWh từ 401 trở lên	2.701-->
+<h3>TÍNH GIÁ ĐIỆN SINH HOẠT</h3>
+<p>Nhập chỉ số điện sử dụng (KWh):<input type="text" id="chiSo">  <button type="button" onclick="tinhGiaDien()">Tính tiền</button></p>
+<p><span id="result" style="color: blue"></span></p>
+<script>
+    function tinhGiaDien() {
+        let chiSoDien = document.getElementById("chiSo").value;
+        let giaTien;
+        let str = "Tiền điện đã bao gồm VAT: ";
+        if (chiSoDien <= 50){
+            giaTien = chiSoDien*1549 + 0.1*chiSoDien*1549;
+            document.getElementById("result").innerText = str + giaTien;
+        } else if (chiSoDien <=100) {
+            giaTien = 50*1549 + (chiSoDien - 50)*1600 + 0.1*(50*1549 + (chiSoDien - 50)*1600);
+            document.getElementById("result").innerText = str + giaTien;
+        } else if (chiSoDien <=200) {
+            giaTien = 50*1549 + 50*1600 + (chiSoDien - 100)*1858+0.1*(50*1549 + 50*1600 + (chiSoDien - 100)*1858);
+            document.getElementById("result").innerText = str + giaTien;
+        } else if (chiSoDien <=300) {
+            giaTien = 50*1549 + 50*1600 + 100*1858 +(chiSoDien - 200)*2340+0.1*(50*1549 + 50*1600 + 100*1858 +(chiSoDien - 200)*2340);
+            document.getElementById("result").innerText = str + giaTien;
+        } else if (chiSoDien <=400) {
+            giaTien = 50*1549 + 50*1600 + 100*1858 + 100*2340 + (chiSoDien - 300)*2615+0.1*(50*1549 + 50*1600 + 100*1858 + 100*2340 + (chiSoDien - 300)*2615);
+            document.getElementById("result").innerText = str + giaTien;
+        } else {
+            giaTien = 50*1549 + 50*1600 + 100*1858 + 100*2340 + 100*2615 +(chiSoDien - 400)*2701+0.1*(50*1549 + 50*1600 + 100*1858 + 100*2340 + 100*2615 +(chiSoDien - 400)*2701);
+            document.getElementById("result").innerText = str + giaTien;
+        }
+
+    }
+</script>
+
+</body>
+</html>

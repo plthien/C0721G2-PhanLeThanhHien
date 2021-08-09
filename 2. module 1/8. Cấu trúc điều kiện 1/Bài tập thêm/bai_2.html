@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài_2</title>
+</head>
+<body>
+<p id="result">Thời tiết hôm nay thế nào ?</p>
+<button type="button" onclick="convert('sunny')">trời nắng</button>
+<button type="button" onclick="convert('rainy')">trời mưa</button>
+<script>
+    function convert(weather) {
+        switch (weather) {
+            case 'sunny':
+                document.getElementById("result").innerText = "Hôm nay trời nắng đẹp";
+                break;
+            case 'rainy':
+                document.getElementById("result").innerText = "Hôm nay trời mưa ngâu";
+                break;
+
+        }
+
+    }
+</script>
+</body>
+</html>

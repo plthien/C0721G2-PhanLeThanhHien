@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số BMI</title>
+</head>
+<body>
+<h3>TÍNH CHỈ SỐ BMI</h3>
+Cân nặng (Kg):<input type="text" id="inputWeight"> Chiều cao (m):<input type="text" id="inputHeight" >
+<button type="button" onclick="calBMI()">Tính BMI</button>
+<p>Chỉ số BMI:<span id="result"></span></p>
+<script>
+    function calBMI() {
+        let weight = Number(document.getElementById("inputWeight").value);
+        let height = Number(document.getElementById("inputHeight").value);
+        let bmi = weight / (height ^ 2);
+        bmi = bmi.toFixed(2);
+        if (bmi >= 30) {
+            document.getElementById("result").innerText = bmi + " Tình trạng: Obese";
+        } else if (bmi >= 25) {
+            document.getElementById("result").innerText = bmi + " Tình trạng: Overweight";
+        } else if (bmi >= 18.5) {
+            document.getElementById("result").innerText = bmi + " Tình trạng: Normal";
+        } else {
+            document.getElementById("result").innerText = bmi + " Tình trạng: Underweight";
+        }
+    }
+
+</script>
+</body>
+</html>

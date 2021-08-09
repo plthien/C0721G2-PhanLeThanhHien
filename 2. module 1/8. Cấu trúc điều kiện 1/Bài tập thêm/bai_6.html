@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Bạn tên gì ?<input type="text" id="name"><br>
+<p>Chọn sở thích của bạn:</p>
+<input type="checkbox" name="hobby" id="hobby_1" value="Đi chơi"><label for="hobby_1">Đi chơi</label><br>
+<input type="checkbox" name="hobby" id="hobby_2" value="Đi du lịch"><label for="hobby_2">Đi du lịch</label> <br>
+<input type="checkbox" name="hobby" id="hobby_3" value="Đi ăn"><label for="hobby_3">Đi ăn</label><br>
+<input type="checkbox" name="hobby" id="hobby_4" value="Đi siêu thị"><label for="hobby_4">Đi siêu thị</label><br>
+<input type="checkbox" name="hobby" id="hobby_5" value="Học lập trình"><label for="hobby_5">Học lập trình</label><br><br>
+<button type="button" onclick="result()">Xem kết quả</button>
+<script>
+    function result() {
+        let name = document.getElementById("name").value;
+        let str = "";
+        let checkBox = document.getElementsByName("hobby");
+        for (let i = 0; i < checkBox.length; i++){
+            if (checkBox[i].checked == true) {
+                str += "[" + checkBox[i].value + "]";
+            }
+        }
+        alert("Sở thích của " + name + " là:" + str);
+
+
+    }
+</script>
+</body>
+</html>

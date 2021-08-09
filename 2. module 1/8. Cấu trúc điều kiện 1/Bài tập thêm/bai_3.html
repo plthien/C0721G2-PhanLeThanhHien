@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm thẻ HTML</title>
+    <style>
+        span {
+            background-color: lightgray;
+
+        }
+        body {
+            line-height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+<input type="text" id="content">
+<button type="button" onclick="addContent()">Add</button> <br>
+<span id="result"></span> <br>
+<script>
+    function addContent() {
+        let str = document.getElementById("content").value;
+        if (str == "") {
+            alert("Bạn chưa nhập nội dung");
+        } else {
+            document.getElementById("result").innerHTML = str;
+        }
+
+
+    }
+</script>
+
+</body>
+</html>

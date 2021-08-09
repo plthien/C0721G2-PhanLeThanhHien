@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>TÍNH LÃI VAY </h3>
+Số tiền vay:<input type="text" id="tienVay"> Thời hạn vay (tháng): <input type="text" id="thoiHanVay"> Lãi suất (%/tháng): <input type="text" id="laiSuat">
+<button type="button" onclick="tinhLai()">Tính Lãi</button>
+<p><span id="result"></span></p>
+<script>
+    function tinhLai() {
+        let tienGoc = document.getElementById("tienVay").value;
+        let thoiHan = document.getElementById("thoiHanVay").value;
+        let laiSuat = document.getElementById("laiSuat").value;
+        let tienLai;
+        tienLai = tienGoc* Math.pow((1+laiSuat/100),thoiHan) - tienGoc;
+        document.getElementById("result").innerText = " Tổng tiền lãi phải trả: " + tienLai;
+
+
+    }
+</script>
+</body>
+</html>

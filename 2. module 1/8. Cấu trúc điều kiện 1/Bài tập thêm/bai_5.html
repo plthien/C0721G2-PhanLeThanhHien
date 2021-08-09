@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo checkbox</title>
+</head>
+<body>
+<p>Bạn là thành viên của lớp C0421G1</p>
+<input type="checkbox" id="check">Vâng, đúng rồi <br><br>
+<button type="button" onclick="tickBox('yes')">Chọn</button>
+<button type="button" onclick="tickBox('no')">Bỏ chọn</button>
+<script>
+    function tickBox(check) {
+        let checkBox = document.getElementById("check");
+        switch (check) {
+            case 'yes':
+                switch (checkBox.checked) {
+                    case true:
+                        break;
+                    case false:
+                        document.getElementById("check").click();
+                        break;
+                }
+                break;
+            case 'no':
+                switch (checkBox.checked) {
+                    case true:
+                        document.getElementById("check").click();
+                        break;
+                    case false:
+                        break;
+                }
+                break;
+        }
+    }
+</script>
+</body>
+</html>

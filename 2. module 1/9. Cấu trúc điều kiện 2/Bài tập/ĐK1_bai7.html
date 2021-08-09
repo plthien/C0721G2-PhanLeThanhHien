@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Phí thuê bao bắt buộc là 25 nghìn.
+    // 600 đồng cho mỗi gọi của 50 phút đầu tiên.
+    // 400 đồng cho mỗi phút gọi của 150 phút tiếp theo.
+    // 200 đồng cho bất kỳ mỗi phút nào sau 200 phút đầu tiên.
+
+    let phiThueBao = 25000;
+    let thoiGianGoi = Number(prompt("Nhập số phút đã gọi:"));
+    let tongCuoc;
+    if (thoiGianGoi > 200) {
+        tongCuoc = (thoiGianGoi - 200)*200 + 150*400 + 50*600 + phiThueBao;
+        alert("Tổng tiền cước: "+tongCuoc);
+    } else if (thoiGianGoi > 50) {
+        tongCuoc = (thoiGianGoi - 50)*400 + 50*600 + phiThueBao;
+        alert("Tổng tiền cước: "+tongCuoc);
+    } else {
+        tongCuoc = thoiGianGoi*600 + phiThueBao;
+        alert("Tổng tiền cước: "+tongCuoc);
+    }
+</script>
+</body>
+</html>

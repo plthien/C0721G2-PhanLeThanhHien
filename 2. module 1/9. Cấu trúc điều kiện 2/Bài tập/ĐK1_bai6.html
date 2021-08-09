@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let doanhSo = Number(prompt("Nhập doanh số bán hàng:"));
+    let donGia = 20000;
+    let hoaHong;
+    if (doanhSo >= 1000) {
+        hoaHong = doanhSo * donGia * 0.1;
+        alert("Hoa hồng: " + hoaHong);
+    } else if (doanhSo >= 700) {
+        hoaHong = doanhSo * donGia * 0.05;
+        alert("Hoa hồng: " + hoaHong);
+    } else if (doanhSo >= 400) {
+        hoaHong = doanhSo * donGia * 0.03;
+        alert("Hoa hồng: " + hoaHong);
+    } else {
+        hoaHong = doanhSo * donGia * 0.01;
+        alert("Hoa hồng: " + hoaHong);
+    }
+</script>
+</body>
+</html>
