@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num = Number(prompt("Số lượng số nguyên tố đầu tiên:"));
+    let count = 0;
+    for (let snt = 2; count < num; snt++) {
+        let checkSNT = true;
+        for (let i = 2; i < snt; i++) {
+            if (snt % i == 0) {
+                checkSNT = false;
+                break;
+            }
+        }
+        if (checkSNT == true) {
+            document.write(snt + " ");
+            count += 1;
+        }
+    }
+</script>
+</body>
+</html>

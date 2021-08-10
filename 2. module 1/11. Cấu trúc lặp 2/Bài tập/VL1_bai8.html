@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+    <style>
+        button {
+            margin: 200px;
+            margin-left: 700px;
+            padding: 10px;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+<button type="button" onclick="playGame()">Chơi</button>
+<script>
+    function playGame() {
+        let min = Number(prompt("Nhập vào số nhỏ nhất:"));
+        let max = Number(prompt("Nhập vào số lớn nhất:"));
+        function numberRandom(min, max) {
+            return Math.round(Math.random() * (max - min + 1)) + min;
+        }
+        let numOfPrograme = numberRandom(min, max);
+        let count = 0;
+        do {
+            let numOfGamer = Number(prompt("Nhập số của bạn:"));
+            count += 1;
+            if (numOfPrograme == numOfGamer) {
+                alert("Chúc mừng bạn đã đoán trúng");
+                break;
+            } else if (numOfPrograme > numOfGamer) {
+                alert("Số của bạn nhỏ hơn, hãy đoán lại");
+            } else {
+                alert("Số của bạn lớn hơn, hãy đoán lại");
+            }
+            if (count == 3 ) {
+                alert("Bạn đã hết lượt chơi");
+            }
+        }
+        while (count < 3)
+    }
+</script>
+</body>
+</html>

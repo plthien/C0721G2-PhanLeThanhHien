@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let f0 = 1;
+    let f1 = 1;
+    let fn ;
+    for (i = 1; i <= 18; i++) {
+        fn = f0 + f1;
+        if ( fn%5 == 0) {
+            break;
+        }
+        f0 = f1;
+        f1 = fn;
+    }
+    document.write(fn);
+</script>
+</body>
+</html>
