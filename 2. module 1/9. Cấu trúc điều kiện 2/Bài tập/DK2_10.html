@@ -19,7 +19,9 @@
         let chiSoDien = document.getElementById("chiSo").value;
         let giaTien;
         let str = "Tiền điện đã bao gồm VAT: ";
-        if (chiSoDien <= 50){
+        if (chiSoDien <=0){
+            alert("Nhập lại chỉ số điện");
+        } else if (chiSoDien <= 50){
             giaTien = chiSoDien*1549 + 0.1*chiSoDien*1549;
             document.getElementById("result").innerText = str + giaTien;
         } else if (chiSoDien <=100) {

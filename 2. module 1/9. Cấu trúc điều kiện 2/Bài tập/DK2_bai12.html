@@ -15,8 +15,12 @@ Số tiền vay:<input type="text" id="tienVay"> Thời hạn vay (tháng): <inp
         let thoiHan = document.getElementById("thoiHanVay").value;
         let laiSuat = document.getElementById("laiSuat").value;
         let tienLai;
-        tienLai = tienGoc* Math.pow((1+laiSuat/100),thoiHan) - tienGoc;
-        document.getElementById("result").innerText = " Tổng tiền lãi phải trả: " + tienLai;
+        if (tienGoc <= 0 || thoiHan <=0 || laiSuat < 0) {
+            alert("Nhập lại");
+        } else {
+            tienLai = tienGoc * Math.pow((1 + laiSuat / 100), thoiHan) - tienGoc;
+            document.getElementById("result").innerText = " Tổng tiền lãi phải trả: " + tienLai;
+        }
 
 
     }

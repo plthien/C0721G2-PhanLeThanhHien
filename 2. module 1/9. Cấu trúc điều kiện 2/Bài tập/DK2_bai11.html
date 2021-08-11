@@ -15,14 +15,16 @@
 <!--7	Trên 80	35 %-->
 
 <h3>TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
-<p>Thu nhập tính thuế/tháng (triệu đồng): <input type="text" id="thuNhap"> <button type="button" onclick="tinhThue()">Tính thuế</button> </p>
+<p>Thu nhập tính thuế/tháng (đồng): <input type="text" id="thuNhap"> <button type="button" onclick="tinhThue()">Tính thuế</button> </p>
 <p><span id="result" style="color: blue"></span></p>
 <script>
     function tinhThue() {
         let thuNhap = document.getElementById("thuNhap").value;
         let thue ;
         let str ="Thuế TNCN phải nộp: ";
-        if (thuNhap <= 5000000) {
+        if (thuNhap <= 0) {
+            alert("Nhập lại thu nhập");
+        } else if (thuNhap <= 5000000) {
             thue = 0.05*thuNhap;
             document.getElementById("result").innerText = str + thue;
         } else if (thuNhap <= 10000000) {

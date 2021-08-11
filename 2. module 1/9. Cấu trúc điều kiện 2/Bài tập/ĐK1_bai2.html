@@ -7,7 +7,9 @@
 <body>
 <script>
     let age =Number(prompt("Nhập tuổi:"));
-    if (age >= 15) {
+    if (age <=0) {
+        alert("Nhập lại");
+    }else if (age >= 15) {
         alert("Đủ điều kiện vào lớp 10");
     } else {
         alert("Không đủ điều kiện vào lớp 10");

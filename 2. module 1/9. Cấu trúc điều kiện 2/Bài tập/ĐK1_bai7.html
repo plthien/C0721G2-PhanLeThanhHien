@@ -14,7 +14,9 @@
     let phiThueBao = 25000;
     let thoiGianGoi = Number(prompt("Nhập số phút đã gọi:"));
     let tongCuoc;
-    if (thoiGianGoi > 200) {
+    if (thoiGianGoi <0) {
+        alert("Nhập lại");
+    }else if (thoiGianGoi > 200) {
         tongCuoc = (thoiGianGoi - 200)*200 + 150*400 + 50*600 + phiThueBao;
         alert("Tổng tiền cước: "+tongCuoc);
     } else if (thoiGianGoi > 50) {

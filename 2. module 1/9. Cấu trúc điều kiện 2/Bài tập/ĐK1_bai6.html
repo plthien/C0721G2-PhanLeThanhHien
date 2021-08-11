@@ -9,7 +9,9 @@
     let doanhSo = Number(prompt("Nhập doanh số bán hàng:"));
     let donGia = 20000;
     let hoaHong;
-    if (doanhSo >= 1000) {
+    if (doanhSo < 0) {
+        alert("Nhập lại");
+    }else if (doanhSo >= 1000) {
         hoaHong = doanhSo * donGia * 0.1;
         alert("Hoa hồng: " + hoaHong);
     } else if (doanhSo >= 700) {
