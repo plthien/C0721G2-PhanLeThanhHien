@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<script>
+    for (let row = 1; row <= 7; row++) {
+        switch (row) {
+            case 1:
+            case 7:
+                for (let col = 1; col <= 21; col++) {
+                    document.write("*");
+                }
+                document.write("<br>");
+                break;
+            default:
+                for (let col = 1; col <= 21; col++) {
+                    switch (col) {
+                        case 1:
+                        case 21:
+                            document.write("*");
+                            break;
+                        default:
+                            document.write("&nbsp;&nbsp;");
+                    }
+                }
+                document.write("<br>");
+                break;
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -5,8 +5,16 @@
     <title>Title</title>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
 <h3>TÍNH LÃI VAY </h3>
-Số tiền vay:<input type="text" id="tienVay"> Thời hạn vay (tháng): <input type="text" id="thoiHanVay"> Lãi suất (%/tháng): <input type="text" id="laiSuat">
+Số tiền vay:<input type="text" id="tienVay"> Thời hạn vay (tháng): <input type="text" id="thoiHanVay"> Lãi suất
+(%/tháng): <input type="text" id="laiSuat">
 <button type="button" onclick="tinhLai()">Tính Lãi</button>
 <p><span id="result"></span></p>
 <script>
@@ -14,16 +22,23 @@ Số tiền vay:<input type="text" id="tienVay"> Thời hạn vay (tháng): <inp
         let tienGoc = Number(document.getElementById("tienVay").value);
         let thoiHan = Number(document.getElementById("thoiHanVay").value);
         let laiSuat = Number(document.getElementById("laiSuat").value);
-        let tienLai;
+        let tienLai = 0;
+        let tienGocBanDau = tienGoc;
         if (tienGoc <= 0 || thoiHan < 1 || laiSuat < 0) {
             alert("Nhập lại");
         } else {
-            tienLai = tienGoc * Math.pow((1 + laiSuat / 100), thoiHan) - tienGoc;
+            for (let i = 1; i <= thoiHan; i++) {
+                tienLai = tienGoc * laiSuat / 100;
+                tienGoc += tienLai;
+            }
+            tienLai = tienGoc - tienGocBanDau;
             document.getElementById("result").innerText = " Tổng tiền lãi phải trả: " + tienLai;
         }
 
 
     }
 </script>
+</body>
+</html>
 </body>
 </html>
