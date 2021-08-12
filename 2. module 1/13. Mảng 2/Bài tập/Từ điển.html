@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+    <link rel="stylesheet" href="fontawesome-free-5.15.3/css/all.min.css">
+    <style>
+        input {
+            width: 400px;
+            height: 25px;
+            font-size: 1.3em;
+            border-radius: 20px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            color: #5f6062;
+        }
+
+        button {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            background: yellow;
+            border: none;
+        }
+
+        form {
+            width: 600px;
+            height: 400px;
+            margin: 100px auto;
+            text-align: center;
+            background-color: #33FF66;
+            padding: 10px;
+            border-radius: 40px;
+        }
+
+        div {
+            margin-top: 20px;
+            margin-left: 70px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <h1>Từ điển Anh-Việt</h1>
+    <input type="text" id="inputEnglish">
+    <button type="button" onclick="searchArray()"><i class="fas fa-search"></i></button>
+    <br>
+    <div id="result"></div>
+</form>
+<script>
+    let arrayEnglish = ["people", "student", "teacher", "table", "chair", "book"];
+    let arrayViet = ["Con người", "Học sinh", "Giáo viên", "Cái bàn", "Cái ghế", "Quyển sách"];
+    let search;
+
+    function searchArray() {
+        let str = document.getElementById("inputEnglish").value;
+        if (str == "") {
+            document.getElementById("result").innerText = "Hãy nhập từ cần tìm vào ô tìm kiếm";
+        } else {
+            for (let i = 0; i < arrayEnglish.length; i++) {
+                if (str == arrayEnglish[i]) {
+                    document.getElementById("result").innerText = arrayViet[i];
+                    search = true;
+                    break;
+                } else {
+                    search = false;
+                }
+            }
+            if (search == false) {
+                document.getElementById("result").innerText = "Không tìm thấy";
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

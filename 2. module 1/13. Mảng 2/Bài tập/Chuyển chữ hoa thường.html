@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  str = prompt("Nhập vào một chuỗi");
+    let result = [];
+    let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (let i=0; i <str.length; i++) {
+        if (UPPER.indexOf(str[i]) != -1) {
+            result.push(str[i].toLowerCase());
+        } else {
+            result.push(str[i].toUpperCase());
+        }
+    }
+    document.write(result.join(""));
+</script>
+</body>
+</html>

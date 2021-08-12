@@ -24,7 +24,8 @@
         if (str == "") {
             alert("Bạn chưa nhập nội dung");
         } else {
-            document.getElementById("result").innerHTML = str;
+            document.getElementById("result").innerHTML += str + "<br>";
+            document.getElementById("content").value = "";
         }
 
 
