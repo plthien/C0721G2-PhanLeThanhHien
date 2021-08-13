@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            text-align: center;
+            background-color: #F8F8FF;
+            border: 1px solid #DCDCDC;
+            width: 50px;
+            height: 50px;
+        }
+
+        td:first-child {
+            border-left: none;
+            border-top: none;
+            border-bottom: none;
+            background-color: white;
+        }
+
+        .hangvitri td {
+            border-left: none;
+            border-top: none;
+            border-right: none;
+            background-color: white;
+        }
+
+        caption {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        #x {
+            color: blue;
+        }
+
+        #o {
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<span id="caroGame"></span> <br>
+<button type="button" onclick="play()"><span id="x">Người chơi 1 (X)</span> <span id="o">Người chơi 2 (O)</span>
+</button>
+<button type="button" onclick="playAgain()">Chơi lại</button>
+<script>
+    let array = [];
+    let isPlay = true;
+    for (let i = 0; i < 5; i++) {
+        array[i] = [".", ".", ".", ".", "."];
+    }
+    displayCaro();
+
+    function displayCaro() {
+        let board = "<table>" + "<caption>Caro Game</caption>" +
+            "<tr class='hangvitri'>" +
+            "<td></td>" +
+            "<td>0</td>" +
+            "<td>1</td>" +
+            "<td>2</td>" +
+            "<td>3</td>" +
+            "<td>4</td>" +
+            "</tr>";
+        for (let i = 0; i < 5; i++) {
+            board += "<tr>" + "<td>" + i + "</td>";
+            for (let j = 0; j < 5; j++) {
+                board += "<td>" + array[i][j] + "</td>";
+            }
+            board += "</tr>";
+        }
+        board += "</table>";
+        document.getElementById("caroGame").innerHTML = board;
+    }
+
+    function play() {
+        let row = Number(prompt("Nhập vị trí dòng"));
+        let col = Number(prompt("Nhập vị trí cột"));
+        if (array[row][col] == "<span id='x'>X</span>" || array[row][col] == "<span id='o'>O</span>") {
+            alert("Ô này đã được chơi, nhập lại ô khác");
+        } else {
+            if (isPlay) {
+                // array[row][col] = "<span style='color: blue'>" + "X" + "</span>";
+                array[row][col] = "<span id='x'>X</span>";
+                isPlay = false;
+
+            } else {
+                // array[row][col] = "<span style='color: red'>" + "O" + "</span>";
+                array[row][col] = "<span id='o'>O</span>";
+                isPlay = true;
+            }
+        }
+        displayCaro();
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                let case1 = array[i][j] == "<span id='x'>X</span>" && array[i][j + 1] == "<span id='x'>X</span>" && array[i][j + 2] == "<span id='x'>X</span>";
+                let case2 = array[i][j] == "<span id='x'>X</span>" && array[i + 1][j] == "<span id='x'>X</span>" && array[i + 2][j] == "<span id='x'>X</span>";
+                let case3 = array[i][j] == "<span id='o'>O</span>" && array[i][j + 1] == "<span id='o'>O</span>" && array[i][j + 2] == "<span id='o'>O</span>";
+                let case4 = array[i][j] == "<span id='o'>O</span>" && array[i + 1][j] == "<span id='o'>O</span>" && array[i + 2][j] == "<span id='o'>O</span>";
+                if (case1 || case2) {
+                    alert("Người chơi 1 thắng");
+
+                } else if (case3 || case4) {
+                    alert("Người chơi 2 thắng");
+                }
+            }
+        }
+    }
+
+    function playAgain() {
+        for (let i = 0; i < 5; i++) {
+            array[i] = [".", ".", ".", ".", "."];
+        }
+        let board = "<table>" + "<caption>Caro Game</caption>" +
+            "<tr class='hangvitri'>" +
+            "<td></td>" +
+            "<td>0</td>" +
+            "<td>1</td>" +
+            "<td>2</td>" +
+            "<td>3</td>" +
+            "<td>4</td>" +
+            "</tr>";
+        for (let i = 0; i < 5; i++) {
+            board += "<tr>" + "<td>" + i + "</td>";
+            for (let j = 0; j < 5; j++) {
+                board += "<td>" + array[i][j] + "</td>";
+            }
+            board += "</tr>";
+        }
+        board += "</table>";
+        document.getElementById("caroGame").innerHTML = board;
+    }
+
+
+</script>
+</body>
+</html>

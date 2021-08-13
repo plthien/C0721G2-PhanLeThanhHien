@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [1, 12, 2, 4, 5, 22, 16, 40, 11, 100];
+    let max = array[0];
+    let index;
+    let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+        if (max < array[i]) {
+            max = array[i];
+        }
+    }
+    let average = sum / array.length;
+    document.write("Phần từ lớn nhất là: " + max + "<br>")
+    document.write("Giá trị trung bình của các phần tử trong mảng là: " + average);
+</script>
+</body>
+</html>

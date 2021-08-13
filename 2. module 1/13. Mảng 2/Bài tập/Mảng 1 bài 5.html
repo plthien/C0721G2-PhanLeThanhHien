@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let row = parseInt(prompt("Nhập vào số phần tử của mảng: "));
+    let array = new Array(row);
+    for (let i=0; i < array.length;i++){
+        do {
+            array[i] = parseInt(prompt("Nhập vào phần tử ở vị trí thứ " +i));
+        } while (isNaN(array[i]))
+    }
+    document.write("Mảng đã nhập: " +array + "<br>");
+    let count =0;
+    for (let i=0; i<array.length; i++){
+        if (array[i] <0 ) {
+            count+=1;
+        }
+    }
+    document.write("Số lượng số nguyên âm có trong chuỗi là: " +count);
+</script>
+</body>
+</html>

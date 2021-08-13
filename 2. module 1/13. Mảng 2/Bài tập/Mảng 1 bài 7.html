@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = new Array(10);
+    let count = 0;
+    let num;
+    for (let i = 0; i < array.length; i++) {
+        do {
+            array[i] = parseInt(prompt("Nhập vào phần tử ở vị trí thứ " + i));
+        } while (isNaN(array[i]))
+
+    }
+    document.write("Mảng đã nhập: "+array + "<br>");
+    do {
+        num = parseInt(prompt("Nhập vào số nguyên cần tìm: "));
+    } while (isNaN(num))
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == num) {
+            array.splice(i, 1);
+            count+=1;
+        }
+    }
+    if (count == 0) {
+        document.write(num + " is not in the array");
+    } else {
+        document.write(num + " is in the array" + "<br>");
+        document.write("Mảng đã xóa " + num + " :" + array);
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let row = parseInt(prompt("Nhập vào số phần tử trong mảng:"));
+    let array = new Array(row);
+    for (let i = 0; i < array.length; i++) {
+        do {
+            array[i] = parseInt(prompt("Nhập phần tử ở vị trí thứ " + i));
+        }
+        while (isNaN(array[i]))
+    }
+    document.write("Mảng đã nhập: " + array + "<br>");
+    let last = array.length - 1;
+    let first = 0;
+   while ( first < last) {
+       let a = array[first];
+       array[first] = array[last];
+       array[last] = a;
+       first++;
+       last--
+   }
+    document.write("Đảo mảng: " + array);
+
+</script>
+</body>
+</html>
