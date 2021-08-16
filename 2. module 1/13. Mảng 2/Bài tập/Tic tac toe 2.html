@@ -46,11 +46,11 @@
     displayCaro();
 
     function displayCaro() {
-        let board = "<table>" + "<caption>Caro Game</caption>" ;
+        let board = "<table>" + "<caption>Caro Game</caption>";
         for (let i = 0; i < 5; i++) {
             board += "<tr>";
             for (let j = 0; j < 5; j++) {
-                board += "<td onclick='play(" + i +","+ j +")'>" + array[i][j] + "</td>";
+                board += "<td onclick='play(" + i + "," + j + ")'>" + array[i][j] + "</td>";
             }
             board += "</tr>";
         }
@@ -58,7 +58,7 @@
         document.getElementById("caroGame").innerHTML = board;
     }
 
-    function play(row,col) {
+    function play(row, col) {
         if (array[row][col] == "<span id='x'>X</span>" || array[row][col] == "<span id='o'>O</span>") {
             alert("Ô này đã được chơi, nhập lại ô khác");
         } else {
@@ -72,19 +72,27 @@
             }
         }
         displayCaro();
-        for (let i = 0; i < 5; i++) {
-            for (let j = 0; j < 5; j++) {
-                let case1 = array[i][j + 1] == "<span id='x'>X</span>" && array[i][j + 2] == "<span id='x'>X</span>";
-                let case2 = array[i + 1][j] == "<span id='x'>X</span>" && array[i + 2][j] == "<span id='x'>X</span>";
-                let case3 = array[i][j + 1] == "<span id='o'>O</span>" && array[i][j + 2] == "<span id='o'>O</span>";
-                let case4 = array[i + 1][j] == "<span id='o'>O</span>" && array[i + 2][j] == "<span id='o'>O</span>";
-                if (array[i][j] == "<span id='x'>X</span>") {
-                    if (case1 || case2) {
+        for (let i = row; i < 5; i++) {
+            for (let j = col; j < 5; j++) {
+                let case1X = array[i][j + 1] === "<span id='x'>X</span>" && array[i][j + 2] === "<span id='x'>X</span>";
+                let case2X = array[i + 1][j] === "<span id='x'>X</span>" && array[i + 2][j] === "<span id='x'>X</span>";
+                let case3X = array[i + 1][j + 1] === "<span id='x'>X</span>" && array[i + 2][j + 2] === "<span id='x'>X</span>";
+                let case4X = array[i - 1][j - 1] === "<span id='x'>X</span>" && array[i - 2][j - 2] === "<span id='x'>X</span>";
+                let case5X = array[i + 1][j - 1] === "<span id='x'>X</span>" && array[i + 2][j - 2] === "<span id='x'>X</span>";
+                let case6X = array[i - 1][j + 1] === "<span id='x'>X</span>" && array[i - 2][j + 2] === "<span id='x'>X</span>";
+                let case1O = array[i][j + 1] === "<span id='o'>O</span>" && array[i][j + 2] === "<span id='o'>O</span>";
+                let case2O = array[i + 1][j] === "<span id='o'>O</span>" && array[i + 2][j] === "<span id='o'>O</span>";
+                let case3O = array[i + 1][j + 1] === "<span id='o'>O</span>" && array[i + 2][j + 2] === "<span id='o'>O</span>";
+                let case4O = array[i - 1][j - 1] === "<span id='o'>O</span>" && array[i - 2][j - 2] === "<span id='o'>O</span>";
+                let case5O = array[i + 1][j - 1] === "<span id='o'>O</span>" && array[i + 2][j - 2] === "<span id='o'>O</span>";
+                let case6O = array[i - 1][j + 1] === "<span id='o'>O</span>" && array[i - 2][j + 2] === "<span id='o'>O</span>";
+                if (array[i][j] === "<span id='x'>X</span>") {
+                    if (case1X || case2X || case3X || case4X || case5X || case6X) {
                         alert("Người chơi 1 thắng");
                         break;
-                }
-                } else if (array[i][j] == "<span id='o'>O</span>") {
-                    if (case3 || case4) {
+                    }
+                } else if (array[i][j] === "<span id='o'>O</span>") {
+                    if (case1O || case2O || case3O || case4O || case5O || case6O) {
                         alert("Người chơi 2 thắng");
                         break;
                     }
@@ -101,7 +109,7 @@
         for (let i = 0; i < 5; i++) {
             board += "<tr>";
             for (let j = 0; j < 5; j++) {
-                board += "<td onclick='play(" + i +","+ j +")'>" + array[i][j] + "</td>";
+                board += "<td onclick='play(" + i + "," + j + ")'>" + array[i][j] + "</td>";
             }
             board += "</tr>";
         }

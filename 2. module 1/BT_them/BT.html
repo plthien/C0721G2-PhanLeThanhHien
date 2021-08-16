@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td {
+            text-align: center;
+            background-color: #F8F8FF;
+            border: 1px solid #DCDCDC;
+            width: 100px;
+            height: 100px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+<p id="result"></p>
+<button type="button" onclick="playAgain()">Chơi lại</button>
+<script>
+    let board = [];
+    let isPlay = true;
+    for (let i = 0; i < 5; i++) {
+        board[i] = [".", ".", ".", ".", "."]
+    }
+    displayCaro();
+
+    function displayCaro() {
+        let data = "<table>"
+        for (let i = 0; i < 5; i++) {
+            data = data + "</tr>"
+            for (let j = 0; j < 5; j++) {
+                data += "<td onclick='changeValue(" + i + "," + j + ")'>";
+                data += board[i][j];
+                data += "</td>"
+            }
+            data = data + "</tr>"
+        }
+        data = data + "</table>"
+        document.getElementById("result").innerHTML = data;
+    }
+
+    function changeValue(row, col) {
+        if (board[row][col] == "X" || board[row][col] == "O") {
+            alert("Ô này đã được chơi. yêu cầu nhập lại ô khác")
+        } else {
+            if (isPlay) {
+                board[row][col] = "X";
+                isPlay = false
+            } else {
+                board[row][col] = "O";
+                isPlay = true;
+            }
+            displayCaro();
+            let count_leftX = 0;
+            let count_rightX = 0;
+            //Kiểm tra hàng ngang về bên phải
+            for (let i = col + 1; i < 5; i++) {
+                if (board[row][i] == "X") {
+                    count_rightX++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra hàng ngang về bên trái
+            for (let i = col; i >= 0; i--) {
+                if (board[row][i] == "X") {
+                    count_leftX++;
+                } else {
+                    break;
+                }
+            }
+            if (count_rightX + count_leftX == 3) {
+                alert("X thắng");
+            }
+            //Kiểm tra hàng dọc dưới
+            let count_upX = 0;
+            let count_downX = 0;
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col] == "X") {
+                    count_downX++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra hàng dọc trên
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col] == "X") {
+                    count_upX++;
+                } else {
+                    break;
+                }
+            }
+            if (count_downX + count_upX == 3) {
+                alert("X thắng");
+            }
+
+            //Kiểm tra đường chéo phải trên
+            let count_right_upX = 0;
+            let count_left_downX = 0;
+            let j1X = 0;
+            let j2X = 1;
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col + j1X] == "X") {
+                    count_right_upX++;
+                    j1X++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra đường chéo phải dưới
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col - j2X] == "X") {
+                    count_left_downX++;
+                    j2X++;
+                } else {
+                    break;
+                }
+            }
+            if (count_right_upX + count_left_downX == 3) {
+                alert("X thắng");
+            }
+            //Kiểm tra đường chéo trái trên
+            let count_left_upX = 0;
+            let count_right_downX = 0;
+            let j3X = 0;
+            let j4X = 1;
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col - j3X] == "X") {
+                    count_left_upX++;
+                    j3X++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra đường chéo trái dưới
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col + j4X] == "X") {
+                    count_right_downX++;
+                    j4X++;
+                } else {
+                    break;
+                }
+            }
+            if (count_left_upX + count_right_downX == 3) {
+                alert("X thắng");
+            }
+            //Kiểm tra hàng ngang về bên phải
+            let count_leftO = 0;
+            let count_rightO = 0;
+            for (let i = col + 1; i < 5; i++) {
+                if (board[row][i] == "O") {
+                    count_rightO++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra hàng ngang về bên trái
+            for (let i = col; i >= 0; i--) {
+                if (board[row][i] == "O") {
+                    count_leftO++;
+                } else {
+                    break;
+                }
+            }
+            if (count_rightO + count_leftO == 3) {
+                alert("O thắng");
+            }
+            //Kiểm tra hàng dọc dưới
+            let count_upO = 0;
+            let count_downO = 0;
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col] == "O") {
+                    count_downO++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra hàng dọc trên
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col] == "O") {
+                    count_upO++;
+                } else {
+                    break;
+                }
+            }
+            if (count_downO + count_upO == 3) {
+                alert("O thắng");
+            }
+
+            //Kiểm tra đường chéo phải trên
+            let count_right_upO = 0;
+            let count_left_downO = 0;
+            let j1O = 0;
+            let j2O = 1;
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col + j1O] == "O") {
+                    count_right_upO++;
+                    j1O++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra đường chéo phải dưới
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col - j2O] == "O") {
+                    count_left_downO++;
+                    j2O++;
+                } else {
+                    break;
+                }
+            }
+            if (count_right_upO + count_left_downO == 3) {
+                alert("O thắng");
+            }
+            //Kiểm tra đường chéo trái trên
+            let count_left_upO = 0;
+            let count_right_downO = 0;
+            let j3O = 0;
+            let j4O = 1;
+            for (let i = row; i >= 0; i--) {
+                if (board[i][col - j3O] == "O") {
+                    count_left_upO++;
+                    j3O++;
+                } else {
+                    break;
+                }
+            }
+            //Kiểm tra đường chéo trái dưới
+            for (let i = row + 1; i < 5; i++) {
+                if (board[i][col + j4O] == "O") {
+                    count_right_downO++;
+                    j4O++;
+                } else {
+                    break;
+                }
+            }
+            if ( count_left_upO + count_right_downO  == 3) {
+                alert("O thắng");
+            }
+
+        }
+
+    }
+
+
+    function playAgain() {
+        for (let i = 0; i < 5; i++) {
+            board[i] = [".", ".", ".", ".", "."]
+            let data = "<table>"
+            for (let i = 0; i < 5; i++) {
+                data = data + "</tr>"
+                for (let j = 0; j < 5; j++) {
+                    data += "<td onclick='changeValue(" + i + "," + j + ")'>";
+                    data += board[i][j];
+                    data += "</td>"
+                }
+                data = data + "</tr>"
+            }
+            data = data + "</table>"
+            document.getElementById("result").innerHTML = data;
+        }
+
+    }
+</script>
+</body>
+</html>

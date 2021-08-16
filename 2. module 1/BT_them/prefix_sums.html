@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let str = prompt("Nhập ký tự ");
+    // const UPPER = "O,U,I,E,A";
+    // const LOWER = "o,u,i,e,a";
+    // if (UPPER.indexOf(str) != -1 || LOWER.indexOf(str) != -1) {
+    //     alert("Ký tự nhập vào là nguyên âm");
+    // } else {
+    //     alert("Ký tự nhập vào là phụ âm");
+    // }
+    let n = parseInt(prompt("Nhập vào độ dài mảng "));
+    let a = new Array(n);
+    let b = new Array(n);
+    for (let i = 0; i < a.length; i++) {
+        do {
+            a[i] = prompt("Nhập vào phần tử thứ " + i);
+        } while (isNaN(a[i]))
+    }
+    b[0] = Number(a[0]);
+    for (let i = 1; i < a.length; i++) {
+        b[i] = Number(b[i - 1]) + Number(a[i]);
+    }
+    console.log(a);
+    console.log(b);
+
+</script>
+</body>
+</html>

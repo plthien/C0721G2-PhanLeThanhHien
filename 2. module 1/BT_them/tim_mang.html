@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let A = [7, 2, 5, 3, 5, 3, 8, 15, 12];
+    let B = [7, 2, 5, 4, 6, 3, 5, 3, 5, 10, 1, 9];
+    let missingValue = [];
+    let count = 0;
+
+    // Lấy các phần tử xuất hiện trong B nhưng không xuất hiện trong A, các phần tử giống nhau chỉ tính 1 lần xuất hiện
+        for (let i = 0; i < B.length; i++) {
+             if (A.indexOf(B[i]) == -1) {
+                 missingValue[count] = B[i];
+                 count++;
+             }
+        }
+        missingValue.sort(function (a,b) { return a - b});
+        console.log(missingValue);
+</script>
+</body>
+</html>

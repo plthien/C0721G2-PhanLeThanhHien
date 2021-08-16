@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5,2,1];
+    let denominators = [6,3,4];
+    let fraction = [];
+    let count = 0;
+    function maxFraction() {
+        for ( let i =0; i < numerators.length; i++) {
+            for (let j =0; j < denominators.length; j++) {
+                fraction[count] = Number(numerators[i])/Number(denominators[j]);
+                count++;
+            }
+        }
+        for (let i =0; i< fraction.length;i++)
+        Math.max(fraction[i]);
+
+    }
+    maxFraction();
+    console.log(fraction);
+
+
+
+</script>
+
+</body>
+</html>

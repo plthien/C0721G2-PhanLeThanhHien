@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let height = prompt("Nhập vào chiều cao tam giác cân: ");
+    //tam giác cân rỗng
+    // for (let row = 1; row <= height * 2; row++) {
+    //     if (row % 2 == 0) {
+    //         document.write("<br>");
+    //     } else {
+    //         for (let j = row; j <= 2 * height - 1; j++) {
+    //             document.write("&nbsp;");
+    //         }
+    //         for (let i = 1; i <= row; i++) {
+    //             switch (row) {
+    //                 case height * 2 - 1:
+    //                     document.write("*");
+    //                     break;
+    //                 default: {
+    //                     switch (i) {
+    //                         case 1:
+    //                         case row:
+    //                             document.write("*");
+    //                             break;
+    //                         default:
+    //                             document.write("&ensp;");
+    //                     }
+    //                 }
+    //
+    //             }
+    //
+    //         }
+    //
+    //     }
+    // }
+    //tam giác cân đặc
+    for (let row = 1; row <= height * 2; row++) {
+        if (row % 2 == 0) {
+            document.write("<br>");
+        } else {
+            for (let j = row; j <= 2 * height - 1; j++) {
+                document.write("&nbsp;");
+            }
+            for (let i = 1; i <= row; i++) {
+                document.write("*");
+
+
+            }
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

@@ -53,7 +53,7 @@
 <script>
     let arrayEnglish = ["people", "student", "teacher", "table", "chair", "book"];
     let arrayViet = ["Con người", "Học sinh", "Giáo viên", "Cái bàn", "Cái ghế", "Quyển sách"];
-    let search;
+    let search = false;
 
     function searchArray() {
         let str = document.getElementById("inputEnglish").value;
@@ -65,8 +65,6 @@
                     document.getElementById("result").innerText = arrayViet[i];
                     search = true;
                     break;
-                } else {
-                    search = false;
                 }
             }
             if (search == false) {
