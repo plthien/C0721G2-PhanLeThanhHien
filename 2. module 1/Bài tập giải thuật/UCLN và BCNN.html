@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = parseInt(prompt("Nhập vào số nguyên dương a: "));
+    let b = parseInt(prompt("Nhập vào số nguyên dương b: "));
+    let UCLN;
+    let BCNN;
+    timUCLN(a,b);
+    function timUCLN(a, b) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        prompt("UCLN là " + a);
+    }
+    timBCNN(a,b);
+    function timBCNN(a,b) {
+        let max= a*b;
+        for (let i=Math.max(a,b); i <= max; i++) {
+            if (i%a==0 && i%b==0) {
+                prompt("BCNN là " +i);
+                break;
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

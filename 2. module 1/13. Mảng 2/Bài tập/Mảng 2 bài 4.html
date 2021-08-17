@@ -3,20 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+        table,td , th{
+            border: 1px solid;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
 <script>
-    let str = " Tôi đang học ở codegym ";
-    let count = 0;
-    let array = str.split(" ");
-    console.log(array);
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] != ""){
-            count+=1;
-        }
+    let str = "Tôi đang học ở     Codegym. Tôi đang, học online ở Codegym   Đà Nẵng. Codegym ở Đà Nẵng phải không?";
+    let num = 234;
+    let str1 =num.toString();
+    let array1 = str1.split("");
+    let sum =0;
+    let times =1;
+    console.log(array1);
+    for (let i=0; i<array1.length;i++){
+        sum+=Number(array1[i]);
+        times*=Number(array1[i]);
 
     }
-    alert("Số từ trong chuỗi: " + str + " là " + count);
+    document.write(sum + "<br>");
+    document.write(times);
+    let count = 0;
+    let countLoop;
+    let array = str.split(/[\s.,?]+/);
+    console.log(array);
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] != ""){
+    //         count+=1;
+    //     }
+    //
+    // }
+    // alert("Số từ trong chuỗi: " + str + " là " + count);
+    let sout = "<table>" +"<tr>" + "<th>" + "Từ" +"</th>"+ "<th>" + "Tần số" +"</th>"+"</tr>";
+    for (let i=0; i<array.length;i++) {
+        if (array[i] != "") {
+            countLoop = 1;
+            sout += "<tr>" + "<td>" + array[i] + "</td>";
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    countLoop += 1;
+                    array.splice(j,1);
+                }
+            }
+            sout += "<td>" + countLoop + "</td>" + "</tr>";
+        }
+    }
+    sout+= "</table>"
+    document.write(sout);
 
 </script>
 </body>
