@@ -12,9 +12,7 @@
     let sum = 0;
     for (let i = 0; i < array.length; i++) {
         sum += array[i];
-        if (max < array[i]) {
-            max = array[i];
-        }
+        max = Math.max(max,Number(array[i]));
     }
     let average = sum / array.length;
     document.write("Phần từ lớn nhất là: " + max + "<br>")

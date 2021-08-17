@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numerators = [5,2,5];
+    let denominators = [6,3,4];
+    function maxFraction() {
+        let max = 0;
+        let fraction = [];
+
+        for ( let i =0; i < numerators.length; i++) {
+                fraction[i] = Number(numerators[i])/Number(denominators[i]);
+            }
+
+        for (let i =0; i< fraction.length;i++) {
+            max = Math.max(max,Number(fraction[i]));
+        }
+
+        return fraction.indexOf(max);
+    }
+    console.log(maxFraction());
+    // function maxFraction(a,b) {
+    //     let max = 0;
+    //     let fraction = [];
+    //
+    //     for ( let i =0; i < a.length; i++) {
+    //             fraction[i] = Number(a[i])/Number(b[i]);
+    //         }
+    //
+    //     for (let i =0; i< fraction.length;i++) {
+    //         max = Math.max(max,Number(fraction[i]));
+    //     }
+    //     return fraction.indexOf(max);
+    // }
+    // console.log(maxFraction(numerators,denominators));
+
+
+</script>
+
+</body>
+</html>

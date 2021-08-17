@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let flag = true;
+        for ( let i = 2; i < number;i++){
+            if (number % i == 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag == true && number != 1) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // function isPrime(number) {
+    //     for (let i = 2; i <= 10000; i++) {
+    //         let flag = true;
+    //         for (let j = 2; j < i; j++) {
+    //             if (i % j == 0) {
+    //                 flag = false;
+    //                 break;
+    //             }
+    //         }
+    //         if (flag == true) {
+    //             if (number == i) {
+    //                 return true;
+    //             } else if (i == 10000) {
+    //                 return false;
+    //
+    //             }
+    //
+    //         }
+    //
+    //     }
+    // }
+
+    let number;
+    do {
+        number = parseInt(prompt("Nhập vào số  cần kiểm tra số nguyên tố:"));
+    } while (isNaN(number) || number > 10000)
+    if (isPrime(number)) {
+        alert(number + " là số nguyên tố");
+    } else {
+        alert(number + " không phải là số nguyên tố");
+    }
+
+</script>
+</body>
+</html>
