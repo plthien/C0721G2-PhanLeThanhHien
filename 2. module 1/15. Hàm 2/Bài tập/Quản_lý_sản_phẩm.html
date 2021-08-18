@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body{
-        margin:20px;
+        body {
+            margin: 20px;
 
         }
+
         button {
             background-color: #32CD32;
             border: none;
@@ -47,7 +48,7 @@
 
         input {
             height: 35px;
-            width: 400px;
+            width: 260px;
             outline: none;
             border-radius: 4px;
             border: 1px solid gray;
@@ -61,14 +62,11 @@
 <h3>Add New Product</h3>
 <input type="text" id="newProduct" placeholder="New Product">
 <button type="button" onclick="addNewProduct()" style='width: 60px;height: 40px; font-size: 0.8em'>Add</button>
-<h3>Edit Product</h3>
-<input type="text" id="edit">
-<button type="button" onclick="finishEdit()" style='width: 60px;height: 40px ;font-size: 0.8em'>Update</button>
 <h3>Display All Product</h3>
-<div id="display"></div>
+<div id="display"></div> <br>
+<!--<div id="displayEdit"></div>-->
 <script>
     let productArray = ['Sony Xperia', 'Samsung Glaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S'];
-    let indexEdit;
 
     function displayProduct(product) {
         let sout = "<table>" + "<tr> <th>No.</th> <th>Product Name</th> </tr>";
@@ -94,20 +92,52 @@
     }
 
     function deleteProduct(index) {
-        productArray.splice(index, 1);
-        displayProduct(productArray);
-    }
+        if (confirm("Bạn có chắc muốn xóa sản phẩm " + productArray[index] + " ?")) {
+            productArray.splice(index, 1);
+            displayProduct(productArray);
+        }
 
+    }
     function editProduct(index) {
-        document.getElementById("edit").value = productArray[index];
-        indexEdit = index;
-    }
+        let sout = "<table>" + "<tr> <th>No.</th> <th>Product Name</th> </tr>";
+        for (let i = 0; i < productArray.length; i++) {
+            if (i == index) {
+                sout += "<tr>"
+                    + "<td>" + i + "</td>"
+                    + "<td>" + "<input type='text' value='"+productArray[i]+"' id='editProduct'>" + "</td>"
+                    + "<td><button type='button' onclick='saveEdit(" + i + ")' style='width: 60px;height: 40px'>Save</button> </td>"
+                    + "<td><button type='button' onclick='deleteProduct(" + i + ")' style='width: 80px;height: 40px'>Delete</button> </td>"
+                    + "</tr>"
+            } else {
+                sout += "<tr>"
+                    + "<td>" + i + "</td>"
+                    + "<td>" + productArray[i] + "</td>"
+                    + "<td><button type='button' onclick='editProduct(" + i + ")' style='width: 60px;height: 40px'>Edit</button> </td>"
+                    + "<td><button type='button' onclick='deleteProduct(" + i + ")' style='width: 80px;height: 40px'>Delete</button> </td>"
+                    + "</tr>"
+            }
 
-    function finishEdit() {
-        productArray[indexEdit] = document.getElementById("edit").value;
-        document.getElementById("edit").value = "";
-        displayProduct(productArray);
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+
     }
+    function saveEdit(index) {
+        productArray[index] = document.getElementById("editProduct").value;
+        displayProduct(productArray);
+
+    }
+    // cách 2 tạo một ô edit riêng
+    // function editProduct(index) {
+    //     let show = "<input type='text' value='" + productArray[index] + "' id='edit'>" +
+    //         "<button type='button' onclick='saveEdit(" + index + ")' style='width: 60px;height: 40px ;font-size: 0.8em'>Save</button>";
+    //     document.getElementById("displayEdit").innerHTML = show;
+    // }
+    // function saveEdit(index) {
+    //     productArray[index] = document.getElementById("edit").value;
+    //     document.getElementById("displayEdit").innerHTML = "";
+    //     displayProduct(productArray);
+    // }
 
 </script>
 </body>

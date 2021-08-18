@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome(str) {
+        if (str[0] == str[str.length - 1]) {
+            str = str.slice(1, str.length - 1);
+            if (str.length == 1 || str.length == 0) {
+                return true;
+            } else {
+                return  isPalindrome(str); //phải có return nếu không thì khi đệ quy, giá trị trả về sẽ undefined
+            }
+        } else {
+            return false;
+        }
+    }
+
+    let str = prompt("Nhập từ cần kiểm tra");
+    if (isPalindrome(str)) {
+        alert("Đây là từ đối xứng");
+    } else {
+        alert("Đây không phải là từ đối xứng");
+    }
+
+</script>
+</body>
+</html>

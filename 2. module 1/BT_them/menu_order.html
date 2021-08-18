@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            font-size: 1.3em;
+            border-radius: 5px;
+            width: auto;
+            height: 30px;
+            background-color: #FFA500;
+            border: none;
+            margin: 2px;
+        }
+
+        input {
+            width: 50px;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        td:first-child {
+            width: 30px;
+        }
+
+        td:nth-child(2) {
+            width: 120px;
+        }
+
+        td:nth-child(3) {
+            width: 60px;
+        }
+
+        table {
+            text-align: left;
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DCDCDC;
+        }
+
+        caption {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+<h1>Chọn thức uống!</h1>
+<div id="display"></div>
+<hr>
+<form id="bill"></form>
+<script>
+    let arrJuice = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+    let arrPrice = [25000, 30000, 35000, 25000, 5000, 20000];
+    let arrSelectJuice = [];
+    let arrSelectPrice = [];
+    let arrMoney = [];
+    let arrQuantity = [];
+
+    function displayJuice() {
+        let show = "<div>";
+        for (let i = 0; i < arrJuice.length; i++) {
+            show += "<button type='button' onclick='selectJuice(" + i + ")'>" + (i + 1) + "." + arrJuice[i] + "</button>";
+        }
+        show += "<button type='button' onclick='order()'>" + "7.Order" + "</button>" + "</div>";
+        document.getElementById("display").innerHTML = show;
+    }
+
+    displayJuice();
+
+    function selectJuice(index) {
+            arrSelectJuice.push(arrJuice[index]);
+            arrSelectPrice.push(arrPrice[index]);
+            let show = "<table>" + "<caption>Hóa đơn</caption>" + "<tr><th>STT</th><th>Sản phẩm</th><th>Đơn giá</th><th>S.lượng</th><th>Thành tiền</th></tr>"
+            for (let i = 0; i < arrSelectJuice.length; i++) {
+                show += "<tr>" +
+                    "<td>" + (i + 1) + "</td>" +
+                    "<td>" + arrSelectJuice[i] + "</td>" +
+                    "<td>" + arrSelectPrice[i] + "</td>" +
+                    "<td>" + "<input type='number' min='1' max='100' id='amount'onchange='getMoney(" + i + ")'>" + "</td>" +
+                    "<td>" + "<span id='" + i + "'></span>" + "</td>" +
+                    "</tr>";
+            }
+            show += "<tr>" + "<th colspan='4'>" + "<span>Tổng cộng</span>" + "</th>" + "<th>" + "<span id='total' ></span>" + "</th>" + "</tr>" + "</table>";
+            document.getElementById("bill").innerHTML = show;
+
+        }
+
+    function getMoney(i) {
+        let quantity = document.getElementById("amount").value;
+        arrMoney[i] = parseInt(arrSelectPrice[i]) * quantity;
+        document.getElementById(i).innerText = arrMoney[i];
+    }
+
+    function order() {
+        let total = 0;
+        for (let i = 0; i < arrMoney.length; i++) {
+            total += arrMoney[i];
+        }
+        document.getElementById("total").innerHTML = total;
+    }
+
+
+</script>
+</body>
+</html>
