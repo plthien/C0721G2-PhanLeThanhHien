@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+        margin:20px;
+
+        }
+        button {
+            background-color: #32CD32;
+            border: none;
+            color: white;
+            font-size: 1.0em;
+            border-radius: 5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #DCDCDC;
+        }
+
+        table, td, th {
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+        }
+
+        td:first-child {
+            width: 50px;
+            font-size: 1.2em;
+        }
+
+        td:nth-child(2) {
+            width: 300px;
+            font-size: 1.2em;
+        }
+
+        td:nth-child(n+3) {
+            width: 150px;
+            font-size: 0.8em;
+        }
+
+        th {
+            font-size: 1.2em;
+        }
+
+        input {
+            height: 35px;
+            width: 400px;
+            outline: none;
+            border-radius: 4px;
+            border: 1px solid gray;
+            color: gray;
+        }
+
+
+    </style>
+</head>
+<body>
+<h3>Add New Product</h3>
+<input type="text" id="newProduct" placeholder="New Product">
+<button type="button" onclick="addNewProduct()" style='width: 60px;height: 40px; font-size: 0.8em'>Add</button>
+<h3>Edit Product</h3>
+<input type="text" id="edit">
+<button type="button" onclick="finishEdit()" style='width: 60px;height: 40px ;font-size: 0.8em'>Update</button>
+<h3>Display All Product</h3>
+<div id="display"></div>
+<script>
+    let productArray = ['Sony Xperia', 'Samsung Glaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S'];
+    let indexEdit;
+
+    function displayProduct(product) {
+        let sout = "<table>" + "<tr> <th>No.</th> <th>Product Name</th> </tr>";
+        for (let i = 0; i < product.length; i++) {
+            sout += "<tr>"
+                + "<td>" + i + "</td>"
+                + "<td>" + product[i] + "</td>"
+                + "<td><button type='button' onclick='editProduct(" + i + ")' style='width: 60px;height: 40px'>Edit</button> </td>"
+                + "<td><button type='button' onclick='deleteProduct(" + i + ")' style='width: 80px;height: 40px'>Delete</button> </td>"
+                + "</tr>"
+        }
+        sout += "</table>";
+        document.getElementById("display").innerHTML = sout;
+    }
+
+    displayProduct(productArray);
+
+    function addNewProduct() {
+        let newProduct = document.getElementById("newProduct").value;
+        document.getElementById("newProduct").value = "";
+        productArray.push(newProduct);
+        displayProduct(productArray);
+    }
+
+    function deleteProduct(index) {
+        productArray.splice(index, 1);
+        displayProduct(productArray);
+    }
+
+    function editProduct(index) {
+        document.getElementById("edit").value = productArray[index];
+        indexEdit = index;
+    }
+
+    function finishEdit() {
+        productArray[indexEdit] = document.getElementById("edit").value;
+        document.getElementById("edit").value = "";
+        displayProduct(productArray);
+    }
+
+</script>
+</body>
+</html>

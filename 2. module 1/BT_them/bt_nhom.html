@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [1, 2, 3, 5, 6];
+    let num = 4;
+    if (num > array[array.length - 1]) {
+        array.push(num);
+    } else {
+        for (let i = 0; i < array.length; i++) {
+            if (num < array[i]) {
+                array.splice(i, 0, num);
+                break;
+
+            }
+        }
+    }
+    console.log(array);
+</script>
+</body>
+</html>

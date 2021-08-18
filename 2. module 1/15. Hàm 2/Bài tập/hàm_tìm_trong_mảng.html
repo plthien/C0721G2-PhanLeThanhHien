@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findArray(arr,element) {
+        let count = 0;
+        for (let i =0; i <arr.length; i++) {
+            if (element == arr[i]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return -1;
+        } else {
+            return count;
+        }
+    }
+    let arr = [1,2,'a','c',1,'a'];
+    let element = 'd';
+    let result = findArray(arr,element);
+    console.log(result);
+
+</script>
+</body>
+</html>
