@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celsius) {
+            this.celsius = celsius;
+        }
+        getFahrennheit() {
+            return 9 * this.celsius / 5 + 32 + "<br>";
+        }
+        getKavin() {
+
+            return this.celsius + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    document.write("Nhiệt độ F: " + temperature.getFahrennheit() + "<br>")
+    document.write("Nhiệt độ K: " + temperature.getKavin() + "<br>")
+
+</script>
+</body>
+</html>

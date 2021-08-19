@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        // getRadius () {
+        //     return this.radius;
+        // }
+        getArea() {
+            return Math.PI * Math.pow(this.radius, 2);
+        }
+        toString() {
+            return "Bán kính hình tròn: " + this.radius + "<br>" + "Diện tích hình tròn: " + this.getArea();
+        }
+
+
+    }
+
+    let circle = new Circle(2);
+    document.write(circle);
+    // let radius = circle.getRadius();
+    // let area = circle.getArea();
+    // document.write("Bán kính hình tròn: " + radius + "<br>");
+    // document.write("Diện tích hình tròn hình tròn: " + area);
+</script>
+</body>
+</html>

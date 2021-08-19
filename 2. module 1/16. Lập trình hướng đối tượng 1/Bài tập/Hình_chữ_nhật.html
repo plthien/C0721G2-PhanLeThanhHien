@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    Chiều rộng hình chữ nhật: <input type="text" id="width">
+    Chiều dài hình chữ nhật: <input type="text" id="height">
+    <button type="button" onclick="displayRectangle()">Vẽ</button>
+</div>
+<p id="area"></p>
+<p id="circuit"></p>
+<canvas id="myCanvas" width="1000px" height="1000px"></canvas>
+<script>
+    class Rectangle {
+        constructor(width, height) {
+            this.width = width;
+            this.height = height;
+        }
+
+        getArea() {
+            return this.width * this.height;
+        }
+
+        getCircuit() {
+            return 2 * (parseInt(this.width)+parseInt(this.height));
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        drawRectangle() {
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            ctx.beginPath();
+            ctx.rect(50, 50, this.height, this.width);
+            ctx.fillStyle = '#FFE4E1';
+            ctx.fill();
+
+
+        }
+
+    }
+    function displayRectangle(){
+        let myRectangle = new Rectangle();
+        myRectangle.setWidth(document.getElementById("width").value);
+        myRectangle.setHeight(document.getElementById("height").value);
+        let area = myRectangle.getArea();
+        let circuit = myRectangle.getCircuit();
+        document.getElementById("area").innerHTML = "Diện tích hỉnh chữ nhật: " + area;
+        document.getElementById("circuit").innerHTML = "Chu vi hỉnh chữ nhật: " + circuit;
+        myRectangle.drawRectangle();
+
+    }
+
+
+
+</script>
+</body>
+</html>
