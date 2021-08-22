@@ -14,7 +14,7 @@
         .formPhone {
             border: 1px solid gray;
             width: 300px;
-            height: 550px;
+            height: 500px;
             text-align: center;
             border-radius: 10px;
         }
@@ -39,9 +39,24 @@
 
         input {
             width: 230px;
+            outline: none;
         }
+
         select {
-            width: 270px;
+            width: 230px;
+        }
+
+        .formOnOff {
+            border: 1px solid gray;
+            width: 300px;
+            height: 500px;
+
+        }
+
+        button {
+            border: 1px solid gray;
+            border-radius: 4px;
+
         }
 
     </style>
@@ -53,14 +68,12 @@
             <p>Nokia - Mức pin: <span id="batteryNokia"></span>
                 <button type="button" onclick="chargeNokia()">Sạc pin</button>
             </p>
-            <input type="text" id="messNokia" placeholder="Nhập tin nhắn">
-            <button type="button" onclick="sendToIphone()">Gửi</button>
             <table>
                 <tr>
-                    <th>Hộp thư chờ</th>
+                    <th>Hộp thư đến</th>
                 </tr>
                 <tr>
-                    <td id="draftBoxNokia" style="height: 20px"></td>
+                    <td id="inBoxNokia"></td>
                 </tr>
             </table>
             <table>
@@ -73,12 +86,14 @@
             </table>
             <table>
                 <tr>
-                    <th>Hộp thư đến</th>
+                    <th>Hộp thư chờ</th>
                 </tr>
                 <tr>
-                    <td id="inBoxNokia"></td>
+                    <td id="draftBoxNokia" style="height: 20px"></td>
                 </tr>
             </table>
+            <input type="text" id="messNokia" placeholder="Nhập tin nhắn">
+            <button type="button" onclick="sendToIphone()">Gửi</button>
             <br>
             <br>
             <button type="button" onclick="onOffNokia()">Home</button>
@@ -88,14 +103,12 @@
         <p>Iphone - Mức pin: <span id="batteryIphone"></span>
             <button type="button" onclick="chargeIphone()">Sạc pin</button>
         </p>
-        <input type="text" id="messIphone" placeholder="Nhập tin nhắn">
-        <button type="button" onclick="sendToNokia()">Gửi</button>
         <table>
             <tr>
-                <th>Hộp thư chờ</th>
+                <th>Hộp thư đến</th>
             </tr>
             <tr>
-                <td id="draftBoxIphone" style="height: 20px"></td>
+                <td id="inBoxIphone"></td>
             </tr>
         </table>
         <table>
@@ -108,19 +121,23 @@
         </table>
         <table>
             <tr>
-                <th>Hộp thư đến</th>
+                <th>Hộp thư chờ</th>
             </tr>
             <tr>
-                <td id="inBoxIphone"></td>
+                <td id="draftBoxIphone" style="height: 20px"></td>
             </tr>
         </table>
+        <input type="text" id="messIphone" placeholder="Nhập tin nhắn">
+        <button type="button" onclick="sendToNokia()">Gửi</button>
         <br>
         <br>
         <button type="button" onclick="onOffIphone()">Home</button>
-
     </form>
 </div>
 <script>
+    let displayNokia = document.getElementById("nokia").innerHTML;
+    let displayIphone = document.getElementById("iphone").innerHTML;
+
     class Mobile {
         constructor(phoneName, battery, status) {
             this.phoneName = phoneName;
@@ -129,7 +146,6 @@
             this.inbox = [];
             this.sentbox = [];
             this.draft = [];
-            this.statusAlert = "";
         }
 
         getBatteryInfo() {
@@ -142,17 +158,22 @@
             }
         }
 
-        isStatusPhone(phone) {
+        isStatusPhone(phone, display) {
             this.battery--;
-            if (this.status == false) {
-                if (phone == nokia){
-                    document.getElementById("draftBoxNokia").innerHTML = "<span>abc</span>";
-                    console.log(this.status);
+            if (this.status) {
+                if (phone == nokia) {
+                    document.getElementById("nokia").innerHTML = display;
+                } else {
+                    document.getElementById("iphone").innerHTML = display;
+                }
+            } else {
+                if (phone == nokia) {
+                    document.getElementById("nokia").innerHTML = "<button type='button' onclick='onOffNokia()' style='margin-top: 456px'>Home</button>";
 
                 } else {
-                    document.getElementById("draftBoxIphone").innerHTML = "";
-
+                    document.getElementById("iphone").innerHTML = "<button type='button' onclick='onOffIphone()'style='margin-top: 456px'>Home</button>";
                 }
+
             }
 
         }
@@ -177,23 +198,39 @@
             this.battery--;
         }
 
-        sentMess(phone) {
-            let show = "<select id='draftMess'>";
+        showDraftMess(elementIdDraftBox) {
+            this.battery--;
+            let phone = this;
+            let show =  "<select>" ;
             for (let i = 0; i < this.draft.length; i++) {
-                show += "<option>"+this.draft[i]+"</option>" ;
+                show += "<option>" + this.draft[i] + "</option>";
             }
             show += "</select>";
-            if (phone == iphone) {
-                document.getElementById("draftBoxNokia").innerHTML=show;
-            } else {
-                document.getElementById("draftBoxIphone").innerHTML=show;
-            }
-            let mess = document.getElementById("draftMess").value;
-            let index = this.draft.indexOf(mess);
-            this.sentbox.push("Đã gửi tin nhắn đến điện thoại " + phone.phoneName + " : " + this.draft[index] + "<br>");
-            phone.inboxMess(this.phoneName, this.draft[index]);
-            this.draft.splice(index, 1);
+            document.getElementById(elementIdDraftBox).innerHTML = show;
+        }
+
+        sentMess(phone, mess) {
+            this.sentbox.push("Đã gửi tin nhắn đến điện thoại " + phone.phoneName + " : " + mess + "<br>");
+            phone.inboxMess(this.phoneName, mess);
+            this.draft.splice(this.draft.indexOf(mess), 1);
             this.battery--;
+        }
+        displaySentMess (phone,idMessFrom,idSentBoxFrom,idInboxTo,idDraftBoxFrom,idBatteryFrom,idFormFrom,idFormTo){
+            let mess = document.getElementById(idMessFrom).value;
+            document.getElementById(idMessFrom).value = "";
+            if (confirm("Bạn có muốn gửi tin nhắn này không ?")) {
+                this.draftMess(mess);
+                this.sentMess(phone, mess);
+                document.getElementById(idSentBoxFrom).innerHTML = this.sentbox.join("");
+                document.getElementById(idInboxTo).innerHTML = phone.inbox.join("");
+                this.showDraftMess(idDraftBoxFrom);
+            } else {
+                this.draftMess(mess);
+                this.showDraftMess(idDraftBoxFrom);
+            }
+            document.getElementById(idBatteryFrom).innerHTML = this.getBatteryInfo().toFixed(0);
+            displayNokia = document.getElementById(idFormFrom).innerHTML;
+            displayIphone = document.getElementById(idFormTo).innerHTML;
         }
     }
 
@@ -209,63 +246,41 @@
     }
 
     function chargeIphone() {
-            iphone.chargeBattery();
-            document.getElementById("batteryIphone").innerHTML = iphone.getBatteryInfo().toFixed(0);
+        iphone.chargeBattery();
+        document.getElementById("batteryIphone").innerHTML = iphone.getBatteryInfo().toFixed(0);
 
     }
 
     function sendToIphone() {
-        nokia.draftMess(document.getElementById("messNokia").value);
-        document.getElementById("messNokia").value = "";
-        if (confirm("Bạn có muốn gửi tin nhắn này không ?")) {
-            nokia.sentMess(iphone);
-            document.getElementById("sentBoxNokia").innerHTML = nokia.sentbox.join("");
-            document.getElementById("inBoxIphone").innerHTML = iphone.inbox.join("");
-
-        }
-        let show = "<select>";
-        for (let i = 0; i < nokia.draft.length; i++) {
-            show += "<option>"+ nokia.draft[i] +"</option>" ;
-        }
-        show += "</select>";
-        document.getElementById("draftBoxNokia").innerHTML = show;
-        document.getElementById("batteryNokia").innerHTML = nokia.getBatteryInfo().toFixed(0);
-
+        nokia.displaySentMess(iphone,"messNokia","sentBoxNokia","inBoxIphone","draftBoxNokia","batteryNokia","nokia","iphone")
     }
+
     function sendToNokia() {
-        iphone.draftMess(document.getElementById("messIphone").value);
-        document.getElementById("messIphone").value = "";
-        if (confirm("Bạn có muốn gửi tin nhắn này không ?")) {
-            iphone.sentMess(nokia);
-            document.getElementById("sentBoxIphone").innerHTML = iphone.sentbox.join("");
-            document.getElementById("inBoxNokia").innerHTML = nokia.inbox.join("");
-        }
-        let show = "<select>";
-        for (let i = 0; i < iphone.draft.length; i++) {
-            show += "<option>"+ iphone.draft[i] +"</option>" ;
-        }
-        show += "</select>";
-        document.getElementById("draftBoxIphone").innerHTML = show;
-        document.getElementById("batteryIphone").innerHTML = iphone.getBatteryInfo().toFixed(0);
-    }
+        iphone.displaySentMess(nokia,"messIphone","sentBoxIphone","inBoxNokia","draftBoxIphone","batteryIphone","iphone","nokia")
 
+    }
 
     function onOffNokia() {
         if (nokia.status) {
             nokia.turnOff();
-            nokia.isStatusPhone(nokia);
+            nokia.isStatusPhone(nokia, displayNokia);
         } else {
             nokia.turnOn();
-            nokia.isStatusPhone(nokia);
+            nokia.isStatusPhone(nokia, displayNokia);
         }
 
     }
 
     function onOffIphone() {
-        iphone.turnOff();
-        iphone.isStatusPhone();
-    }
+        if (iphone.status) {
+            iphone.turnOff();
+            iphone.isStatusPhone(iphone, displayIphone);
+        } else {
+            iphone.turnOn();
+            iphone.isStatusPhone(iphone, displayIphone);
+        }
 
+    }
 
 
 </script>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rat {
+        constructor(name,weight,speed,status) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+            this.status = status;
+        }
+        setSpeed (speed){
+            this.speed = speed;
+        }
+
+        ratSound (sound) {
+            console.log(sound);
+        }
+        isDead () {
+            if (this.status == 0) {
+                return true;
+            } else if (this.status == 1){
+                return false;
+            }
+        }
+
+    }
+    class Cat {
+        constructor(name,weight,speed) {
+            this.name = name;
+            this.weight = weight;
+            this.speed = speed;
+        }
+        setSpeed (speed) {
+            this.speed = speed;
+        }
+        catSound (sound) {
+            console.log(sound);
+        }
+        catchRat (rat) {
+            if (rat.speed < this.speed) {
+                return rat.status = Math.round(Math.random() *1);
+            } else {
+                return  2;
+            }
+        }
+        eatRat (rat) {
+            if (this.catchRat(rat) == 2) {
+                console.log(this.name +" said: Chạy nhanh thế") ;
+            }else if (rat.isDead()) {
+                console.log(this.name +" said: Chết cmm nhé " + rat.name);
+            } else {
+                console.log("Yummy!!")
+                this.weight += rat.weight;
+                rat.weight = 0;
+
+            }
+        }
+
+    }
+    let rat = new Rat("Jerry",2,2,1);
+    let cat = new Cat("Tom",12,2);
+    while (cat.catchRat(rat) == 2) {
+        rat.setSpeed(Math.round(Math.random() * 10) + 1);
+        cat.setSpeed(Math.round(Math.random() * 10) + 1);
+        // console.log(rat.speed);
+        // console.log(cat.speed);
+        rat.ratSound(rat.name+  " said: Đố anh bắt được em " + cat.name);
+        cat.catSound(cat.name + " said: Ahihi đồ ngốc!!");
+        cat.catchRat(rat);
+        cat.eatRat(rat);
+    }
+</script>
+</body>
+</html>
