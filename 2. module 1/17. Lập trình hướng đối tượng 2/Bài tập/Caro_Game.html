@@ -17,6 +17,7 @@
             position: absolute;
             width: 40px;
             height: 40px;
+            background-color: #F0E68C;
         }
     </style>
 </head>
@@ -98,7 +99,7 @@
                 count++;
                 i++;
             }
-            this.endGame(count);
+            this.endGame(count,cellXO.value);
             //Vertical
             count = 1;
             i = 1;
@@ -111,7 +112,7 @@
                 count++;
                 i++;
             }
-            this.endGame(count);
+            this.endGame(count,cellXO.value);
             //Vertical
             count = 1;
             i = 1;
@@ -124,7 +125,7 @@
                 count++;
                 i++;
             }
-            this.endGame(count);
+            this.endGame(count,cellXO.value);
             //Left diagonal
             count = 1;
             i = 1;
@@ -141,7 +142,7 @@
                 i++;
                 j++;
             }
-            this.endGame(count);
+            this.endGame(count,cellXO.value);
             //Right diagonal
             count = 1;
             i = 1;
@@ -158,12 +159,15 @@
                 i++;
                 j++;
             }
-            this.endGame(count);
+            this.endGame(count,cellXO.value);
         }
-        endGame (count) {
-            if (count >= 5) {
+        endGame (count,value) {
+            if (count >= 5 && value === 2) {
                 this.isOver = true;
-                alert("You won!!!");
+                alert("X won!!!");
+            } else if (count >= 5 && value === 3) {
+                this.isOver = true;
+                alert("O won!!!");
             }
         }
         playGame (x,y) {

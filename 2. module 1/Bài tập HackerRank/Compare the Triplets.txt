@@ -1,0 +1,17 @@
+function compareTriplets(a, b) {
+    let c = [];
+    let counta = 0;
+    let countb = 0;
+    for (let i = 0 ; i < a.length; i++) {
+        if (a[i] > b[i] ) {
+            counta++;
+        } else if (a[i] < b[i]) {
+            countb++;
+        }
+    }
+    c[0] = counta;
+    c[1] = countb;
+    return c;
+    
+
+}

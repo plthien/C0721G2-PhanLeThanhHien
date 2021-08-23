@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let tu1;
+    let mau1;
+    let tu2;
+    let mau2;
+    do {
+        tu1 = parseInt(prompt("Nhập tử số của phân số 1: "));
+        mau1 = parseInt(prompt("Nhập mẫu số của phân số 1: "));
+        tu2 = parseInt(prompt("Nhập tử số của phân số 2: "));
+        mau2 = parseInt(prompt("Nhập mẫu số của phân số 2: "));
+    } while (mau1 == 0 || mau2 == 0);
+    function timUCLN(a, b) {
+        while (a != b) {
+            if (a > b) {
+                a = a - b;
+            } else {
+                b = b - a;
+            }
+        }
+        return a;
+    }
+
+    function cong(tu1, mau1, tu2, mau2) {
+        let tu;
+        let mau;
+        tu = (tu1 * mau2) + (tu2 * mau1)
+        mau = tu2 * mau1;
+        let ucln = timUCLN(tu,mau);
+        return tu/ucln + "/" + mau/ucln;
+    }
+
+    function tru(tu1, mau1, tu2, mau2) {
+        let tu;
+        let mau;
+        tu = (tu1 * mau2) - (tu2 * mau1)
+        mau = tu2 * mau1;
+        let ucln = timUCLN(tu,mau);
+        return tu/ucln + "/" + mau/ucln;
+    }
+
+    function nhan() {
+        let tu;
+        let mau;
+        tu = tu1 * tu2
+        mau = mau1 * mau2;
+        let ucln = timUCLN(tu,mau);
+        return tu/ucln + "/" + mau/ucln;
+    }
+
+    function chia() {
+        let tu;
+        let mau;
+        tu = tu1 * mau2;
+        mau = mau1 * tu2;
+        let ucln = timUCLN(tu,mau);
+        return tu/ucln + "/" + mau/ucln;
+    }
+
+    document.write(cong(tu1, mau1, tu2, mau2) + "<br>");
+    document.write(tru(tu1, mau1, tu2, mau2) + "<br>");
+    document.write(nhan(tu1, mau1, tu2, mau2) + "<br>");
+    document.write(chia(tu1, mau1, tu2, mau2) + "<br>");
+</script>
 </body>
 </html>

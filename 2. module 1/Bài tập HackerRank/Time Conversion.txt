@@ -1,0 +1,26 @@
+
+
+function timeConversion(s) {
+    // Write your code here
+      let temp = parseInt(s[0] +s[1]);
+        s = s.split("");
+        if (s[8]=== "A") {
+            if (temp== 12) {
+               s[0] = "0";
+               s[1] = "0";
+            }
+        }else if (s[8] === "P") {
+            if (temp >= 1 && temp <= 11){
+                temp = temp +12;
+                let str = temp.toString();
+                str= str.split("");
+                s[0] = str[0];
+                s[1] = str[1];
+
+            }
+        }
+        s.splice(8,2);
+        
+        return s.join("");
+
+}
