@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập xâu ký tự: ");
+    let array;
+    function standardize(str) {
+        array = str.split(" ");
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === "") {
+                array.splice(i,1);
+                i--;
+            }
+        }
+        let max;
+        let elementMax;
+        for (let i = 0; i < array.length; i++) {
+           let words = array[i];
+           for (let j =0; j < words.length; j++) {
+               if (j === 0) {
+                   array[i]=words[j].toUpperCase();
+               } else {
+                    array[i]+=words[j].toLowerCase();
+               }
+           }
+            max = array[0].length;
+            elementMax = array[0];
+            if (max < array[i].length) {
+                max = array[i].length;
+                elementMax = array[i];
+            }
+        }
+        document.write("Trước khi chuẩn hóa: "+str + "<br>");
+        document.write("Sau khi chuẩn hóa: " +array.join(" ") +"<br>");
+        document.write(" Từ dài nhất trong xâu: " +elementMax);
+
+
+    }
+    standardize(str);
+
+</script>
+</body>
+</html>

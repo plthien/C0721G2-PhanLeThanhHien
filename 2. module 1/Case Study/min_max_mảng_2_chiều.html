@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m, n;
+    do {
+        m = parseInt(prompt("Nhập số hàng ma trận: "));
+        n = parseInt(prompt("Nhập số cột ma trận: "));
+    } while (isNaN(m) || isNaN(n))
+    let array = new Array();
+    for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+            do {
+                array[i][j] = parseInt(prompt("Nhập phần tử ở vị trí " +i + j));
+            } while (isNaN(array[i][j]))
+        }
+    }
+    function minMax(array) {
+        let min = array[0][0];
+        let max = min;
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                max = Math.max(max,array[i][j]);
+                min = Math.min(min,array[i][j]);
+            }
+        }
+        console.log(min);
+        console.log(max);
+    }
+    minMax(array);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label {
+            width: 150px;
+            display: block;
+            float: left;
+            clear: left;
+        }
+
+        form {
+            width: 600px;
+            height: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 20px solid lightblue;
+            border-top-width: 10px;
+
+        }
+
+        .legend {
+            background: orangered;
+            color: white;
+            font-size: 1.6em;
+            padding: 5px;
+            font-weight: bold;
+            margin: 0px 0px 10px 0px;
+        }
+
+        div {
+            padding: 4px;
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /*table,td {*/
+        /*    border: 1px solid gray;*/
+        /*    border-collapse: collapse;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<form>
+    <p align="center" class="legend">XỔ SỐ CODEGYM</p>
+    <div>
+        <div>
+            <label for="name">Họ và tên:</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <label for="phoneNumber">Số điện thoại:</label>
+            <input type="text" id="phoneNumber">
+        </div>
+        <div>
+            <label for="amountTicket">Số lượng vé đặt mua:</label>
+            <input type="text" id="amountTicket" >
+            <button type="button" id="buttonPlayer" onclick="inputArrayNumber()">Tự chọn số</button>
+            <button type="button" id="buttonPro" onclick="randomArrayNumber()">Hệ thống chọn ngẫu nhiên</button>
+        </div>
+        <div id="numberBoard"></div>
+
+
+    </div>
+    <div id="buttonBuy"></div>
+    <div id="result"></div>
+
+</form>
+<script>
+    class Player {
+        constructor() {
+            this.name = "";
+            this.phoneNumber = "";
+            this.arrayNumberPlayer = new Array();
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setPhone(phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+
+        getArrayNumberPlayer() {
+            return this.arrayNumberPlayer;
+        }
+
+        setArrayNumber(i, j) {
+            this.arrayNumberPlayer[i][j] = parseInt(document.getElementById("cell-" + i + "-" + j).value);
+
+        }
+
+        displayArrayNumber(amount) {
+            let show = "<table>" + "<caption>Nhập số của bạn</caption>";
+            for (let i = 0; i < amount; i++) {
+                show += "<tr>" + "<td>" + "Vé số " + (i+1) + ": " + "</td>";
+                this.arrayNumberPlayer[i] = [];
+                for (let j = 0; j < 6; j++) {
+                    show += "<td>" + "<input type='number' min='0' max='99' name='cell' id='cell-" + i + "-" + j + "' onchange='getNumber(" + i + "," + j + ")'>" + "</td>";
+                }
+                show += "</tr>";
+            }
+            show += "</table>";
+            document.getElementById("numberBoard").innerHTML = show;
+        }
+
+
+    }
+
+    class Program {
+        constructor(player) {
+            this.player = player;
+            this.arrayNumberPro = new Array(6);
+        }
+
+        setArrayNumberPro() {
+            for (let i = 0; i < this.arrayNumberPro.length; i++) {
+                this.arrayNumberPro[i] = i;
+                // this.arrayNumberPro[i] = Math.round(Math.random() * 100);
+            }
+        }
+
+        setArrayNumberPlayer(amount) {
+            let show = "<table>" + "<caption>Số của bạn</caption>";
+            for (let i = 0; i < amount; i++) {
+                this.player.arrayNumberPlayer[i] = [];
+                show += "<tr>" + "<td>" + "Vé số " + (i+1) + ": " + "</td>";
+                for (let j = 0; j < 6; j++) {
+                    this.player.arrayNumberPlayer[i][j] = Math.round(Math.random() * 100);
+                    show += "<td>" + this.player.arrayNumberPlayer[i][j] + "</td>";
+                }
+                show += "</tr>";
+            }
+            show += "</table>";
+            document.getElementById("numberBoard").innerHTML = show;
+        }
+
+        checkWin() {
+            document.getElementById("result").innerHTML = "";
+            for (let i = 0; i < this.player.arrayNumberPlayer.length; i++) {
+                let flag1 = true;
+                let flag2 = true;
+                let flag3 = true;
+                if (this.player.arrayNumberPlayer[i][0] != this.arrayNumberPro[0]) {
+                    flag1 = false;
+                    for (let j = 1; j <= 2; j++) {
+                        if (this.player.arrayNumberPlayer[i][j] != this.arrayNumberPro[j]) {
+                            flag2 = false;
+                            break;
+                        }
+                    }
+                    for (let j = 3; j <= 5; j++) {
+                        if (this.player.arrayNumberPlayer[i][j] != this.arrayNumberPro[j]) {
+                            flag2 = false;
+                            flag3 = false;
+                            break;
+                        }
+                    }
+                } else {
+                    for (let j = 1; j <= 2; j++) {
+                        if (this.player.arrayNumberPlayer[i][j] != this.arrayNumberPro[j]) {
+                            flag1 = false;
+                            flag2 = false;
+                        }
+                    }
+                    for (let j = 3; j <= 5; j++) {
+                        if (this.player.arrayNumberPlayer[i][j] != this.arrayNumberPro[j]) {
+                            flag1 = false;
+                            flag2 = false;
+                            flag3 = false;
+                            break;
+                        }
+                    }
+                }
+                let info = "Xin chúc mừng bạn " + this.player.name + " số điện thoại:" +this.player.phoneNumber+ ", vé số " + (i+1);
+                if (flag1) {
+                    document.getElementById("result").innerHTML += info + ": Đã đạt giải nhất!!" + "<br>";
+                } else {
+                    if (flag2) {
+                        document.getElementById("result").innerHTML += info + ": Đã đạt giải nhì!!" + "<br>";
+                    } else {
+                        if (flag3) {
+                            document.getElementById("result").innerHTML += info + ": Đã đạt giải khuyến khích!!" + "<br>";
+                        } else {
+                            document.getElementById("result").innerHTML += "Vé số " + (i+1) + ": Chúc bạn may mắn lần sau!!" + "<br>";
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    let player = new Player();
+    let program = new Program(player);
+    program.setArrayNumberPro();
+
+    function getNumber(i, j) {
+        player.setArrayNumber(i, j);
+
+    }
+
+    function inputArrayNumber() {
+        document.getElementById("result").innerHTML = "";
+        let amount = document.getElementById("amountTicket").value;
+        if (amount <= 4 && amount > 0) {
+            player.displayArrayNumber(amount);
+            document.getElementById("buttonBuy").innerHTML = "<button type='button' onclick='buyTicket()'>Mua vé</button>" +
+                "<button type='button' onclick='displayResult()'>Xem kết quả</button>";
+        } else {
+            document.getElementById("result").innerHTML = "Xin vui lòng nhập lại số lượng vé. Chỉ được mua tối đa 4 vé!!"
+        }
+
+    }
+    function randomArrayNumber() {
+        document.getElementById("result").innerHTML = "";
+        let amount = document.getElementById("amountTicket").value;
+        if (amount <= 4 && amount > 0) {
+            program.setArrayNumberPlayer(amount);
+            document.getElementById("buttonBuy").innerHTML = "<button type='button' onclick='buyTicket()'>Mua vé</button>"  +
+                "<button type='button' onclick='displayResult()'>Xem kết quả</button>";
+        } else {
+            document.getElementById("result").innerHTML = "Xin vui lòng nhập lại số lượng vé. Chỉ được mua tối đa 4 vé!!"
+        }
+    }
+
+    function buyTicket() {
+        let name = document.getElementById("name").value;
+        let phoneNumber = document.getElementById("phoneNumber").value;
+        player.setName(name);
+        player.setPhone(phoneNumber);
+        document.getElementById("name").readOnly = true;
+        document.getElementById("phoneNumber").readOnly = true;
+        document.getElementById("amountTicket").readOnly = true;
+        document.getElementById("buttonPlayer").disabled = true;
+        document.getElementById("buttonPro").disabled = true;
+        let amount = document.getElementById("amountTicket").value;
+        for (let i = 0; i < amount*6; i++) {
+            document.getElementsByName("cell")[i].readOnly = true;
+        }
+    }
+
+    function displayResult() {
+        program.checkWin();
+        document.getElementById("result").innerHTML += "<button type='button' onclick='buyAgain()'>Mua lại</button>"
+
+    }
+    function buyAgain() {
+        document.getElementById("name").readOnly = false;
+        document.getElementById("phoneNumber").readOnly = false;
+        document.getElementById("amountTicket").readOnly = false;
+        document.getElementById("buttonPlayer").disabled = false;
+        document.getElementById("buttonPro").disabled = false;
+        document.getElementsByName("cell").readOnly = false;
+        let amount = document.getElementById("amountTicket").value;
+        for (let i = 0; i <amount*6; i++) {
+            document.getElementsByName("cell")[i].readOnly = false;
+        }
+    }
+</script>
+</body>
+</html>

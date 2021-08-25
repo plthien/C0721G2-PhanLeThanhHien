@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str1= prompt("Nhập chuỗi 1: ");
+    let str2= prompt("Nhập chuỗi 2: ");
+    function commonCharacterCount(str1,str2) {
+        let array1 = str1.split("");
+        let array2 = str2.split("");
+        let count = 0;
+        for (let i =0; i < array1.length; i++) {
+            let temp = 0;
+            for (let j = 0; j < array2.length; j++) {
+                if (array1[i] === array2[j]) {
+                    array2.splice(j,1);
+                    j--;
+                    temp = 1;
+                }
+            }
+            count+=temp;
+        }
+        return count;
+    }
+    console.log(commonCharacterCount(str1,str2));
+</script>
+</body>
+</html>

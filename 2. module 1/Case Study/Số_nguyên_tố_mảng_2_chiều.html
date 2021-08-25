@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let m, n;
+    do {
+        m = parseInt(prompt("Nhập số hàng ma trận: "));
+        n = parseInt(prompt("Nhập số cột ma trận: "));
+    } while (isNaN(m) || isNaN(n))
+    let array = new Array();
+    for (let i = 0; i < m; i++) {
+        array[i] = [];
+        for (let j = 0; j < n; j++) {
+            do {
+                array[i][j] = parseInt(prompt("Nhập phần tử ở vị trí " +i + j));
+            } while (isNaN(array[i][j]))
+        }
+    }
+    function soNT(array) {
+        let arraySNT=[];
+        for (let i = 0; i < array.length; i++) {
+            for (let j = 0; j < array[i].length; j++) {
+                let flag = true;
+                if (array[i][j] === 1) {
+                    flag = false;
+                }
+                for (let num = 2; num < array[i][j]; num++){
+                    if (array[i][j] % num === 0){
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    arraySNT.push(array[i][j]);
+                }
+            }
+        }
+        return arraySNT;
+    }
+    let kq = soNT(array);
+    console.log(kq);
+    console.log(kq.length);
+</script>
+</body>
+</html>

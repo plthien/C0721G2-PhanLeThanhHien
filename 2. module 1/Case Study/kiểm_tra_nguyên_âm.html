@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let nguyenAm = ['o','u','i','a','e','O','U','I','A','E'];
+    let kyTu = "";
+    do {
+        kyTu = prompt("Nhập ký tự chữ: ");
+    } while (isNaN(kyTu) === false || kyTu.length > 1 )
+    if (nguyenAm.indexOf(kyTu) !== -1) {
+        alert(kyTu +" là nguyên âm");
+    } else {
+        alert(kyTu+ " là phụ âm");
+    }
+</script>
+</body>
+</html>
