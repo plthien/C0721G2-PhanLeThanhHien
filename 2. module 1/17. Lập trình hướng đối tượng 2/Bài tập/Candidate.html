@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ class Candidate {
+     constructor(id,name,math,literality,english) {
+         this.id = id;
+         this.name = name;
+         this.math = math;
+         this.literality = literality;
+         this.english =english;
+
+     }
+     sumScores () {
+         return  this.math +this.literality +this.english;
+     }
+ }
+ class TestCandidate {
+     constructor() {
+         this.candidates = [];
+     }
+
+     setCandidate() {
+         let n = parseInt(prompt("Nhập số lượng thí sinh: "));
+         for (let i = 0; i < n; i++) {
+             this.candidates[i] = new Candidate();
+                 this.candidates[i].id = prompt("Nhập mã số thí sinh: ");
+                 this.candidates[i].name = prompt("Nhập tên thí sinh: ");
+                 this.candidates[i].birthday = prompt("Nhập ngày tháng năm sinh thí sinh: ");
+                 this.candidates[i].math = parseInt(prompt("Nhập điểm Toán của thí sinh: "));
+                 this.candidates[i].literality = parseInt(prompt("Nhập điểm Văn của thí sinh: "));
+                 this.candidates[i].english = parseInt(prompt("Nhập điểm Anh của thí sinh: "));
+         }
+     }
+     displayInfo () {
+         for (let i = 0; i < this.candidates.length; i++) {
+                 if (this.candidates[i].sumScores() > 15) {
+                     document.write("Mã số: " + this.candidates[i].id + "<br>");
+                     document.write("Tên : " + this.candidates[i].name+ "<br>");
+                     document.write("Ngày sinh: " + this.candidates[i].birthday+ "<br>");
+                     document.write("Điểm Toán: " + this.candidates[i].math+ "<br>");
+                     document.write("Điểm Văn: " + this.candidates[i].literality+ "<br>");
+                     document.write("Điểm Anh: " + this.candidates[i].english+ "<br>");
+             }
+         }
+
+     }
+ }
+ let testCandidate = new TestCandidate();
+ testCandidate.setCandidate();
+ testCandidate.displayInfo();
+ console.log(testCandidate.candidates);
+</script>
+</body>
+</html>

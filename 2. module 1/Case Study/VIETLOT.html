@@ -13,7 +13,7 @@
 
         form {
             width: 600px;
-            height: 400px;
+            height: 520px;
             margin: 40px auto;
             padding: 20px;
             border: 20px solid lightblue;
@@ -36,13 +36,20 @@
 
         caption {
             font-weight: bold;
-            font-size: 1.2em;
+            font-size: 1.1em;
+        }
+        table {
+            margin: 10px auto;
+        }
+        td {
+            text-align: center;
+            padding: 5px;
+        }
+        button {
+            border-radius: 5px;
         }
 
-        /*table,td {*/
-        /*    border: 1px solid gray;*/
-        /*    border-collapse: collapse;*/
-        /*}*/
+
     </style>
 </head>
 <body>
@@ -68,6 +75,7 @@
 
     </div>
     <div id="buttonBuy"></div>
+    <div id="numberPro"></div>
     <div id="result"></div>
 
 </form>
@@ -121,9 +129,17 @@
 
         setArrayNumberPro() {
             for (let i = 0; i < this.arrayNumberPro.length; i++) {
-                this.arrayNumberPro[i] = i;
-                // this.arrayNumberPro[i] = Math.round(Math.random() * 100);
+                // this.arrayNumberPro[i] = i;
+                this.arrayNumberPro[i] = Math.round(Math.random() * 100);
             }
+        }
+        displayArrayNumberPro() {
+            let show = "<table>" + "<caption>Số của chương trình</caption>" +"<tr>";
+            for (let i = 0; i < this.arrayNumberPro.length; i++) {
+                show += "<td>" + this.arrayNumberPro[i] + "</td>";
+            }
+                show += "</tr>" +"</table>";
+            document.getElementById("numberPro").innerHTML = show;
         }
 
         setArrayNumberPlayer(amount) {
@@ -142,6 +158,7 @@
         }
 
         checkWin() {
+            this.displayArrayNumberPro();
             document.getElementById("result").innerHTML = "";
             for (let i = 0; i < this.player.arrayNumberPlayer.length; i++) {
                 let flag1 = true;
@@ -233,22 +250,34 @@
     function buyTicket() {
         let name = document.getElementById("name").value;
         let phoneNumber = document.getElementById("phoneNumber").value;
-        player.setName(name);
-        player.setPhone(phoneNumber);
-        document.getElementById("name").readOnly = true;
-        document.getElementById("phoneNumber").readOnly = true;
-        document.getElementById("amountTicket").readOnly = true;
-        document.getElementById("buttonPlayer").disabled = true;
-        document.getElementById("buttonPro").disabled = true;
-        let amount = document.getElementById("amountTicket").value;
-        for (let i = 0; i < amount*6; i++) {
-            document.getElementsByName("cell")[i].readOnly = true;
+        if (name == "" || phoneNumber=="") {
+            document.getElementById("result").innerHTML = "Bạn chưa nhập thông tin cá nhân!!";
+        } else {
+            player.setName(name);
+            player.setPhone(phoneNumber);
+            document.getElementById("name").readOnly = true;
+            document.getElementById("phoneNumber").readOnly = true;
+            document.getElementById("amountTicket").readOnly = true;
+            document.getElementById("buttonPlayer").disabled = true;
+            document.getElementById("buttonPro").disabled = true;
+            let amount = document.getElementById("amountTicket").value;
+            for (let i = 0; i < amount*6; i++) {
+                document.getElementsByName("cell")[i].readOnly = true;
+            }
         }
+
     }
 
     function displayResult() {
-        program.checkWin();
-        document.getElementById("result").innerHTML += "<button type='button' onclick='buyAgain()'>Mua lại</button>"
+        console.log(player.name);
+        if (player.name == ""){
+            document.getElementById("result").innerHTML = "Bạn chưa mua vé!!"
+        } else {
+            document.getElementById("result").innerHTML ="";
+            program.checkWin();
+            document.getElementById("result").innerHTML += "<button type='button' onclick='buyAgain()'>Mua lại</button>"
+        }
+
 
     }
     function buyAgain() {
