@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #myCanvas {
+            width: 700px;
+            height: 720px;
+            background-color: blanchedalmond;
+            margin-left: 400px;
+        }
+    </style>
+</head>
+<body>
+<button type="button" onclick="startRacing()">Bắt đầu</button>
+<canvas id="myCanvas"></canvas>
+<script>
+    const GAMEBOARD_WIDTH = 700;
+    const GAMEBOARD_HEIGHT = 720;
+
+    const ORIENTATION_LEFT = "left";
+    const ORIENTATION_RIGHT = "right";
+    const MOTOR_WIDTH = 70;
+    const MOTOR_HEIGHT = 50;
+    const DEFAULT_MOTOR_X_POSITION = 115;
+    const DEFAULT_MOTOR_Y_POSITION = 100;
+    const DEFAULT_MOTOR_SPEED = 25;
+    const DEFAULT_MOTOR_LEFT_RIGHT = 20;
+
+    class Motor {
+        constructor() {
+            this.x = DEFAULT_MOTOR_X_POSITION;
+            this.y = DEFAULT_MOTOR_Y_POSITION;
+            this.speed = DEFAULT_MOTOR_SPEED;
+            this.image = "motorcycle.png";
+            this.width = MOTOR_WIDTH;
+            this.height = MOTOR_HEIGHT;
+        }
+
+        getMotor(ctx) {
+            let img = new Image();
+            img.src = this.image;
+            let xPosition = this.x;
+            let yPosition = this.y;
+            let width = this.width;
+            let height = this.height;
+            img.onload = function () {
+                ctx.drawImage(img, xPosition, yPosition, width, height);
+
+            };
+        }
+
+        racing(gameBoard) {
+            if (this.y > 0) {
+                this.y -= this.speed;
+                gameBoard.clearMotor();
+                gameBoard.drawMotor();
+
+            } else {
+                this.y = DEFAULT_MOTOR_Y_POSITION;
+                gameBoard.clearMotor();
+                gameBoard.drawMotor();
+            }
+
+        }
+
+        leftArrowPressed(gameBoard) {
+            if (this.x > 0) {
+                this.x -= DEFAULT_MOTOR_LEFT_RIGHT;
+                gameBoard.clearMotor();
+                gameBoard.drawMotor();
+            }
+
+        }
+
+        rightArrowPressed(gameBoard) {
+            if (this.x < 200) {
+                this.x += DEFAULT_MOTOR_LEFT_RIGHT;
+                gameBoard.clearMotor();
+                gameBoard.drawMotor();
+            }
+
+        }
+
+        increaseSpeed() {
+            this.speed += 2;
+        }
+        decreaseSpeed() {
+            this.speed -= 2;
+        }
+
+    }
+
+    class GameBoard {
+        constructor() {
+            this.motor = new Motor();
+            this.ctx = "";
+
+        }
+
+        drawMotor() {
+            this.ctx = document.getElementById("myCanvas").getContext("2d");
+            this.motor.getMotor(this.ctx);
+
+        }
+
+        clearMotor() {
+            this.ctx.clearRect(0, 0, GAMEBOARD_WIDTH, GAMEBOARD_HEIGHT);
+            this.motor.getMotor(this.ctx);
+        }
+        drawRoad () {
+
+        }
+
+
+    }
+
+    let gameBoard = new GameBoard();
+    gameBoard.drawMotor();
+
+    function Racing() {
+        gameBoard.motor.racing(gameBoard);
+    }
+
+    function startRacing() {
+        setInterval(Racing, 500);
+    }
+
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                gameBoard.motor.leftArrowPressed(gameBoard);
+                break;
+            case 39:
+                gameBoard.motor.rightArrowPressed(gameBoard);
+                break;
+            case 17:
+                gameBoard.motor.increaseSpeed();
+                break;
+            case 16:
+                gameBoard.motor.decreaseSpeed();
+                break;
+
+
+        }
+
+    }
+
+    window.addEventListener("keydown", moveSelection);
+</script>
+</body>
+</html>

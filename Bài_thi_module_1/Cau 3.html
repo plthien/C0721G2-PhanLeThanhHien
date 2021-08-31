@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function arrayPrime(arr) {
+        let arrNew = [];
+        for (let i = 0; i < arr.length; i++) {
+            let flag = true;
+            if (arr[i] <= 1) {
+                flag = false;
+            } else {
+                for (let j = 2; j < arr[i]; j++) {
+                    if (arr[i] % j === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag) {
+                arrNew.push(arr[i]);
+            }
+
+        }
+        for (let i = 0; i < arrNew.length - 1; i++) {
+            for (let j = i + 1; j < arrNew.length; j++) {
+                if (arrNew[i] > arrNew[j]) {
+                    let temp = arrNew[i];
+                    arrNew[i] = arrNew[j];
+                    arrNew[j] = temp;
+                }
+            }
+        }
+        return arrNew;
+    }
+    let arr = [1,5,17,6,23,8,47,11,10,3];
+    let arrNew = arrayPrime(arr);
+    console.log(arrNew);
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n;
+    let sumEven = 0;
+    let sumOdd = 0;
+    let subtract;
+    do {
+        n = parseInt(prompt("Nhập số lượng phần tử: "));
+    } while (isNaN(n) || n > 20 || n <= 0);
+    let arr = Array(n);
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = parseInt(prompt("Nhập phần tử vị trí " + i + " :"));
+    }
+    document.write("Danh sách các phần tử trong mảng: ");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            sumEven += arr[i];
+            document.write(arr[i] + " ");
+        } else {
+            sumOdd += arr[i];
+            document.write(arr[i] + " ");
+        }
+    }
+    subtract = sumEven - sumOdd;
+    document.write( "<br>" + "Hiệu của Tổng số chẵn và Tổng số lẻ có trong mảng: " +subtract);
+
+
+</script>
+</body>
+</html>
