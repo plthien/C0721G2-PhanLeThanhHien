@@ -10,5 +10,6 @@ public class ConvertUSDToVND {
         float usd = sc.nextFloat();
         float vnd = usd * RATE;
         System.out.println("VND: "+vnd);
+
     }
 }
