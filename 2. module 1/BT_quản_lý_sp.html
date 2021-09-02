@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+
+        }
+
+        button {
+            background-color: #32CD32;
+            border: none;
+            color: white;
+            font-size: 1.0em;
+            border-radius: 5px;
+        }
+        table, td, th {
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+        }
+        tr:nth-child(odd) {
+            background-color: #DCDCDC;
+        }
+
+        td:first-child {
+            width: 100px;
+        }
+
+        td:nth-child(2) {
+            width: 100px;
+        }
+
+        td:nth-child(3) {
+            width: 300px;
+        }
+
+        th {
+            font-size: 1.2em;
+        }
+        h1 {
+            margin-left: 160px;
+        }
+        input {
+            height: 20px;
+            outline: none;
+        }
+        #editDescription {
+            width: 300px;
+        }
+    </style>
+</head>
+<label>Name: </label>
+<input id="name">
+<label>Price: </label>
+<input id="price">
+<label>Description: </label>
+<input id="description">
+<button onclick="createProduct()">Create Product</button>
+<button onclick="searchProduct()">Search Product</button>
+<button onclick="displayAgainProduct()">Display All Products</button>
+<h1>DANH SÁCH SẢN PHẨM</h1>
+<div id="display"></div>
+<body>
+<script>
+    class Product {
+        constructor(name, price, description) {
+            this.name = name;
+            this.price = price;
+            this.description = description;
+        }
+    }
+
+    function createProduct() {
+        let name = document.getElementById("name").value;
+        document.getElementById("name").value="";
+        let price = document.getElementById("price").value;
+        document.getElementById("price").value ="";
+        let description = document.getElementById("description").value;
+        document.getElementById("description").value ="";
+        products.push(new Product(name, parseInt(price), description));
+        displayProduct();
+    }
+
+
+    function displayProduct() {
+        let temp="";
+        temp+="<table>";
+        temp+="<tr><th>Name</th><th>Price</th><th>Description</th><th>Delete</th><th>Edit</th></tr>"
+        for(let i =0; i<products.length;i++) {
+            temp+="<tr>"
+            temp+="<td>"+products[i].name+"</td>"
+            temp+="<td>"+products[i].price+"</td>"
+            temp+="<td>"+products[i].description+"</td>"
+            temp+="<td><button onclick='deleteProduct("+i+")'>Delete</button></td>"
+            temp+="<td><button onclick='editProduct("+i+")'>Edit</button></td>"
+            temp+="</tr>"
+        }
+        temp+="</table>"
+        document.getElementById("display").innerHTML=temp;
+    }
+    function deleteProduct(index) {
+        if(confirm("Bạn thật sự muốn xóa sản phẩm có tên là "+products[index].name+" ?")) {
+            products.splice(index,1);
+            displayProduct();
+        }
+    }
+    function editProduct (index) {
+        let temp="";
+        temp+="<table>";
+        temp+="<tr><th>Name</th><th>Price</th><th>Description</th><th>Delete</th><th>Edit</th></tr>"
+        for(let i =0; i<products.length;i++) {
+            if (i == index) {
+                temp+="<tr>"
+                temp+="<td>"+ "<input type='text' value='"+products[i].name+"' id='editName'>"+"</td>"
+                temp+="<td>"+"<input type='text' value='"+products[i].price+"' id='editPrice'>"+"</td>"
+                temp+="<td>"+"<input type='text' value='"+products[i].description+"' id='editDescription'>"+"</td>"
+                temp+="<td><button onclick='saveEditProduct("+i+")'>Save</button></td>"
+                temp+="<td><button onclick='editProduct("+i+")'>Edit</button></td>"
+                temp+="</tr>"
+            } else {
+                temp+="<tr>"
+                temp+="<td>"+products[i].name+"</td>"
+                temp+="<td>"+products[i].price+"</td>"
+                temp+="<td>"+products[i].description+"</td>"
+                temp+="<td><button onclick='deleteProduct("+i+")'>Delete</button></td>"
+                temp+="<td><button onclick='editProduct("+i+")'>Edit</button></td>"
+                temp+="</tr>"
+            }
+
+        }
+        temp+="</table>"
+        document.getElementById("display").innerHTML=temp;
+    }
+    function saveEditProduct (index) {
+        products[index].name= document.getElementById("editName").value;
+        products[index].price= document.getElementById("editPrice").value;
+        products[index].description= document.getElementById("editDescription").value;
+        displayProduct();
+    }
+    function searchProduct () {
+        let str = document.getElementById("name").value;
+        for (let i =0; i < products.length; i++) {
+            if (str == products[i].name) {
+                let temp="";
+                temp+="<table>";
+                temp+="<tr><th>Name</th><th>Price</th><th>Description</th><th>Delete</th><th>Edit</th></tr>"
+                    temp+="<tr>"
+                    temp+="<td>"+products[i].name+"</td>"
+                    temp+="<td>"+products[i].price+"</td>"
+                    temp+="<td>"+products[i].description+"</td>"
+                    temp+="<td><button onclick='deleteProduct("+i+")'>Delete</button></td>"
+                    temp+="<td><button onclick='editProduct("+i+")'>Edit</button></td>"
+                    temp+="</tr>"
+                temp+="</table>"
+                document.getElementById("display").innerHTML=temp;
+            }
+        }
+    }
+    function displayAgainProduct () {
+        displayProduct();
+    }
+    //Chức năng edit thì các bạn sẽ về nhà thực hành.
+    // Và nếu được thì thực hành thêm chức năng search tên sản phẩm.
+    let products = [];
+    products.push(new Product("Iphone",12345,"Iphone 10 plus"))
+    displayProduct();
+
+
+</script>
+</body>
+</html>

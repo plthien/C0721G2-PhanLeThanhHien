@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 20px;
+
+        }
+
+        button {
+            background-color: #32CD32;
+            border: none;
+            color: white;
+            font-size: 1.0em;
+            border-radius: 5px;
+        }
+
+        table, td, th {
+            border-collapse: collapse;
+            text-align: left;
+            padding: 10px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #DCDCDC;
+        }
+
+        td:first-child {
+            width: 50px;
+        }
+
+        td:nth-child(2) {
+            width: 150px;
+        }
+
+        td:nth-child(3) {
+            width: 200px;
+        }
+
+        th {
+            font-size: 1.2em;
+        }
+
+        h1 {
+            margin-left: 120px;
+        }
+
+        input {
+            height: 20px;
+            outline: none;
+        }
+
+    </style>
+</head>
+<label>Id: </label>
+<input id="id" placeholder="Nhập Id sản phẩm">
+<label>Name: </label>
+<input id="name" placeholder="Nhập tên sản phẩm">
+<label>Manufacturer: </label>
+<input id="manufacturer" placeholder="Nhập hãng sản xuất">
+<label>Price: </label>
+<input id="price" placeholder="Nhập giá sản phẩm">
+<button onclick="addProduct()">Add Product</button>
+<h1>DANH SÁCH SẢN PHẨM</h1>
+<div id="display"></div>
+<body>
+<script>
+    class Phone {
+        constructor(id, name, manufacturer, price) {
+            this.id = id;
+            this.name = name;
+            this.manufacturer = manufacturer;
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getManufacturer() {
+            return this.manufacturer;
+        }
+
+        setManufacturer(manufacturer) {
+            this.manufacturer = manufacturer;
+
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+    }
+
+    let products = [];
+
+    function displayProducts() {
+        let show = "";
+        show += "<table>";
+        show += "<tr><th>Id</th><th>Name</th><th>Manufacturer</th><th>Price</th></tr>";
+        for (let i = 0; i < products.length; i++) {
+            show += "<tr>";
+            show += "<td>" + products[i].id + "</td>";
+            show += "<td>" + products[i].name + "</td>";
+            show += "<td>" + products[i].manufacturer + "</td>";
+            show += "<td>" + products[i].price + "</td>";
+            show += "</tr>"
+        }
+        show += "</table>";
+        document.getElementById("display").innerHTML = show;
+    }
+
+    function sortProducts() {
+        const UPPER_CHAR = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let i = 0; i < products.length - 1; i++) {
+            let strI = products[i].name;
+            let indexI = UPPER_CHAR.indexOf(strI[0]);
+            for (let j = i + 1; j < products.length; j++) {
+                let strJ = products[j].name;
+                let indexJ = UPPER_CHAR.indexOf(strJ[0]);
+                if (indexI > indexJ) {
+                    let temp = products[i];
+                    products[i] = products[j];
+                    products[j] = temp;
+                }
+            }
+        }
+        // products.sort(function (phone1, phone2) {
+        //     let a = phone1.name.toLowerCase();
+        //     let b = phone2.name.toLowerCase();
+        //     return a === b ? 0 : a > b ? 1 : -1;
+        //
+        // })
+    }
+
+
+    function addProduct() {
+        let id = document.getElementById("id").value;
+        document.getElementById("id").value = "";
+        let name = document.getElementById("name").value;
+        document.getElementById("name").value = "";
+        let manufacturer = document.getElementById("manufacturer").value;
+        document.getElementById("manufacturer").value = "";
+        let price = document.getElementById("price").value;
+        document.getElementById("price").value = "";
+        let phone = new Phone(id, name, manufacturer, price);
+        products.push(phone);
+        sortProducts();
+        displayProducts();
+    }
+
+
+    let phone = new Phone();
+    phone.setId("SS");
+    phone.setName("A50");
+    phone.setManufacturer("Samsung");
+    phone.setPrice(7000000);
+    products.push(phone);
+    sortProducts();
+    displayProducts();
+
+
+</script>
+</body>
+</html>

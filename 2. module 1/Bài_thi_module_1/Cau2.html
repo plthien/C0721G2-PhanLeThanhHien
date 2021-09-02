@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function countUpperChar(str) {
+        let count = 0;
+        const UPPER_CHAR = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for (let i = 0; i < str.length; i++) {
+            for (let j = 0; j < UPPER_CHAR.length; j++) {
+                if (str[i] === UPPER_CHAR[j]){
+                    count++;
+                }
+            }
+        }
+        if (count > 0) {
+            return count;
+        } else {
+            return  "The Strings is not contain upper char";
+        }
+
+    }
+
+    let str = "abEcDdg";
+    let result = countUpperChar(str);
+    console.log(result);
+</script>
+</body>
+</html>
