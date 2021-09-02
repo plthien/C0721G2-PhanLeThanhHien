@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border: none;
+            border-collapse: collapse;
+            margin: 20px auto;
+
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            background-color: #F0E68C;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-collapse: collapse;
+            border: 0.5px solid gray;
+            cursor: pointer;
+        }
+
+        caption {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ff253a;
+        }
+    </style>
+</head>
+<body>
+<div id="gameCaro"></div>
+<script>
+    class Cell {
+        constructor(x,y) {
+            this.x = x;
+            this.y = y;
+            this.value = "";
+            this.color = "black";
+        }
+        changeValueCell (value) {
+            this.value = value;
+        }
+        changeColorValue (color) {
+            this.color = color;
+        }
+    }
+    class GameBoard {
+        constructor(rows, cols, playName1, playName2) {
+            this.rows = rows;
+            this.cols = cols;
+            this.playName1 = playName1;
+            this.playName2 = playName2;
+            this.isPlay = true;
+        }
+        drawBoard () {
+            this.arrayCell = [];
+            for (let i = 0 ; i < this.rows; i++) {
+                this.arrayCell[i] = [];
+                for (let j = 0; j < this.cols; j++) {
+                    this.arrayCell[i][j] = new Cell(i,j);
+                }
+            }
+        }
+        displayBoard () {
+            let show = "<table>" + "<caption>CARO GAME</caption>" +
+                "<tr>"+
+                "<th colspan='3'>"+this.playName1+":<span style='color: blue'>X</span>"+"</th>"+
+                "<th colspan='3'>"+this.playName2+":<span style='color: red'>O</span>"+"</th>"+
+                "</tr>";
+            for (let i =0; i < this.rows; i++) {
+                show+= "<tr>";
+                for (let j = 0 ; j < this.cols; j++) {
+                    show+= "<td onclick='changeValue("+i+","+j+")'style='color: "+this.arrayCell[i][j].color+"'>" + this.arrayCell[i][j].value + "</td>";
+                }
+                show+= "</tr>";
+            }
+            show+= "</table>";
+            document.getElementById("gameCaro").innerHTML = show;
+        }
+        playGame (i,j) {
+            if (this.arrayCell[i][j].value === "") {
+                if (this.isPlay) {
+                    this.arrayCell[i][j].changeValueCell("X");
+                    this.arrayCell[i][j].changeColorValue("blue");
+                    this.conditionWin(i,j);
+                } else {
+                    this.arrayCell[i][j].changeValueCell("O");
+                    this.arrayCell[i][j].changeColorValue("red");
+                    this.conditionWin(i,j);
+
+                }
+                this.isPlay = !this.isPlay;
+                this.displayBoard();
+            }
+        }
+        conditionWin (i,j) {
+            //Kiểm tra hàng
+            let count = 1;
+            let x = 1;
+            while (j + x <= this.cols && this.arrayCell[i][j].value === this.arrayCell[i][j+x].value) {
+                count++;
+                x++;
+            }
+            while (j - x >=0 && this.arrayCell[i][j].value === this.arrayCell[i][j-x].value) {
+                count++;
+                x++;
+            }
+            this.checkWin(count,this.arrayCell[i][j].value);
+            //kiểm tra cột
+            count = 1;
+            x = 1;
+            while (i + x <= this.rows && this.arrayCell[i][j].value === this.arrayCell[i+x][j].value) {
+                count++;
+                x++;
+            }
+            while (i - x >=0 && this.arrayCell[i][j].value === this.arrayCell[i-x][j].value) {
+                count++;
+                x++;
+            }
+            this.checkWin(count,this.arrayCell[i][j].value);
+            //kiểm tra đướng chéo hướng phải
+            count = 1;
+            x = 1;
+            let y =1;
+            while (i - x >= 0 && j + y <= this.cols && this.arrayCell[i][j].value === this.arrayCell[i-x][j+y].value) {
+                count++;
+                x++;
+                y++;
+            }
+            while (i + x <= this.rows && j - y >= 0 && this.arrayCell[i][j].value === this.arrayCell[i+x][j-y].value) {
+                count++;
+                x++;
+                y++;
+            }
+            this.checkWin(count,this.arrayCell[i][j].value);
+            //Kiểm tra đường chéo hướng trái
+            count = 1;
+            x = 1;
+            y =1;
+            while (i + x <= this.rows && j + y <= this.cols && this.arrayCell[i][j].value === this.arrayCell[i+x][j+y].value) {
+                count++;
+                x++;
+                y++;
+            }
+            while (i - x >= 0 && j - y >= 0  && this.arrayCell[i][j].value === this.arrayCell[i-x][j-y].value) {
+                count++;
+                x++;
+                y++;
+            }
+            this.checkWin(count,this.arrayCell[i][j].value);
+        }
+        checkWin (count,value) {
+            if (count>=5) {
+                if (value === "X") {
+                    alert(this.playName1+" thắng");
+                }else   {
+                    alert(this.playName2+" thắng");
+                }
+            }
+
+        }
+
+    }
+    let gameBoard = new GameBoard(15,15,"jack","John");
+    gameBoard.drawBoard();
+    gameBoard.displayBoard();
+    function changeValue(i,j) {
+        gameBoard.playGame(i,j);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tu1;
+    let mau1;
+    let tu2;
+    let mau2;
+    do {
+        tu1 = parseInt(prompt("Nhập tử số của phân số 1: "));
+        mau1 = parseInt(prompt("Nhập mẫu số của phân số 1: "));
+        tu2 = parseInt(prompt("Nhập tử số của phân số 2: "));
+        mau2 = parseInt(prompt("Nhập mẫu số của phân số 2: "));
+        if (mau1 < 0) {
+            mau1 *=-1;
+            tu1 *=-1;
+        }
+        if (mau2 < 0) {
+            mau2 *=-1;
+            tu2 *=-1;
+        }
+    } while (mau1 == 0 || mau2 == 0 || isNaN(tu1) || isNaN(mau1) || isNaN(tu2) || isNaN(mau2));
+    // function timUCLN(a, b) {
+    //     while (a != b) {
+    //         if (a > b) {
+    //             a = a - b;
+    //         } else {
+    //             b = b - a;
+    //         }
+    //     }
+    //     return a;
+    // }
+    //
+    // function cong(tu1, mau1, tu2, mau2) {
+    //     let tu;
+    //     let mau;
+    //     tu = (tu1 * mau2) + (tu2 * mau1);
+    //     mau = mau1 * mau2;
+    //     let ucln = timUCLN( Math.abs(tu),Math.abs(mau));
+    //     return tu/ucln + "/" + mau/ucln;
+    // }
+    //
+    // function tru(tu1, mau1, tu2, mau2) {
+    //     let tu;
+    //     let mau;
+    //     tu = (tu1 * mau2) - (tu2 * mau1);
+    //     mau = mau1 * mau2;
+    //     let ucln = timUCLN( Math.abs(tu),Math.abs(mau));
+    //     return tu/ucln + "/" + mau/ucln;
+    // }
+    //
+    // function nhan(tu1, mau1, tu2, mau2) {
+    //     let tu;
+    //     let mau;
+    //     tu = tu1 * tu2;
+    //     mau = mau1 * mau2;
+    //     let ucln = timUCLN( Math.abs(tu),Math.abs(mau));
+    //     return tu/ucln + "/" + mau/ucln;
+    // }
+    //
+    // function chia(tu1, mau1, tu2, mau2) {
+    //     let tu;
+    //     let mau;
+    //     tu = tu1 * mau2;
+    //     mau = mau1 * tu2;
+    //     let ucln = timUCLN( Math.abs(tu),Math.abs(mau));
+    //     return tu/ucln + "/" + mau/ucln;
+    // }
+    class  PhanSo {
+        constructor(tu1,mau1,tu2,mau2) {
+            this.tu1 = tu1;
+            this.mau1 =mau1;
+            this.tu2 = tu2;
+            this.mau2 = mau2;
+        }
+        // setTu1Mau1 (tu1,mau1) {
+        //     this.tu1 = tu1;
+        //     this.mau1 = mau1;
+        //     if (this.mau1 < 0) {
+        //         this.tu1 *= -1;
+        //         this.mau1 *=-1;
+        //     }
+        // }
+        // setTu2Mau2 (tu2,mau2) {
+        //     this.tu2 = tu2;
+        //     this.mau2 = mau2;
+        //     if (this.mau2 < 0) {
+        //         this.tu2 *= -1;
+        //         this.mau2 *=-1;
+        //     }
+        // }
+        timUCLN (a,b) {
+            while (a != b) {
+                if (a > b) {
+                    a = a - b;
+                } else {
+                    b = b - a;
+                }
+            }
+            return a;
+        }
+        cong () {
+            let tu = (this.tu1 * this.mau2) + (this.tu2 * this.mau1);
+            let mau = this.mau1 * this.mau2;
+            let ucln = this.timUCLN( Math.abs(tu),Math.abs(mau));
+            return tu/ucln + "/" + mau/ucln;
+        }
+        tru () {
+            let tu = (this.tu1 * this.mau2) - (this.tu2 * this.mau1);
+            let mau = this.mau1 * this.mau2;
+            let ucln = this.timUCLN( Math.abs(tu),Math.abs(mau));
+            return tu/ucln + "/" + mau/ucln;
+        }
+        nhan () {
+            let tu = this.tu1 * this.tu2;
+            let mau = this.mau1 * this.mau2;
+            let ucln = this.timUCLN( Math.abs(tu),Math.abs(mau));
+            return tu/ucln + "/" + mau/ucln;
+        }
+        chia () {
+            let tu = this.tu1 * this.mau2;
+            let mau = this.tu2 * this.mau1;
+            let ucln = this.timUCLN( Math.abs(tu),Math.abs(mau));
+            return tu/ucln + "/" + mau/ucln;
+        }
+
+    }
+    let phanSo= new PhanSo(tu1,mau1,tu2,mau2);
+
+    document.write("Phép cộng: " + phanSo.cong() + "<br>");
+    document.write("Phép trừ: " +phanSo.tru() + "<br>");
+    document.write("Phép nhân: " +phanSo.nhan() + "<br>");
+    document.write("Phép chia: " +phanSo.chia() + "<br>");
+</script>
+</body>
+</html>

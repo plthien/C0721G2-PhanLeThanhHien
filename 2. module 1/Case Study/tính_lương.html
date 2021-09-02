@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let luong;
+    let thue, luongRong;
+    do {
+        luong = parseInt(prompt("Nhập lương:"));
+    } while (isNaN(luong) || luong <=0)
+    if (luong < 7000000 ) {
+        thue = luong * 5 / 100;
+        luongRong = luong - thue;
+    } else if (luong >= 7000000 && luong < 15000000) {
+        thue = luong * 10 / 100;
+        luongRong = luong - thue;
+
+    } else {
+        thue = luong * 20 /100;
+        luongRong = luong - thue;
+    }
+    alert("thuế của bạn là: " +thue);
+    alert("luogn ròng của bạn là: " +luongRong)
+</script>
+</body>
+</html>

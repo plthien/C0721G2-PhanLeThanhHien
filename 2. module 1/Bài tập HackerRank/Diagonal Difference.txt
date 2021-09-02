@@ -1,0 +1,17 @@
+function diagonalDifference(arr) {
+    let a = 0;
+    let b = 0;
+    for ( let i =0; i < arr.length; i++) {
+        for ( let j = 0; j < arr[i].length; j++){
+            if ( i == j) {
+                a = a + arr[i][j];
+            }
+            if ( (i + j) == (arr.length -1)) {
+                b = b + arr[i][j]; 
+            }
+        }
+    }
+    let c = Math.abs(a-b);
+    return c;
+
+}

@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
+=======
+    <mapping directory="$PROJECT_DIR$/2. module 1/4.Git_HTML/Bài Tập/GitProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/2. module 1/4.Git_HTML/Thực hành/my-new-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/2. module 1/4.Git_HTML/Thực hành/wf-hello" vcs="Git" />
+>>>>>>> c4cf94e54368b5cd9665de231df41288fe11c745
   </component>
 </project>

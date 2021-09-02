@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            padding: 5px;
+        }
+        table,td,th {
+            border-collapse: collapse;
+            border: 0.5px solid gray;
+            padding: 15px;
+        }
+        td, th {
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<h1 style="margin-left: 120px">DANH SÁCH SINH VIÊN</h1>
+<div>
+    <input type="text" id="inputData" placeholder="Nhập Id hoặc tên">
+    <button type="button" onclick="searchData()">Tìm kiếm</button>
+    <button type="button" onclick="disableSearchData()">Bỏ tìm kiếm</button>
+</div>
+<div>
+    <input type="text" id="inputRemove" placeholder="Nhập Id hoặc số thứ tự">
+    <button type="button" onclick="deleteData()">Xóa</button>
+    <button type="button" onclick="sortData()">Sắp xếp</button>
+    <button type="button" onclick="addData()">Thêm sinh viên</button>
+
+</div>
+<div id="list"></div>
+<script>
+    class Student {
+        constructor(id, name, birthday, gender, className, year) {
+            this.id = id;
+            this.name = name;
+            this.birthday = birthday;
+            this.gender = gender;
+            this.className = className;
+            this.year = year;
+        }
+    }
+
+    class StudentList {
+        constructor() {
+            this.students = [];
+        }
+
+        setInfo() {
+            let n = parseInt(prompt("Nhập số lượng thí sinh: "));
+            for (let i = 0; i < n; i++) {
+                this.students[i] = new Student();
+                this.students[i].id = prompt("Nhập mã số Sinh viên: ");
+                this.students[i].name = prompt("Nhập tên Sinh viên: ");
+                this.students[i].birthday= prompt("Nhập ngày sinh Sinh viên: ");
+                this.students[i].gender = prompt("Nhập giới tính Sinh viên: ");
+                this.students[i].className = prompt("Nhập tên lớp Sinh viên: ");
+                this.students[i].year = prompt("Nhập niên khóa Sinh viên: ");
+
+            }
+        }
+
+        displayStudentList() {
+            let show = "<table>" + "<tr><th>STT</th><th>Mã sinh viên</th><th>Họ và tên</th><th>Ngày sinh</th><th>Giới tính</th><th>Lớp</th><th>Khóa</th></tr>";
+            for (let i = 0; i < this.students.length; i++) {
+                show += "<tr>" + "<td>" + (i + 1) + "</td>" +
+                    "<td>" + this.students[i].id + "</td>" +
+                    "<td>" + this.students[i].name + "</td>" +
+                    "<td>" + this.students[i].birthday+ "</td>" +
+                    "<td>" + this.students[i].gender + "</td>" +
+                    "<td>" + this.students[i].className + "</td>" +
+                    "<td>" + this.students[i].year + "</td>" + "</tr>";
+            }
+            show += "</table>";
+            document.getElementById("list").innerHTML = show;
+        }
+
+        displayStudent(i) {
+            let show = "<table>" + "<tr><th>STT</th><th>Mã sinh viên</th><th>Họ và tên</th><th>Ngày sinh</th><th>Giới tính</th><th>Lớp</th><th>Khóa</th></tr>";
+            show += "<tr>" + "<td>" + (i + 1) + "</td>" +
+                "<td>" + this.students[i].id + "</td>" +
+                "<td>" + this.students[i].name + "</td>" +
+                "<td>" + this.students[i].birthday + "</td>" +
+                "<td>" + this.students[i].gender + "</td>" +
+                "<td>" + this.students[i].className + "</td>" +
+                "<td>" + this.students[i].year + "</td>" + "</tr>";
+            show += "</table>";
+            document.getElementById("list").innerHTML = show;
+        }
+
+        addStudent(id, name, birthday, gender, className, year) {
+            this.students.push(new Student(id, name, birthday, gender, className, year));
+            this.displayStudentList();
+
+        }
+
+        removeStudentById(i) {
+            this.students.splice(i, 1);
+            this.displayStudentList();
+        }
+
+        removeStudentByIndex(index) {
+            this.students.splice(index, 1);
+            this.displayStudentList();
+
+        }
+
+        searchStudent(str) {
+            for (let i = 0; i < this.students.length; i++) {
+                if (this.students[i].id === str) {
+                    this.displayStudent(i);
+                } else {
+                    if (this.students[i].name === str) {
+                        this.displayStudent(i);
+                    }
+                }
+            }
+        }
+
+        sortStudentById() {
+            for (let i = 0; i < this.students.length - 1; i++) {
+                for (let j = i + 1; j < this.students.length; j++) {
+                    if (parseInt(this.students[i].id) > parseInt(this.students[j].id)) {
+                        let temp = this.students[i];
+                        this.students[i] = this.students[j];
+                        this.students[j] = temp;
+                    }
+                }
+            }
+            this.displayStudentList();
+        }
+
+    }
+
+    let list = new StudentList();
+    list.setInfo();
+    list.displayStudentList();
+
+    function searchData() {
+        let str = document.getElementById("inputData").value;
+        list.searchStudent(str);
+    }
+
+    function disableSearchData() {
+        list.displayStudentList();
+    }
+
+    function deleteData() {
+        let str = document.getElementById("inputRemove").value;
+        for (let i = 0; i < list.students.length; i++) {
+            switch (str) {
+                case list.students[i].id:
+                    list.removeStudentById(i);
+                    break;
+                case String(i + 1):
+                    list.removeStudentByIndex(i);
+                    break;
+            }
+        }
+    }
+    function sortData() {
+        list.sortStudentById();
+    }
+    function addData() {
+        let id = prompt("Nhập MSSV của sinh viên: ");
+        let name = prompt("Nhập tên của sinh viên: ");
+        let birthday = prompt("Nhập ngày sinh của sinh viên: ");
+        let gender = prompt("Nhập giới tính của sinh viên: ");
+        let className = prompt("Nhập tên lớp của sinh viên: ");
+        let year = prompt("Nhập niên khóa của sinh viên: ");
+        list.addStudent(id, name, birthday, gender, className, year);
+
+    }
+</script>
+</body>
+</html>
