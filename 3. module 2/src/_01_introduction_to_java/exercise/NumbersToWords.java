@@ -1,8 +1,6 @@
 package _01_introduction_to_java.exercise;
 
 
-import com.sun.javafx.scene.web.Debugger;
-
 import java.util.Scanner;
 
 public class NumbersToWords {
