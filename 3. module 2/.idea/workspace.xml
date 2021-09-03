@@ -1,27 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_02_loop/exercise/DisplayPrime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_02_loop/exercise/DisplayPrimeLessThan100.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_02_loop/exercise/DisplayShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/ReverseArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../2. module 1/11. Cấu trúc lặp 2/Bài tập/VL2_Vẽ tam giác.html" beforeDir="false" afterPath="$PROJECT_DIR$/../2. module 1/11. Cấu trúc lặp 2/Bài tập/VL2_Vẽ tam giác.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/DeleteElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/FindMaxArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/FindMinArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/GatherArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/InsertElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindMaxElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindValueInArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/META-INF/3. module 2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/ConvertUSDToVND.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/ConvertUSDToVND.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/Greetings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/Greetings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/NumbersToWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/NumbersToWords.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/practice/BodyMassIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/practice/BodyMassIndex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrimeLessThan100.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrimeLessThan100.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/CheckPrime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/CheckPrime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/GreatestCommonFactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/GreatestCommonFactor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/InterestCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/InterestCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DateOfMonth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DateOfMonth.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DeclareVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DeclareVariable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LeapYear.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LeapYear.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LinearEquationResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LinearEquationResolver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/OperatorExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/OperatorExpression.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/SystemTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/SystemTime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_01_introduction_to_java/exercise/NumbersToWords.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_01_introduction_to_java/exercise/NumbersToWords.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,15 +73,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.ReverseArray">
-    <configuration name="DisplayPrime" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_02_loop.exercise.DisplayPrime" />
+  <component name="RunManager" selected="Application.FindMinArray">
+    <configuration name="FindMaxArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.FindMaxArray" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_02_loop.exercise.*" />
+          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -63,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DisplayPrimeLessThan100" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_02_loop.exercise.DisplayPrimeLessThan100" />
+    <configuration name="FindMinArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.FindMinArray" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_02_loop.exercise.*" />
+          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -76,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DisplayShape" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_02_loop.exercise.DisplayShape" />
+    <configuration name="GatherArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.GatherArray" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_02_loop.exercise.*" />
+          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,12 +121,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReverseArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.practice.ReverseArray" />
+    <configuration name="InsertElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.InsertElement" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.practice.*" />
+          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.test" />
+      <module name="3. module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,14 +149,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReverseArray" />
-        <item itemvalue="Application.DisplayPrimeLessThan100" />
-        <item itemvalue="Application.DisplayPrime" />
-        <item itemvalue="Application.DisplayShape" />
+        <item itemvalue="Application.FindMinArray" />
+        <item itemvalue="Application.FindMaxArray" />
+        <item itemvalue="Application.GatherArray" />
+        <item itemvalue="Application.InsertElement" />
+        <item itemvalue="Application.test" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="" />
@@ -119,8 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630571151135</updated>
+      <workItem from="1630641498339" duration="15960000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -133,5 +186,47 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1630663260998">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630663260998" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1630663260997">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1630663260997" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1630663260997">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1630663260997" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1630663260998">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1630663260998" />
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1630663259787">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
+    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1630663259787">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1630663259787">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1630663259787">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1630651948963">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1630651948963" />
+    <state x="425" y="185" key="run.anything.popup" timestamp="1630655659758">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="425" y="185" key="run.anything.popup/0.0.1536.816@0.0.1536.816" timestamp="1630655659758" />
   </component>
 </project>
