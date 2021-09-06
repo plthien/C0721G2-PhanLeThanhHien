@@ -2,7 +2,7 @@ package _03_Array_Method.practice;
 
 import java.util.Scanner;
 
-public class CountStudentsPass {
+public class CountStudentsPassing {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         float [] array;

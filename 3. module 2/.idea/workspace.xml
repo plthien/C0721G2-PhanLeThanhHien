@@ -20,34 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/DeleteElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/FindMaxArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/FindMinArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/GatherArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/exercise/InsertElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindMaxElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindValueInArray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/ConvertTemperature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindMinValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/QuadraticEquation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/QuadraticEquationMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/StopWatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/StopWatchMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/practice/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/practice/RectangleMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/ConvertUSDToVND.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/ConvertUSDToVND.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/Greetings.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/Greetings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/NumbersToWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/exercise/NumbersToWords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/practice/BodyMassIndex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_01_introduction_to_java/practice/BodyMassIndex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrimeLessThan100.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayPrimeLessThan100.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/exercise/DisplayShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/CheckPrime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/CheckPrime.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/GreatestCommonFactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/GreatestCommonFactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/InterestCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/InterestCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_02_loop/practice/Menu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DateOfMonth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DateOfMonth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DeclareVariable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/DeclareVariable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LeapYear.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LeapYear.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LinearEquationResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/LinearEquationResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/OperatorExpression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/OperatorExpression.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/SystemTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/ss1_introduction_to_java/thuc_hanh/SystemTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_Array_Method/practice/CountStudentsPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/CountStudentsPassing.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +64,13 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.FindMinArray">
-    <configuration name="FindMaxArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.FindMaxArray" />
+  <component name="RunManager" selected="Application.StopWatchMain">
+    <configuration name="ConvertTemperature" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.practice.ConvertTemperature" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="PATTERN" value="_03_Array_Method.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,12 +78,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindMinArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.FindMinArray" />
+    <configuration name="FindMinValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.practice.FindMinValue" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="PATTERN" value="_03_Array_Method.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GatherArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.GatherArray" />
+    <configuration name="QuadraticEquationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_04_Class_Object.exercise.QuadraticEquationMain" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="PATTERN" value="_04_Class_Object.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.InsertElement" />
+    <configuration name="RectangleMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_04_Class_Object.practice.RectangleMain" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="PATTERN" value="_04_Class_Object.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_Array_Method.exercise.test" />
+    <configuration name="StopWatchMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_04_Class_Object.exercise.StopWatchMain" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.exercise.*" />
+          <option name="PATTERN" value="_04_Class_Object.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -149,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FindMinArray" />
-        <item itemvalue="Application.FindMaxArray" />
-        <item itemvalue="Application.GatherArray" />
-        <item itemvalue="Application.InsertElement" />
-        <item itemvalue="Application.test" />
+        <item itemvalue="Application.StopWatchMain" />
+        <item itemvalue="Application.QuadraticEquationMain" />
+        <item itemvalue="Application.RectangleMain" />
+        <item itemvalue="Application.FindMinValue" />
+        <item itemvalue="Application.ConvertTemperature" />
       </list>
     </recent_temporary>
   </component>
@@ -169,6 +152,8 @@
       <option name="presentableId" value="Default" />
       <updated>1630571151135</updated>
       <workItem from="1630641498339" duration="15960000" />
+      <workItem from="1630891088930" duration="3959000" />
+      <workItem from="1630909564096" duration="12372000" />
     </task>
     <servers />
   </component>
@@ -188,38 +173,42 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1630663260998">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1630917343468">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630663260998" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1630663260997">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1630917343468" />
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1630923812554">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1630663260997" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1630663260997">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630923812554" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1630923812554">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1630663260997" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1630663260998">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1630923812554" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1630923812538">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1630663260998" />
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1630663259787">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1630923812538" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1630923812554">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
-    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1630663259787">
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1630923812554" />
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1630915906095">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
-    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1630663259787">
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
+    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1630915906095">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
-    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1630663259787">
+    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1630915906095">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1630663259787" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1630915906095">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1630651948963">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
