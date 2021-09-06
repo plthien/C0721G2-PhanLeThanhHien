@@ -79,7 +79,7 @@
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.practice.*" />
+          <option name="PATTERN" value="_03_array_method.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,7 +92,7 @@
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_Array_Method.practice.*" />
+          <option name="PATTERN" value="_03_array_method.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,7 +105,7 @@
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_Class_Object.exercise.*" />
+          <option name="PATTERN" value="_04_class_object.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,7 +118,7 @@
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_Class_Object.practice.*" />
+          <option name="PATTERN" value="_04_class_object.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,7 +131,7 @@
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_Class_Object.exercise.*" />
+          <option name="PATTERN" value="_04_class_object.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
