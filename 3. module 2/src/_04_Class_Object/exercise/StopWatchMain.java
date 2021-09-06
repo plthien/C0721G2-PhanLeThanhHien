@@ -1,4 +1,4 @@
-package _04_Class_Object.exercise;
+package _04_class_object.exercise;
 
 public class StopWatchMain {
     public static void main(String[] args) {

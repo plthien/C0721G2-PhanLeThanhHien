@@ -1,4 +1,4 @@
-package _03_Array_Method.practice;
+package _03_array_method.practice;
 
 
 import java.util.Scanner;
@@ -14,6 +14,7 @@ public class ConvertTemperature {
             System.out.println("0. Exit");
             System.out.println("Enter your choice: ");
             choice = sc.nextInt();
+
             switch (choice) {
                 case 1:
                     System.out.println("Enter The value of Fahrenheit: ");

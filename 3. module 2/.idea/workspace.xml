@@ -19,7 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="" />
+    <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/CountCharactersInString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/CountCharactersInString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/DeleteElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/DeleteElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/FindMaxArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/FindMaxArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/FindMinArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/FindMinArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/GatherArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/GatherArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/InsertElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/InsertElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/SumColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/SumColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/exercise/SumDiagonal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/exercise/SumDiagonal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/ConvertTemperature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/ConvertTemperature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/CountStudentsPassing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/CountStudentsPassing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/FindMaxElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/FindMaxElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/FindMinValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/FindMinValue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/FindValueInArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/FindValueInArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_03_array_method/practice/ReverseArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_array_method/practice/ReverseArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/exercise/QuadraticEquation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/QuadraticEquation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/exercise/QuadraticEquationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/QuadraticEquationMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatchMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatchMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/practice/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/practice/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_04_class_object/practice/RectangleMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/practice/RectangleMain.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -143,7 +164,7 @@
       <workItem from="1630891088930" duration="3959000" />
       <workItem from="1630909564096" duration="12372000" />
       <workItem from="1630924754690" duration="439000" />
-      <workItem from="1630941260647" duration="86000" />
+      <workItem from="1630941260647" duration="474000" />
     </task>
     <servers />
   </component>

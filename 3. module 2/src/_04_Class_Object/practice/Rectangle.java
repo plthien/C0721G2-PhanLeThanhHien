@@ -1,4 +1,4 @@
-package _04_Class_Object.practice;
+package _04_class_object.practice;
 
 public class Rectangle {
     double width, height;

@@ -1,4 +1,4 @@
-package _03_Array_Method.practice;
+package _03_array_method.practice;
 
 import java.util.Scanner;
 
