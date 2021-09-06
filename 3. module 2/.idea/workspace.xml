@@ -19,19 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/ConvertTemperature.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/FindMinValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/QuadraticEquation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/QuadraticEquationMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/StopWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/exercise/StopWatchMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/practice/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_Class_Object/practice/RectangleMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_03_Array_Method/practice/CountStudentsPass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_03_Array_Method/practice/CountStudentsPassing.java" afterDir="false" />
-    </list>
+    <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,6 +142,7 @@
       <workItem from="1630641498339" duration="15960000" />
       <workItem from="1630891088930" duration="3959000" />
       <workItem from="1630909564096" duration="12372000" />
+      <workItem from="1630924754690" duration="439000" />
     </task>
     <servers />
   </component>
