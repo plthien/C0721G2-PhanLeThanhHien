@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7775467b-6c23-41cf-bd37-f2c55a35c99a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/3. module 2/src/_04_class_object/exercise/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3. module 2/src/_04_class_object/exercise/FanMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/C0721G2-PhanLeThanhHien.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/CountCharactersInString.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/CountCharactersInString.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/DeleteElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/DeleteElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/FindMaxArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/FindMaxArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/GatherArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/GatherArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/InsertElement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/SumColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/SumColumn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/SumDiagonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/exercise/SumDiagonal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/ConvertTemperature.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/ConvertTemperature.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/CountStudentsPassing.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/CountStudentsPassing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindMaxElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindMaxElement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindMinValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindMinValue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindValueInArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/FindValueInArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquation.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquationMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/StopWatch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/StopWatchMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/exercise/StopWatchMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/practice/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/practice/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/practice/RectangleMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/out/production/3. module 2/_04_Class_Object/practice/RectangleMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2/src/_04_class_object/exercise/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2/src/_04_class_object/exercise/StopWatch.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1xnss11lVfOpr3d473n3CfcRFbJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7775467b-6c23-41cf-bd37-f2c55a35c99a" name="Default Changelist" comment="" />
+      <created>1631002389937</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1631002389937</updated>
+      <workItem from="1631002392974" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
