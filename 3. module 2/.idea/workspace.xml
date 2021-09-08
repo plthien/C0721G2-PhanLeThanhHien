@@ -20,38 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/Fan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/FanMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../C0721G2-PhanLeThanhHien.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/C0721G2-PhanLeThanhHien.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/exercise/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/exercise/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/exercise/TestCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/exercise/TestStudent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/practice/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/practice/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/practice/TestStaticMethod.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_05_access_modifier_static/practice/TestStaticProperty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/META-INF/3. module 2.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/CountCharactersInString.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/CountCharactersInString.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/DeleteElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/DeleteElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMaxArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMaxArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/FindMinArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/GatherArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/GatherArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/InsertElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/SumColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/SumColumn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/SumDiagonal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/exercise/SumDiagonal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ConvertTemperature.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ConvertTemperature.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/CountStudentsPassing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/CountStudentsPassing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindMaxElement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindMaxElement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindMinValue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindMinValue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindValueInArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/FindValueInArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_03_Array_Method/practice/ReverseArray.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/QuadraticEquationMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/StopWatch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/StopWatch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/StopWatchMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/exercise/StopWatchMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/practice/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/practice/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/practice/RectangleMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_04_Class_Object/practice/RectangleMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_04_class_object/exercise/StopWatch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,26 +57,13 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FuramaResort/src" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.FanMain">
-    <configuration name="DeleteElement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_array_method.exercise.DeleteElement" />
-      <module name="3. module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="_03_array_method.exercise.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestStudent">
     <configuration name="FanMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_04_class_object.exercise.FanMain" />
       <module name="3. module 2" />
@@ -113,12 +77,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuadraticEquationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_04_Class_Object.exercise.QuadraticEquationMain" />
+    <configuration name="TestCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.exercise.TestCircle" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_class_object.exercise.*" />
+          <option name="PATTERN" value="_05_access_modifier_static.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,12 +90,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchMain (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_04_class_object.exercise.StopWatchMain" />
+    <configuration name="TestStaticMethod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.practice.TestStaticMethod" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_class_object.exercise.*" />
+          <option name="PATTERN" value="_05_access_modifier_static.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,12 +103,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StopWatchMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_04_Class_Object.exercise.StopWatchMain" />
+    <configuration name="TestStaticProperty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.practice.TestStaticProperty" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_04_class_object.exercise.*" />
+          <option name="PATTERN" value="_05_access_modifier_static.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.exercise.TestStudent" />
+      <module name="3. module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_05_access_modifier_static.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestStudent" />
+        <item itemvalue="Application.TestCircle" />
+        <item itemvalue="Application.TestStaticProperty" />
+        <item itemvalue="Application.TestStaticMethod" />
         <item itemvalue="Application.FanMain" />
-        <item itemvalue="Application.StopWatchMain (1)" />
-        <item itemvalue="Application.DeleteElement" />
-        <item itemvalue="Application.StopWatchMain" />
-        <item itemvalue="Application.QuadraticEquationMain" />
       </list>
     </recent_temporary>
   </component>
@@ -184,6 +161,7 @@
       <workItem from="1630999744126" duration="41000" />
       <workItem from="1631002235761" duration="449000" />
       <workItem from="1631006827344" duration="559000" />
+      <workItem from="1631059248955" duration="4303000" />
     </task>
     <servers />
   </component>
@@ -203,46 +181,46 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1630990312431">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631065301909">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1630990312431" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631002652034">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631065301909" />
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631072849500">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631002652034" />
-    <state width="1342" height="192" key="GridCell.Tab.0.bottom" timestamp="1631007391084">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631072849500" />
+    <state width="1493" height="258" key="GridCell.Tab.0.bottom" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1342" height="192" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631007391084" />
-    <state width="1342" height="192" key="GridCell.Tab.0.center" timestamp="1631007391084">
+    <state width="1493" height="258" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.0.center" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1342" height="192" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631007391084" />
-    <state width="1342" height="192" key="GridCell.Tab.0.left" timestamp="1631007391084">
+    <state width="1493" height="258" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.0.left" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1342" height="192" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631007391084" />
-    <state width="1342" height="192" key="GridCell.Tab.0.right" timestamp="1631007391084">
+    <state width="1493" height="258" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.0.right" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1342" height="192" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631007391084" />
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1630915906095">
+    <state width="1493" height="258" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
-    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1630915906095">
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
-    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1630915906095">
+    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
-    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1630915906095">
+    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1630915906095" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1631072851281" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1630999783052">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
