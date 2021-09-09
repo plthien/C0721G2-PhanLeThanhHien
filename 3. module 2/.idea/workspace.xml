@@ -20,13 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Cylinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/MoveablePoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Point2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Point3D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/TestCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/TestPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/TestPoint2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/TestTriangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/test.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,20 +66,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.FanMain">
-    <configuration name="FanMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_04_class_object.exercise.FanMain" />
-      <module name="3. module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="_04_class_object.exercise.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestTriangle">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_06_inheritance.practice.Test" />
       <module name="3. module 2" />
@@ -89,11 +81,11 @@
       </method>
     </configuration>
     <configuration name="TestCircle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.exercise.TestCircle" />
+      <option name="MAIN_CLASS_NAME" value="_06_inheritance.exercise.TestCircle" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_05_access_modifier_static.exercise.*" />
+          <option name="PATTERN" value="_06_inheritance.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestStaticProperty" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.practice.TestStaticProperty" />
+    <configuration name="TestPoint" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_06_inheritance.exercise.TestPoint" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_05_access_modifier_static.practice.*" />
+          <option name="PATTERN" value="_06_inheritance.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,12 +106,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_05_access_modifier_static.exercise.TestStudent" />
+    <configuration name="TestPoint2D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_06_inheritance.exercise.TestPoint2D" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_05_access_modifier_static.exercise.*" />
+          <option name="PATTERN" value="_06_inheritance.exercise.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestTriangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_06_inheritance.exercise.TestTriangle" />
+      <module name="3. module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_06_inheritance.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FanMain" />
+        <item itemvalue="Application.TestTriangle" />
+        <item itemvalue="Application.TestPoint" />
+        <item itemvalue="Application.TestPoint2D" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.TestStudent" />
-        <item itemvalue="Application.TestCircle" />
-        <item itemvalue="Application.TestStaticProperty" />
+        <item itemvalue="Application.TestCircle (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -160,7 +165,7 @@
       <workItem from="1631002235761" duration="449000" />
       <workItem from="1631006827344" duration="559000" />
       <workItem from="1631059248955" duration="4303000" />
-      <workItem from="1631168970393" duration="3496000" />
+      <workItem from="1631168970393" duration="15921000" />
     </task>
     <servers />
   </component>
@@ -180,30 +185,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631170675549">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631184463975">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631170675549" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631184463975" />
     <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631072849500">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631072849500" />
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631172489822">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631185233647">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631172489822" />
-    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631172489822">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631185233647">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631172489822" />
-    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631172489822">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631185233647">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631172489822" />
-    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631172489822">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631185233647">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631172489822" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
     <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
