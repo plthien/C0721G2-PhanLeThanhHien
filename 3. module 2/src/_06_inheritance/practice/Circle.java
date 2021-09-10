@@ -1,6 +1,8 @@
 package _06_inheritance.practice;
 
-public class Circle extends Shape {
+import _07_abstract_interface.exercise.Resizeable;
+
+public class Circle extends Shape{
     private double radius;
 
     public Circle() {
@@ -35,5 +37,10 @@ public class Circle extends Shape {
     @Override
     public String toString() {
         return "A Circle with radius = " + this.getRadius() + ", which is a subclass of " + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.radius+=this.radius * percent / 100;
     }
 }

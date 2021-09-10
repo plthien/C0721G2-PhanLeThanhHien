@@ -1,6 +1,8 @@
 package _06_inheritance.practice;
 
-public class Square extends Rectangle {
+import _07_abstract_interface.exercise.Colorable;
+
+public class Square extends Rectangle implements Colorable {
 
     public Square() {
         super.setWidth(1.0);
@@ -25,16 +27,16 @@ public class Square extends Rectangle {
     }
 
     @Override
-    public void setWidth(double width) {
-        this.setSize(width);
-    }
-    @Override
-    public void setLength(double length){
-        this.setSize(length);
+    public String toString() {
+        return "A Square with side=" + this.getSize() + ", which is a subclass of " + super.toString();
     }
 
     @Override
-    public String toString() {
-        return "A Square with side="+ this.getSize()+", which is a subclass of " +super.toString();
+    public void resize(double percent) {
+        this.setSize(this.getSize() + this.getSize() * percent / 100);
+    }
+    @Override
+    public void howToColor(){
+        System.out.println("Color all four side");
     }
 }

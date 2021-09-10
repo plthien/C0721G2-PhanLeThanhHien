@@ -4,6 +4,6 @@ public class Orange extends Fruit {
 
     @Override
     public String howToEat() {
-        return null;
+        return "Orange could be juiced";
     }
 }

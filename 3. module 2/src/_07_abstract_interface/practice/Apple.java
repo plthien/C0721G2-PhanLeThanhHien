@@ -1,8 +1,8 @@
 package _07_abstract_interface.practice;
 
-public class Apple  extends Fruit{
+public class Apple extends Fruit{
     @Override
     public String howToEat() {
-        return null;
+        return "Apple could be slided";
     }
 }

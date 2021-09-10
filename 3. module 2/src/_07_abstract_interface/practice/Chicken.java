@@ -4,11 +4,11 @@ public class Chicken extends Animal implements Edible {
 
     @Override
     public String makeSound() {
-        return null;
+        return "Chicken: tuck tac !";
     }
 
     @Override
     public String howToEat() {
-        return null;
+        return "could be fried";
     }
 }

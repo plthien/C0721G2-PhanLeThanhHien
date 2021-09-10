@@ -1,6 +1,8 @@
 package _06_inheritance.practice;
 
-public class Rectangle extends Shape {
+import _07_abstract_interface.exercise.Resizeable;
+
+public class Rectangle extends Shape{
     private double width;
     private double length;
 
@@ -47,9 +49,14 @@ public class Rectangle extends Shape {
     @Override
     public String toString() {
         return "A Rectangle with width=" + this.getWidth()
-                +" and length="+ this.getLength()
-                +", which is a subclass of " + super.toString();
+                + " and length=" + this.getLength()
+                + ", which is a subclass of " + super.toString();
     }
 
 
+    @Override
+    public void resize(double percent) {
+        this.width += this.width * percent / 100;
+        this.length += this.length * percent / 100;
+    }
 }

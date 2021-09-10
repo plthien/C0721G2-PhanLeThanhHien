@@ -1,6 +1,8 @@
 package _06_inheritance.practice;
 
-public class Shape {
+import _07_abstract_interface.exercise.Resizeable;
+
+public class Shape implements Resizeable {
     private String color;
     private boolean filled;
 
@@ -35,5 +37,8 @@ public class Shape {
         return "A Shape with color of " +this.getColor() + " and " + (this.getFilled() ? "filled" : "not filled");
     }
 
+    @Override
+    public void resize(double percent) {
+    }
 }
 
