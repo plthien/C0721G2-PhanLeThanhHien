@@ -57,8 +57,8 @@ public class MoveablePoint extends Point {
     }
 
     public MoveablePoint move(){
-        super.x += this.xSpeed;
-        super.y += this.ySpeed;
+        super.setX(super.getX() + this.xSpeed);
+        super.setY(super.getY() + this.ySpeed);
         return this;
 
     }

@@ -1,8 +1,8 @@
 package _06_inheritance.exercise;
 
 public class Point {
-    protected float x = 0.0f;
-    protected float y = 0.0f;
+    private float x = 0.0f;
+    private float y = 0.0f;
     private float[] arr = new float[2];
 
     public Point() {

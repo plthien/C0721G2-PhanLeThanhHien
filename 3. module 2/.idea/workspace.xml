@@ -20,9 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Animal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Chicken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Edible.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Fruit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Orange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Tiger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/exercise/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/exercise/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Cylinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/exercise/MoveablePoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/MoveablePoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/exercise/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/exercise/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -57,7 +65,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.TestCircle">
+  <component name="RunManager" selected="Application.TestPoint">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_06_inheritance.practice.Test" />
       <module name="3. module 2" />
@@ -125,9 +133,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestPoint" />
         <item itemvalue="Application.TestCircle" />
         <item itemvalue="Application.TestTriangle" />
-        <item itemvalue="Application.TestPoint" />
         <item itemvalue="Application.TestPoint2D" />
         <item itemvalue="Application.Test" />
       </list>
@@ -157,7 +165,7 @@
       <workItem from="1631006827344" duration="559000" />
       <workItem from="1631059248955" duration="4303000" />
       <workItem from="1631168970393" duration="15921000" />
-      <workItem from="1631235140877" duration="1811000" />
+      <workItem from="1631235140877" duration="3826000" />
     </task>
     <servers />
   </component>
@@ -177,30 +185,30 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631184463975">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631249050918">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631184463975" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631249050918" />
     <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631072849500">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631072849500" />
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631185233647">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631237150168">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
-    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631185233647">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631237150168" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631237150168">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
-    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631185233647">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631237150168" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631237150168">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
-    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631185233647">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631237150168" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631237150168">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631185233647" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631237150168" />
     <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631072851281">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
