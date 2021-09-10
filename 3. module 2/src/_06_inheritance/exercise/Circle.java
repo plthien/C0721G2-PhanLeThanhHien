@@ -3,6 +3,7 @@ package _06_inheritance.exercise;
 public class Circle {
     private double radius;
     private String color;
+    protected double area;
 
     public Circle() {
 
@@ -19,24 +20,23 @@ public class Circle {
 
     public void setRadius(double radius) {
         this.radius = radius;
+        this.area = this.radius * this.radius * Math.PI;
+
     }
 
     public String getColor() {
         return this.color;
+
     }
 
     public void setColor(String color) {
         this.color = color;
     }
 
-    public double getArea() {
-        return this.radius * this.radius * Math.PI;
-    }
-
     @Override
     public String toString() {
         return "Circles width radius = "+this.getRadius() +
-                ", area = "+ this.getArea() +
+                ", area = "+ this.area +
                 ", color of " + this.getColor();
     }
 }
