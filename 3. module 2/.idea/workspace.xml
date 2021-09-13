@@ -20,32 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/Colorable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ColorableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/Resizeable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ResizeableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/AbstractAndInterfaceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/CircleComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/CircleComparatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/ComparableCircle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/ComparableCircleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Circle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Circle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_06_inheritance/practice/Square.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Apple.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Apple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Chicken.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Chicken.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Orange.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Orange.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Tiger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Tiger.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/practice/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Circle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/practice/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/practice/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_06_inheritance/practice/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_06_inheritance/practice/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Chicken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Chicken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Orange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Orange.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Tiger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/practice/Tiger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/exercise/ResizeableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/exercise/ResizeableTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ResizeableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ResizeableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -181,7 +160,12 @@
       <workItem from="1631006827344" duration="559000" />
       <workItem from="1631059248955" duration="4303000" />
       <workItem from="1631168970393" duration="15921000" />
-      <workItem from="1631235140877" duration="13535000" />
+      <workItem from="1631235140877" duration="14358000" />
+      <workItem from="1631267125256" duration="2081000" />
+      <workItem from="1631269381816" duration="58000" />
+      <workItem from="1631270526490" duration="30000" />
+      <workItem from="1631496162725" duration="388000" />
+      <workItem from="1631497190348" duration="1085000" />
     </task>
     <servers />
   </component>
@@ -201,46 +185,46 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631263515941">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631268011289">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631263515941" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631268011289" />
     <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631072849500">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631072849500" />
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631263949724">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631269221120">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631263949724" />
-    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631263949724">
+    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631269221120" />
+    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631269221119">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631263949724" />
-    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631263949724">
+    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
+    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631269221119">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631263949724" />
-    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631263949724">
+    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
+    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631269221119">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631263949724" />
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631256531609">
+    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631264875786">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631256531609" />
-    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1631256531608">
+    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631264875786" />
+    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1631264875785">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1631256531608" />
-    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1631256531608">
+    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1631264875785" />
+    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1631264875785">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1631256531608" />
-    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1631256531608">
+    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1631264875785" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1631264875786">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1631256531608" />
+    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1631264875786" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1630999783052">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
