@@ -1,4 +1,4 @@
-package _07_abstract_interface.practice;
+package _07_abstract_interface.practice.interface_comparator;
 
 import _06_inheritance.practice.Circle;
 

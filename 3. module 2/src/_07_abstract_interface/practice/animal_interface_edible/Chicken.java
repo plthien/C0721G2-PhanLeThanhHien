@@ -1,4 +1,4 @@
-package _07_abstract_interface.practice;
+package _07_abstract_interface.practice.animal_interface_edible;
 
 public class Chicken extends Animal implements Edible {
 

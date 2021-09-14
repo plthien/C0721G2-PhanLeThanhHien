@@ -1,9 +1,9 @@
-package _07_abstract_interface.practice;
+package _07_abstract_interface.practice.interface_comparator;
 
 import _06_inheritance.practice.Circle;
+import _07_abstract_interface.practice.interface_comparator.CircleComparator;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 public class CircleComparatorTest {
     public static void main(String[] args) {

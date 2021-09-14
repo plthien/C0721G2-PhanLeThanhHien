@@ -1,4 +1,6 @@
-package _07_abstract_interface.practice;
+package _07_abstract_interface.practice.animal_interface_edible;
+
+import _07_abstract_interface.practice.animal_interface_edible.*;
 
 public class AbstractAndInterfaceTest {
     public static void main(String[] args) {

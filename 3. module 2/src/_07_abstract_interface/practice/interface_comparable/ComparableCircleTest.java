@@ -1,4 +1,6 @@
-package _07_abstract_interface.practice;
+package _07_abstract_interface.practice.interface_comparable;
+
+import _07_abstract_interface.practice.interface_comparable.ComparableCircle;
 
 import java.util.Arrays;
 
