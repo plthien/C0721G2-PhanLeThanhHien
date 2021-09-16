@@ -1,51 +1,26 @@
 package _11_stack_queue.exercise;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.Stack;
 
 public class ReverseByStack {
     public static void main(String[] args) {
-        //arraylist
-        ArrayList<Integer> listInteger = new ArrayList<>();
-        listInteger.add(1);
-        listInteger.add(2);
-        listInteger.add(3);
-        listInteger.add(4);
-        listInteger.add(5);
-        System.out.println("Before reverse: ");
-        System.out.println(listInteger);
+        int [] integerArray = {1,2,3,4,5};
 
+        System.out.println("Before reverse: ");
+        System.out.println(Arrays.toString(integerArray));
         Stack<Integer> stack = new Stack<>();
-        while (!listInteger.isEmpty()) {
-            stack.push(listInteger.remove(0));
+
+        for (int i = 0; i < integerArray.length ; i++) {
+            stack.push(integerArray[i]);
         }
-        while (!stack.empty()) {
-            listInteger.add(stack.pop());
+
+        for (int i = 0; i < integerArray.length ; i++) {
+            integerArray[i] = stack.pop();
         }
         System.out.println("After reverse: ");
-        System.out.println(listInteger);
+        System.out.println(Arrays.toString(integerArray));
 
-        //linkedlist
-        LinkedList<Integer> linkedListInteger = new LinkedList<>();
-        linkedListInteger.add(1);
-        linkedListInteger.add(2);
-        linkedListInteger.add(3);
-        linkedListInteger.add(4);
-        linkedListInteger.add(5);
-        System.out.println("Before reverse: ");
-        System.out.println(linkedListInteger);
-
-        while (!linkedListInteger.isEmpty()) {
-            stack.push(linkedListInteger.removeFirst());
-        }
-
-        while (!stack.isEmpty()) {
-            linkedListInteger.add(stack.pop());
-        }
-
-        System.out.println("After reverse: ");
-        System.out.println(linkedListInteger);
 
         //reverse string
         Stack<String> wStack = new Stack<>();
