@@ -30,6 +30,6 @@ public class CheckBracket {
                 }
             }
         }
-        return stack.size() == 0;
+        return stack.isEmpty();
     }
 }
