@@ -26,40 +26,35 @@ public class ProductManager {
         displayProducts();
     }
 
-    public static int searchProductById(String id) {
+    public static void editProductById(String id) {
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i).getId().equals(id)) {
-                return i;
+                System.out.println(products.get(i).toString());
+                System.out.println("Enter new Id: ");
+                String newId = sc.nextLine();
+                System.out.println("Enter new Name: ");
+                String name = sc.nextLine();
+                System.out.println("Enter new Price: ");
+                double price = Double.parseDouble(sc.nextLine());
+                products.get(i).setId(newId);
+                products.get(i).setName(name);
+                products.get(i).setPrice(price);
+                displayProducts();
+                return;
             }
         }
-        return -1;
+        System.out.println("Id is not exist");
     }
 
-    public static void editProductById(int index) {
-        if (index != -1) {
-            System.out.println(products.get(index).toString());
-            System.out.println("Enter new Id: ");
-            String id = sc.nextLine();
-            System.out.println("Enter new Name: ");
-            String name = sc.nextLine();
-            System.out.println("Enter new Price: ");
-            double price = Double.parseDouble(sc.nextLine());
-            products.get(index).setId(id);
-            products.get(index).setName(name);
-            products.get(index).setPrice(price);
-            displayProducts();
-        } else {
-            System.out.println("Id is not exist");
+    public static void deleteProductById(String id) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId().equals(id)) {
+                products.remove(i);
+                displayProducts();
+                return;
+            }
         }
-    }
-
-    public static void deleteProductById(int index) {
-        if (index != -1) {
-            products.remove(index);
-            displayProducts();
-        } else {
-            System.out.println("Id is not exist");
-        }
+        System.out.println("Id is not exist");
     }
 
     public static void searchProductByName(String name) {
@@ -68,7 +63,6 @@ public class ProductManager {
             if (products.get(i).getName().equals(name)) {
                 System.out.println(products.get(i).toString());
                 flag = false;
-
             }
         }
         if (flag) {

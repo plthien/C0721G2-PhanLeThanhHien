@@ -32,14 +32,14 @@ public class Test {
                 case 2: {
                     System.out.println("Enter id: ");
                     String id = sc.nextLine();
-                    ProductManager.editProductById(ProductManager.searchProductById(id));
+                    ProductManager.editProductById(id);
                     break;
                 }
 
                 case 3: {
                     System.out.println("Enter id: ");
                     String id = sc.nextLine();
-                    ProductManager.deleteProductById(ProductManager.searchProductById(id));
+                    ProductManager.deleteProductById(id);
                     break;
                 }
 
