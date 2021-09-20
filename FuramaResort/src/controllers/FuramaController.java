@@ -45,32 +45,32 @@ public class FuramaController {
                 "3. Return main menu"
         };
 
-        displayMainMenu(management);
+        displayMenu(management);
         int choice;
 
         do {
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    displayMainMenu(employee);
+                    displayMenu(employee);
                     break;
                 case 2:
-                    displayMainMenu(customer);
+                    displayMenu(customer);
                     break;
                 case 3:
-                    displayMainMenu(facility);
+                    displayMenu(facility);
                     break;
                 case 4:
-                    displayMainMenu(booking);
+                    displayMenu(booking);
                     break;
                 case 5:
-                    displayMainMenu(promotion);
+                    displayMenu(promotion);
                     break;
             }
         } while (choice != 6);
     }
 
-    public static void displayMainMenu(String[] arr) {
+    public static void displayMenu(String[] arr) {
         for (String s : arr) {
             System.out.println(s + "\n");
         }

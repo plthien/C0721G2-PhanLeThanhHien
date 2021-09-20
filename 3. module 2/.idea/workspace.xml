@@ -20,10 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/_13_searching_algorithm/exercise/StringSearching.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_13_searching_algorithm/optional/AlgorithmComplexityTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_13_searching_algorithm/optional/BinarySearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_13_searching_algorithm/optional/MaxLengthString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_13_searching_algorithm/practice/BinarySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/3. module 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/3. module 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/3. module 2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/exercise/ResizeableTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/exercise/ResizeableTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ResizeableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_abstract_interface/exercise/ResizeableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/AbstractAndInterfaceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Apple.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Chicken.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/CircleComparator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/CircleComparatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/ComparableCircle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/ComparableCircleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Edible.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Fruit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Orange.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_07_abstract_interface/practice/Tiger.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,24 +66,35 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FuramaResort" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.ResizeableTest">
-    <configuration name="CircleComparatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_07_abstract_interface.practice.CircleComparatorTest" />
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="_07_abstract_interface.practice.interface_comparable" />
+      <recent name="_07_abstract_interface.practice.interface_comparator" />
+      <recent name="_07_abstract_interface.practice.animal_interface_edible" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MaxLengthString">
+    <configuration name="AlgorithmComplexityTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_13_searching_algorithm.optional.AlgorithmComplexityTest" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_07_abstract_interface.practice.*" />
+          <option name="PATTERN" value="_13_searching_algorithm.optional.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -74,12 +102,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColorableTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_07_abstract_interface.exercise.ColorableTest" />
+    <configuration name="BinarySearch (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_13_searching_algorithm.optional.BinarySearch" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_07_abstract_interface.exercise.*" />
+          <option name="PATTERN" value="_13_searching_algorithm.optional.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,12 +115,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComparableCircleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_07_abstract_interface.practice.ComparableCircleTest" />
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_13_searching_algorithm.practice.BinarySearch" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_07_abstract_interface.practice.*" />
+          <option name="PATTERN" value="_13_searching_algorithm.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -100,12 +128,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResizeableTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_07_abstract_interface.exercise.ResizeableTest" />
+    <configuration name="MaxLengthString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_13_searching_algorithm.optional.MaxLengthString" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_07_abstract_interface.exercise.*" />
+          <option name="PATTERN" value="_13_searching_algorithm.optional.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -113,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_06_inheritance.practice.Test" />
+    <configuration name="StringSearching" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_13_searching_algorithm.exercise.StringSearching" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_06_inheritance.practice.*" />
+          <option name="PATTERN" value="_13_searching_algorithm.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,11 +156,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ResizeableTest" />
-        <item itemvalue="Application.ColorableTest" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.CircleComparatorTest" />
-        <item itemvalue="Application.ComparableCircleTest" />
+        <item itemvalue="Application.MaxLengthString" />
+        <item itemvalue="Application.StringSearching" />
+        <item itemvalue="Application.BinarySearch (1)" />
+        <item itemvalue="Application.AlgorithmComplexityTest" />
+        <item itemvalue="Application.BinarySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -166,6 +194,11 @@
       <workItem from="1631270526490" duration="30000" />
       <workItem from="1631496162725" duration="388000" />
       <workItem from="1631497190348" duration="1085000" />
+      <workItem from="1631601087478" duration="15887000" />
+      <workItem from="1631668878184" duration="23214000" />
+      <workItem from="1631754684521" duration="9754000" />
+      <workItem from="1631841467110" duration="18942000" />
+      <workItem from="1632099953760" duration="17425000" />
     </task>
     <servers />
   </component>
@@ -185,50 +218,70 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631268011289">
+    <state x="464" y="26" key="#MainTest" timestamp="1631699382997">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631268011289" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1631072849500">
+    <state x="464" y="26" key="#MainTest/0.0.1536.816@0.0.1536.816" timestamp="1631699382997" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631862392854">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1631072849500" />
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom" timestamp="1631269221120">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631862392854" />
+    <state x="499" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631580983470">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631269221120" />
-    <state width="1493" height="207" key="GridCell.Tab.0.center" timestamp="1631269221119">
+    <state x="499" y="187" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.816@0.0.1536.816" timestamp="1631580983470" />
+    <state x="551" y="302" width="535" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1631580985174">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
-    <state width="1493" height="207" key="GridCell.Tab.0.left" timestamp="1631269221119">
+    <state x="551" y="302" width="535" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1631580985174" />
+    <state width="387" height="466" key="DebuggerActiveHint" timestamp="1631701896977">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
-    <state width="1493" height="207" key="GridCell.Tab.0.right" timestamp="1631269221119">
+    <state width="387" height="466" key="DebuggerActiveHint/0.0.1536.816@0.0.1536.816" timestamp="1631701896977" />
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632123282198">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="207" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1631269221119" />
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom" timestamp="1631264875786">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632123282198" />
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom" timestamp="1632123283074">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1631264875786" />
-    <state width="1493" height="258" key="GridCell.Tab.1.center" timestamp="1631264875785">
+    <state width="1493" height="163" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632123283074" />
+    <state width="1493" height="163" key="GridCell.Tab.0.center" timestamp="1632123283073">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1631264875785" />
-    <state width="1493" height="258" key="GridCell.Tab.1.left" timestamp="1631264875785">
+    <state width="1493" height="163" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632123283073" />
+    <state width="1493" height="163" key="GridCell.Tab.0.left" timestamp="1632123283073">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1631264875785" />
-    <state width="1493" height="258" key="GridCell.Tab.1.right" timestamp="1631264875786">
+    <state width="1493" height="163" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632123283073" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right" timestamp="1632123283074">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="258" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1631264875786" />
+    <state width="1493" height="163" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632123283074" />
+    <state width="1493" height="228" key="GridCell.Tab.1.bottom" timestamp="1632122327158">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="228" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
+    <state width="1493" height="228" key="GridCell.Tab.1.center" timestamp="1632122327158">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="228" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
+    <state width="1493" height="228" key="GridCell.Tab.1.left" timestamp="1632122327158">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="228" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
+    <state width="1493" height="228" key="GridCell.Tab.1.right" timestamp="1632122327158">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="228" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1630999783052">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="277" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1630999783052" />
+    <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1631593111430">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.816@0.0.1536.816" timestamp="1631593111430" />
     <state x="209" y="28" key="new project wizard" timestamp="1631002653950">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -237,5 +290,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="425" y="185" key="run.anything.popup/0.0.1536.816@0.0.1536.816" timestamp="1630655659758" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/3__module_2$MaxLengthString.ic" NAME="MaxLengthString Coverage Results" MODIFIED="1632120004547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>_13_searching_algorithm.optional.*</FILTER>
+    </SUITE>
   </component>
 </project>
