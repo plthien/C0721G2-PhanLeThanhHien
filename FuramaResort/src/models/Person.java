@@ -1,30 +1,20 @@
 package models;
 
 public abstract class Person {
-    protected String  code;
-    protected String name;
-    protected String birthDay;
-    protected boolean gender;
-    protected String id;
-    protected String phoneNumber;
-    protected String email;
+    private String name;
+    private String birthDay;
+    private boolean gender;
+    private String personalID;
+    private String phoneNumber;
+    private String email;
 
-    public Person(String code, String name, String birthDay, boolean gender, String id, String phoneNumber, String email) {
-        this.code = code;
+    public Person(String name, String birthDay, boolean gender, String personalID, String phoneNumber, String email) {
         this.name = name;
         this.birthDay = birthDay;
         this.gender = gender;
-        this.id = id;
+        this.personalID = personalID;
         this.phoneNumber = phoneNumber;
         this.email = email;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     public String getName() {
@@ -43,20 +33,20 @@ public abstract class Person {
         this.birthDay = birthDay;
     }
 
-    public boolean isGender() {
-        return gender;
+    public String isGender() {
+        return this.gender ? "Male" : "Female";
     }
 
     public void setGender(boolean gender) {
         this.gender = gender;
     }
 
-    public String getId() {
-        return id;
+    public String getPersonalID() {
+        return personalID;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPersonalID(String personalID) {
+        this.personalID = personalID;
     }
 
     public String getPhoneNumber() {
@@ -74,4 +64,8 @@ public abstract class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
 }
+
+

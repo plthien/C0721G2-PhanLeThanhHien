@@ -1,5 +1,8 @@
 package controllers;
 
+import services.EmployeeService;
+import services.EmployeeServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -45,14 +48,30 @@ public class FuramaController {
                 "3. Return main menu"
         };
 
-        displayMenu(management);
-        int choice;
-
+        int choiceMenuManagement;
         do {
-            choice = sc.nextInt();
-            switch (choice) {
+            displayMenu(management);
+            choiceMenuManagement = Integer.parseInt(sc.nextLine());
+            switch (choiceMenuManagement) {
                 case 1:
-                    displayMenu(employee);
+                    int choiceEmployee;
+                    do {
+                        displayMenu(employee);
+                        choiceEmployee = Integer.parseInt(sc.nextLine());
+                        switch (choiceEmployee) {
+                            case 1:
+                                EmployeeServiceImpl.displayEmployeeList();
+                                break;
+                            case 2:
+                                EmployeeServiceImpl.addNewEmployee();
+                                break;
+                            case 3:
+                                System.out.println("Enter employee code: ");
+                                String employeeCode = sc.nextLine();
+                                EmployeeServiceImpl.editEmployee(employeeCode);
+                                break;
+                        }
+                    } while (choiceEmployee!=4);
                     break;
                 case 2:
                     displayMenu(customer);
@@ -67,10 +86,11 @@ public class FuramaController {
                     displayMenu(promotion);
                     break;
             }
-        } while (choice != 6);
+        } while (choiceMenuManagement != 6);
     }
 
     public static void displayMenu(String[] arr) {
+        System.out.println("Menu: ");
         for (String s : arr) {
             System.out.println(s + "\n");
         }
