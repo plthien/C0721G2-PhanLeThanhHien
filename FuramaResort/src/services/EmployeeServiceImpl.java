@@ -19,8 +19,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public static void displayEmployeeList() {
-        for (Person person : employee) {
-            System.out.println(person.toString());
+        for (Employee employee : employee) {
+            System.out.println(employee.toString());
         }
     }
 
@@ -54,9 +54,76 @@ public class EmployeeServiceImpl implements EmployeeService {
         boolean flag = true;
         for (int i = 0; i < employee.size(); i++) {
             if (employee.get(i).getEmployeeCode().contains(employeeCode)) {
-                System.out.println(employee.get(i).toString());
-                employee.remove(employee.get(i));
-                addNewEmployee();
+                int choice;
+                do {
+                    System.out.println(employee.get(i).toString());
+                    System.out.println("Menu: "+
+                            "1. Name \t"+
+                            "2. Birthday \t"+
+                            "3. Gender \t"+
+                            "4. Personal ID \t"+
+                            "5. Phone number \t"+
+                            "6. Email \t"+
+                            "7. Degree \t"+
+                            "8. Office \t"+
+                            "9. Salary \t"+
+                            "10. Employee Code \t"+
+                            "11. Exit");
+                    System.out.println("Enter your choice: ");
+                    choice = Integer.parseInt(sc.nextLine());
+                    switch (choice){
+                        case 1:
+                            System.out.println("Enter name: ");
+                            String name = sc.nextLine();
+                            employee.get(i).setName(name);
+                            break;
+                        case 2:
+                            System.out.println("Enter birthday: ");
+                            String birthday = sc.nextLine();
+                            employee.get(i).setBirthDay(birthday);
+                            break;
+                        case 3:
+                            System.out.println("Enter gender ( Male enter 'true' else enter 'false'): ");
+                            boolean gender = Boolean.parseBoolean(sc.nextLine());
+                            employee.get(i).setGender(gender);
+                            break;
+                        case 4:
+                            System.out.println("Enter Personal ID: ");
+                            String personalID = sc.nextLine();
+                            employee.get(i).setPersonalID(personalID);
+                            break;
+                        case 5:
+                            System.out.println("Enter phone number: ");
+                            String phoneNumber = sc.nextLine();
+                            employee.get(i).setPhoneNumber(phoneNumber);
+                            break;
+                        case 6:
+                            System.out.println("Enter email: ");
+                            String email = sc.nextLine();
+                            employee.get(i).setEmail(email);
+                            break;
+                        case 7:
+                            System.out.println("Enter degree: ");
+                            String degree = sc.nextLine();
+                            employee.get(i).setDegree(degree);
+                            break;
+                        case 8:
+                            System.out.println("Enter office: ");
+                            String office = sc.nextLine();
+                            employee.get(i).setOffice(office);
+                            break;
+                        case 9:
+                            System.out.println("Enter salary: ");
+                            double salary = Double.parseDouble(sc.nextLine());
+                            employee.get(i).setSalary(salary);
+                            break;
+                        case 10:
+                            System.out.println("Enter employee code: ");
+                            String employeeCodeNew = sc.nextLine();
+                            employee.get(i).setEmployeeCode(employeeCodeNew);
+                            break;
+                    }
+                }while (choice != 11);
                 flag = false;
                 break;
             }

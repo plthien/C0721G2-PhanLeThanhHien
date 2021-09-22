@@ -20,33 +20,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_14_sort_algorithm/exercise/InsertionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_14_sort_algorithm/exercise/InsertionSortStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_14_sort_algorithm/practice/BubbleSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_14_sort_algorithm/practice/BubbleSortByStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_14_sort_algorithm/practice/SelectionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Contract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/ContractService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_15_exception_debug/exercise/IllegalTriangleException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_15_exception_debug/exercise/Triangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_15_exception_debug/practice/ArrayExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_15_exception_debug/practice/CalculationExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_15_exception_debug/practice/LinearEquationResolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/META-INF/3. module 2.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Employee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Facility.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Facility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Facility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/uml.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/uml.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +95,13 @@
       <recent name="_07_abstract_interface.practice.animal_interface_edible" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.InsertionSort">
-    <configuration name="BubbleSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_14_sort_algorithm.practice.BubbleSort" />
+  <component name="RunManager" selected="Application.Triangle">
+    <configuration name="ArrayExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_15_exception_debug.practice.ArrayExample" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_14_sort_algorithm.practice.*" />
+          <option name="PATTERN" value="_15_exception_debug.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BubbleSortByStep" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_14_sort_algorithm.practice.BubbleSortByStep" />
+    <configuration name="CalculationExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_15_exception_debug.practice.CalculationExample" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_14_sort_algorithm.practice.*" />
+          <option name="PATTERN" value="_15_exception_debug.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,12 +135,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertionSortStep" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_14_sort_algorithm.exercise.InsertionSortStep" />
+    <configuration name="LinearEquationResolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_15_exception_debug.practice.LinearEquationResolver" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_14_sort_algorithm.exercise.*" />
+          <option name="PATTERN" value="_15_exception_debug.practice.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,12 +148,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_14_sort_algorithm.practice.SelectionSort" />
+    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_15_exception_debug.exercise.Triangle" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_14_sort_algorithm.practice.*" />
+          <option name="PATTERN" value="_15_exception_debug.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Triangle" />
+        <item itemvalue="Application.CalculationExample" />
+        <item itemvalue="Application.ArrayExample" />
+        <item itemvalue="Application.LinearEquationResolver" />
         <item itemvalue="Application.InsertionSort" />
-        <item itemvalue="Application.InsertionSortStep" />
-        <item itemvalue="Application.SelectionSort" />
-        <item itemvalue="Application.BubbleSortByStep" />
-        <item itemvalue="Application.BubbleSort" />
       </list>
     </recent_temporary>
   </component>
@@ -207,6 +208,9 @@
       <workItem from="1632099953760" duration="17425000" />
       <workItem from="1632187104137" duration="5303000" />
       <workItem from="1632219153684" duration="30000" />
+      <workItem from="1632274138158" duration="3814000" />
+      <workItem from="1632302032574" duration="47000" />
+      <workItem from="1632304334228" duration="17000" />
     </task>
     <servers />
   </component>
@@ -230,10 +234,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="464" y="26" key="#MainTest/0.0.1536.816@0.0.1536.816" timestamp="1631699382997" />
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1631862392854">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1632283387494">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1631862392854" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1632283387494" />
     <state x="499" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631580983470">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -242,46 +246,50 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="551" y="302" width="535" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1631580985174" />
+    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1632283318861">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.816@0.0.1536.816" timestamp="1632283318861" />
     <state width="387" height="466" key="DebuggerActiveHint" timestamp="1631701896977">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state width="387" height="466" key="DebuggerActiveHint/0.0.1536.816@0.0.1536.816" timestamp="1631701896977" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632197707496">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632284026571">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632197707496" />
-    <state width="1493" height="548" key="GridCell.Tab.0.bottom" timestamp="1632197708285">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632284026571" />
+    <state width="1493" height="193" key="GridCell.Tab.0.bottom" timestamp="1632284027655">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="548" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632197708285" />
-    <state width="1493" height="548" key="GridCell.Tab.0.center" timestamp="1632197708285">
+    <state width="1493" height="193" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632284027655" />
+    <state width="1493" height="193" key="GridCell.Tab.0.center" timestamp="1632284027655">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="548" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632197708285" />
-    <state width="1493" height="548" key="GridCell.Tab.0.left" timestamp="1632197708285">
+    <state width="1493" height="193" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632284027655" />
+    <state width="1493" height="193" key="GridCell.Tab.0.left" timestamp="1632284027655">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="548" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632197708285" />
-    <state width="1493" height="548" key="GridCell.Tab.0.right" timestamp="1632197708285">
+    <state width="1493" height="193" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632284027655" />
+    <state width="1493" height="193" key="GridCell.Tab.0.right" timestamp="1632284027655">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="548" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632197708285" />
-    <state width="1493" height="228" key="GridCell.Tab.1.bottom" timestamp="1632122327158">
+    <state width="1493" height="193" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632284027655" />
+    <state width="1493" height="228" key="GridCell.Tab.1.bottom" timestamp="1632283693027">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="228" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
-    <state width="1493" height="228" key="GridCell.Tab.1.center" timestamp="1632122327158">
+    <state width="1493" height="228" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632283693027" />
+    <state width="1493" height="228" key="GridCell.Tab.1.center" timestamp="1632283693026">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="228" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
-    <state width="1493" height="228" key="GridCell.Tab.1.left" timestamp="1632122327158">
+    <state width="1493" height="228" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1632283693026" />
+    <state width="1493" height="228" key="GridCell.Tab.1.left" timestamp="1632283693026">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="228" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
-    <state width="1493" height="228" key="GridCell.Tab.1.right" timestamp="1632122327158">
+    <state width="1493" height="228" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1632283693026" />
+    <state width="1493" height="228" key="GridCell.Tab.1.right" timestamp="1632283693026">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="228" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1632122327158" />
+    <state width="1493" height="228" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1632283693026" />
     <state x="277" y="0" key="SettingsEditor" timestamp="1630999783052">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

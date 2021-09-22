@@ -1,7 +1,6 @@
 package models;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
+
 
 public class Employee extends Person {
     private String degree;
@@ -56,7 +55,8 @@ public class Employee extends Person {
     @Override
     public String toString() {
         return "Employee{" +
-                " Name: " + super.getName() +
+                " Employee Code: " + this.getEmployeeCode() +
+                ", Name: " + super.getName() +
                 ", BirthDay: " + super.getBirthDay() +
                 ", Gender: " + super.isGender() +
                 ", Personal ID: " + super.getPersonalID() +
@@ -64,8 +64,6 @@ public class Employee extends Person {
                 ", Email: " + super.getEmail() +
                 ", Degree: " + this.getDegree() +
                 ", Office: " + this.getOffice() +
-                ", Salary: " + this.getSalary() +
-                ", Employee Code: " + this.getEmployeeCode() +
-                '}';
+                ", Salary: " + this.getSalary() + '}';
     }
 }

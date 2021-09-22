@@ -1,8 +1,8 @@
 package controllers;
 
-import services.EmployeeService;
+import services.CustomerServiceImpl;
 import services.EmployeeServiceImpl;
-
+import services.FacilityServiceImpl;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -37,7 +37,7 @@ public class FuramaController {
         String[] booking = new String[]{
                 "1. Add new booking",
                 "2. Display list booking",
-                "3. Create new constracts",
+                "3. Create new contracts",
                 "4. Display list contracts",
                 "5. Edit contracts",
                 "6. Return main menu"
@@ -74,10 +74,42 @@ public class FuramaController {
                     } while (choiceEmployee!=4);
                     break;
                 case 2:
-                    displayMenu(customer);
+                    int choiceCustomer;
+                    do {
+                        displayMenu(customer);
+                        choiceCustomer= Integer.parseInt(sc.nextLine());
+                        switch (choiceCustomer) {
+                            case 1:
+                                CustomerServiceImpl.displayCustomerList();
+                                break;
+                            case 2:
+                                CustomerServiceImpl.addNewCustomer();
+                                break;
+                            case 3:
+                                System.out.println("Enter customer code: ");
+                                String customerCode = sc.nextLine();
+                                CustomerServiceImpl.editCustomer(customerCode);
+                                break;
+                        }
+                    } while (choiceCustomer!=4);
                     break;
                 case 3:
-                    displayMenu(facility);
+                    int choiceFacility;
+                    do {
+                        displayMenu(facility);
+                        choiceFacility= Integer.parseInt(sc.nextLine());
+                        switch (choiceFacility) {
+                            case 1:
+                                FacilityServiceImpl.displayFacility();
+                                break;
+                            case 2:
+                                FacilityServiceImpl.addNewFacility();
+                                break;
+                            case 3:
+                                FacilityServiceImpl.displayFacilityMaintenance();
+                                break;
+                        }
+                    } while (choiceFacility!=4);
                     break;
                 case 4:
                     displayMenu(booking);
@@ -92,9 +124,9 @@ public class FuramaController {
     public static void displayMenu(String[] arr) {
         System.out.println("Menu: ");
         for (String s : arr) {
-            System.out.println(s + "\n");
+            System.out.print(s + "\t");
         }
-        System.out.println("Enter your choice: ");
+        System.out.print("\nEnter your choice: ");
     }
 
 }
