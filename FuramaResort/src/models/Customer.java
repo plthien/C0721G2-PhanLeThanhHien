@@ -9,8 +9,8 @@ public class Customer extends Person {
     private String customerCode;
 
 
-    public Customer(String name, String birthDay, boolean gender, String personalID, String phoneNumber, String email,
-                    String customerTypes, String address, String customerCode) {
+    public Customer(String customerCode, String name, String birthDay, boolean gender, String personalID, String phoneNumber, String email,
+                    String customerTypes, String address ) {
         super(name, birthDay, gender, personalID, phoneNumber, email);
         this.customerTypes = customerTypes;
         this.address = address;

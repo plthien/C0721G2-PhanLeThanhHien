@@ -18,13 +18,13 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
-    public static void displayEmployeeList() {
+    public void display() {
         for (Employee employee : employee) {
             System.out.println(employee.toString());
         }
     }
 
-    public static void addNewEmployee() {
+    public void add() {
         System.out.println("Enter name: ");
         String name = sc.nextLine();
         System.out.println("Enter birthday: ");
@@ -46,11 +46,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Enter employee code: ");
         String employeeCode = sc.nextLine();
         employee.add(new Employee(name, birthday, gender, personalID, phoneNumber, email, degree, office, salary, employeeCode));
-        displayEmployeeList();
+        display();
 
     }
 
-    public static void editEmployee(String employeeCode) {
+    public void editEmployee(String employeeCode) {
         boolean flag = true;
         for (int i = 0; i < employee.size(); i++) {
             if (employee.get(i).getEmployeeCode().contains(employeeCode)) {

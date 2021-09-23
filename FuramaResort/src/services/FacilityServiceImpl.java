@@ -23,7 +23,7 @@ public class FacilityServiceImpl implements FacilityService {
                 "Free Wifi/ Water"), 6);
     }
 
-    public static void displayFacility() {
+    public void display() {
         System.out.println("Facilities List: ");
         Set<Facility> set = facilities.keySet();
         for (Facility key : set) {
@@ -31,7 +31,7 @@ public class FacilityServiceImpl implements FacilityService {
         }
     }
 
-    public static void addNewFacility() {
+    public void add() {
         int choice;
         do {
             System.out.println("Menu: 1. Add New Villa \t 2. Add New House \t 3. Add New Room \t 4. Back to menu");
@@ -73,12 +73,12 @@ public class FacilityServiceImpl implements FacilityService {
                     facilities.put(new Room(serviceName, usableArea, cost, customerMax, rentingBy, freeServices), 0);
                     break;
             }
-            displayFacility();
+            display();
         } while (true);
 
     }
 
-    public static void displayFacilityMaintenance() {
+    public void displayFacilityMaintenance() {
         System.out.println("Facilities Maintenance List: ");
         for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
             if (entry.getValue() >= 5) {

@@ -11,19 +11,20 @@ public class CustomerServiceImpl implements CustomerService{
     static Scanner sc = new Scanner(System.in);
 
     static {
-        customers.add(new Customer("Nguyen Minh Tam","20/10/1990",false,"2010123456",
-                "078654321","minhtam@gmail.com","Member","Ha Noi","Me0001"));
-        customers.add(new Customer("Ho Van Hung","28/02/1995",true,"201710995",
-                "0935327645","vahung@gmail.com","Gold","Da Nang","Go0001"));
+        customers.add(new Customer("Me0001","Nguyen Minh Tam","20/10/1990",false,"2010123456",
+                "078654321","minhtam@gmail.com","Member","Ha Noi"));
+        customers.add(new Customer("Go0001","Ho Van Hung","28/02/1995",true,"201710995",
+                "0935327645","vahung@gmail.com","Gold","Da Nang"));
     }
 
-    public static void displayCustomerList() {
+    public void display() {
+        System.out.println("Customer List: ");
         for (Customer customer:customers) {
             System.out.println(customer.toString());
         }
     }
 
-    public static void addNewCustomer() {
+    public void add() {
         System.out.println("Enter name: ");
         String name = sc.nextLine();
         System.out.println("Enter birthday: ");
@@ -42,12 +43,12 @@ public class CustomerServiceImpl implements CustomerService{
         String address = sc.nextLine();
         System.out.println("Enter customer code: ");
         String customerCode = sc.nextLine();
-        customers.add(new Customer(name,birthday,gender,personalID,phoneNumber,email,customerTypes,address,customerCode));
-        displayCustomerList();
+        customers.add(new Customer(customerCode,name,birthday,gender,personalID,phoneNumber,email,customerTypes,address));
+        display();
 
     }
 
-    public static void editCustomer(String customerCode) {
+    public void editCustomer(String customerCode) {
         boolean flag = true;
         for (int i = 0; i < customers.size(); i++) {
             if (customers.get(i).getCustomerCode().contains(customerCode)) {
