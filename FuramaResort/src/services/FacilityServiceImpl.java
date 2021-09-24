@@ -78,6 +78,16 @@ public class FacilityServiceImpl implements FacilityService {
 
     }
 
+    public void useFacilities(String serviceName) {
+        Set<Facility> set = facilities.keySet();
+        for (Facility key : set) {
+            if (key.getServiceName().contains(serviceName)) {
+                facilities.computeIfPresent(key, (k, v) -> v + 1);
+                break;
+            }
+        }
+    }
+
     public void displayFacilityMaintenance() {
         System.out.println("Facilities Maintenance List: ");
         for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {

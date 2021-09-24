@@ -68,4 +68,8 @@ public class Booking {
                 ", checkout Date: " + this.checkOutDate +
                 '}';
     }
+
+    public String getInfoToWrite(){
+        return this.bookingCode + "," + this.customerCode + "," + this.serviceName + "," + this.checkInDate + "," + this.checkOutDate;
+    }
 }

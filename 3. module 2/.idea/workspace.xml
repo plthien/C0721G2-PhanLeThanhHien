@@ -20,43 +20,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/copy_file_text/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/copy_file_text/ReadAndWriteFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/copy_file_text/source.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/copy_file_text/target.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/read_file_csv/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/read_file_csv/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/read_file_csv/ReadFileCSV.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/exercise/read_file_csv/file.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/ReadFileExample.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/find_max_in_file/FindMaxValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/find_max_in_file/ReadAndWriteFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/find_max_in_file/numbers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_16_io_text_file/practice/find_max_in_file/result.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/ProductManage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/product.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/copy_file/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/copy_file/dest.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/copy_file/source.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/read_write_file/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/read_write_file/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/practice/read_write_file/student.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/booking.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/contract.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/customer.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/employee.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/house.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/room.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/data/villa.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/services/ContractServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_16_io_text_file/exercise/copy_file_text/ReadAndWriteFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_16_io_text_file/exercise/copy_file_text/ReadAndWriteFile.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/Service.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/ContractService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/Service.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,13 +96,13 @@
       <recent name="_07_abstract_interface.practice.animal_interface_edible" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="FindMaxValue" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_16_io_text_file.practice.find_max_in_file.FindMaxValue" />
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_16_io_text_file.exercise.read_file_csv.Main" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_16_io_text_file.practice.find_max_in_file.*" />
+          <option name="PATTERN" value="_16_io_text_file.exercise.read_file_csv.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,12 +110,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_16_io_text_file.exercise.read_file_csv.Main" />
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_17_io_binary_file_serialization.practice.copy_file.Main" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_16_io_text_file.exercise.read_file_csv.*" />
+          <option name="PATTERN" value="_17_io_binary_file_serialization.practice.copy_file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_17_io_binary_file_serialization.practice.read_write_file.Main" />
+      <module name="3. module 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_17_io_binary_file_serialization.practice.read_write_file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,25 +149,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadFileExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_16_io_text_file.practice.ReadFileExample" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_17_io_binary_file_serialization.exercise.Test" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_16_io_text_file.practice.find_max_in_file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Triangle" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_15_exception_debug.exercise.Triangle" />
-      <module name="3. module 2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="_15_exception_debug.exercise.*" />
+          <option name="PATTERN" value="_17_io_binary_file_serialization.exercise.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Main (3)" />
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.FindMaxValue" />
-        <item itemvalue="Application.ReadFileExample" />
-        <item itemvalue="Application.Triangle" />
       </list>
     </recent_temporary>
   </component>
@@ -226,6 +218,9 @@
       <workItem from="1632380333639" duration="470000" />
       <workItem from="1632381036379" duration="272000" />
       <workItem from="1632385552319" duration="358000" />
+      <workItem from="1632453732490" duration="3959000" />
+      <workItem from="1632458786039" duration="575000" />
+      <workItem from="1632467724683" duration="926000" />
     </task>
     <servers />
   </component>
@@ -249,10 +244,14 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="464" y="26" key="#MainTest/0.0.1536.816@0.0.1536.816" timestamp="1631699382997" />
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1632373513364">
+    <state x="523" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1632454527859">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1632373513364" />
+    <state x="523" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1632454527859" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1632454903879">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1632454903879" />
     <state x="499" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631580983470">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -273,26 +272,26 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state width="387" height="466" key="DebuggerActiveHint/0.0.1536.816@0.0.1536.816" timestamp="1631701896977" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632378354716">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632457719354">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632378354716" />
-    <state width="1493" height="155" key="GridCell.Tab.0.bottom" timestamp="1632381301689">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632457719354" />
+    <state width="1493" height="467" key="GridCell.Tab.0.bottom" timestamp="1632457722304">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="155" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632381301689" />
-    <state width="1493" height="155" key="GridCell.Tab.0.center" timestamp="1632381301689">
+    <state width="1493" height="467" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632457722304" />
+    <state width="1493" height="467" key="GridCell.Tab.0.center" timestamp="1632457722303">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="155" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632381301689" />
-    <state width="1493" height="155" key="GridCell.Tab.0.left" timestamp="1632381301689">
+    <state width="1493" height="467" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632457722303" />
+    <state width="1493" height="467" key="GridCell.Tab.0.left" timestamp="1632457722303">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="155" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632381301689" />
-    <state width="1493" height="155" key="GridCell.Tab.0.right" timestamp="1632381301689">
+    <state width="1493" height="467" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632457722303" />
+    <state width="1493" height="467" key="GridCell.Tab.0.right" timestamp="1632457722304">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="155" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632381301689" />
+    <state width="1493" height="467" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632457722304" />
     <state width="1493" height="228" key="GridCell.Tab.1.bottom" timestamp="1632283693027">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

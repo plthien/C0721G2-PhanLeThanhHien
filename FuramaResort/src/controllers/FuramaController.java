@@ -1,9 +1,7 @@
 package controllers;
 
-import services.BookingServiceImpl;
-import services.CustomerServiceImpl;
-import services.EmployeeServiceImpl;
-import services.FacilityServiceImpl;
+import services.*;
+
 import java.util.Scanner;
 
 public class FuramaController {
@@ -52,6 +50,7 @@ public class FuramaController {
         CustomerServiceImpl customerManage = new CustomerServiceImpl();
         FacilityServiceImpl facilityManage = new FacilityServiceImpl();
         BookingServiceImpl bookingManage = new BookingServiceImpl();
+        ContractServiceImpl contractManage = new ContractServiceImpl();
 
         int choiceMenuManagement;
         do {
@@ -131,9 +130,12 @@ public class FuramaController {
                                 bookingManage.display();
                                 break;
                             case 3:
+                                contractManage.add();
                                 break;
+                            case 4:
+                                contractManage.display();
                         }
-                    } while (choiceBooking!=4);
+                    } while (choiceBooking!=6);
                     break;
                 case 5:
                     displayMenu(promotion);
