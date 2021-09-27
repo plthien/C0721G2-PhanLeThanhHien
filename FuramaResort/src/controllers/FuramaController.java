@@ -134,6 +134,12 @@ public class FuramaController {
                                 break;
                             case 4:
                                 contractManage.display();
+                                break;
+                            case 5:
+                                System.out.println("Enter contract number: ");
+                                String contractNumber = sc.nextLine();
+                                contractManage.editContract(contractNumber);
+                                break;
                         }
                     } while (choiceBooking!=6);
                     break;

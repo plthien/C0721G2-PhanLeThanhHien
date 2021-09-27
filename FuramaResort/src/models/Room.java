@@ -38,4 +38,10 @@ public class Room extends Facility {
     public int hashCode() {
         return serviceName.hashCode();
     }
+
+    public String getInfoToWrite(){
+        return super.getServiceName() + "," + super.getUsableArea() + "," + super.getCost() + "," +
+                super.getCustomerMax() + "," + super.getRentingBy()+ "," +
+                this.getFreeServices();
+    }
 }

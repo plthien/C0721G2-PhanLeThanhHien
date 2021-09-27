@@ -54,4 +54,9 @@ public abstract class Facility {
     public void setRentingBy(String rentingBy) {
         this.rentingBy = rentingBy;
     }
+
+    public String getInfoToWrite(){
+        return this.getServiceName() + "," + this.getUsableArea() + "," + this.getCost() + "," +
+                this.getCustomerMax() + "," + this.getRentingBy();
+    }
 }

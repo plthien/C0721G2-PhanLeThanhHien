@@ -1,8 +1,6 @@
 package models;
 
-import java.util.Objects;
-
-public class Booking {
+public class Booking{
     private String bookingCode;
     private String customerCode;
     private String serviceName;

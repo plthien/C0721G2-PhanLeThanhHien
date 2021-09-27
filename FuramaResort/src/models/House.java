@@ -49,4 +49,10 @@ public class House extends Facility{
         return serviceName.hashCode();
     }
 
+    public String getInfoToWrite(){
+        return super.getServiceName() + "," + super.getUsableArea() + "," + super.getCost() + "," +
+                super.getCustomerMax() + "," + super.getRentingBy()+ "," +
+                this.getRoomStandard() + "," + this.getFloors();
+    }
+
 }

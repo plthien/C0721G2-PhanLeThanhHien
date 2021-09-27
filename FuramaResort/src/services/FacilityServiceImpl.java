@@ -4,6 +4,7 @@ import models.Facility;
 import models.House;
 import models.Room;
 import models.Villa;
+import utils.ReadAndWriteFacility;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,22 +12,28 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class FacilityServiceImpl implements FacilityService {
-    private static Map<Facility, Integer> facilities = new LinkedHashMap<>();
     static Scanner sc = new Scanner(System.in);
-
-    static {
-        facilities.put(new Villa("Villa-01", 500, 200, 10, "Day",
-                "Deluxe Room", 90, 3), 2);
-        facilities.put(new House("House-01", 150, 100, 5, "Day",
-                "Family Room", 2), 7);
-        facilities.put(new Room("Room-01", 30, 20, 2, "Hours",
-                "Free Wifi/ Water"), 6);
-    }
+    private final String FILE_HOUSE_PATH = "src\\data\\house.csv";
+    private final String FILE_VILLA_PATH = "src\\data\\villa.csv";
+    private final String FILE_ROOM_PATH = "src\\data\\room.csv";
 
     public void display() {
-        System.out.println("Facilities List: ");
-        Set<Facility> set = facilities.keySet();
-        for (Facility key : set) {
+        Map<Facility,Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
+        System.out.println("Villa List: ");
+        Set<Facility> keyVilla = villa.keySet();
+        for (Facility key : keyVilla) {
+            System.out.println(key);
+        }
+        Map<Facility,Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
+        System.out.println("House List: ");
+        Set<Facility> keyHouse = house.keySet();
+        for (Facility key : keyHouse) {
+            System.out.println(key);
+        }
+        Map<Facility,Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
+        System.out.println("Room List: ");
+        Set<Facility> keyRoom = room.keySet();
+        for (Facility key : keyRoom) {
             System.out.println(key);
         }
     }
@@ -51,48 +58,78 @@ public class FacilityServiceImpl implements FacilityService {
             System.out.println("Enter Renting by: ");
             String rentingBy = sc.nextLine();
             switch (choice) {
-                case 1:
+                case 1: {
                     System.out.println("Enter Room Standard: ");
                     String roomStandard = sc.nextLine();
                     System.out.println("Enter Pool Area: ");
                     double poolArea = Double.parseDouble(sc.nextLine());
                     System.out.println("Enter Number of floors: ");
                     int floors = Integer.parseInt(sc.nextLine());
+                    Map<Facility, Integer> facilities = new LinkedHashMap<>();
                     facilities.put(new Villa(serviceName, usableArea, cost, customerMax, rentingBy, roomStandard, poolArea, floors), 0);
+                    ReadAndWriteFacility.writeFile(FILE_VILLA_PATH, facilities);
                     break;
-                case 2:
+                }
+
+                case 2: {
                     System.out.println("Enter Room Standard: ");
                     String roomStandardHouse = sc.nextLine();
                     System.out.println("Enter Number of floors: ");
                     int floorsHouse = Integer.parseInt(sc.nextLine());
+                    Map<Facility, Integer> facilities = new LinkedHashMap<>();
                     facilities.put(new House(serviceName, usableArea, cost, customerMax, rentingBy, roomStandardHouse, floorsHouse), 0);
+                    ReadAndWriteFacility.writeFile(FILE_HOUSE_PATH, facilities);
                     break;
-                case 3:
+                }
+
+                case 3: {
                     System.out.println("Enter Free Services: ");
                     String freeServices = sc.nextLine();
+                    Map<Facility, Integer> facilities = new LinkedHashMap<>();
                     facilities.put(new Room(serviceName, usableArea, cost, customerMax, rentingBy, freeServices), 0);
+                    ReadAndWriteFacility.writeFile(FILE_ROOM_PATH, facilities);
                     break;
+                }
+
             }
             display();
         } while (true);
 
     }
 
-    public void useFacilities(String serviceName) {
-        Set<Facility> set = facilities.keySet();
-        for (Facility key : set) {
-            if (key.getServiceName().contains(serviceName)) {
-                facilities.computeIfPresent(key, (k, v) -> v + 1);
-                break;
-            }
-        }
-    }
+//    public void useFacilities(String serviceName) {
+//        Set<Facility> set = facilities.keySet();
+//        for (Facility key : set) {
+//            if (key.getServiceName().contains(serviceName)) {
+//                facilities.computeIfPresent(key, (k, v) -> v + 1);
+//                break;
+//            }
+//        }
+//    }
 
     public void displayFacilityMaintenance() {
-        System.out.println("Facilities Maintenance List: ");
-        for (Map.Entry<Facility, Integer> entry : facilities.entrySet()) {
-            if (entry.getValue() >= 5) {
-                System.out.println(entry.getKey() + "- Number of Uses: " + entry.getValue());
+        Map<Facility,Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
+        System.out.println("Villa Maintenance List: ");
+        Set<Facility> keyVilla = villa.keySet();
+        for (Facility key : keyVilla) {
+            if (villa.get(key) >= 5) {
+                System.out.println(key.toString() + villa.get(key));
+            }
+        }
+        Map<Facility,Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
+        System.out.println("House List: ");
+        Set<Facility> keyHouse = house.keySet();
+        for (Facility key : keyHouse) {
+            if (house.get(key) >= 5) {
+                System.out.println(key.toString() + house.get(key));
+            }
+        }
+        Map<Facility,Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
+        System.out.println("Room List: ");
+        Set<Facility> keyRoom = room.keySet();
+        for (Facility key : keyRoom) {
+            if (room.get(key) >= 5) {
+                System.out.println(key.toString() + room.get(key));
             }
         }
     }
