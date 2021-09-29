@@ -6,10 +6,10 @@ public class Booking{
     private String serviceName;
     private int checkInDate;
     private int checkOutDate;
+    private static int code = 1000;
 
 
-    public Booking(String bookingCode, String customerCode, String serviceName, int checkInDate, int checkOutDate) {
-        this.bookingCode = bookingCode;
+    public Booking(String customerCode, String serviceName, int checkInDate, int checkOutDate) {
         this.customerCode = customerCode;
         this.serviceName = serviceName;
         this.checkInDate = checkInDate;
@@ -21,7 +21,13 @@ public class Booking{
     }
 
     public void setBookingCode(String bookingCode) {
+
         this.bookingCode = bookingCode;
+    }
+
+    public void setBookingCode() {
+        code++;
+        this.bookingCode = this.customerCode + code;
     }
 
     public String getCustomerCode() {

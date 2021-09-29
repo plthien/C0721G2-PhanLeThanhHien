@@ -1,27 +1,28 @@
 package services;
 
 import models.Customer;
+import models.Person;
+import sun.nio.cs.ext.ISO2022_CN;
+import utils.ReadAndWritePerson;
 
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CustomerServiceImpl implements CustomerService{
-    private static LinkedList<Customer> customers = new LinkedList<>();
-    static Scanner sc = new Scanner(System.in);
+public class CustomerServiceImpl implements CustomerService {
+    Scanner sc = new Scanner(System.in);
+    private final String FILE_CUSTOMER_PATH = "src\\data\\customer.csv";
 
-    static {
-        customers.add(new Customer("Me0001","Nguyen Minh Tam","20/10/1990",false,"2010123456",
-                "078654321","minhtam@gmail.com","Member","Ha Noi"));
-        customers.add(new Customer("Go0001","Ho Van Hung","28/02/1995",true,"201710995",
-                "0935327645","vahung@gmail.com","Gold","Da Nang"));
-    }
 
-    public void display() {
+    public ArrayList<String> display() {
+        ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
+        ArrayList<String> customerCodeList = new ArrayList<>();
         System.out.println("Customer List: ");
-        for (Customer customer:customers) {
-            System.out.println(customer.toString());
+        for (int i = 0; i < customers.size(); i++) {
+            System.out.println((i + 1) + ". " + customers.get(i));
+            customerCodeList.add(((Customer) customers.get(i)).getCustomerCode());
         }
+        return customerCodeList;
     }
 
     public void add() {
@@ -37,38 +38,40 @@ public class CustomerServiceImpl implements CustomerService{
         String phoneNumber = sc.nextLine();
         System.out.println("Enter email: ");
         String email = sc.nextLine();
-        System.out.println("Enter customer types: ");
-        String customerTypes = sc.nextLine();
+        System.out.println("Enter customer types:: 1.Member\t2.Silver\t3.Gold\t4.Platinium\t5.Diamond ");
+        int customerTypes = Integer.parseInt(sc.nextLine());
         System.out.println("Enter address: ");
         String address = sc.nextLine();
-        System.out.println("Enter customer code: ");
-        String customerCode = sc.nextLine();
-        customers.add(new Customer(customerCode,name,birthday,gender,personalID,phoneNumber,email,customerTypes,address));
+        Customer customer = new Customer(name, birthday, gender, personalID, phoneNumber, email, customerTypes, address);
+        customer.setCustomerCode();
+        ArrayList<Person> personArrayList = new ArrayList<>();
+        personArrayList.add(customer);
+        ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, personArrayList, true);
         display();
 
     }
 
     public void editCustomer(String customerCode) {
+        ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
         boolean flag = true;
         for (int i = 0; i < customers.size(); i++) {
-            if (customers.get(i).getCustomerCode().contains(customerCode)) {
+            if (((Customer) customers.get(i)).getCustomerCode().contains(customerCode)) {
                 int choice;
                 do {
-                    System.out.println(customers.get(i).toString());
-                    System.out.println("Menu: "+
-                            "1. Name \t"+
-                            "2. Birthday \t"+
-                            "3. Gender \t"+
-                            "4. Personal ID \t"+
-                            "5. Phone number \t"+
-                            "6. Email \t"+
-                            "7. Customer types \t"+
-                            "8. Address \t"+
-                            "9. Customer Code \t"+
-                            "10. Exit");
+                    System.out.println(customers.get(i));
+                    System.out.println("Menu: " +
+                            "1. Name \t" +
+                            "2. Birthday \t" +
+                            "3. Gender \t" +
+                            "4. Personal ID \t" +
+                            "5. Phone number \t" +
+                            "6. Email \t" +
+                            "7. Customer types \t" +
+                            "8. Address \t" +
+                            "9. Exit");
                     System.out.println("Enter your choice: ");
                     choice = Integer.parseInt(sc.nextLine());
-                    switch (choice){
+                    switch (choice) {
                         case 1:
                             System.out.println("Enter name: ");
                             String name = sc.nextLine();
@@ -100,28 +103,26 @@ public class CustomerServiceImpl implements CustomerService{
                             customers.get(i).setEmail(email);
                             break;
                         case 7:
-                            System.out.println("Enter customer types: ");
-                            String customerTypes = sc.nextLine();
-                            customers.get(i).setCustomerTypes(customerTypes);
+                            System.out.println("Enter customer types:: 1.Member\t2.Silver\t3.Gold\t4.Platinium\t5.Diamond ");
+                            int customerTypes = Integer.parseInt(sc.nextLine());
+                            ((Customer) customers.get(i)).setCustomerTypes(customerTypes);
+                            ((Customer) customers.get(i)).setCustomerCode();
                             break;
                         case 8:
                             System.out.println("Enter address: ");
                             String address = sc.nextLine();
-                            customers.get(i).setAddress(address);
-                            break;
-                        case 9:
-                            System.out.println("Enter customer code: ");
-                            String customerCodeNew = sc.nextLine();
-                            customers.get(i).setCustomerCode(customerCodeNew);
+                            ((Customer) customers.get(i)).setAddress(address);
                             break;
                     }
-                }while (choice != 10);
+                } while (choice != 9);
                 flag = false;
                 break;
             }
         }
         if (flag) {
             System.out.println("Customer does not exist");
+        } else {
+            ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, customers, false);
         }
     }
 

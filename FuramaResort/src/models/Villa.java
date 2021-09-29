@@ -7,6 +7,10 @@ public class Villa extends Facility {
     private double poolArea;
     private int floors;
 
+    public Villa(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
+        super(serviceName, usableArea, cost, customerMax, rentingBy);
+    }
+
     public Villa(String serviceName, double usableArea, double cost, int customerMax, String rentingBy,
                  String roomStandard, double poolArea, int floors) {
         super(serviceName, usableArea, cost, customerMax, rentingBy);

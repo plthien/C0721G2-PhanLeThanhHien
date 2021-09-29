@@ -9,10 +9,10 @@ import java.util.Map;
 import java.util.Set;
 
 public class ReadAndWriteFacility {
-    public static void writeFile(String filePath, Map<Facility, Integer> facilities) {
+    public static void writeFile(String filePath, Map<Facility, Integer> facilities, boolean append) {
         File file = new File(filePath);
         try {
-            FileWriter fileWriter = new FileWriter(file, true);
+            FileWriter fileWriter = new FileWriter(file, append);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             Set<Facility> facilitySet = facilities.keySet();
             for (Facility key : facilitySet) {
@@ -55,4 +55,5 @@ public class ReadAndWriteFacility {
 
         return facilities;
     }
+
 }

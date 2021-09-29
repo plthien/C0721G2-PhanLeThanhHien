@@ -35,7 +35,9 @@ public class ProductManage {
             products = (ArrayList<Product>) objectInputStream.readObject();
             fileInputStream.close();
             objectInputStream.close();
-        } catch (IOException | ClassNotFoundException e) {
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
 

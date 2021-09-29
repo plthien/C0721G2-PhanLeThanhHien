@@ -3,6 +3,10 @@ package models;
 public class Room extends Facility {
     private String freeServices;
 
+    public Room(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
+        super(serviceName, usableArea, cost, customerMax, rentingBy);
+    }
+
     public Room(String serviceName, double usableArea, double cost, int customerMax, String rentingBy, String freeServices) {
         super(serviceName, usableArea, cost, customerMax, rentingBy);
         this.freeServices = freeServices;

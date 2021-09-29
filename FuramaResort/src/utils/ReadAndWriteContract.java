@@ -32,12 +32,16 @@ public class ReadAndWriteContract {
             String[] array ;
             while ((line = bufferedReader.readLine()) != null) {
                 array = line.split(",");
-                contracts.add(new Contract(array[0], array[1], array[2], Double.parseDouble(array[3]),Double.parseDouble(array[4])));
+                Contract contract = new Contract(array[1], array[2], Double.parseDouble(array[3]),Double.parseDouble(array[4]));
+                contract.setContractNumbers(array[0]);
+                contracts.add(contract);
 
             }
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("The contract list is empty!");
         }
 
         return contracts;

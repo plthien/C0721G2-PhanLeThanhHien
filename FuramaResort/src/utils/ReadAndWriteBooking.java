@@ -34,12 +34,16 @@ public class ReadAndWriteBooking {
             String[] array = null;
             while ((line = bufferedReader.readLine()) != null) {
                 array = line.split(",");
-                bookingSet.add(new Booking(array[0], array[1], array[2], Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+                Booking booking = new Booking(array[1], array[2], Integer.parseInt(array[3]), Integer.parseInt(array[4]));
+                booking.setBookingCode(array[0]);
+                bookingSet.add(booking);
 
             }
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Booking List is empty!");
         }
 
         return bookingSet;

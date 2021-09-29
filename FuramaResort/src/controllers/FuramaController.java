@@ -1,5 +1,6 @@
 package controllers;
 
+import libs.MenuException;
 import services.*;
 
 import java.util.Scanner;
@@ -52,16 +53,40 @@ public class FuramaController {
         BookingServiceImpl bookingManage = new BookingServiceImpl();
         ContractServiceImpl contractManage = new ContractServiceImpl();
 
-        int choiceMenuManagement;
+        int choiceMenuManagement = 0;
         do {
-            displayMenu(management);
-            choiceMenuManagement = Integer.parseInt(sc.nextLine());
+            do {
+                try {
+                    displayMenu(management);
+                    choiceMenuManagement = Integer.parseInt(sc.nextLine());
+                    if (choiceMenuManagement <= 0 || choiceMenuManagement >= 7) {
+                        throw new MenuException("Your choice out of menu!");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("It is not a number!");
+                } catch (MenuException e) {
+                    System.out.println(e.getMessage());
+                }
+            } while (choiceMenuManagement <= 0 || choiceMenuManagement >= 7);
+
             switch (choiceMenuManagement) {
                 case 1:
-                    int choiceEmployee;
+                    int choiceEmployee = 0;
                     do {
-                        displayMenu(employee);
-                        choiceEmployee = Integer.parseInt(sc.nextLine());
+                        do {
+                            try {
+                                displayMenu(employee);
+                                choiceEmployee = Integer.parseInt(sc.nextLine());
+                                if (choiceEmployee <= 0 || choiceEmployee >= 5) {
+                                    throw new MenuException("Your choice out of menu!");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("It is not a number!");
+                            } catch (MenuException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (choiceEmployee <= 0 || choiceEmployee >= 5);
+
                         switch (choiceEmployee) {
                             case 1:
                                 employeeManage.display();
@@ -75,13 +100,25 @@ public class FuramaController {
                                 employeeManage.editEmployee(employeeCode);
                                 break;
                         }
-                    } while (choiceEmployee!=4);
+                    } while (choiceEmployee != 4);
                     break;
                 case 2:
-                    int choiceCustomer;
+                    int choiceCustomer = 0;
                     do {
-                        displayMenu(customer);
-                        choiceCustomer= Integer.parseInt(sc.nextLine());
+                        do {
+                            try {
+                                displayMenu(customer);
+                                choiceCustomer = Integer.parseInt(sc.nextLine());
+                                if (choiceCustomer <= 0 || choiceCustomer >= 5) {
+                                    throw new MenuException("Your choice out of menu!");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("It is not a number!");
+                            } catch (MenuException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (choiceCustomer <= 0 || choiceCustomer >= 5);
+
                         switch (choiceCustomer) {
                             case 1:
                                 customerManage.display();
@@ -95,13 +132,24 @@ public class FuramaController {
                                 customerManage.editCustomer(customerCode);
                                 break;
                         }
-                    } while (choiceCustomer!=4);
+                    } while (choiceCustomer != 4);
                     break;
                 case 3:
-                    int choiceFacility;
+                    int choiceFacility = 0;
                     do {
-                        displayMenu(facility);
-                        choiceFacility= Integer.parseInt(sc.nextLine());
+                        do {
+                            try {
+                                displayMenu(facility);
+                                choiceFacility = Integer.parseInt(sc.nextLine());
+                                if (choiceFacility <= 0 || choiceFacility >= 5) {
+                                    throw new MenuException("Your choice out of menu!");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("It is not a number!");
+                            } catch (MenuException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (choiceFacility <= 0 || choiceFacility >= 5);
                         switch (choiceFacility) {
                             case 1:
                                 facilityManage.display();
@@ -113,17 +161,26 @@ public class FuramaController {
                                 facilityManage.displayFacilityMaintenance();
                                 break;
                         }
-                    } while (choiceFacility!=4);
+                    } while (choiceFacility != 4);
                     break;
                 case 4:
-                    int choiceBooking;
+                    int choiceBooking = 0;
                     do {
-                        displayMenu(booking);
-                        choiceBooking= Integer.parseInt(sc.nextLine());
+                        do {
+                            try {
+                                displayMenu(booking);
+                                choiceBooking = Integer.parseInt(sc.nextLine());
+                                if (choiceBooking <= 0 || choiceBooking >= 7) {
+                                    throw new MenuException("Your choice out of menu!");
+                                }
+                            } catch (NumberFormatException e) {
+                                System.out.println("It is not a number!");
+                            } catch (MenuException e) {
+                                System.out.println(e.getMessage());
+                            }
+                        } while (choiceBooking <= 0 || choiceBooking >= 7);
                         switch (choiceBooking) {
                             case 1:
-                                customerManage.display();
-                                facilityManage.display();
                                 bookingManage.add();
                                 break;
                             case 2:
@@ -141,7 +198,7 @@ public class FuramaController {
                                 contractManage.editContract(contractNumber);
                                 break;
                         }
-                    } while (choiceBooking!=6);
+                    } while (choiceBooking != 6);
                     break;
                 case 5:
                     displayMenu(promotion);

@@ -6,9 +6,9 @@ public class Contract {
     private String customerCode;
     private double deposit;
     private double payment;
+    private static int code = 1000;
 
-    public Contract(String contractNumbers, String bookingCode, String customerCode, double deposit, double payment) {
-        this.contractNumbers = contractNumbers;
+    public Contract(String bookingCode, String customerCode, double deposit, double payment) {
         this.bookingCode = bookingCode;
         this.customerCode = customerCode;
         this.deposit = deposit;
@@ -29,6 +29,11 @@ public class Contract {
 
     public void setContractNumbers(String contractNumbers) {
         this.contractNumbers = contractNumbers;
+    }
+
+    public void setContractNumbers() {
+        code++;
+        this.contractNumbers = this.bookingCode + code;
     }
 
     public String getBookingCode() {

@@ -65,6 +65,11 @@ public abstract class Person {
         this.email = email;
     }
 
+    public String getInfoToWrite() {
+        return this.name + "," + this.birthDay + "," + this.gender + "," +
+                this.personalID + "," + this.phoneNumber + "," + this.email;
+    }
+
 
 }
 

@@ -27,7 +27,7 @@ public class ContractServiceImpl implements ContractService {
                     break;
                 }
             }
-            if (flag && (booking.getServiceName().contains("Villa") || booking.getServiceName().contains("House"))) {
+            if (flag && (booking.getServiceName().contains("VL") || booking.getServiceName().contains("HO"))) {
                 bookingQueue.add(booking);
             }
         }
@@ -44,24 +44,24 @@ public class ContractServiceImpl implements ContractService {
             System.out.println("Creat new Contract for Booking that has Booking code: " + bookingQueue.peek().getBookingCode());
             String bookingCode = bookingQueue.peek().getBookingCode();
             String customerCode = bookingQueue.peek().getCustomerCode();
-            System.out.println("Enter Contract number: ");
-            String contractNumbers = sc.nextLine();
             System.out.println("Enter deposit: ");
             double deposit = Double.parseDouble(sc.nextLine());
             System.out.println("Enter payment: ");
             double payment = Double.parseDouble(sc.nextLine());
             ArrayList<Contract> contracts = new ArrayList<>();
-            contracts.add(new Contract(contractNumbers, bookingCode, customerCode, deposit, payment));
+            Contract contract = new Contract(bookingCode, customerCode, deposit, payment);
+            contract.setContractNumbers();
+            contracts.add(contract);
             ReadAndWriteContract.writeFile(FILE_CONTRACT_PATH, contracts, true);
             bookingQueue.remove();
         }
     }
 
-    @Override
+
     public void display() {
         ArrayList<Contract> contracts = ReadAndWriteContract.readFile(FILE_CONTRACT_PATH);
-        for (Contract contract : contracts) {
-            System.out.println(contract);
+        for (int i = 0; i < contracts.size() ; i++) {
+            System.out.println((i+1) + ". " + contracts.get(i));
         }
 
     }
