@@ -1,15 +1,18 @@
 package models;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Booking{
     private String bookingCode;
     private String customerCode;
     private String serviceName;
-    private int checkInDate;
-    private int checkOutDate;
+    private String checkInDate;
+    private String checkOutDate;
     private static int code = 1000;
 
 
-    public Booking(String customerCode, String serviceName, int checkInDate, int checkOutDate) {
+    public Booking(String customerCode, String serviceName, String checkInDate, String checkOutDate) {
         this.customerCode = customerCode;
         this.serviceName = serviceName;
         this.checkInDate = checkInDate;
@@ -46,19 +49,19 @@ public class Booking{
         this.serviceName = serviceName;
     }
 
-    public int getCheckInDate() {
+    public String getCheckInDate() {
         return checkInDate;
     }
 
-    public void setCheckInDate(int checkInDate) {
+    public void setCheckInDate(String checkInDate) {
         this.checkInDate = checkInDate;
     }
 
-    public int getCheckOutDate() {
+    public String getCheckOutDate() {
         return checkOutDate;
     }
 
-    public void setCheckOutDate(int checkOutDate) {
+    public void setCheckOutDate(String checkOutDate) {
         this.checkOutDate = checkOutDate;
     }
 

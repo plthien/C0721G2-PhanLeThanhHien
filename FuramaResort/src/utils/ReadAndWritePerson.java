@@ -35,14 +35,16 @@ public class ReadAndWritePerson {
             String[] array;
             while ((line = bufferedReader.readLine()) != null) {
                 array = line.split(",");
-                if (array.length == 9) {
+                if (array.length == 10) {
                     Customer customer = new Customer(array[0], array[1], Boolean.parseBoolean(array[2]), array[3],
                             array[4], array[5], Integer.parseInt(array[6]), array[7]);
                     customer.setCustomerCode(array[8]);
+                    Customer.setCode(Integer.parseInt(array[9]));
                     personArrayList.add(customer);
                 } else {
                     Employee employee = new Employee(array[0], array[1], Boolean.parseBoolean(array[2]), array[3],
                             array[4], array[5], Integer.parseInt(array[6]), Integer.parseInt(array[7]), Double.parseDouble(array[8]));
+                    Employee.setCode(Integer.parseInt(array[10]));
                     employee.setEmployeeCode(array[9]);
                     personArrayList.add(employee);
                 }

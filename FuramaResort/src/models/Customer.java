@@ -62,6 +62,10 @@ public class Customer extends Person {
         this.customerCode = customerCode;
     }
 
+    public static void setCode(int nextCode) {
+        code = nextCode;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
@@ -78,7 +82,7 @@ public class Customer extends Person {
 
     @Override
     public String getInfoToWrite() {
-        return super.getInfoToWrite() + "," + this.customerTypes + "," + this.address + "," + this.customerCode;
+        return super.getInfoToWrite() + "," + this.customerTypes + "," + this.address + "," + this.customerCode + "," + code;
     }
 
 }

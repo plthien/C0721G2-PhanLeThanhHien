@@ -18,13 +18,13 @@ public class Employee extends Person {
     }
 
     public String getStringDegree() {
-        switch (this.degree){
+        switch (this.degree) {
             case 1:
                 return "Intermediate";
             case 2:
                 return "Associate";
             case 3:
-                return  "College";
+                return "College";
             case 4:
                 return "Postgraduate";
             default:
@@ -37,13 +37,13 @@ public class Employee extends Person {
     }
 
     public String getStringOffice() {
-        switch (this.office){
+        switch (this.office) {
             case 1:
                 return "Receptionist";
             case 2:
                 return "Service Staff";
             case 3:
-                return  "Specialist";
+                return "Specialist";
             case 4:
                 return "Supervisor";
             case 5:
@@ -84,8 +84,12 @@ public class Employee extends Person {
         this.employeeCode = this.office + "" + this.degree + code;
     }
 
-    public void setEmployeeCode(String employeeCode){
+    public void setEmployeeCode(String employeeCode) {
         this.employeeCode = employeeCode;
+    }
+
+    public static void setCode(int nextCode) {
+        code = nextCode;
     }
 
     @Override
@@ -105,7 +109,7 @@ public class Employee extends Person {
 
     @Override
     public String getInfoToWrite() {
-        return super.getInfoToWrite() + "," + this.degree + "," + this.office + "," + this.salary + "," + this.employeeCode ;
+        return super.getInfoToWrite() + "," + this.degree + "," + this.office + "," + this.salary + "," + this.employeeCode + "," + code;
     }
 
 }

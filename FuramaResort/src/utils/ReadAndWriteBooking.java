@@ -2,8 +2,10 @@ package utils;
 
 import models.Booking;
 import services.BookingComparator;
+import services.BookingServiceImpl;
 
 import java.io.*;
+import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -34,7 +36,7 @@ public class ReadAndWriteBooking {
             String[] array = null;
             while ((line = bufferedReader.readLine()) != null) {
                 array = line.split(",");
-                Booking booking = new Booking(array[1], array[2], Integer.parseInt(array[3]), Integer.parseInt(array[4]));
+                Booking booking = new Booking(array[1], array[2], array[3] , array[4]);
                 booking.setBookingCode(array[0]);
                 bookingSet.add(booking);
 

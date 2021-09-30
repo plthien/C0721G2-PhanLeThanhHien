@@ -20,77 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0634abbe-9037-495c-b4ed-b55b86bc196e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/factory_method/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/factory_method/AnimalFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/factory_method/Cat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/factory_method/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/factory_method/FactoryDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/object_pool/ObjectPoolDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/object_pool/Taxi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/object_pool/TaxiNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/object_pool/TaxiPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/object_pool/TaxiThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/singleton/BookBorrower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/singleton/BookSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/_21_design_pattern/practice/singleton/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/libs/MenuException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/libs/UserException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/models/FacilityFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWritePerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/codegym_file_utils.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/adapter/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/adapter/FileCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/adapter/FileCalculatorAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/adapter/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/Facebook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/LinkedIn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/SocialMediaFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/SocialShare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/facade/Twitter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/proxy/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/proxy/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/proxy/MathCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/_22_structural_design_pattern/practice/proxy/MathCalculatorProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/ProductManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_17_io_binary_file_serialization/exercise/ProductManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/controllers/FuramaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/booking.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/contract.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/contract.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/employee.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/employee.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/house.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/house.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/data/villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Booking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Booking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Contract.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Contract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/House.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/models/Villa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/BookingServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/ContractServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/ContractServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3. module 2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/3. module 2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/3. module 2/_17_io_binary_file_serialization/exercise/ProductManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/3. module 2/_17_io_binary_file_serialization/exercise/ProductManage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/EmployeeServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/FacilityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/services/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteBooking.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteBooking.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteContract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteFacility.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/out/production/FuramaResort/utils/ReadAndWriteFacility.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/controllers/FuramaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/booking.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/booking.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/contract.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/contract.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/customer.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/customer.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/employee.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/employee.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/house.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/house.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/data/villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/data/villa.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Contract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/models/Villa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/ContractServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/EmployeeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/FacilityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/services/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/services/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteBooking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteFacility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FuramaResort/src/utils/ReadAndWriteFacility.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -126,13 +75,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last.edited.regexp" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/codegym-file-utils.jar!/" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="_22_structural_design_pattern.practice.facade" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="_07_abstract_interface.practice.interface_comparable" />
       <recent name="_07_abstract_interface.practice.interface_comparator" />
@@ -142,13 +94,13 @@
       <recent name="_21_design_pattern.practice.object_pool" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ObjectPoolDemo">
-    <configuration name="Crawl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_19_string_regex.optional.Crawl" />
+  <component name="RunManager" selected="Application.Main (1)">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_22_structural_design_pattern.practice.facade.Client" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_19_string_regex.optional.*" />
+          <option name="PATTERN" value="_22_structural_design_pattern.practice.facade.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrawlSongExample (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_19_string_regex.practice.CrawlSongExample" />
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_22_structural_design_pattern.practice.adapter.Main" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_19_string_regex.practice.*" />
+          <option name="PATTERN" value="_22_structural_design_pattern.practice.adapter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -169,12 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FactoryDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_21_design_pattern.practice.factory_method.FactoryDemo" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_22_structural_design_pattern.practice.proxy.Main" />
       <module name="3. module 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_21_design_pattern.practice.factory_method.*" />
+          <option name="PATTERN" value="_22_structural_design_pattern.practice.proxy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -210,11 +162,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Client" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ObjectPoolDemo" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.FactoryDemo" />
-        <item itemvalue="Application.CrawlSongExample (1)" />
-        <item itemvalue="Application.Crawl" />
       </list>
     </recent_temporary>
   </component>
@@ -278,6 +230,7 @@
       <workItem from="1632909141423" duration="214000" />
       <workItem from="1632909403304" duration="13000" />
       <workItem from="1632909513582" duration="509000" />
+      <workItem from="1632972398042" duration="2477000" />
     </task>
     <servers />
   </component>
@@ -305,10 +258,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="523" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.816@0.0.1536.816" timestamp="1632454527859" />
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1632889518504">
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser" timestamp="1632974541547">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1632889518504" />
+    <state x="574" y="124" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1632974541547" />
     <state x="499" y="187" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1631580983470">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -329,26 +282,26 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state width="387" height="466" key="DebuggerActiveHint/0.0.1536.816@0.0.1536.816" timestamp="1631701896977" />
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632789713470">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1632974667713">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632789713470" />
-    <state width="1493" height="658" key="GridCell.Tab.0.bottom" timestamp="1632889859377">
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1632974667713" />
+    <state width="1493" height="155" key="GridCell.Tab.0.bottom" timestamp="1632974811127">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="658" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632889859377" />
-    <state width="1493" height="658" key="GridCell.Tab.0.center" timestamp="1632889859377">
+    <state width="1493" height="155" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1632974811127" />
+    <state width="1493" height="155" key="GridCell.Tab.0.center" timestamp="1632974811127">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="658" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632889859377" />
-    <state width="1493" height="658" key="GridCell.Tab.0.left" timestamp="1632889859377">
+    <state width="1493" height="155" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1632974811127" />
+    <state width="1493" height="155" key="GridCell.Tab.0.left" timestamp="1632974811127">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="658" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632889859377" />
-    <state width="1493" height="658" key="GridCell.Tab.0.right" timestamp="1632889859377">
+    <state width="1493" height="155" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1632974811127" />
+    <state width="1493" height="155" key="GridCell.Tab.0.right" timestamp="1632974811127">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="658" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632889859377" />
+    <state width="1493" height="155" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1632974811127" />
     <state width="1493" height="228" key="GridCell.Tab.1.bottom" timestamp="1632715440528">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -365,18 +318,18 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state width="1493" height="228" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1632715440528" />
-    <state x="277" y="0" key="SettingsEditor" timestamp="1630999783052">
+    <state x="277" y="0" key="SettingsEditor" timestamp="1632974675127">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="277" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1630999783052" />
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.816@0.0.1536.816" timestamp="1632974675127" />
     <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1631593111430">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="498" y="300" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.816@0.0.1536.816" timestamp="1631593111430" />
-    <state x="209" y="28" key="new project wizard" timestamp="1631002653950">
+    <state x="209" y="28" key="new project wizard" timestamp="1632974325764">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="209" y="28" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1631002653950" />
+    <state x="209" y="28" key="new project wizard/0.0.1536.816@0.0.1536.816" timestamp="1632974325764" />
     <state x="425" y="185" key="run.anything.popup" timestamp="1630655659758">
       <screen x="0" y="0" width="1536" height="816" />
     </state>

@@ -26,6 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     public void add() {
+        ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH); // read file to get nextcode to generate customerCode
         System.out.println("Enter name: ");
         String name = sc.nextLine();
         System.out.println("Enter birthday: ");
