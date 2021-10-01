@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Scanner;
+
 public class Contract {
     private String contractNumbers;
     private String bookingCode;
@@ -7,6 +9,10 @@ public class Contract {
     private double deposit;
     private double payment;
     private static int code = 1000;
+    Scanner sc = new Scanner(System.in);
+
+    public Contract() {
+    }
 
     public Contract(String bookingCode, String customerCode, double deposit, double payment) {
         this.bookingCode = bookingCode;
@@ -36,6 +42,10 @@ public class Contract {
         this.contractNumbers = this.bookingCode + code;
     }
 
+    public static void setCode(int nextCode){
+        code = nextCode;
+    }
+
     public String getBookingCode() {
         return bookingCode;
     }
@@ -48,16 +58,38 @@ public class Contract {
         return deposit;
     }
 
-    public void setDeposit(double deposit) {
-        this.deposit = deposit;
+    public void setDeposit() {
+        this.deposit = -1;
+        do {
+            try {
+                System.out.println("Enter deposit: ");
+                this.deposit = Double.parseDouble(sc.nextLine());
+                if (this.deposit < 0) {
+                    System.out.println("The deposit is greater than 0 !");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("It is not a number!");
+            }
+        } while (this.deposit < 0);
     }
 
     public double getPayment() {
         return payment;
     }
 
-    public void setPayment(double payment) {
-        this.payment = payment;
+    public void setPayment() {
+        this.payment = -1;
+        do {
+            try {
+                System.out.println("Enter payment: ");
+                this.payment = Double.parseDouble(sc.nextLine());
+                if (this.payment < 0) {
+                    System.out.println("The payment is greater than 0 !");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("It is not a number!");
+            }
+        } while (this.payment < 0);
     }
 
     @Override
@@ -72,6 +104,6 @@ public class Contract {
     }
 
     public String getInfoToWrite() {
-        return this.contractNumbers + "," + this.bookingCode + "," + this.customerCode + "," + this.deposit + "," + this.payment;
+        return this.contractNumbers + "," + this.bookingCode + "," + this.customerCode + "," + this.deposit + "," + this.payment + "," + code;
     }
 }

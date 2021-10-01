@@ -39,13 +39,12 @@ public class ReadAndWriteBooking {
                 Booking booking = new Booking(array[1], array[2], array[3] , array[4]);
                 booking.setBookingCode(array[0]);
                 bookingSet.add(booking);
+                Booking.setCode(Integer.parseInt(array[5]));//get nextcode to generate next bookingcode
 
             }
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Booking List is empty!");
         }
 
         return bookingSet;

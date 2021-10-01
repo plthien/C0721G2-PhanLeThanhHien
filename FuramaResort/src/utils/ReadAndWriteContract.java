@@ -34,14 +34,13 @@ public class ReadAndWriteContract {
                 array = line.split(",");
                 Contract contract = new Contract(array[1], array[2], Double.parseDouble(array[3]),Double.parseDouble(array[4]));
                 contract.setContractNumbers(array[0]);
+                Contract.setCode(Integer.parseInt(array[5]));
                 contracts.add(contract);
 
             }
             bufferedReader.close();
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("The contract list is empty!");
         }
 
         return contracts;

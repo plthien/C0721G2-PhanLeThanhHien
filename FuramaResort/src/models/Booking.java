@@ -1,8 +1,5 @@
 package models;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class Booking{
     private String bookingCode;
     private String customerCode;
@@ -31,6 +28,10 @@ public class Booking{
     public void setBookingCode() {
         code++;
         this.bookingCode = this.customerCode + code;
+    }
+
+    public static void setCode(int nextCode){
+        code = nextCode;
     }
 
     public String getCustomerCode() {
@@ -77,6 +78,6 @@ public class Booking{
     }
 
     public String getInfoToWrite(){
-        return this.bookingCode + "," + this.customerCode + "," + this.serviceName + "," + this.checkInDate + "," + this.checkOutDate;
+        return this.bookingCode + "," + this.customerCode + "," + this.serviceName + "," + this.checkInDate + "," + this.checkOutDate + "," + code;
     }
 }

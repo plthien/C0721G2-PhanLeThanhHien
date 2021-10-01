@@ -5,11 +5,11 @@ public class FacilityFactory {
     private FacilityFactory() {
     }
 
-    public static Facility getFacility(int choice, String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
+    public static Facility getFacility(int choice) {
         if (choice == 1) {
-            return new Villa(serviceName, usableArea, cost, customerMax, rentingBy);
+            return new Villa();
         } else if (choice == 2) {
-            return new House(serviceName, usableArea, cost, customerMax, rentingBy);
-        } else return new Room(serviceName, usableArea, cost, customerMax, rentingBy);
+            return new House();
+        } else return new Room();
     }
 }

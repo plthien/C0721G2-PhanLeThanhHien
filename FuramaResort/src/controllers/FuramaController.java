@@ -47,11 +47,12 @@ public class FuramaController {
                 "2. Display list customers get voucher",
                 "3. Return main menu"
         };
-        EmployeeServiceImpl employeeManage = new EmployeeServiceImpl();
-        CustomerServiceImpl customerManage = new CustomerServiceImpl();
-        FacilityServiceImpl facilityManage = new FacilityServiceImpl();
-        BookingServiceImpl bookingManage = new BookingServiceImpl();
-        ContractServiceImpl contractManage = new ContractServiceImpl();
+        EmployeeService employeeManagement = new EmployeeServiceImpl();
+        CustomerService customerManagement = new CustomerServiceImpl();
+        FacilityService facilityManagement = new FacilityServiceImpl();
+        BookingService bookingManagement = new BookingServiceImpl();
+        ContractService contractManagement = new ContractServiceImpl();
+        PromotionService promotionManagement = new PromotionServiceImpl();
 
         int choiceMenuManagement = 0;
         do {
@@ -89,15 +90,15 @@ public class FuramaController {
 
                         switch (choiceEmployee) {
                             case 1:
-                                employeeManage.display();
+                                employeeManagement.display();
                                 break;
                             case 2:
-                                employeeManage.add();
+                                employeeManagement.add();
                                 break;
                             case 3:
                                 System.out.println("Enter employee code: ");
                                 String employeeCode = sc.nextLine();
-                                employeeManage.editEmployee(employeeCode);
+                                employeeManagement.editEmployee(employeeCode);
                                 break;
                         }
                     } while (choiceEmployee != 4);
@@ -121,15 +122,15 @@ public class FuramaController {
 
                         switch (choiceCustomer) {
                             case 1:
-                                customerManage.display();
+                                customerManagement.display();
                                 break;
                             case 2:
-                                customerManage.add();
+                                customerManagement.add();
                                 break;
                             case 3:
                                 System.out.println("Enter customer code: ");
                                 String customerCode = sc.nextLine();
-                                customerManage.editCustomer(customerCode);
+                                customerManagement.editCustomer(customerCode);
                                 break;
                         }
                     } while (choiceCustomer != 4);
@@ -152,13 +153,13 @@ public class FuramaController {
                         } while (choiceFacility <= 0 || choiceFacility >= 5);
                         switch (choiceFacility) {
                             case 1:
-                                facilityManage.display();
+                                facilityManagement.display();
                                 break;
                             case 2:
-                                facilityManage.add();
+                                facilityManagement.add();
                                 break;
                             case 3:
-                                facilityManage.displayFacilityMaintenance();
+                                facilityManagement.displayFacilityMaintenance();
                                 break;
                         }
                     } while (choiceFacility != 4);
@@ -181,27 +182,39 @@ public class FuramaController {
                         } while (choiceBooking <= 0 || choiceBooking >= 7);
                         switch (choiceBooking) {
                             case 1:
-                                bookingManage.add();
+                                bookingManagement.add();
                                 break;
                             case 2:
-                                bookingManage.display();
+                                bookingManagement.display();
                                 break;
                             case 3:
-                                contractManage.add();
+                                contractManagement.add();
                                 break;
                             case 4:
-                                contractManage.display();
+                                contractManagement.display();
                                 break;
                             case 5:
                                 System.out.println("Enter contract number: ");
                                 String contractNumber = sc.nextLine();
-                                contractManage.editContract(contractNumber);
+                                contractManagement.editContract(contractNumber);
                                 break;
                         }
                     } while (choiceBooking != 6);
                     break;
                 case 5:
-                    displayMenu(promotion);
+                    int choicePromotion = 1 ;
+                    do {
+                        displayMenu(promotion);
+                        choicePromotion = Integer.parseInt(sc.nextLine());
+                        switch (choicePromotion){
+                            case 1:
+                                promotionManagement.displayCustomerByYear();
+                                break;
+                            case 2:
+                                promotionManagement.giveVoucher();
+                                break;
+                        }
+                    }while (choicePromotion != 3);
                     break;
             }
         } while (choiceMenuManagement != 6);

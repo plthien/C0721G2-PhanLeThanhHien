@@ -16,7 +16,7 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public Queue<Booking> getBookingQueue() {
         Set<Booking> bookingSet = ReadAndWriteBooking.readFile(FILE_BOOKING_PATH);
-        Queue<Booking> bookingQueue = new LinkedList<>();
+        Queue<Booking> bookingListToContract = new LinkedList<>();
         ArrayList<Contract> contracts = ReadAndWriteContract.readFile(FILE_CONTRACT_PATH);
 
         for (Booking booking : bookingSet) {
@@ -28,42 +28,46 @@ public class ContractServiceImpl implements ContractService {
                 }
             }
             if (flag && (booking.getServiceName().contains("VL") || booking.getServiceName().contains("HO"))) {
-                bookingQueue.add(booking);
+                bookingListToContract.add(booking);
             }
         }
-        return bookingQueue;
+        return bookingListToContract;
     }
 
     @Override
     public void add() {
-        Queue<Booking> bookingQueue = getBookingQueue();
-        if (bookingQueue.size() == 0) {
+        ReadAndWriteContract.readFile(FILE_CONTRACT_PATH);
+        Queue<Booking> bookingListToContract = getBookingQueue();
+        if (bookingListToContract.size() == 0) {
             System.out.println("There are not any Booking at this time!");
         } else {
-            System.out.println(bookingQueue.peek());
-            System.out.println("Creat new Contract for Booking that has Booking code: " + bookingQueue.peek().getBookingCode());
-            String bookingCode = bookingQueue.peek().getBookingCode();
-            String customerCode = bookingQueue.peek().getCustomerCode();
-            System.out.println("Enter deposit: ");
-            double deposit = Double.parseDouble(sc.nextLine());
-            System.out.println("Enter payment: ");
-            double payment = Double.parseDouble(sc.nextLine());
-            ArrayList<Contract> contracts = new ArrayList<>();
-            Contract contract = new Contract(bookingCode, customerCode, deposit, payment);
+            Contract contract = new Contract();
+            System.out.println(bookingListToContract.peek());
+            System.out.println("Creat new Contract for Booking that has Booking code: " + bookingListToContract.peek().getBookingCode());
+            String bookingCode = bookingListToContract.peek().getBookingCode();
+            contract.setBookingCode(bookingCode);
+            String customerCode = bookingListToContract.peek().getCustomerCode();
+            contract.setCustomerCode(customerCode);
             contract.setContractNumbers();
+            contract.setDeposit();
+            contract.setPayment();
+
+            ArrayList<Contract> contracts = new ArrayList<>();
             contracts.add(contract);
             ReadAndWriteContract.writeFile(FILE_CONTRACT_PATH, contracts, true);
-            bookingQueue.remove();
+            bookingListToContract.remove();
         }
     }
 
-
     public void display() {
         ArrayList<Contract> contracts = ReadAndWriteContract.readFile(FILE_CONTRACT_PATH);
-        for (int i = 0; i < contracts.size() ; i++) {
-            System.out.println((i+1) + ". " + contracts.get(i));
+        if (contracts.size() == 0) {
+            System.out.println("The contract list is empty!");
+        } else {
+            for (int i = 0; i < contracts.size(); i++) {
+                System.out.println((i + 1) + ". " + contracts.get(i));
+            }
         }
-
     }
 
     @Override
@@ -101,14 +105,10 @@ public class ContractServiceImpl implements ContractService {
                             contract.setCustomerCode(customerCode);
                             break;
                         case 4:
-                            System.out.println("Enter deposit: ");
-                            double deposit = Double.parseDouble(sc.nextLine());
-                            contract.setDeposit(deposit);
+                            contract.setDeposit();
                             break;
                         case 5:
-                            System.out.println("Enter payment: ");
-                            double payment = Double.parseDouble(sc.nextLine());
-                            contract.setPayment(payment);
+                            contract.setPayment();
                             break;
                     }
 

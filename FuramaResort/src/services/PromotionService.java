@@ -1,4 +1,6 @@
 package services;
 
-public interface PromotionService  {
+public interface PromotionService {
+    void displayCustomerByYear();
+    void giveVoucher();
 }

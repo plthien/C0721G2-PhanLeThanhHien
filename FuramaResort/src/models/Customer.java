@@ -1,13 +1,14 @@
 package models;
 
 
-
 public class Customer extends Person {
     private int customerTypes;
     private String address;
     private String customerCode;
     private static int code = 1000;
 
+    public Customer() {
+    }
 
     public Customer(String name, String birthDay, boolean gender, String personalID, String phoneNumber, String email,
                     int customerTypes, String address) {
@@ -37,16 +38,27 @@ public class Customer extends Person {
         }
     }
 
-    public void setCustomerTypes(int customerTypes) {
-        this.customerTypes = customerTypes;
+    public void setCustomerTypes() {
+        do {
+            try {
+                System.out.println("Enter customer types: 1.Member\t2.Silver\t3.Gold\t4.Platinium\t5.Diamond ");
+                this.customerTypes = Integer.parseInt(sc.nextLine());
+                if (this.customerTypes < 1 || this.customerTypes > 5) {
+                    System.out.println("Your choice out of range!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("It is not a number!");
+            }
+        } while (this.customerTypes < 1 || this.customerTypes > 5);
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAddress() {
+        System.out.println("Enter address: ");
+        this.address = sc.nextLine();
     }
 
     public String getCustomerCode() {
@@ -58,7 +70,7 @@ public class Customer extends Person {
         this.customerCode = this.customerTypes + "" + code;
     }
 
-    public void setCustomerCode(String customerCode){
+    public void setCustomerCode(String customerCode) {
         this.customerCode = customerCode;
     }
 
@@ -71,7 +83,7 @@ public class Customer extends Person {
         return "Customer{" +
                 " Customer Code: " + this.getCustomerCode() +
                 ", Name: " + super.getName() +
-                ", BirthDay: " + super.getBirthDay() +
+                ", BirthDay: " + super.getBirthday() +
                 ", Gender: " + super.isGender() +
                 ", Personal ID: " + super.getPersonalID() +
                 ", Phone Number: " + super.getPhoneNumber() +

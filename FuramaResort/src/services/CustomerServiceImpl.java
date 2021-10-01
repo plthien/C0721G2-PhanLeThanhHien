@@ -2,7 +2,6 @@ package services;
 
 import models.Customer;
 import models.Person;
-import sun.nio.cs.ext.ISO2022_CN;
 import utils.ReadAndWritePerson;
 
 
@@ -13,43 +12,39 @@ public class CustomerServiceImpl implements CustomerService {
     Scanner sc = new Scanner(System.in);
     private final String FILE_CUSTOMER_PATH = "src\\data\\customer.csv";
 
-
-    public ArrayList<String> display() {
+    public void display() {
         ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
-        ArrayList<String> customerCodeList = new ArrayList<>();
         System.out.println("Customer List: ");
         for (int i = 0; i < customers.size(); i++) {
             System.out.println((i + 1) + ". " + customers.get(i));
-            customerCodeList.add(((Customer) customers.get(i)).getCustomerCode());
+        }
+    }
+
+    public ArrayList<String> getCustomerCodeList(){
+        ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
+        ArrayList<String> customerCodeList = new ArrayList<>();
+        for (Person customer : customers) {
+            customerCodeList.add(((Customer) customer).getCustomerCode());
         }
         return customerCodeList;
     }
 
     public void add() {
         ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH); // read file to get nextcode to generate customerCode
-        System.out.println("Enter name: ");
-        String name = sc.nextLine();
-        System.out.println("Enter birthday: ");
-        String birthday = sc.nextLine();
-        System.out.println("Enter gender ( Male enter 'true' else enter 'false'): ");
-        boolean gender = Boolean.parseBoolean(sc.nextLine());
-        System.out.println("Enter Personal ID: ");
-        String personalID = sc.nextLine();
-        System.out.println("Enter phone number: ");
-        String phoneNumber = sc.nextLine();
-        System.out.println("Enter email: ");
-        String email = sc.nextLine();
-        System.out.println("Enter customer types:: 1.Member\t2.Silver\t3.Gold\t4.Platinium\t5.Diamond ");
-        int customerTypes = Integer.parseInt(sc.nextLine());
-        System.out.println("Enter address: ");
-        String address = sc.nextLine();
-        Customer customer = new Customer(name, birthday, gender, personalID, phoneNumber, email, customerTypes, address);
+        Customer customer = new Customer();
+        customer.setName();
+        customer.setBirthday();
+        customer.setGender();
+        customer.setPersonalID();
+        customer.setPhoneNumber();
+        customer.setEmail();
+        customer.setCustomerTypes();
+        customer.setAddress();
         customer.setCustomerCode();
         ArrayList<Person> personArrayList = new ArrayList<>();
         personArrayList.add(customer);
         ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, personArrayList, true);
         display();
-
     }
 
     public void editCustomer(String customerCode) {
@@ -74,45 +69,29 @@ public class CustomerServiceImpl implements CustomerService {
                     choice = Integer.parseInt(sc.nextLine());
                     switch (choice) {
                         case 1:
-                            System.out.println("Enter name: ");
-                            String name = sc.nextLine();
-                            customers.get(i).setName(name);
+                            customers.get(i).setName();
                             break;
                         case 2:
-                            System.out.println("Enter birthday: ");
-                            String birthday = sc.nextLine();
-                            customers.get(i).setBirthDay(birthday);
+                            customers.get(i).setBirthday();
                             break;
                         case 3:
-                            System.out.println("Enter gender ( Male enter 'true' else enter 'false'): ");
-                            boolean gender = Boolean.parseBoolean(sc.nextLine());
-                            customers.get(i).setGender(gender);
+                            customers.get(i).setGender();
                             break;
                         case 4:
-                            System.out.println("Enter Personal ID: ");
-                            String personalID = sc.nextLine();
-                            customers.get(i).setPersonalID(personalID);
+                            customers.get(i).setPersonalID();
                             break;
                         case 5:
-                            System.out.println("Enter phone number: ");
-                            String phoneNumber = sc.nextLine();
-                            customers.get(i).setPhoneNumber(phoneNumber);
+                            customers.get(i).setPhoneNumber();
                             break;
                         case 6:
-                            System.out.println("Enter email: ");
-                            String email = sc.nextLine();
-                            customers.get(i).setEmail(email);
+                            customers.get(i).setEmail();
                             break;
                         case 7:
-                            System.out.println("Enter customer types:: 1.Member\t2.Silver\t3.Gold\t4.Platinium\t5.Diamond ");
-                            int customerTypes = Integer.parseInt(sc.nextLine());
-                            ((Customer) customers.get(i)).setCustomerTypes(customerTypes);
+                            ((Customer) customers.get(i)).setCustomerTypes();
                             ((Customer) customers.get(i)).setCustomerCode();
                             break;
                         case 8:
-                            System.out.println("Enter address: ");
-                            String address = sc.nextLine();
-                            ((Customer) customers.get(i)).setAddress(address);
+                            ((Customer) customers.get(i)).setAddress();
                             break;
                     }
                 } while (choice != 9);

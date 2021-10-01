@@ -1,7 +1,12 @@
 package models;
 
+import libs.UserException;
+
 public class Room extends Facility {
     private String freeServices;
+
+    public Room() {
+    }
 
     public Room(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
         super(serviceName, usableArea, cost, customerMax, rentingBy);
@@ -16,8 +21,18 @@ public class Room extends Facility {
         return freeServices;
     }
 
-    public void setFreeServices(String freeServices) {
-        this.freeServices = freeServices;
+    public void setFreeServices() {
+        boolean check = false;
+        do {
+            try {
+                System.out.println("Enter Free Services: ");
+                this.freeServices = sc.nextLine();
+                check = UserException.checkNoun(freeServices);
+            } catch (UserException e) {
+                System.out.println(e.getMessage());
+            }
+
+        } while (!check);
     }
 
     @Override

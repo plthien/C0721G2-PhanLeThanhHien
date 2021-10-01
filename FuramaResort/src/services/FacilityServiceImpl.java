@@ -6,8 +6,6 @@ import models.*;
 import utils.ReadAndWriteFacility;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class FacilityServiceImpl implements FacilityService {
     Scanner sc = new Scanner(System.in);
@@ -15,26 +13,41 @@ public class FacilityServiceImpl implements FacilityService {
     private final String FILE_VILLA_PATH = "src\\data\\villa.csv";
     private final String FILE_ROOM_PATH = "src\\data\\room.csv";
 
-    public ArrayList<String> display() {
+    public void display() {
         Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
-        ArrayList<String> serviceNameList = new ArrayList<>();
         int number = 1;
         System.out.println("Facility List: ");
         Set<Facility> keyVilla = villa.keySet();
         for (Facility key : keyVilla) {
             System.out.println(number++ + ". " + key);
-            serviceNameList.add(key.getServiceName());
         }
         Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
         Set<Facility> keyHouse = house.keySet();
         for (Facility key : keyHouse) {
             System.out.println(number++ + ". " + key);
-            serviceNameList.add(key.getServiceName());
         }
         Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
         Set<Facility> keyRoom = room.keySet();
         for (Facility key : keyRoom) {
             System.out.println(number++ + ". " + key);
+        }
+    }
+
+    public ArrayList<String> getServiceNameList(){
+        Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
+        Set<Facility> keyVilla = villa.keySet();
+        ArrayList<String> serviceNameList = new ArrayList<>();
+        for (Facility key : keyVilla) {
+            serviceNameList.add(key.getServiceName());
+        }
+        Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
+        Set<Facility> keyHouse = house.keySet();
+        for (Facility key : keyHouse) {
+            serviceNameList.add(key.getServiceName());
+        }
+        Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
+        Set<Facility> keyRoom = room.keySet();
+        for (Facility key : keyRoom) {
             serviceNameList.add(key.getServiceName());
         }
         return serviceNameList;
@@ -59,149 +72,34 @@ public class FacilityServiceImpl implements FacilityService {
             if (choice == 4) {
                 break;
             }
-            boolean check = false;
-            String serviceName = "";
-            do {
-                try {
-                    System.out.println("Enter Service Name: ");
-                    serviceName = sc.nextLine();
-                    check = checkServiceName(serviceName, choice);
-                } catch (UserException e) {
-                    System.out.println(e.getMessage());
-                }
-
-            } while (!check);
-
-            double usableArea = 0;
-            do {
-                try {
-                    System.out.println("Enter Usable Area: ");
-                    usableArea = Double.parseDouble(sc.nextLine());
-                    if (usableArea < 30) {
-                        throw new UserException("The usable area is invalid. It is greater than 30!");
-                    }
-                } catch (UserException e) {
-                    System.out.println(e.getMessage());
-                } catch (NumberFormatException e) {
-                    System.out.println("It is not a number!");
-                }
-            } while (usableArea < 30);
-
-            double cost = 0;
-            do {
-                try {
-                    System.out.println("Enter Cost: ");
-                    cost = Double.parseDouble(sc.nextLine());
-                    if (cost <= 0) {
-                        throw new UserException("The cost is grater than 0!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("It is not a number");
-                } catch (UserException e) {
-                    System.out.println(e.getMessage());
-                }
-            } while (cost <= 0);
-
-            int customerMax = 0;
-            do {
-                try {
-                    System.out.println("Enter Customer Maximum: ");
-                    customerMax = Integer.parseInt(sc.nextLine());
-                    if (customerMax <= 0 || customerMax >= 20) {
-                        throw new UserException("The customer maximum is grater than 0 and less than 20!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("It is not a number");
-                } catch (UserException e) {
-                    System.out.println(e.getMessage());
-                }
-            } while (customerMax <= 0 || customerMax >= 20);
-
-            check = false;
-            String rentingBy = "";
-            do {
-                try {
-                    System.out.println("Enter Renting by: ");
-                    rentingBy = sc.nextLine();
-                    check = checkRoomStandardAndRentingBy(rentingBy);
-                } catch (UserException e) {
-                    System.out.println(e.getMessage());
-                }
-            } while (!check);
-
-            Facility facility = FacilityFactory.getFacility(choice, serviceName, usableArea, cost, customerMax, rentingBy);
-            if (choice == 3) {
-                System.out.println("Enter Free Services: ");
-                String freeServices = sc.nextLine();
-                Map<Facility, Integer> facilities = new LinkedHashMap<>();
-                ((Room) facility).setFreeServices(freeServices);
-                facilities.put(facility, 0);
-                ReadAndWriteFacility.writeFile(FILE_ROOM_PATH, facilities, true);
+            Map<Facility, Integer> facilityList = new LinkedHashMap<>();
+            Facility facility = FacilityFactory.getFacility(choice);
+            facility.setServiceName();
+            facility.setUsableArea();
+            facility.setCost();
+            facility.setCustomerMax();
+            facility.setRentingBy();
+            if (facility instanceof Room) {
+                ((Room) facility).setFreeServices();
+                facilityList.put(facility, 0);
+                ReadAndWriteFacility.writeFile(FILE_ROOM_PATH, facilityList, true);
+                break;
+            } else if (facility instanceof House) {
+                ((House) facility).setRoomStandard();
+                ((House) facility).setFloors();
+                facilityList.put(facility, 0);
+                ReadAndWriteFacility.writeFile(FILE_HOUSE_PATH, facilityList, true);
                 break;
             } else {
-                check = false;
-                String roomStandard = "";
-                do {
-                    try {
-                        System.out.println("Enter Room Standard: ");
-                        roomStandard = sc.nextLine();
-                        check = checkRoomStandardAndRentingBy(roomStandard);
-                    } catch (UserException e) {
-                        System.out.println(e.getMessage());
-                    }
-
-                } while (!check);
-
-                int floors = 0;
-                do {
-                    try {
-                        System.out.println("Enter Number of floors: ");
-                        floors = Integer.parseInt(sc.nextLine());
-                        if (floors <= 0) {
-                            throw new UserException("The floors is grater than 0!");
-                        }
-                    } catch (NumberFormatException e) {
-                        System.out.println("It is not a number");
-                    } catch (UserException e) {
-                        System.out.println(e.getMessage());
-                    }
-                } while (floors <= 0);
-
-                if (choice == 2) {
-                    Map<Facility, Integer> facilities = new LinkedHashMap<>();
-                    ((House) facility).setRoomStandard(roomStandard);
-                    ((House) facility).setFloors(floors);
-                    facilities.put(facility, 0);
-                    ReadAndWriteFacility.writeFile(FILE_HOUSE_PATH, facilities, true);
-                    break;
-                } else {
-                    double poolArea = 0;
-                    do {
-                        try {
-                            System.out.println("Enter Pool Area: ");
-                            poolArea = Double.parseDouble(sc.nextLine());
-                            if (poolArea < 30) {
-                                throw new UserException("The usable area is invalid. It is greater than 30!");
-                            }
-                        } catch (UserException e) {
-                            System.out.println(e.getMessage());
-                        } catch (NumberFormatException e) {
-                            System.out.println("It is not a number!");
-                        }
-                    } while (poolArea < 30);
-
-                    Map<Facility, Integer> facilities = new LinkedHashMap<>();
-                    ((Villa) facility).setRoomStandard(roomStandard);
-                    ((Villa) facility).setPoolArea(poolArea);
-                    ((Villa) facility).setFloors(floors);
-                    facilities.put(facility, 0);
-                    ReadAndWriteFacility.writeFile(FILE_VILLA_PATH, facilities, true);
-                    break;
-                }
+                ((Villa) facility).setRoomStandard();
+                ((Villa) facility).setPoolArea();
+                ((Villa) facility).setFloors();
+                facilityList.put(facility, 0);
+                ReadAndWriteFacility.writeFile(FILE_VILLA_PATH, facilityList, true);
+                break;
             }
         } while (true);
         display();
-
     }
 
     public void useFacilities(String serviceName) {
@@ -246,7 +144,7 @@ public class FacilityServiceImpl implements FacilityService {
         Set<Facility> keyVilla = villa.keySet();
         for (Facility key : keyVilla) {
             if (villa.get(key) >= 5) {
-                System.out.println(key.toString() + villa.get(key));
+                System.out.println(key.toString() + " - Number of uses: " + villa.get(key));
             }
         }
         Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
@@ -267,33 +165,5 @@ public class FacilityServiceImpl implements FacilityService {
         }
     }
 
-    public boolean checkServiceName(String serviceName, int choice) throws UserException {
-        String regex;
-        if (choice == 1) {
-            regex = "SVVL-\\d{4}";
-        } else if (choice == 2) {
-            regex = "SVHO-\\d{4}";
-        } else {
-            regex = "SVRO-\\d{4}";
-        }
 
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(serviceName);
-        boolean check = matcher.matches();
-        if (!check) {
-            throw new UserException("Service name invalid!");
-        }
-        return check;
-    }
-
-    public boolean checkRoomStandardAndRentingBy(String str) throws UserException {
-        String regex = "[A-Z][a-z]+";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(str);
-        boolean check = matcher.matches();
-        if (!check) {
-            throw new UserException("Service name invalid!");
-        }
-        return check;
-    }
 }

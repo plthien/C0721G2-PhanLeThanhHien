@@ -1,11 +1,14 @@
 package models;
 
-import java.util.Objects;
+import libs.UserException;
 
 public class Villa extends Facility {
     private String roomStandard;
     private double poolArea;
     private int floors;
+
+    public Villa() {
+    }
 
     public Villa(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
         super(serviceName, usableArea, cost, customerMax, rentingBy);
@@ -23,30 +26,64 @@ public class Villa extends Facility {
         return roomStandard;
     }
 
-    public void setRoomStandard(String roomStandard) {
-        this.roomStandard = roomStandard;
+    public void setRoomStandard() {
+        boolean check = false;
+        do {
+            try {
+                System.out.println("Enter Room Standard: ");
+                this.roomStandard = sc.nextLine();
+                check = UserException.checkNoun(this.roomStandard);
+            } catch (UserException e) {
+                System.out.println(e.getMessage());
+            }
+
+        } while (!check);
     }
 
     public double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
-        this.poolArea = poolArea;
+    public void setPoolArea() {
+        do {
+            try {
+                System.out.println("Enter Pool Area: ");
+                this.poolArea = Double.parseDouble(sc.nextLine());
+                if (this.poolArea < 30) {
+                    throw new UserException("The usable area is invalid. It is greater than 30!");
+                }
+            } catch (UserException e) {
+                System.out.println(e.getMessage());
+            } catch (NumberFormatException e) {
+                System.out.println("It is not a number!");
+            }
+        } while (this.poolArea < 30);
     }
 
     public int getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
-        this.floors = floors;
+    public void setFloors() {
+        do {
+            try {
+                System.out.println("Enter Number of floors: ");
+                this.floors = Integer.parseInt(sc.nextLine());
+                if (this.floors <= 0) {
+                    throw new UserException("The floors is grater than 0!");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("It is not a number");
+            } catch (UserException e) {
+                System.out.println(e.getMessage());
+            }
+        } while (this.floors <= 0);
     }
 
     @Override
     public String toString() {
         return "Villa{" +
-                " Service Name: " + super.getServiceName()  +
+                " Service Name: " + super.getServiceName() +
                 ", Usable Area: " + super.getUsableArea() +
                 ", Cost: " + super.getCost() +
                 ", Customer Max: " + super.getCustomerMax() +
@@ -67,10 +104,10 @@ public class Villa extends Facility {
         return serviceName.hashCode();
     }
 
-    public String getInfoToWrite(){
+    public String getInfoToWrite() {
         return super.getServiceName() + "," + super.getUsableArea() + "," + super.getCost() + "," +
-                super.getCustomerMax() + "," + super.getRentingBy()+ "," +
-                this.getRoomStandard() + "," + this.getPoolArea()+ "," +
+                super.getCustomerMax() + "," + super.getRentingBy() + "," +
+                this.getRoomStandard() + "," + this.getPoolArea() + "," +
                 this.getFloors();
     }
 }
