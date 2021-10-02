@@ -105,5 +105,15 @@ public class CustomerServiceImpl implements CustomerService {
             ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, customers, false);
         }
     }
+    @Override
+    public Customer searchCustomerByCode(String customerCode){
+        ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
+        for (Person customer:customers) {
+            if (((Customer) customer).getCustomerCode().contains(customerCode)){
+                return (Customer) customer;
+            }
+        }
+        return null;
+    }
 
 }

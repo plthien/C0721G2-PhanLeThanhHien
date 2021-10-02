@@ -208,7 +208,7 @@ public class FuramaController {
                         choicePromotion = Integer.parseInt(sc.nextLine());
                         switch (choicePromotion){
                             case 1:
-                                promotionManagement.displayCustomerByYear();
+                                promotionManagement.displayCustomerInYear();
                                 break;
                             case 2:
                                 promotionManagement.giveVoucher();

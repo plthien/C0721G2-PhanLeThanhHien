@@ -14,47 +14,51 @@ public class PromotionServiceImpl implements PromotionService {
     Scanner sc = new Scanner(System.in);
     private final String FILE_BOOKING_PATH = "src\\data\\booking.csv";
     private final String FILE_CUSTOMER_PATH = "src\\data\\customer.csv";
+    CustomerService customerService = new CustomerServiceImpl();
 
     @Override
-    public void displayCustomerByYear() {
+    public void displayCustomerInYear() {
         Set<Booking> bookingSet = ReadAndWriteBooking.readFile(FILE_BOOKING_PATH);
-        ArrayList<Person> customerList = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
+
         System.out.println("Enter year that you want to display: ");
         String year = sc.nextLine();
         int number = 1;
         System.out.println("Customer list used service in " + year + ":");
         for (Booking booking : bookingSet) {
             if (booking.getCheckInDate().contains(year)) {
-                for (Person customer : customerList) {
-                    if (((Customer) customer).getCustomerCode().contains(booking.getCustomerCode())) {
-                        System.out.println(number++ + ". " + "Customer code: " + ((Customer) customer).getCustomerCode() +
-                                ", Customer name: " + customer.getName() + ", Booking code: " + booking.getBookingCode());
-                    }
-                }
+                Customer customer = customerService.searchCustomerByCode(booking.getCustomerCode());
+                System.out.println(number++ + ". "  + customer + ", Booking code: " + booking.getBookingCode());
             }
         }
-
-
     }
 
     @Override
     public void giveVoucher() {
-        Stack<Booking> bookingListInMonth = new Stack<>();
+        Stack<Customer> customerListInMonth = new Stack<>();
         Set<Booking> bookingSet = ReadAndWriteBooking.readFile(FILE_BOOKING_PATH);
         LocalDate date = LocalDate.now();
         int currentMonth = date.getMonthValue();
         for (Booking booking : bookingSet) {
             String monthBooking = booking.getCheckInDate().substring(3, 5);
             if (monthBooking.contains(String.valueOf(currentMonth))) {
-                bookingListInMonth.add(booking);
+                customerListInMonth.add(customerService.searchCustomerByCode(booking.getCustomerCode()));
             }
         }
-        int numberOfVoucher = bookingListInMonth.size();
-
-
+        int numberOfVoucher = customerListInMonth.size();
+        Map<String, Integer> voucherList = createVoucher(numberOfVoucher);
+        while (!customerListInMonth.empty()) {
+            Set<String> voucherName = voucherList.keySet();
+            for (String key: voucherName) {
+                while (voucherList.get(key) > 0) {
+                    System.out.println("Give " + key + " for " + customerListInMonth.pop());
+                    voucherList.computeIfPresent(key,(k,v)->v-1);
+                }
+            }
+        }
     }
-    public Map<String,Integer> createVoucher(int numberOfVoucher){
-        Map<String,Integer> voucherList = new LinkedHashMap<>();
+
+    public Map<String, Integer> createVoucher(int numberOfVoucher) {
+        Map<String, Integer> voucherList = new LinkedHashMap<>();
         int tenPercentVoucher = 0;
         int twelvePercentVoucher = 0;
         int fiftyPercentVoucher = 0;
@@ -81,12 +85,12 @@ public class PromotionServiceImpl implements PromotionService {
             System.out.println("Number of voucher: " + numberOfVoucher);
             do {
                 try {
-                    System.out.println("Enter number of 10% voucher: ");
-                    tenPercentVoucher = Integer.parseInt(sc.nextLine());
-                    if (numberOfVoucher < tenPercentVoucher) {
+                    System.out.println("Enter number of 20% voucher: ");
+                    twelvePercentVoucher = Integer.parseInt(sc.nextLine());
+                    if (numberOfVoucher < twelvePercentVoucher) {
                         throw new UserException("Only have " + numberOfVoucher + " voucher!");
                     } else {
-                        numberOfVoucher = numberOfVoucher - tenPercentVoucher;
+                        numberOfVoucher = numberOfVoucher - twelvePercentVoucher;
                         break;
                     }
 
@@ -98,6 +102,12 @@ public class PromotionServiceImpl implements PromotionService {
 
             } while (true);
         }
+        fiftyPercentVoucher = numberOfVoucher;
+        System.out.println("Number of fifty percent voucher: " + fiftyPercentVoucher);
+        voucherList.put("Voucher 10%", tenPercentVoucher);
+        voucherList.put("Voucher 20%", twelvePercentVoucher);
+        voucherList.put("Voucher 50%", fiftyPercentVoucher);
+        return voucherList;
     }
 
 
