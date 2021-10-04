@@ -128,6 +128,7 @@ public class FuramaController {
                                 customerManagement.add();
                                 break;
                             case 3:
+                                customerManagement.display();
                                 System.out.println("Enter customer code: ");
                                 String customerCode = sc.nextLine();
                                 customerManagement.editCustomer(customerCode);

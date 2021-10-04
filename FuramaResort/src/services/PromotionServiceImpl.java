@@ -3,17 +3,13 @@ package services;
 import libs.UserException;
 import models.Booking;
 import models.Customer;
-import models.Person;
 import utils.ReadAndWriteBooking;
-import utils.ReadAndWritePerson;
-
 import java.time.LocalDate;
 import java.util.*;
 
 public class PromotionServiceImpl implements PromotionService {
     Scanner sc = new Scanner(System.in);
     private final String FILE_BOOKING_PATH = "src\\data\\booking.csv";
-    private final String FILE_CUSTOMER_PATH = "src\\data\\customer.csv";
     CustomerService customerService = new CustomerServiceImpl();
 
     @Override
@@ -27,7 +23,7 @@ public class PromotionServiceImpl implements PromotionService {
         for (Booking booking : bookingSet) {
             if (booking.getCheckInDate().contains(year)) {
                 Customer customer = customerService.searchCustomerByCode(booking.getCustomerCode());
-                System.out.println(number++ + ". "  + customer + ", Booking code: " + booking.getBookingCode());
+                System.out.println(number++ + ". " + customer + ", Booking code: " + booking.getBookingCode());
             }
         }
     }
@@ -46,13 +42,11 @@ public class PromotionServiceImpl implements PromotionService {
         }
         int numberOfVoucher = customerListInMonth.size();
         Map<String, Integer> voucherList = createVoucher(numberOfVoucher);
-        while (!customerListInMonth.empty()) {
-            Set<String> voucherName = voucherList.keySet();
-            for (String key: voucherName) {
-                while (voucherList.get(key) > 0) {
-                    System.out.println("Give " + key + " for " + customerListInMonth.pop());
-                    voucherList.computeIfPresent(key,(k,v)->v-1);
-                }
+        Set<String> voucherName = voucherList.keySet();
+        for (String key : voucherName) {
+            while (voucherList.get(key) > 0) {
+                System.out.println("Give " + key + " for " + customerListInMonth.pop());
+                voucherList.computeIfPresent(key, (k, v) -> v - 1);
             }
         }
     }
