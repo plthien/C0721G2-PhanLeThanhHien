@@ -70,8 +70,14 @@ public class ContractServiceImpl implements ContractService {
         }
     }
 
+
     @Override
-    public void editContract(String contractNumber) {
+    public void delete() {
+        //bo sung sau
+    }
+
+    @Override
+    public void edit(String contractNumber) {
         ArrayList<Contract> contracts = ReadAndWriteContract.readFile(FILE_CONTRACT_PATH);
         boolean flag = true;
         for (Contract contract : contracts) {

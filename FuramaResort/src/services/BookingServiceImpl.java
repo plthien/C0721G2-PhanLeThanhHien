@@ -3,6 +3,7 @@ package services;
 import libs.UserException;
 import models.Booking;
 import utils.ReadAndWriteBooking;
+
 import java.util.*;
 
 
@@ -18,6 +19,16 @@ public class BookingServiceImpl implements BookingService {
             System.out.println(booking);
         }
 
+    }
+
+    @Override
+    public void edit(String bookingCode) {
+        //bo sung sau
+    }
+
+    @Override
+    public void delete() {
+        //bo sung sau
     }
 
     @Override

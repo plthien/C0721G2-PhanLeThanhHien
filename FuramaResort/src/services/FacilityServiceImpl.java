@@ -33,6 +33,16 @@ public class FacilityServiceImpl implements FacilityService {
         }
     }
 
+    @Override
+    public void edit(String str) {
+        //bo sung sau
+    }
+
+    @Override
+    public void delete() {
+        // bo sung sau
+    }
+
     public ArrayList<String> getServiceNameList(){
         Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
         Set<Facility> keyVilla = villa.keySet();

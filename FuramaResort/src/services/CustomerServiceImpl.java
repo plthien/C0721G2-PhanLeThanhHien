@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
         display();
     }
 
-    public void editCustomer(String customerCode) {
+    public void edit(String customerCode) {
         ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);
         boolean flag = true;
         for (int i = 0; i < customers.size(); i++) {
@@ -105,6 +105,12 @@ public class CustomerServiceImpl implements CustomerService {
             ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, customers, false);
         }
     }
+
+    @Override
+    public void delete() {
+        //bo sung sau
+    }
+
     @Override
     public Customer searchCustomerByCode(String customerCode){
         ArrayList<Person> customers = ReadAndWritePerson.readFile(FILE_CUSTOMER_PATH);

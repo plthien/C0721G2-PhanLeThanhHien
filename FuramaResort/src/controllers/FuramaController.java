@@ -98,7 +98,7 @@ public class FuramaController {
                             case 3:
                                 System.out.println("Enter employee code: ");
                                 String employeeCode = sc.nextLine();
-                                employeeManagement.editEmployee(employeeCode);
+                                employeeManagement.edit(employeeCode);
                                 break;
                         }
                     } while (choiceEmployee != 4);
@@ -131,7 +131,7 @@ public class FuramaController {
                                 customerManagement.display();
                                 System.out.println("Enter customer code: ");
                                 String customerCode = sc.nextLine();
-                                customerManagement.editCustomer(customerCode);
+                                customerManagement.edit(customerCode);
                                 break;
                         }
                     } while (choiceCustomer != 4);
@@ -197,7 +197,7 @@ public class FuramaController {
                             case 5:
                                 System.out.println("Enter contract number: ");
                                 String contractNumber = sc.nextLine();
-                                contractManagement.editContract(contractNumber);
+                                contractManagement.edit(contractNumber);
                                 break;
                         }
                     } while (choiceBooking != 6);

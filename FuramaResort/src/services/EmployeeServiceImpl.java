@@ -43,7 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         display();
     }
 
-    public void editEmployee(String employeeCode) {
+    public void edit(String employeeCode) {
         ArrayList<Person> employees = ReadAndWritePerson.readFile(FILE_EMPLOYEE_PATH);
         boolean flag = true;
         for (int i = 0; i < employees.size(); i++) {
@@ -105,5 +105,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         } else {
             ReadAndWritePerson.writeFile(FILE_EMPLOYEE_PATH, employees, false);
         }
+    }
+
+    @Override
+    public void delete() {
+        //bo sung sau
     }
 }
