@@ -1,5 +1,7 @@
 package _12_java_collection_framework.practice.hashmap_hashset;
 
+import java.util.Objects;
+
 public class Student {
     private String name;
     private int age;
@@ -45,4 +47,16 @@ public class Student {
                 ", address='" + this.address + '\'' +
                 '}';
     }
+
+//    @Override
+//    public boolean equals(Object o) {
+//        Student student = (Student) o;
+//        return Objects.equals(name, student.name);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+////        return  11;
+//        return Objects.hash(name);
+//    }
 }

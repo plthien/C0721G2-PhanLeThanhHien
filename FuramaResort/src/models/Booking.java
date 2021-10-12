@@ -8,6 +8,8 @@ public class Booking{
     private String checkOutDate;
     private static int code = 1000;
 
+    public Booking() {
+    }
 
     public Booking(String customerCode, String serviceName, String checkInDate, String checkOutDate) {
         this.customerCode = customerCode;

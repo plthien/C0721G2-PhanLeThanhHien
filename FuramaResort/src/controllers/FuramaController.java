@@ -54,171 +54,129 @@ public class FuramaController {
         ContractService contractManagement = new ContractServiceImpl();
         PromotionService promotionManagement = new PromotionServiceImpl();
 
-        int choiceMenuManagement = 0;
+        String choiceMenuManagement = "";
         do {
-            do {
-                try {
-                    displayMenu(management);
-                    choiceMenuManagement = Integer.parseInt(sc.nextLine());
-                    if (choiceMenuManagement <= 0 || choiceMenuManagement >= 7) {
-                        throw new MenuException("Your choice out of menu!");
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("It is not a number!");
-                } catch (MenuException e) {
-                    System.out.println(e.getMessage());
-                }
-            } while (choiceMenuManagement <= 0 || choiceMenuManagement >= 7);
-
+            displayMenu(management);
+            choiceMenuManagement = sc.nextLine();
             switch (choiceMenuManagement) {
-                case 1:
-                    int choiceEmployee = 0;
+                case "1":
+                    String choiceEmployee = "";
                     do {
-                        do {
-                            try {
-                                displayMenu(employee);
-                                choiceEmployee = Integer.parseInt(sc.nextLine());
-                                if (choiceEmployee <= 0 || choiceEmployee >= 5) {
-                                    throw new MenuException("Your choice out of menu!");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("It is not a number!");
-                            } catch (MenuException e) {
-                                System.out.println(e.getMessage());
-                            }
-                        } while (choiceEmployee <= 0 || choiceEmployee >= 5);
-
+                        displayMenu(employee);
+                        choiceEmployee = sc.nextLine();
                         switch (choiceEmployee) {
-                            case 1:
+                            case "1":
                                 employeeManagement.display();
                                 break;
-                            case 2:
+                            case "2":
                                 employeeManagement.add();
                                 break;
-                            case 3:
+                            case "3":
                                 System.out.println("Enter employee code: ");
                                 String employeeCode = sc.nextLine();
                                 employeeManagement.edit(employeeCode);
                                 break;
+                            default:
+                                System.out.println("Choose again!");
+                                break;
                         }
-                    } while (choiceEmployee != 4);
+                    } while (!choiceEmployee.equals("4"));
                     break;
-                case 2:
-                    int choiceCustomer = 0;
+                case "2":
+                    String choiceCustomer = "";
                     do {
-                        do {
-                            try {
-                                displayMenu(customer);
-                                choiceCustomer = Integer.parseInt(sc.nextLine());
-                                if (choiceCustomer <= 0 || choiceCustomer >= 5) {
-                                    throw new MenuException("Your choice out of menu!");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("It is not a number!");
-                            } catch (MenuException e) {
-                                System.out.println(e.getMessage());
-                            }
-                        } while (choiceCustomer <= 0 || choiceCustomer >= 5);
-
+                        displayMenu(customer);
+                        choiceCustomer = sc.nextLine();
                         switch (choiceCustomer) {
-                            case 1:
+                            case "1":
                                 customerManagement.display();
                                 break;
-                            case 2:
+                            case "2":
                                 customerManagement.add();
                                 break;
-                            case 3:
+                            case "3":
                                 customerManagement.display();
                                 System.out.println("Enter customer code: ");
                                 String customerCode = sc.nextLine();
                                 customerManagement.edit(customerCode);
                                 break;
+                            default:
+                                System.out.println("Choose again!");
+                                break;
                         }
-                    } while (choiceCustomer != 4);
+                    } while (!choiceCustomer.equals("4"));
                     break;
-                case 3:
-                    int choiceFacility = 0;
+                case "3":
+                    String choiceFacility = "";
                     do {
-                        do {
-                            try {
-                                displayMenu(facility);
-                                choiceFacility = Integer.parseInt(sc.nextLine());
-                                if (choiceFacility <= 0 || choiceFacility >= 5) {
-                                    throw new MenuException("Your choice out of menu!");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("It is not a number!");
-                            } catch (MenuException e) {
-                                System.out.println(e.getMessage());
-                            }
-                        } while (choiceFacility <= 0 || choiceFacility >= 5);
+                        displayMenu(facility);
+                        choiceFacility = sc.nextLine();
                         switch (choiceFacility) {
-                            case 1:
+                            case "1":
                                 facilityManagement.display();
                                 break;
-                            case 2:
+                            case "2":
                                 facilityManagement.add();
                                 break;
-                            case 3:
+                            case "3":
                                 facilityManagement.displayFacilityMaintenance();
                                 break;
+                            default:
+                                System.out.println("Choose again!");
                         }
-                    } while (choiceFacility != 4);
+                    } while (!choiceFacility.equals("4"));
                     break;
-                case 4:
-                    int choiceBooking = 0;
+                case "4":
+                    String choiceBooking = "";
                     do {
-                        do {
-                            try {
-                                displayMenu(booking);
-                                choiceBooking = Integer.parseInt(sc.nextLine());
-                                if (choiceBooking <= 0 || choiceBooking >= 7) {
-                                    throw new MenuException("Your choice out of menu!");
-                                }
-                            } catch (NumberFormatException e) {
-                                System.out.println("It is not a number!");
-                            } catch (MenuException e) {
-                                System.out.println(e.getMessage());
-                            }
-                        } while (choiceBooking <= 0 || choiceBooking >= 7);
+                        displayMenu(booking);
+                        choiceBooking = sc.nextLine();
                         switch (choiceBooking) {
-                            case 1:
+                            case "1":
                                 bookingManagement.add();
                                 break;
-                            case 2:
+                            case "2":
                                 bookingManagement.display();
                                 break;
-                            case 3:
+                            case "3":
                                 contractManagement.add();
                                 break;
-                            case 4:
+                            case "4":
                                 contractManagement.display();
                                 break;
-                            case 5:
+                            case "5":
                                 System.out.println("Enter contract number: ");
                                 String contractNumber = sc.nextLine();
                                 contractManagement.edit(contractNumber);
                                 break;
+                            default:
+                                System.out.println("Choose again!");
+                                 break;
                         }
-                    } while (choiceBooking != 6);
+                    } while (!choiceBooking.equals("6"));
                     break;
-                case 5:
-                    int choicePromotion = 1 ;
+                case "5":
+                    String choicePromotion = "";
                     do {
                         displayMenu(promotion);
-                        choicePromotion = Integer.parseInt(sc.nextLine());
-                        switch (choicePromotion){
-                            case 1:
+                        choicePromotion = sc.nextLine();
+                        switch (choicePromotion) {
+                            case "1":
                                 promotionManagement.displayCustomerInYear();
                                 break;
-                            case 2:
+                            case "2":
                                 promotionManagement.giveVoucher();
                                 break;
+                            default:
+                                System.out.println("Choose again!");
                         }
-                    }while (choicePromotion != 3);
+                    } while (!choicePromotion.equals("3"));
+                    break;
+                default:
+                    System.out.println("Choose again!");
                     break;
             }
-        } while (choiceMenuManagement != 6);
+        } while (!choiceMenuManagement.equals("6"));
     }
 
     public static void displayMenu(String[] arr) {

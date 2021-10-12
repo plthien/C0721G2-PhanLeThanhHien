@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService {
         boolean flag = true;
         for (int i = 0; i < customers.size(); i++) {
             if (((Customer) customers.get(i)).getCustomerCode().contains(customerCode)) {
-                int choice;
+                String choice;
                 do {
                     System.out.println(customers.get(i));
                     System.out.println("Menu: " +
@@ -66,35 +66,38 @@ public class CustomerServiceImpl implements CustomerService {
                             "8. Address \t" +
                             "9. Exit");
                     System.out.println("Enter your choice: ");
-                    choice = Integer.parseInt(sc.nextLine());
+                    choice = sc.nextLine();
                     switch (choice) {
-                        case 1:
+                        case "1":
                             customers.get(i).setName();
                             break;
-                        case 2:
+                        case "2":
                             customers.get(i).setBirthday();
                             break;
-                        case 3:
+                        case "3":
                             customers.get(i).setGender();
                             break;
-                        case 4:
+                        case "4":
                             customers.get(i).setPersonalID();
                             break;
-                        case 5:
+                        case "5":
                             customers.get(i).setPhoneNumber();
                             break;
-                        case 6:
+                        case "6":
                             customers.get(i).setEmail();
                             break;
-                        case 7:
+                        case "7":
                             ((Customer) customers.get(i)).setCustomerTypes();
                             ((Customer) customers.get(i)).setCustomerCode();
                             break;
-                        case 8:
+                        case "8":
                             ((Customer) customers.get(i)).setAddress();
                             break;
+                        default:
+                            System.out.println("Choose again!");
+                            break;
                     }
-                } while (choice != 9);
+                } while (!choice.equals("9"));
                 flag = false;
                 break;
             }
@@ -105,7 +108,7 @@ public class CustomerServiceImpl implements CustomerService {
             ReadAndWritePerson.writeFile(FILE_CUSTOMER_PATH, customers, false);
         }
     }
-
+    
     @Override
     public void delete() {
         //bo sung sau

@@ -9,11 +9,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.zip.DataFormatException;
 
 public class UserException extends Exception {
     private static final String FILE_HOUSE_PATH = "src\\data\\house.csv";
@@ -27,23 +31,23 @@ public class UserException extends Exception {
         super(message);
     }
 
-    public static boolean checkBirthday(String birthday) throws UserException {
-        String regex = "^(?=\\d{2}([\\/])\\d{2}\\/\\d{4}$)(?:0[1-9]|1\\d|[2][0-8]|29(?!.02.(?!(?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)\\d{2}(?:[02468][048]|[13579][26])))|30(?!.02)|31(?=.(?:0[13578]|10|12))).(?:0[1-9]|1[012]).\\d{4}$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(birthday);
-        boolean check = matcher.matches();
-        if (!check) {
-            throw new UserException("Birthday is invalid!");
-        } else {
-            String[] array = birthday.split("/");
-            LocalDate birthdayNew = LocalDate.of(Integer.parseInt(array[2]), Integer.parseInt(array[1]), Integer.parseInt(array[0]));
+    public static boolean checkBirthday(String birthday){
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu").withResolverStyle(ResolverStyle.STRICT);
+        try {
+            LocalDate birthdayNew = LocalDate.parse(birthday, f);
+            System.out.println(birthdayNew);
             LocalDate now = LocalDate.now();
+            System.out.println(now);
             int age = Period.between(birthdayNew, now).getYears();
             if (age >= 101 || age <= 17) {
-                throw new UserException("Birthday is greater than 17 and less than 101 ");
+                System.out.println("Birthday is greater than 17 and less than 101 ");
+                return false;
             }
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date!");
+            return false;
         }
-        return check;
+        return true;
     }
 
     public static boolean checkPhoneNumber(String phoneNumber) throws UserException {
@@ -69,32 +73,16 @@ public class UserException extends Exception {
     }
 
     public static boolean checkDate(String checkInDate, String checkOutDate) {
-        String regex = "^(?=\\d{2}\\/\\d{2}\\/\\d{4}$)" +
-                "(?:0[1-9]|1\\d|[2][0-8]|29(?!.02.(?!(?!(?:[02468][1-35-79]|[13579][0-13-57-9])00)\\d{2}(?:[02468][048]|[13579][26])))" +
-                "|30(?!.02)|31(?=.(?:0[13578]|10|12))).(?:0[1-9]|1[012]).\\d{4}$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher1 = pattern.matcher(checkInDate);
-        Matcher matcher2 = pattern.matcher(checkOutDate);
-
-        if (!matcher1.matches()) {
-            System.out.println("The checkin date is invalid!");
-            return false;
-        }
-        if (!matcher2.matches()) {
-            System.out.println("The checkout date is invalid!");
-            return false;
-        }
-        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-        Date checkInDateNew = new Date();
-        Date checkOutDateNew = new Date();
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd/MM/uuuu").withResolverStyle(ResolverStyle.STRICT);
         try {
-            checkInDateNew = df.parse(checkInDate);
-            checkOutDateNew = df.parse(checkOutDate);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        if (checkOutDateNew.compareTo(checkInDateNew) <= 0) {
-            System.out.println("Checkout Date is greater than checkin Date!");
+            LocalDate checkInDateNew = LocalDate.parse(checkInDate,f);
+            LocalDate checkOutDateNew = LocalDate.parse(checkOutDate,f);
+            if (checkInDateNew.isAfter(checkOutDateNew)) {
+                System.out.println("Checkout Date is greater than checkin Date!");
+                return false;
+            }
+        } catch (DateTimeParseException e) {
+            System.out.println("Invalid date");
             return false;
         }
         return true;

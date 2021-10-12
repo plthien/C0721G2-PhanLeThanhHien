@@ -48,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         boolean flag = true;
         for (int i = 0; i < employees.size(); i++) {
             if (((Employee) employees.get(i)).getEmployeeCode().contains(employeeCode)) {
-                int choice;
+                String choice;
                 do {
                     System.out.println(employees.get(i));
                     System.out.println("Menu: " +
@@ -63,39 +63,42 @@ public class EmployeeServiceImpl implements EmployeeService {
                             "9. Salary \t" +
                             "10. Exit");
                     System.out.println("Enter your choice: ");
-                    choice = Integer.parseInt(sc.nextLine());
+                    choice = sc.nextLine();
                     switch (choice) {
-                        case 1:
+                        case "1":
                             employees.get(i).setName();
                             break;
-                        case 2:
+                        case "2":
                             employees.get(i).setBirthday();
                             break;
-                        case 3:
+                        case "3":
                             employees.get(i).setGender();
                             break;
-                        case 4:
+                        case "4":
                             employees.get(i).setPersonalID();
                             break;
-                        case 5:
+                        case "5":
                             employees.get(i).setPhoneNumber();
                             break;
-                        case 6:
+                        case "6":
                             employees.get(i).setEmail();
                             break;
-                        case 7:
+                        case "7":
                             ((Employee) employees.get(i)).setDegree();
                             ((Employee) employees.get(i)).setEmployeeCode();
                             break;
-                        case 8:
+                        case "8":
                             ((Employee) employees.get(i)).setOffice();
                             ((Employee) employees.get(i)).setEmployeeCode();
                             break;
-                        case 9:
+                        case "9":
                             ((Employee) employees.get(i)).setSalary();
                             break;
+                        default:
+                            System.out.println("Choose again!");
+                            break;
                     }
-                } while (choice != 10);
+                } while (!choice.equals("10"));
                 flag = false;
                 break;
             }

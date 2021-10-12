@@ -38,16 +38,13 @@ public abstract class Person {
         return this.birthday;
     }
 
-    public void setBirthday(){
+    public void setBirthday() {
         boolean check = false;
         do {
             System.out.println("Enter birthday: ");
             this.birthday = sc.nextLine();
-            try {
-                check = UserException.checkBirthday(this.birthday);
-            } catch (UserException e) {
-                System.out.println(e.getMessage());
-            }
+            check = UserException.checkBirthday(this.birthday);
+
         } while (!check);
     }
 
@@ -55,7 +52,7 @@ public abstract class Person {
         return this.gender ? "Male" : "Female";
     }
 
-    public void setGender(){
+    public void setGender() {
         int choiceGender = 0;
         this.gender = true;
         do {
@@ -91,7 +88,7 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
     }
 
-    public void setPhoneNumber(){
+    public void setPhoneNumber() {
         boolean check = false;
         do {
             try {
@@ -112,7 +109,7 @@ public abstract class Person {
         this.email = email;
     }
 
-    public void setEmail(){
+    public void setEmail() {
         boolean check = false;
         do {
             try {
