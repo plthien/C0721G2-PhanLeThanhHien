@@ -5,19 +5,15 @@ import models.House;
 import models.Villa;
 import utils.ReadAndWriteFacility;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
-import java.util.Date;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.zip.DataFormatException;
 
 public class UserException extends Exception {
     private static final String FILE_HOUSE_PATH = "src\\data\\house.csv";
@@ -88,7 +84,7 @@ public class UserException extends Exception {
         return true;
     }
 
-    public static boolean checkServiceName(String serviceName, Facility facility) throws UserException {
+    public static boolean checkIdService(String idService, Facility facility) throws UserException {
         String regex;
         if (facility instanceof Villa) {
             regex = "SVVL-\\d{4}";
@@ -98,25 +94,25 @@ public class UserException extends Exception {
             regex = "SVRO-\\d{4}";
         }
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(serviceName);
+        Matcher matcher = pattern.matcher(idService);
         boolean check = matcher.matches();
         if (!check) {
-            throw new UserException("Service name invalid!");
-        } else if (serviceName.contains("VL")) {
+            throw new UserException(" Id Service invalid!");
+        } else if (idService.contains("VL")) {
             Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
             Set<Facility> keyVilla = villa.keySet();
             for (Facility key : keyVilla) {
-                if (key.getServiceName().contains(serviceName)) {
-                    System.out.println("Service name existed!");
+                if (key.getIdService().contains(idService)) {
+                    System.out.println(" Id Service existed!");
                     return false;
                 }
             }
-        } else if (serviceName.contains("HO")) {
+        } else if (idService.contains("HO")) {
             Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
             Set<Facility> keyHouse = house.keySet();
             for (Facility key : keyHouse) {
-                if (key.getServiceName().contains(serviceName)) {
-                    System.out.println("Service name existed!");
+                if (key.getIdService().contains(idService)) {
+                    System.out.println("Id Service existed!");
                     return false;
                 }
             }
@@ -124,8 +120,8 @@ public class UserException extends Exception {
             Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
             Set<Facility> keyRoom = room.keySet();
             for (Facility key : keyRoom) {
-               if (key.getServiceName().contains(serviceName)){
-                   System.out.println("Service name existed!");
+               if (key.getIdService().contains(idService)){
+                   System.out.println("Id Service existed!");
                    return false;
                }
             }
@@ -140,7 +136,7 @@ public class UserException extends Exception {
         Matcher matcher = pattern.matcher(str);
         boolean check = matcher.matches();
         if (!check) {
-            throw new UserException("Service name invalid!");
+            throw new UserException("Invalid!");
         }
         return check;
     }

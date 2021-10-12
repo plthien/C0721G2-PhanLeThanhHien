@@ -1,7 +1,6 @@
 package services;
 
 import libs.MenuException;
-import libs.UserException;
 import models.*;
 import utils.ReadAndWriteFacility;
 
@@ -43,24 +42,24 @@ public class FacilityServiceImpl implements FacilityService {
         // bo sung sau
     }
 
-    public ArrayList<String> getServiceNameList(){
+    public ArrayList<String> getIdServiceList(){
         Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
         Set<Facility> keyVilla = villa.keySet();
-        ArrayList<String> serviceNameList = new ArrayList<>();
+        ArrayList<String> idServiceList = new ArrayList<>();
         for (Facility key : keyVilla) {
-            serviceNameList.add(key.getServiceName());
+            idServiceList.add(key.getIdService());
         }
         Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
         Set<Facility> keyHouse = house.keySet();
         for (Facility key : keyHouse) {
-            serviceNameList.add(key.getServiceName());
+            idServiceList.add(key.getIdService());
         }
         Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
         Set<Facility> keyRoom = room.keySet();
         for (Facility key : keyRoom) {
-            serviceNameList.add(key.getServiceName());
+            idServiceList.add(key.getIdService());
         }
-        return serviceNameList;
+        return idServiceList;
     }
 
     public void add() {
@@ -84,7 +83,7 @@ public class FacilityServiceImpl implements FacilityService {
             }
             Map<Facility, Integer> facilityList = new LinkedHashMap<>();
             Facility facility = FacilityFactory.getFacility(choice);
-            facility.setServiceName();
+            facility.setIdService();
             facility.setUsableArea();
             facility.setCost();
             facility.setCustomerMax();
@@ -112,23 +111,23 @@ public class FacilityServiceImpl implements FacilityService {
         display();
     }
 
-    public void useFacilities(String serviceName) {
-        if (serviceName.contains("VL")) {
+    public void useFacilities(String idService) {
+        if (idService.contains("VL")) {
             Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
             Set<Facility> keyVilla = villa.keySet();
             for (Facility key : keyVilla) {
-                if (key.getServiceName().contains(serviceName)) {
+                if (key.getIdService().contains(idService)) {
                     villa.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_VILLA_PATH, villa, false);
                     break;
                 }
             }
 
-        } else if (serviceName.contains("HO")) {
+        } else if (idService.contains("HO")) {
             Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
             Set<Facility> keyHouse = house.keySet();
             for (Facility key : keyHouse) {
-                if (key.getServiceName().contains(serviceName)) {
+                if (key.getIdService().contains(idService)) {
                     house.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_HOUSE_PATH, house, false);
                     break;
@@ -138,7 +137,7 @@ public class FacilityServiceImpl implements FacilityService {
             Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
             Set<Facility> keyRoom = room.keySet();
             for (Facility key : keyRoom) {
-                if (key.getServiceName().contains(serviceName)) {
+                if (key.getIdService().contains(idService)) {
                     room.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_ROOM_PATH, room, false);
                     break;

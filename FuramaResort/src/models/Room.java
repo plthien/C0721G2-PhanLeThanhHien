@@ -8,12 +8,12 @@ public class Room extends Facility {
     public Room() {
     }
 
-    public Room(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
-        super(serviceName, usableArea, cost, customerMax, rentingBy);
+    public Room(String idService, double usableArea, double cost, int customerMax, String rentingBy) {
+        super(idService, usableArea, cost, customerMax, rentingBy);
     }
 
-    public Room(String serviceName, double usableArea, double cost, int customerMax, String rentingBy, String freeServices) {
-        super(serviceName, usableArea, cost, customerMax, rentingBy);
+    public Room(String idService, double usableArea, double cost, int customerMax, String rentingBy, String freeServices) {
+        super(idService, usableArea, cost, customerMax, rentingBy);
         this.freeServices = freeServices;
     }
 
@@ -38,7 +38,7 @@ public class Room extends Facility {
     @Override
     public String toString() {
         return "Room{" +
-                " Service Name: " + super.getServiceName()  +
+                " Id Service: " + super.getIdService()  +
                 ", Usable Area: " + super.getUsableArea() +
                 ", Cost: " + super.getCost() +
                 ", Customer Max: " + super.getCustomerMax() +
@@ -50,16 +50,16 @@ public class Room extends Facility {
     @Override
     public boolean equals(Object o) {
         Room room = (Room) o;
-        return this.getServiceName().equals(room.getServiceName());
+        return this.getIdService().equals(room.getIdService());
     }
 
     @Override
     public int hashCode() {
-        return serviceName.hashCode();
+        return idService.hashCode();
     }
 
     public String getInfoToWrite(){
-        return super.getServiceName() + "," + super.getUsableArea() + "," + super.getCost() + "," +
+        return super.getIdService() + "," + super.getUsableArea() + "," + super.getCost() + "," +
                 super.getCustomerMax() + "," + super.getRentingBy()+ "," +
                 this.getFreeServices();
     }

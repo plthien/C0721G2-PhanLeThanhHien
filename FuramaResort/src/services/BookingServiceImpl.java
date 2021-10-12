@@ -54,17 +54,17 @@ public class BookingServiceImpl implements BookingService {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         System.out.println("Choose service name: ");
         facilityService.display();
-        ArrayList<String> serviceNameList = facilityService.getServiceNameList();
+        ArrayList<String> idServiceList = facilityService.getIdServiceList();
         String serviceName = "";
         do {
             System.out.println("Enter number of Service: ");
             choice = Integer.parseInt(sc.nextLine());
             try {
-                serviceName = serviceNameList.get(choice - 1);
+                serviceName = idServiceList.get(choice - 1);
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Your choice out of range");
             }
-        } while (choice - 1 < 0 || choice - 1 >= serviceNameList.size());
+        } while (choice - 1 < 0 || choice - 1 >= idServiceList.size());
 
         String checkInDate, checkOutDate;
         boolean flag;

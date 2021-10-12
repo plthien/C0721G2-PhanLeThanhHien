@@ -10,13 +10,13 @@ public class Villa extends Facility {
     public Villa() {
     }
 
-    public Villa(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
-        super(serviceName, usableArea, cost, customerMax, rentingBy);
+    public Villa(String idService, double usableArea, double cost, int customerMax, String rentingBy) {
+        super(idService, usableArea, cost, customerMax, rentingBy);
     }
 
-    public Villa(String serviceName, double usableArea, double cost, int customerMax, String rentingBy,
+    public Villa(String idService, double usableArea, double cost, int customerMax, String rentingBy,
                  String roomStandard, double poolArea, int floors) {
-        super(serviceName, usableArea, cost, customerMax, rentingBy);
+        super(idService, usableArea, cost, customerMax, rentingBy);
         this.roomStandard = roomStandard;
         this.poolArea = poolArea;
         this.floors = floors;
@@ -83,7 +83,7 @@ public class Villa extends Facility {
     @Override
     public String toString() {
         return "Villa{" +
-                " Service Name: " + super.getServiceName() +
+                " Id Service: " + super.getIdService() +
                 ", Usable Area: " + super.getUsableArea() +
                 ", Cost: " + super.getCost() +
                 ", Customer Max: " + super.getCustomerMax() +
@@ -96,16 +96,16 @@ public class Villa extends Facility {
     @Override
     public boolean equals(Object o) {
         Villa villa = (Villa) o;
-        return this.getServiceName().equals(villa.getServiceName());
+        return this.getIdService().equals(villa.getIdService());
     }
 
     @Override
     public int hashCode() {
-        return serviceName.hashCode();
+        return idService.hashCode();
     }
 
     public String getInfoToWrite() {
-        return super.getServiceName() + "," + super.getUsableArea() + "," + super.getCost() + "," +
+        return super.getIdService() + "," + super.getUsableArea() + "," + super.getCost() + "," +
                 super.getCustomerMax() + "," + super.getRentingBy() + "," +
                 this.getRoomStandard() + "," + this.getPoolArea() + "," +
                 this.getFloors();

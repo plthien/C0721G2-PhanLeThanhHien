@@ -5,7 +5,7 @@ import libs.UserException;
 import java.util.Scanner;
 
 public abstract class Facility {
-    protected String serviceName;
+    protected String idService;
     protected double usableArea;
     protected double cost;
     protected int customerMax;
@@ -15,25 +15,25 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, double usableArea, double cost, int customerMax, String rentingBy) {
-        this.serviceName = serviceName;
+    public Facility(String idService, double usableArea, double cost, int customerMax, String rentingBy) {
+        this.idService = idService;
         this.usableArea = usableArea;
         this.cost = cost;
         this.customerMax = customerMax;
         this.rentingBy = rentingBy;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getIdService() {
+        return idService;
     }
 
-    public void setServiceName() {
+    public void setIdService() {
         boolean check = false;
         do {
             try {
-                System.out.println("Enter Service Name: ");
-                this.serviceName = sc.nextLine();
-                check = UserException.checkServiceName(this.serviceName, this);
+                System.out.println("Enter Id Service: ");
+                this.idService = sc.nextLine();
+                check = UserException.checkIdService(this.idService, this);
             } catch (UserException e) {
                 System.out.println(e.getMessage());
             }
@@ -119,7 +119,7 @@ public abstract class Facility {
     }
 
     public String getInfoToWrite(){
-        return this.getServiceName() + "," + this.getUsableArea() + "," + this.getCost() + "," +
+        return this.getIdService() + "," + this.getUsableArea() + "," + this.getCost() + "," +
                 this.getCustomerMax() + "," + this.getRentingBy();
     }
 }
