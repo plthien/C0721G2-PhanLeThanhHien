@@ -102,7 +102,7 @@ public class UserException extends Exception {
             Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
             Set<Facility> keyVilla = villa.keySet();
             for (Facility key : keyVilla) {
-                if (key.getIdService().contains(idService)) {
+                if (key.getServiceId().contains(idService)) {
                     System.out.println(" Id Service existed!");
                     return false;
                 }
@@ -111,7 +111,7 @@ public class UserException extends Exception {
             Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
             Set<Facility> keyHouse = house.keySet();
             for (Facility key : keyHouse) {
-                if (key.getIdService().contains(idService)) {
+                if (key.getServiceId().contains(idService)) {
                     System.out.println("Id Service existed!");
                     return false;
                 }
@@ -120,7 +120,7 @@ public class UserException extends Exception {
             Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
             Set<Facility> keyRoom = room.keySet();
             for (Facility key : keyRoom) {
-               if (key.getIdService().contains(idService)){
+               if (key.getServiceId().contains(idService)){
                    System.out.println("Id Service existed!");
                    return false;
                }

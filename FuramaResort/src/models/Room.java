@@ -8,12 +8,12 @@ public class Room extends Facility {
     public Room() {
     }
 
-    public Room(String idService, double usableArea, double cost, int customerMax, String rentingBy) {
-        super(idService, usableArea, cost, customerMax, rentingBy);
+    public Room(String serviceId, double usableArea, double cost, int customerMax, String rentingBy) {
+        super(serviceId, usableArea, cost, customerMax, rentingBy);
     }
 
-    public Room(String idService, double usableArea, double cost, int customerMax, String rentingBy, String freeServices) {
-        super(idService, usableArea, cost, customerMax, rentingBy);
+    public Room(String serviceId, double usableArea, double cost, int customerMax, String rentingBy, String freeServices) {
+        super(serviceId, usableArea, cost, customerMax, rentingBy);
         this.freeServices = freeServices;
     }
 
@@ -38,7 +38,7 @@ public class Room extends Facility {
     @Override
     public String toString() {
         return "Room{" +
-                " Id Service: " + super.getIdService()  +
+                " Service Id: " + super.getServiceId()  +
                 ", Usable Area: " + super.getUsableArea() +
                 ", Cost: " + super.getCost() +
                 ", Customer Max: " + super.getCustomerMax() +
@@ -50,16 +50,16 @@ public class Room extends Facility {
     @Override
     public boolean equals(Object o) {
         Room room = (Room) o;
-        return this.getIdService().equals(room.getIdService());
+        return this.getServiceId().equals(room.getServiceId());
     }
 
     @Override
     public int hashCode() {
-        return idService.hashCode();
+        return serviceId.hashCode();
     }
 
     public String getInfoToWrite(){
-        return super.getIdService() + "," + super.getUsableArea() + "," + super.getCost() + "," +
+        return super.getServiceId() + "," + super.getUsableArea() + "," + super.getCost() + "," +
                 super.getCustomerMax() + "," + super.getRentingBy()+ "," +
                 this.getFreeServices();
     }

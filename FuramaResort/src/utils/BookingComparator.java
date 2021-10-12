@@ -26,7 +26,7 @@ public class BookingComparator implements Comparator<Booking> {
 
         if (checkInDate1.compareTo(checkInDate2) == 0) {
             if (checkOutDate1.compareTo(checkOutDate2) == 0) {
-                return o1.getServiceName().compareTo(o2.getServiceName());
+                return o1.getServiceId().compareTo(o2.getServiceId());
             } else {
                 return checkOutDate1.compareTo(checkOutDate2);
             }

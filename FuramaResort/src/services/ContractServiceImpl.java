@@ -27,7 +27,7 @@ public class ContractServiceImpl implements ContractService {
                     break;
                 }
             }
-            if (flag && (booking.getServiceName().contains("VL") || booking.getServiceName().contains("HO"))) {
+            if (flag && (booking.getServiceId().contains("VL") || booking.getServiceId().contains("HO"))) {
                 bookingListToContract.add(booking);
             }
         }

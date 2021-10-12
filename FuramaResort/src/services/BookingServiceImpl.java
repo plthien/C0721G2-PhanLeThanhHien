@@ -54,17 +54,17 @@ public class BookingServiceImpl implements BookingService {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         System.out.println("Choose service name: ");
         facilityService.display();
-        ArrayList<String> idServiceList = facilityService.getIdServiceList();
-        String serviceName = "";
+        ArrayList<String> serviceIdList = facilityService.getServiceIdList();
+        String serviceId = "";
         do {
             System.out.println("Enter number of Service: ");
             choice = Integer.parseInt(sc.nextLine());
             try {
-                serviceName = idServiceList.get(choice - 1);
+                serviceId = serviceIdList.get(choice - 1);
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Your choice out of range");
             }
-        } while (choice - 1 < 0 || choice - 1 >= idServiceList.size());
+        } while (choice - 1 < 0 || choice - 1 >= serviceIdList.size());
 
         String checkInDate, checkOutDate;
         boolean flag;
@@ -76,10 +76,10 @@ public class BookingServiceImpl implements BookingService {
             flag = UserException.checkDate(checkInDate, checkOutDate);
         } while (!flag);
 
-        Booking booking = new Booking(customerCode, serviceName, checkInDate, checkOutDate);
+        Booking booking = new Booking(customerCode, serviceId, checkInDate, checkOutDate);
         booking.setBookingCode();
         ReadAndWriteBooking.writeFile(FILE_BOOKING_PATH, booking);
-        facilityService.useFacilities(serviceName);
+        facilityService.useFacilities(serviceId);
     }
 
 }

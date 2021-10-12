@@ -42,24 +42,24 @@ public class FacilityServiceImpl implements FacilityService {
         // bo sung sau
     }
 
-    public ArrayList<String> getIdServiceList(){
+    public ArrayList<String> getServiceIdList(){
         Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
         Set<Facility> keyVilla = villa.keySet();
-        ArrayList<String> idServiceList = new ArrayList<>();
+        ArrayList<String> serviceIdList = new ArrayList<>();
         for (Facility key : keyVilla) {
-            idServiceList.add(key.getIdService());
+            serviceIdList.add(key.getServiceId());
         }
         Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
         Set<Facility> keyHouse = house.keySet();
         for (Facility key : keyHouse) {
-            idServiceList.add(key.getIdService());
+            serviceIdList.add(key.getServiceId());
         }
         Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
         Set<Facility> keyRoom = room.keySet();
         for (Facility key : keyRoom) {
-            idServiceList.add(key.getIdService());
+            serviceIdList.add(key.getServiceId());
         }
-        return idServiceList;
+        return serviceIdList;
     }
 
     public void add() {
@@ -83,7 +83,7 @@ public class FacilityServiceImpl implements FacilityService {
             }
             Map<Facility, Integer> facilityList = new LinkedHashMap<>();
             Facility facility = FacilityFactory.getFacility(choice);
-            facility.setIdService();
+            facility.setServiceId();
             facility.setUsableArea();
             facility.setCost();
             facility.setCustomerMax();
@@ -111,23 +111,23 @@ public class FacilityServiceImpl implements FacilityService {
         display();
     }
 
-    public void useFacilities(String idService) {
-        if (idService.contains("VL")) {
+    public void useFacilities(String serviceId) {
+        if (serviceId.contains("VL")) {
             Map<Facility, Integer> villa = ReadAndWriteFacility.readFile(FILE_VILLA_PATH);
             Set<Facility> keyVilla = villa.keySet();
             for (Facility key : keyVilla) {
-                if (key.getIdService().contains(idService)) {
+                if (key.getServiceId().contains(serviceId)) {
                     villa.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_VILLA_PATH, villa, false);
                     break;
                 }
             }
 
-        } else if (idService.contains("HO")) {
+        } else if (serviceId.contains("HO")) {
             Map<Facility, Integer> house = ReadAndWriteFacility.readFile(FILE_HOUSE_PATH);
             Set<Facility> keyHouse = house.keySet();
             for (Facility key : keyHouse) {
-                if (key.getIdService().contains(idService)) {
+                if (key.getServiceId().contains(serviceId)) {
                     house.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_HOUSE_PATH, house, false);
                     break;
@@ -137,7 +137,7 @@ public class FacilityServiceImpl implements FacilityService {
             Map<Facility, Integer> room = ReadAndWriteFacility.readFile(FILE_ROOM_PATH);
             Set<Facility> keyRoom = room.keySet();
             for (Facility key : keyRoom) {
-                if (key.getIdService().contains(idService)) {
+                if (key.getServiceId().contains(serviceId)) {
                     room.computeIfPresent(key, (k, v) -> v + 1);
                     ReadAndWriteFacility.writeFile(FILE_ROOM_PATH, room, false);
                     break;

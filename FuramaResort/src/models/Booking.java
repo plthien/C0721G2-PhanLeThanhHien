@@ -3,7 +3,7 @@ package models;
 public class Booking{
     private String bookingCode;
     private String customerCode;
-    private String serviceName;
+    private String serviceId;
     private String checkInDate;
     private String checkOutDate;
     private static int code = 1000;
@@ -11,9 +11,9 @@ public class Booking{
     public Booking() {
     }
 
-    public Booking(String customerCode, String serviceName, String checkInDate, String checkOutDate) {
+    public Booking(String customerCode, String serviceId, String checkInDate, String checkOutDate) {
         this.customerCode = customerCode;
-        this.serviceName = serviceName;
+        this.serviceId = serviceId;
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
     }
@@ -44,12 +44,12 @@ public class Booking{
         this.customerCode = customerCode;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getServiceId() {
+        return serviceId;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
     }
 
     public String getCheckInDate() {
@@ -73,13 +73,13 @@ public class Booking{
         return "Booking{" +
                 "Booking Code: " + this.bookingCode +
                 ", Customer Code: " + this.customerCode +
-                ", Service Name: " + this.serviceName +
+                ", Service Id: " + this.serviceId +
                 ", Checkin Date: " + this.checkInDate +
                 ", checkout Date: " + this.checkOutDate +
                 '}';
     }
 
     public String getInfoToWrite(){
-        return this.bookingCode + "," + this.customerCode + "," + this.serviceName + "," + this.checkInDate + "," + this.checkOutDate + "," + code;
+        return this.bookingCode + "," + this.customerCode + "," + this.serviceId + "," + this.checkInDate + "," + this.checkOutDate + "," + code;
     }
 }
