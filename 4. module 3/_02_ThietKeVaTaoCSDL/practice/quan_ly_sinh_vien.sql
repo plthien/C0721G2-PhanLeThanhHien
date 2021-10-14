@@ -1,3 +1,4 @@
+drop database if exists QuanLySinhVien;
 create database QuanLySinhVien;
 use QuanLySinhVien;
 

@@ -118,6 +118,7 @@ foreign key(extra_service_id) references extra_service(id)
 insert into degree(degree_name) values('Intermediate'),('Associate'),('College'),('Postgraduate');
 insert into office(office_name) values('Receptionist'),('Service Staff'),('Specialist'),('Supervisor'),('Manager'),('Director');
 insert into department(department_name) values('Sale-Marketing'),('Administrative staff'),('Service'),('Management');
+insert into customer_type(customer_type_name) values('Member'),('Silver'),('Gold'),('Platinium'),('Diamond');
 
 insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
 values('Ho Van Hung','1995-02-28','M','201710991','0905999888','hung@gmail.com',2000, (select id from degree where degree_name = 'College'),
@@ -132,15 +133,35 @@ values('Pham Thi Kieu','1992-08-12','F','201719321','0905686868','kieu@gmail.com
 (select id from office where office_name = 'Manager'),(select id from department where department_name = 'Management'));
 
 insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
-values('Le Quang Vu','1980-10-12','M','201219421','0905666888','quangvu@gmail.com',5000, (select id from degree where degree_name = 'College'),
+values('Phan Le Thanh Hien','1980-10-12','M','201219421','0905666888','quangvu@gmail.com',5000, (select id from degree where degree_name = 'College'),
 (select id from office where office_name = 'Director'),(select id from department where department_name = 'Management'));
 
+insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
+values('Le Thi Hong','1990-02-10','F','200912131','0906123456','hong@gmail.com',(select c.id from customer_type c where customer_type_name = 'Gold'),'Đà Nẵng');
+
+insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
+values('Tran Van Chau','1995-02-10','M','200976131','0906654123','chau@gmail.com',(select c.id from customer_type c where customer_type_name = 'Silver'),'Quảng Trị');
+
+insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
+values('Ngo Thanh Van','1990-02-10','F','201819992','0905686564','van@gmail.com',(select c.id from customer_type c where customer_type_name = 'Diamond'),'HCM');
+
+insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
+values('Ngo Kinh','2005-02-15','M','2018199432','0905686569','ngokinh@gmail.com',(select c.id from customer_type c where customer_type_name = 'Member'),'Đà Nẵng');
 
 select * from degree;
 select * from office;
 select * from department;
 select * from employee;
 
-select * from employee where `name` regexp '^.*[TKH][a-z]*$';
+select e.`name`, e.birthday, e.gender, e.personal_id, e.phone_number, e.email, e.salary, d.degree_name, o.office_name, dp.department_name
+from employee e 
+join degree d on e.degree_id = d.id
+join office o on e.office_id = o.id
+join department dp on e.department_id = dp.id
+where e.`name` regexp '^(?=.{0,15}$)(.*[TKH][a-z]*)$';
 
+select c.`name`, c.birthday, c.gender, c.personal_id, c.phone_number, c.email, ct.customer_type_name, c.address
+ from customer c 
+ join customer_type ct on c.customer_type_id = ct.id
+ where c.address in ('Đà Nẵng','Quảng Trị') and ( timestampdiff(year,c.birthday,current_date()) between 18 and 50);
 
