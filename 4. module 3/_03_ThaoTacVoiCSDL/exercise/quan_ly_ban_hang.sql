@@ -76,6 +76,15 @@ from customer c
 left join `order` o on c.id = o.customer_id 
 where o.id is null;
 
+--  cách 4
+select c.id, c.`name`
+from customer c
+where c.id not in (
+  select `order`.customer_id 
+  from `order`
+  where customer_id is not null
+);
+
 select o.id as order_id, o.buy_of_date, sum(od.quantity*p.price) as payment
 from `order` o
 join order_detail od on o.id = od.order_id

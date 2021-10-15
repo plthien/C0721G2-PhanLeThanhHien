@@ -73,7 +73,8 @@ from student join mark on student.id = mark.student_id join `subject` on mark.su
 where `subject`.sub_name = 'CF';
 
 select class_name, count(student.id) as student_count
-from student right join class on student.class_id = class.id
+from student 
+right join class on student.class_id = class.id
 group by class_name; 
 
 select student.id, student_name, address, phone,student.`status`, class_name
