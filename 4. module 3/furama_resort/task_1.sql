@@ -28,13 +28,13 @@ insert into customer(`name`,birthday,gender,personal_id,phone_number,email,custo
 values('Tran Van Chau','1995-02-10','M','200976131','0906654123','chau@gmail.com',(select c.id from customer_type c where customer_type_name = 'Silver'),'Quảng Trị');
 
 insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
-values('Ngo Thanh Van','1990-02-10','F','201819992','0905686564','van@gmail.com',(select c.id from customer_type c where customer_type_name = 'Diamond'),'HCM');
+values('Ngo Thanh Van','1990-02-10','F','201819992','0905686564','van@gmail.com',(select c.id from customer_type c where customer_type_name = 'Diamond'),'Vinh');
 
 insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
 values('Ngo Kinh','2005-02-15','M','2018199432','0905686569','ngokinh@gmail.com',(select c.id from customer_type c where customer_type_name = 'Diamond'),'Đà Nẵng');
 
 insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
-values('Ngo Kinh','1990-05-10','M','1994123112','0905987345','ngokinh1990@gmail.com',(select c.id from customer_type c where customer_type_name = 'Platinium'),'Ha Noi');
+values('Ngo Kinh','1990-05-10','M','1994123112','0905987345','ngokinh1990@gmail.com',(select c.id from customer_type c where customer_type_name = 'Platinium'),'Quang Ngai');
 
 insert into renting_by(renting_by_name)
 values('Year'),('Month'),('Day'),('Hour');
