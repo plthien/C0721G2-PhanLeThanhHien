@@ -30,6 +30,7 @@ salary double,
 degree_id int,
 office_id int,
 department_id int,
+address varchar(45),
 
 foreign key(degree_id) references degree(id),
 foreign key(office_id) references office(id),

@@ -5,20 +5,24 @@ insert into office(office_name) values('Receptionist'),('Service Staff'),('Speci
 insert into department(department_name) values('Sale-Marketing'),('Administrative staff'),('Service'),('Management');
 insert into customer_type(customer_type_name) values('Member'),('Silver'),('Gold'),('Platinium'),('Diamond');
 
-insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
-values('Ho Van Hung','1995-02-28','M','201710991','0905999888','hung@gmail.com',2000, (select id from degree where degree_name = 'College'),
+insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,address,degree_id,office_id,department_id)
+values('Ho Van Hung','1995-02-28','M','201710991','0905999888','hung@gmail.com',2000,'Da Nang', (select id from degree where degree_name = 'College'),
 (select id from office where office_name = 'Supervisor'),(select id from department where department_name = 'Management'));
 
-insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
-values('Phan Hoang Quan','1998-05-28','M','201710956','0905656565','tuan@gmail.com',1000, (select id from degree where degree_name = 'College'),
+insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,address,degree_id,office_id,department_id)
+values('Phan Hoang Quan','1998-05-28','M','201710956','0905656565','tuan@gmail.com',1000,'Quang Nam', (select id from degree where degree_name = 'College'),
 (select id from office where office_name = 'Specialist'),(select id from department where department_name = 'Administrative staff'));
 
-insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
-values('Pham Thi Kieu','1992-08-12','F','201719321','0905686868','kieu@gmail.com',3300, (select id from degree where degree_name = 'College'),
+insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,address,degree_id,office_id,department_id)
+values('Pham Thi Kieu','1992-08-12','F','201719321','0905686868','kieu@gmail.com',3300,'Ha Noi', (select id from degree where degree_name = 'College'),
 (select id from office where office_name = 'Manager'),(select id from department where department_name = 'Management'));
 
-insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,degree_id,office_id,department_id)
-values('Phan Le Thanh Hien','1980-10-12','M','201219421','0905666888','quangvu@gmail.com',5000, (select id from degree where degree_name = 'College'),
+insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,address,degree_id,office_id,department_id)
+values('Phan Le Thanh Hien','1980-10-12','M','201219421','0905666888','quangvu@gmail.com',5000,'Hue', (select id from degree where degree_name = 'College'),
+(select id from office where office_name = 'Director'),(select id from department where department_name = 'Management'));
+
+insert into employee(`name`,birthday,gender,personal_id,phone_number,email,salary,address,degree_id,office_id,department_id)
+values('Nguyen Van Danh','1992-10-12','M','201129421','0905666999','vanhdanh@gmail.com',1000,'Hue', (select id from degree where degree_name = 'College'),
 (select id from office where office_name = 'Director'),(select id from department where department_name = 'Management'));
 
 insert into customer(`name`,birthday,gender,personal_id,phone_number,email,customer_type_id,address)
@@ -79,7 +83,17 @@ insert into contract_detail(contract_id, extra_service_id, quantity)
 values(4,3,3),(4,4,5);
 
 insert into contract(customer_id,employee_id,facility_id,check_in_date,check_out_date,deposit,payment)
-values(3,3,2,'2019-01-12','2019-01-15',40,400);
+values(3,3,2,'2019-10-12','2019-10-15',40,400);
 
 insert into contract_detail(contract_id, extra_service_id, quantity)
 values(5,3,3),(5,4,5);
+
+insert into contract(customer_id,employee_id,facility_id,check_in_date,check_out_date,deposit,payment)
+values(4,3,1,'2019-11-05','2019-11-08',30,200);
+
+insert into contract_detail(contract_id, extra_service_id, quantity)
+values(6,1,2),(6,4,2);
+
+update contract_detail
+set extra_service_id = 2
+where id = 4
