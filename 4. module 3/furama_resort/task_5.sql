@@ -8,4 +8,4 @@ from customer c
 	left join facility f on f.id = ctr.facility_id
 	left join contract_detail ctrd on ctrd.contract_id  = ctr.id 
 	left join extra_service exs on exs.id = ctrd.extra_service_id
-group by c.`name`;
+group by ctr.id;
