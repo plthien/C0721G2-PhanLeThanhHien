@@ -117,7 +117,13 @@ insert into contract(customer_id,employee_id,facility_id,check_in_date,check_out
 values(4,6,1,'2019-12-12','2019-12-15',30,200);
 
 insert into contract_detail(contract_id, extra_service_id, quantity)
-values(8,1,4),(8,2,4);
+values(9,1,4),(9,2,4);
+
+insert into contract(customer_id,employee_id,facility_id,check_in_date,check_out_date,deposit,payment)
+values(1,1,3,'2015-12-12','2015-12-15',30,200);
+
+insert into contract_detail(contract_id, extra_service_id, quantity)
+values(10,1,4),(10,2,4);
 
 update contract_detail
 set extra_service_id = 2
