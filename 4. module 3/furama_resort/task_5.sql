@@ -1,7 +1,8 @@
 use Furama_Resort_Management;
 
 select c.id as customer_id, c.`name` as customer_name, cty.customer_type_name, ctr.id as contract_id, f.`name` as facility_name,
-		ctr.check_in_date, ctr.check_out_date, (sum(ctrd.quantity*exs.price) + f.cost) as total
+		ctr.check_in_date, ctr.check_out_date
+        , (sum(ctrd.quantity*exs.price) + f.cost) as total
 from customer c
 	left join customer_type cty on c.customer_type_id = cty.id
 	left join contract ctr on c.id = ctr.customer_id
