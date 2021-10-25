@@ -1,0 +1,50 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.show-pipe::before {
+    border-left: 2px solid #000;
+    height: 24px;
+    content: " ";
+    margin-left: 7px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.show-pipe{
+    position: relative;
+}
+
+.col-megamenu a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em;
+}
+
+.col-megamenu a:hover{
+    text-decoration: underline;
+}
+
+.col-megamenu {
+    min-width: 60rem;
+    padding: 1rem 1rem;
+}
+
+.navbar-nav li a:hover{
+    text-decoration: underline ;
+}
+
+.navbar-nav li a:active{
+    text-decoration: underline ;
+    border: 1px dotted black;
+}
+
+
+.dropdown-menu a {
+    font-size: 0.8em;
+    height: 50px;
+    line-height: 40px;
+}
+
