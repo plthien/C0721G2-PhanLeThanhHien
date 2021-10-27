@@ -28,7 +28,7 @@
     </style>
   </head>
   <body>
-  <form action="discount">
+  <form action="/discount">
     <div>
       <label for="productDescription">Product Description: </label>
       <input type="text" name="productDescription" id="productDescription">
