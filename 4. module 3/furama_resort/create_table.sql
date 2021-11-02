@@ -22,7 +22,7 @@ create table employee(
 id int auto_increment primary key,
 `name` varchar(45),
 birthday date,
-gender enum('M','F'),
+gender varchar(10),
 personal_id varchar(20),
 phone_number varchar(10),
 email varchar(45),
@@ -30,7 +30,7 @@ salary double,
 degree_id int,
 office_id int,
 department_id int,
-address varchar(45),
+address varchar(120),
 
 foreign key(degree_id) references degree(id),
 foreign key(office_id) references office(id),
@@ -117,7 +117,16 @@ foreign key(extra_service_id) references extra_service(id)
 
 );
 
-
+delimiter //
+create procedure get_all_employee()
+begin
+	select e.id, e.`name`, e.gender, e.birthday, e.email, e.address, e.personal_id, e.phone_number, e.salary, d.degree_name, o.office_name, dp.department_name 
+    from employee e 
+		join degree d on e.degree_id = d.id 
+        join office o on e.office_id = o.id
+        join department dp on e.department_id = dp.id;
+end;
+// delimiter ;
 
 
 
