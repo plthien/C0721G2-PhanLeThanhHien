@@ -1,6 +1,9 @@
 package Repository;
 
 import bean.Employee;
+import bean.EmployeeDegree;
+import bean.EmployeeDepartment;
+import bean.EmployeeOffice;
 
 import java.util.List;
 
@@ -16,4 +19,14 @@ public interface EmployeeRepository {
 
     Employee findById(int id);
 
-}
+    List<Employee> findByName(String name);
+
+    List<EmployeeDegree> getEmployeeDegree();
+
+    List<EmployeeOffice> getEmployeeOffice();
+
+    List<EmployeeDepartment> getEmployeeDepartment();
+    }
+
+
+

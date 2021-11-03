@@ -1,6 +1,9 @@
 package controller;
 
 import bean.Employee;
+import bean.EmployeeDegree;
+import bean.EmployeeDepartment;
+import bean.EmployeeOffice;
 import service.EmployeeService;
 import service.Impl.EmployeeServiceImpl;
 
@@ -25,15 +28,12 @@ public class EmployeeServlet extends HttpServlet {
             case "create":
                 createEmployee(request,response);
                 break;
-//            case "edit":
-//                updateUser(request,response);
-//                break;
-//            case "delete":
-//                deleteUser(request,response);
-//                break;
-//            case "search":
-//                searchUser(request,response);
-//                break;
+            case "edit":
+                updateEmployee(request,response);
+                break;
+            case "search":
+                searchUser(request,response);
+                break;
             default:
                 break;
 
@@ -50,9 +50,12 @@ public class EmployeeServlet extends HttpServlet {
             case "create":
                 showCreateEmployeeForm(request,response);
                 break;
-//            case "edit":
-//                showEditForm(request,response);
-//                break;
+            case "edit":
+                showEditEmployeeForm(request,response);
+                break;
+            case "delete":
+                deleteUser(request,response);
+                break;
 //            case "sort":
 //                sortUser(request,response);
 //                break;
@@ -76,11 +79,21 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void showCreateEmployeeForm(HttpServletRequest request, HttpServletResponse response){
+        List<EmployeeDegree> employeeDegreeList = this.employeeService.getEmployeeDegree();
+        List<EmployeeOffice> employeeOfficeList = this.employeeService.getEmployeeOffice();
+        List<EmployeeDepartment> employeeDepartmentList = this.employeeService.getEmployeeDepartment();
+
+        request.setAttribute("employeeDegreeList",employeeDegreeList);
+        request.setAttribute("employeeOfficeList",employeeOfficeList);
+        request.setAttribute("employeeDepartmentList",employeeDepartmentList);
         try {
-            response.sendRedirect("pages/create-employee.jsp");
+            request.getRequestDispatcher("pages/create-employee.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     public void createEmployee(HttpServletRequest request, HttpServletResponse response){
@@ -90,24 +103,33 @@ public class EmployeeServlet extends HttpServlet {
         String personalID = request.getParameter("input-personal-id");
         String phoneNumber = request.getParameter("input-phone-number");
         String address = request.getParameter("input-address");
-        String degree = request.getParameter("input-degree");
-        String office = request.getParameter("input-office");
-        String department = request.getParameter("input-department");
         Double salary = Double.parseDouble(request.getParameter("input-salary")) ;
         String email = request.getParameter("input-email");
 
+        int degreeID = Integer.parseInt(request.getParameter("input-degree")) ;
+        int officeID = Integer.parseInt(request.getParameter("input-office")) ;
+        int departmentID = Integer.parseInt(request.getParameter("input-department")) ;
+
         Employee employee = new Employee();
+        EmployeeDegree employeeDegree = new EmployeeDegree();
+        EmployeeOffice employeeOffice = new EmployeeOffice();
+        EmployeeDepartment employeeDepartment = new EmployeeDepartment();
         employee.setName(name);
         employee.setBirthday(birthday);
         employee.setGender(gender);
         employee.setPersonalID(personalID);
         employee.setPhoneNumber(phoneNumber);
         employee.setAddress(address);
-        employee.setDegree(degree);
-        employee.setOffice(office);
-        employee.setDepartment(department);
         employee.setSalary(salary);
         employee.setEmail(email);
+
+        employeeDegree.setId(degreeID);
+        employeeOffice.setId(officeID);
+        employeeDepartment.setId(departmentID);
+
+        employee.setEmployeeDegree(employeeDegree);
+        employee.setEmployeeOffice(employeeOffice);
+        employee.setEmployeeDepartment(employeeDepartment);
 
         this.employeeService.save(employee);
         try {
@@ -115,5 +137,86 @@ public class EmployeeServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void showEditEmployeeForm(HttpServletRequest request, HttpServletResponse response){
+        int id = Integer.parseInt(request.getParameter("id"));
+        Employee employee =  this.employeeService.findById(id);
+        List<EmployeeDegree> employeeDegreeList = this.employeeService.getEmployeeDegree();
+        List<EmployeeOffice> employeeOfficeList = this.employeeService.getEmployeeOffice();
+        List<EmployeeDepartment> employeeDepartmentList = this.employeeService.getEmployeeDepartment();
+
+        request.setAttribute("employeeDegreeList",employeeDegreeList);
+        request.setAttribute("employeeOfficeList",employeeOfficeList);
+        request.setAttribute("employeeDepartmentList",employeeDepartmentList);
+        request.setAttribute("employee",employee);
+        try {
+            request.getRequestDispatcher("/pages/edit-employee.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void updateEmployee(HttpServletRequest request, HttpServletResponse response){
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("input-name");
+        String birthday = request.getParameter("input-birthday");
+        String gender = request.getParameter("input-gender");
+        String personalID = request.getParameter("input-personal-id");
+        String phoneNumber = request.getParameter("input-phone-number");
+        String address = request.getParameter("input-address");
+        Double salary = Double.parseDouble(request.getParameter("input-salary")) ;
+        String email = request.getParameter("input-email");
+
+        int degreeID = Integer.parseInt(request.getParameter("input-degree")) ;
+        int officeID = Integer.parseInt(request.getParameter("input-office")) ;
+        int departmentID = Integer.parseInt(request.getParameter("input-department")) ;
+
+        EmployeeDegree employeeDegree = new EmployeeDegree();
+        EmployeeOffice employeeOffice = new EmployeeOffice();
+        EmployeeDepartment employeeDepartment = new EmployeeDepartment();
+        Employee employee = new Employee();
+        employee.setId(id);
+        employee.setName(name);
+        employee.setBirthday(birthday);
+        employee.setGender(gender);
+        employee.setPersonalID(personalID);
+        employee.setPhoneNumber(phoneNumber);
+        employee.setAddress(address);
+        employee.setSalary(salary);
+        employee.setEmail(email);
+
+        employeeDegree.setId(degreeID);
+        employeeOffice.setId(officeID);
+        employeeDepartment.setId(departmentID);
+
+        employee.setEmployeeDegree(employeeDegree);
+        employee.setEmployeeOffice(employeeOffice);
+        employee.setEmployeeDepartment(employeeDepartment);
+
+        this.employeeService.update(employee);
+        try {
+            response.sendRedirect("/employees");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteUser(HttpServletRequest request, HttpServletResponse response){
+        int id = Integer.parseInt(request.getParameter("id"));
+        this.employeeService.remove(id);
+        try {
+            response.sendRedirect("/employees");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void searchUser(HttpServletRequest request, HttpServletResponse response){
+        String name = request.getParameter("searchName");
+
     }
 }

@@ -47,7 +47,7 @@ create table customer(
 id int auto_increment primary key,
 `name` varchar(45),
 birthday date,
-gender enum('M','F'),
+gender varchar(10),
 personal_id varchar(20),
 phone_number varchar(10),
 email varchar(45),
@@ -125,6 +125,27 @@ begin
 		join degree d on e.degree_id = d.id 
         join office o on e.office_id = o.id
         join department dp on e.department_id = dp.id;
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_employee_by_id(in p_id int)
+begin
+	select e.id, e.`name`, e.gender, e.birthday, e.email, e.address, e.personal_id, e.phone_number, e.salary, e.degree_id, e.office_id, e.department_id
+    from employee e 
+	where e.id = p_id;
+end;
+// delimiter ;
+
+delimiter //
+create procedure delete_employee(in p_id int)
+begin
+	set foreign_key_checks = 0;
+	delete 
+    from employee
+	where id = p_id;
+	set foreign_key_checks = 1;
+
 end;
 // delimiter ;
 

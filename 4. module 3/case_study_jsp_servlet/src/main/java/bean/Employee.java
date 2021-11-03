@@ -2,21 +2,19 @@ package bean;
 
 public class Employee extends Person {
     private double salary;
-    private String office;
-    private String degree;
-    private String department;
+    private EmployeeOffice employeeOffice;
+    private EmployeeDegree employeeDegree;
+    private EmployeeDepartment employeeDepartment;
 
     public Employee() {
     }
 
-    public Employee(int id, String name, String birthday, String gender, String personalID, String phoneNumber,
-                    String email, String address, double salary, String office, String degree, String department) {
+    public Employee(int id, String name, String birthday, String gender, String personalID, String phoneNumber, String email, String address, double salary, EmployeeOffice employeeOffice, EmployeeDegree employeeDegree, EmployeeDepartment employeeDepartment) {
         super(id, name, birthday, gender, personalID, phoneNumber, email, address);
         this.salary = salary;
-        this.office = office;
-        this.degree = degree;
-        this.department = department;
-
+        this.employeeOffice = employeeOffice;
+        this.employeeDegree = employeeDegree;
+        this.employeeDepartment = employeeDepartment;
     }
 
     public double getSalary() {
@@ -27,28 +25,27 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    public String getOffice() {
-        return office;
+    public EmployeeOffice getEmployeeOffice() {
+        return employeeOffice;
     }
 
-    public void setOffice(String office) {
-        this.office = office;
+    public void setEmployeeOffice(EmployeeOffice employeeOffice) {
+        this.employeeOffice = employeeOffice;
     }
 
-    public String getDegree() {
-        return degree;
+    public EmployeeDegree getEmployeeDegree() {
+        return employeeDegree;
     }
 
-    public void setDegree(String degree) {
-        this.degree = degree;
+    public void setEmployeeDegree(EmployeeDegree employeeDegree) {
+        this.employeeDegree = employeeDegree;
     }
 
-    public String getDepartment() {
-        return department;
+    public EmployeeDepartment getEmployeeDepartment() {
+        return employeeDepartment;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setEmployeeDepartment(EmployeeDepartment employeeDepartment) {
+        this.employeeDepartment = employeeDepartment;
     }
-
 }

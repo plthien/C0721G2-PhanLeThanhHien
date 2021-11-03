@@ -3,6 +3,9 @@ package service.Impl;
 import Repository.EmployeeRepository;
 import Repository.Impl.EmployeeRepositoryImpl;
 import bean.Employee;
+import bean.EmployeeDegree;
+import bean.EmployeeDepartment;
+import bean.EmployeeOffice;
 import service.EmployeeService;
 
 import java.util.List;
@@ -16,21 +19,42 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void save(Employee employee) {
-
+        employeeRepository.save(employee);
     }
 
     @Override
     public void update(Employee employee) {
-
+        employeeRepository.update(employee);
     }
 
     @Override
     public void remove(int id) {
-
+        employeeRepository.remove(id);
     }
 
     @Override
     public Employee findById(int id) {
-        return null;
+        Employee employee = employeeRepository.findById(id);
+        return employee;
+    }
+
+    @Override
+    public List<Employee> findByName(String name) {
+        return employeeRepository.findByName(name);
+    }
+
+    @Override
+    public List<EmployeeDegree> getEmployeeDegree() {
+        return employeeRepository.getEmployeeDegree();
+    }
+
+    @Override
+    public List<EmployeeOffice> getEmployeeOffice() {
+        return employeeRepository.getEmployeeOffice();
+    }
+
+    @Override
+    public List<EmployeeDepartment> getEmployeeDepartment() {
+        return employeeRepository.getEmployeeDepartment();
     }
 }

@@ -18,10 +18,10 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/soft-ui-dashboard-pro.css">
 </head>
 <body class="g-sidenav-show  bg-gray-100">
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 " id="sidenav-main">
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start " id="sidenav-main">
     <div class="sidenav-header">
         <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">
@@ -230,10 +230,10 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                    <div class="input-group">
-                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Type here...">
-                    </div>
+                    <form class="input-group" method="post" action="/employees/userAction=search">
+                        <input id="searchEmployee" name="searchName" type="text" class="form-control" placeholder="Type name...">
+                        <button id="buttonSearch" type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    </form>
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
@@ -334,7 +334,7 @@
         </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid">
         <div class="row mb-3">
             <div class="col-12 text-end ">
                 <a href="/employees?userAction=create" class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light" data-toggle="tooltip" data-original-title="Add Employee">
@@ -350,62 +350,62 @@
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0">
+                            <table class="table align-items-center mb-0 " id="employeeTable" >
                                 <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Birth</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Gender</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Personal ID</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone Number</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Salary</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Degree</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-3 ">Name</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center ">Date of Birth</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center">Gender</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center">Personal ID</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center">Phone Number</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Address</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Salary</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Degree</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Function</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center p-2">Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <c:forEach var="employee" items="${employeeList}">
                                 <tr>
-                                    <td>
-                                        <div class="d-flex px-2 py-1">
+                                    <td class="p-3">
+                                        <div class="d-flex py-1">
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="mb-0 text-sm">${employee.getName()}</h6>
                                                 <p class="text-xs text-secondary mb-0">${employee.getEmail()}</p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getBirthday()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getGender()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getPersonalID()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getPhoneNumber()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getAddress()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
+                                    <td class="align-middle p-2">
                                         <span class="text-secondary text-xs font-weight-bold">${employee.getSalary()}</span>
                                     </td>
-                                    <td class="align-middle text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">${employee.getDegree()}</span>
+                                    <td class="align-middle p-2">
+                                        <span class="text-secondary text-xs font-weight-bold">${employee.getEmployeeDegree().getName()}</span>
                                     </td>
-                                    <td>
-                                        <p class="text-xs font-weight-bold mb-0">${employee.getDepartment()}</p>
-                                        <p class="text-xs text-secondary mb-0">${employee.getOffice()}</p>
+                                    <td class="p-2">
+                                        <p class="text-xs font-weight-bold mb-0">${employee.getEmployeeDepartment().getName()}</p>
+                                        <p class="text-xs text-secondary mb-0">${employee.getEmployeeOffice().getName()}</p>
                                     </td>
-                                    <td class="align-middle">
+                                    <td class="align-middle p-2 text-center">
                                         <a href="/employees?userAction=edit&id=${employee.getId()}" class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light" data-toggle="tooltip" data-original-title="Edit Employee">
                                             Edit
                                         </a>
-                                        <a href="/employees?userAction=delete&id=${employee.getId()}" class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light" data-toggle="tooltip" data-original-title="Delete Employee">
+                                        <a href="/employees?userAction=delete&id=${employee.getId()}" onclick="return confirm('Do you want to delete ${employee.getName()} ?')" class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light" data-toggle="tooltip" data-original-title="Delete Employee">
                                             Delete
                                         </a>
                                     </td>
@@ -420,5 +420,24 @@
         </div>
     </div>
 </main>
+<script src="../assets/js/plugins/datatables.js" type="text/javascript"></script>
+<script type="text/javascript">
+    const dataTableBasic = new simpleDatatables.DataTable("#employeeTable", {
+        searchable: false,
+        fixedHeight: true,
+        sortable:false,
+        // perPageSelect: [5,10,15,20],
+        perPage:5,
+    });
+</script>
+<script>
+    var inputSearch = document.getElementById("searchEmployee");
+    inputSearch.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("buttonSearch").click();
+        }
+    });
+</script>
 </body>
 </html>

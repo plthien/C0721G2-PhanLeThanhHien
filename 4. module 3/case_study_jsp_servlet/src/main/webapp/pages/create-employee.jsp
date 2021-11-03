@@ -353,8 +353,8 @@
                         <div class="col-md-2 position-relative">
                             <label for="validationTooltip03" class="form-label">Gender</label>
                             <select class="form-select" id="validationTooltip03" name="input-gender" required>
-                                <option  value="M">Male</option>
-                                <option  value="F">Female</option>
+                                <option  value="Male">Male</option>
+                                <option  value="Female">Female</option>
                             </select>
 <%--                            <div class="invalid-tooltip">--%>
 <%--                                Please select a valid state.--%>
@@ -378,10 +378,9 @@
                         <div class="col-md-3 position-relative">
                             <label for="validationTooltip07" class="form-label">Degree</label>
                             <select class="form-select" name="input-degree" id="validationTooltip07" required>
-                                <option value="Intermediate">Intermediate</option>
-                                <option value="Associate">Associate</option>
-                                <option value="College">College</option>
-                                <option value="Postgraduate">Postgraduate</option>
+                                <c:forEach var="degree" items="${employeeDegreeList}">
+                                    <option value="${degree.getId()}">${degree.getName()}</option>
+                                </c:forEach>
                             </select>
                             <div class="invalid-tooltip">
                                 Please select a valid state.
@@ -390,12 +389,9 @@
                         <div class="col-md-3 position-relative">
                             <label for="validationTooltip08" class="form-label">Office</label>
                             <select class="form-select" name="input-office" id="validationTooltip08" required>
-                                <option value="Receptionist">Receptionist</option>
-                                <option value="Service Staff">Service Staff</option>
-                                <option value="Specialist">Specialist</option>
-                                <option value="Supervisor">Supervisor</option>
-                                <option value="Manager">Manager</option>
-                                <option value="Director">Director</option>
+                                <c:forEach var="office" items="${employeeOfficeList}">
+                                    <option value="${office.getId()}">${office.getName()}</option>
+                                </c:forEach>
                             </select>
                             <div class="invalid-tooltip">
                                 Please select a valid state.
@@ -404,11 +400,9 @@
                         <div class="col-md-3 position-relative">
                             <label for="validationTooltip09" class="form-label">Department</label>
                             <select class="form-select" name="input-department" id="validationTooltip09" required>
-                                <option value="Sale-Marketing">Sale-Marketing</option>
-                                <option value="Administrative staff">Administrative staff</option>
-                                <option value="Service">Service</option>
-                                <option value="Supervisor">Supervisor</option>
-                                <option value="Management">Management</option>
+                                <c:forEach var="department" items="${employeeDepartmentList}">
+                                    <option value="${department.getId()}">${department.getName()}</option>
+                                </c:forEach>
                             </select>
                             <div class="invalid-tooltip">
                                 Please select a valid state.
