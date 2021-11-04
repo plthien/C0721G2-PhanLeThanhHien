@@ -1,6 +1,7 @@
 package bean;
 
 public class Employee extends Person {
+    private int id;
     private double salary;
     private EmployeeOffice employeeOffice;
     private EmployeeDegree employeeDegree;
@@ -9,12 +10,21 @@ public class Employee extends Person {
     public Employee() {
     }
 
-    public Employee(int id, String name, String birthday, String gender, String personalID, String phoneNumber, String email, String address, double salary, EmployeeOffice employeeOffice, EmployeeDegree employeeDegree, EmployeeDepartment employeeDepartment) {
-        super(id, name, birthday, gender, personalID, phoneNumber, email, address);
+    public Employee(String name, String birthday, String gender, String personalID, String phoneNumber, String email, String address, int id, double salary, EmployeeOffice employeeOffice, EmployeeDegree employeeDegree, EmployeeDepartment employeeDepartment) {
+        super(name, birthday, gender, personalID, phoneNumber, email, address);
+        this.id = id;
         this.salary = salary;
         this.employeeOffice = employeeOffice;
         this.employeeDegree = employeeDegree;
         this.employeeDepartment = employeeDepartment;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public double getSalary() {

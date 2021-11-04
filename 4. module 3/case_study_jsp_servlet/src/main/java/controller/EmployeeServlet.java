@@ -32,7 +32,7 @@ public class EmployeeServlet extends HttpServlet {
                 updateEmployee(request,response);
                 break;
             case "search":
-                searchUser(request,response);
+                searchEmployee(request,response);
                 break;
             default:
                 break;
@@ -54,7 +54,7 @@ public class EmployeeServlet extends HttpServlet {
                 showEditEmployeeForm(request,response);
                 break;
             case "delete":
-                deleteUser(request,response);
+                deleteEmployee(request,response);
                 break;
 //            case "sort":
 //                sortUser(request,response);
@@ -70,7 +70,7 @@ public class EmployeeServlet extends HttpServlet {
         List<Employee> employeeList = this.employeeService.findAll();
         request.setAttribute("employeeList", employeeList);
         try {
-            request.getRequestDispatcher("pages/employee-list.jsp").forward(request,response);
+            request.getRequestDispatcher("pages/employee/employee-list.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -87,7 +87,7 @@ public class EmployeeServlet extends HttpServlet {
         request.setAttribute("employeeOfficeList",employeeOfficeList);
         request.setAttribute("employeeDepartmentList",employeeDepartmentList);
         try {
-            request.getRequestDispatcher("pages/create-employee.jsp").forward(request,response);
+            request.getRequestDispatcher("pages/employee/create-employee.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -151,7 +151,7 @@ public class EmployeeServlet extends HttpServlet {
         request.setAttribute("employeeDepartmentList",employeeDepartmentList);
         request.setAttribute("employee",employee);
         try {
-            request.getRequestDispatcher("/pages/edit-employee.jsp").forward(request,response);
+            request.getRequestDispatcher("/pages/employee/edit-employee.jsp").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -161,7 +161,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void updateEmployee(HttpServletRequest request, HttpServletResponse response){
-        int id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("input-id"));
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
         String gender = request.getParameter("input-gender");
@@ -205,7 +205,7 @@ public class EmployeeServlet extends HttpServlet {
         }
     }
 
-    public void deleteUser(HttpServletRequest request, HttpServletResponse response){
+    public void deleteEmployee(HttpServletRequest request, HttpServletResponse response){
         int id = Integer.parseInt(request.getParameter("id"));
         this.employeeService.remove(id);
         try {
@@ -215,8 +215,17 @@ public class EmployeeServlet extends HttpServlet {
         }
     }
 
-    public void searchUser(HttpServletRequest request, HttpServletResponse response){
+    public void searchEmployee(HttpServletRequest request, HttpServletResponse response){
         String name = request.getParameter("searchName");
+        List<Employee> employeeList = this.employeeService.findByName(name);
+        request.setAttribute("employeeList",employeeList);
+        try {
+            request.getRequestDispatcher("/pages/employee/employee-list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }

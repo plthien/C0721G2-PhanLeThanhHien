@@ -83,10 +83,11 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
             if (rowAffect == 1) {
                 connection.commit();
-                connection.setAutoCommit(true);
             }else {
                 connection.rollback();
             }
+            connection.setAutoCommit(true);
+
 
         } catch (SQLException throwables) {
             try {
@@ -192,13 +193,46 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
 
     @Override
     public List<Employee> findByName(String name) {
-        List<Employee>employeeList = null;
+        List<Employee> employeeList = new ArrayList<>();
         try {
-            PreparedStatement preparedStatement = BaseRepository.connection.prepareStatement("");
+            CallableStatement callableStatement = BaseRepository.connection.prepareCall("{call get_employee_by_name(?)}");
+            callableStatement.setString(1,name);
+
+            ResultSet resultSet = callableStatement.executeQuery();
+            Employee employee = null;
+            EmployeeDegree employeeDegree =null;
+            EmployeeOffice employeeOffice = null;
+            EmployeeDepartment employeeDepartment = null;
+            while (resultSet.next()){
+                employee = new Employee();
+                employeeDegree = new EmployeeDegree();
+                employeeOffice = new EmployeeOffice();
+                employeeDepartment = new EmployeeDepartment();
+
+                employee.setId(resultSet.getInt("id"));
+                employee.setName(resultSet.getString("name"));
+                employee.setBirthday(resultSet.getString("birthday"));
+                employee.setGender(resultSet.getString("gender"));
+                employee.setPersonalID(resultSet.getString("personal_id"));
+                employee.setPhoneNumber(resultSet.getString("phone_number"));
+                employee.setEmail(resultSet.getString("email"));
+                employee.setAddress(resultSet.getString("address"));
+                employee.setSalary(resultSet.getDouble("salary"));
+
+                employeeDegree.setName(resultSet.getString("degree_name"));
+                employeeOffice.setName(resultSet.getString("office_name"));
+                employeeDepartment.setName(resultSet.getString("department_name"));
+
+                employee.setEmployeeDegree(employeeDegree);
+                employee.setEmployeeOffice(employeeOffice);
+                employee.setEmployeeDepartment(employeeDepartment);
+
+                employeeList.add(employee);
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return null;
+        return employeeList;
     }
 
     @Override
