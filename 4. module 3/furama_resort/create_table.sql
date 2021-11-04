@@ -215,10 +215,19 @@ end;
 delimiter //
 create procedure get_facility_by_id(in p_id varchar(10))
 begin
-	select f.id,f.`name`,f.usable_area,f.number_of_floors,f.cost,f.customer_max,r.renting_by_name,s.service_type_name
+	select f.id,f.`name`,f.usable_area,f.number_of_floors,f.cost,f.customer_max,f.renting_by_id,f.service_type_id
     from facility f 
-		join service_type s on s.id = f.service_type_id
-        join renting_by r on r.id = f.renting_by_id
 	where f.id = p_id and f.`status` = 1;
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_facility_by_name(in p_name varchar(120))
+begin
+	select f.id, f.`name`, f.usable_area, f.number_of_floors,f.cost,f.customer_max, r.renting_by_name, st.service_type_name
+    from facility f
+		join service_type st on f.service_type_id = st.id
+        join renting_by r on f.renting_by_id = r.id
+	where f.`status` = 1 and f.`name` like concat('%' , p_name , '%');
 end;
 // delimiter ;

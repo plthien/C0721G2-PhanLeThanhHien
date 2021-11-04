@@ -28,9 +28,9 @@ public class FacilityServlet extends HttpServlet {
             case "edit":
                 updateFacility(request,response);
                 break;
-//            case "search":
-//                searchCustomer(request,response);
-//                break;
+            case "search":
+                searchFacility(request,response);
+                break;
             default:
                 break;
 
@@ -50,9 +50,9 @@ public class FacilityServlet extends HttpServlet {
             case "edit":
                 showEditFacilityForm(request,response);
                 break;
-//            case "delete":
-//                deleteCustomer(request,response);
-//                break;
+            case "delete":
+                deleteFacility(request,response);
+                break;
             default:
                 facilityList(request, response);
                 break;
@@ -180,27 +180,27 @@ public class FacilityServlet extends HttpServlet {
         }
     }
 
-//    public void deleteCustomer(HttpServletRequest request, HttpServletResponse response){
-//        int id = Integer.parseInt(request.getParameter("id"));
-//        this.customerService.remove(id);
-//        try {
-//            response.sendRedirect("/customers");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    public void searchCustomer(HttpServletRequest request, HttpServletResponse response){
-//        String name = request.getParameter("searchName");
-//        List<Customer> customerList = this.customerService.findByName(name);
-//        request.setAttribute("customerList",customerList);
-//        try {
-//            request.getRequestDispatcher("/pages/customer/customer-list.jsp").forward(request,response);
-//        } catch (ServletException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//    }
+    public void deleteFacility(HttpServletRequest request, HttpServletResponse response){
+        String id = request.getParameter("id");
+        this.facilityService.remove(id);
+        try {
+            response.sendRedirect("/facilities");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void searchFacility(HttpServletRequest request, HttpServletResponse response){
+        String name = request.getParameter("searchName");
+        List<Facility> facilityList = this.facilityService.findByName(name);
+        request.setAttribute("facilityList",facilityList);
+        try {
+            request.getRequestDispatcher("/pages/facility/facility-list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

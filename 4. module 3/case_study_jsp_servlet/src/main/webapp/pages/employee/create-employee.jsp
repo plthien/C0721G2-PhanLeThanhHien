@@ -228,10 +228,10 @@
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                    <div class="input-group">
-                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" placeholder="Type here...">
-                    </div>
+                    <form class="input-group m-0" method="post" action="/employees?userAction=search">
+                        <input id="searchEmployee" name="searchName" type="text" class="form-control" placeholder="Type name...">
+                        <button id="buttonSearch" type="submit" class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></button>
+                    </form>
                 </div>
                 <ul class="navbar-nav  justify-content-end">
                     <li class="nav-item d-flex align-items-center">
@@ -429,5 +429,14 @@
         </div>
     </div>
 </main>
+<script>
+    var inputSearch = document.getElementById("searchEmployee");
+    inputSearch.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("buttonSearch").click();
+        }
+    });
+</script>
 </body>
 </html>
