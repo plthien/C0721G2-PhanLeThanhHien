@@ -32,7 +32,7 @@ public class FacilityServiceImpl implements FacilityService {
     }
 
     @Override
-    public Facility findById(String id) {
+    public List<Facility> findById(String id) {
         return facilityRepository.findById(id);
     }
 

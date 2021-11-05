@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/dashboard.html">
+                <a class="nav-link  " href="/home">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="30px" height="30px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -110,7 +110,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link  " href="/contracts">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
                             <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
@@ -200,23 +200,6 @@
             </li>
         </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-        <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-            <div class="full-background" style="background-image: url('../../assets/img/curved-images/white-curved.jpeg')"></div>
-            <div class="card-body text-start p-3 w-100">
-                <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-                    <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-                </div>
-                <div class="docs-info">
-                    <h6 class="text-white up mb-0">Need help?</h6>
-                    <p class="text-xs font-weight-bold">Please check our docs</p>
-                    <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-                </div>
-            </div>
-        </div>
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
-</aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
@@ -342,61 +325,64 @@
                         <h6>Facility Information</h6>
                     </div>
                     <form class="row g-3 needs-validation m-3" method="post">
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip00" class="form-label">ID</label>
-                            <input type="text" class="form-control" name="input-id" id="validationTooltip00" readonly
-                                   value="${facility.getId()}">
-                        </div>
-                        <div class="col-md-5 position-relative">
-                            <label for="validationTooltip01" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="input-name" id="validationTooltip01" required
-                                   value="${facility.getName()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip02" class="form-label">Usable Area</label>
-                            <input type="text" class="form-control" name="input-usable-area" id="validationTooltip02" required
-                                   value="${facility.getUsableArea()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip03" class="form-label">Floors</label>
-                            <input type="text" class="form-control" name="input-floors" id="validationTooltip03" required
-                                   value="${facility.getFloors()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip04" class="form-label">Customer Maximization</label>
-                            <input type="text" class="form-control" name="input-customer-max" id="validationTooltip04" required
-                                   value="${facility.getCustomerMax()}">
-                        </div>
-                        <div class="col-md-3 position-relative">
-                            <label for="validationTooltip05" class="form-label">Cost</label>
-                            <input type="text" class="form-control" name="input-cost" id="validationTooltip05" required
-                                   value="${facility.getCost()}">
-                        </div>
-                        <div class="col-md-3 position-relative">
-                            <label for="validationTooltip06" class="form-label">Renting Type</label>
-                            <select class="form-select" name="input-rentingType" id="validationTooltip06" required>
-                                <c:forEach var="rentingType" items="${rentingTypeList}">
-                                    <option value="${rentingType.getId()}" <c:if test="${facility.getRentingType().getId()==rentingType.getId()}"> selected </c:if>>${rentingType.getName()}</option>
-                                </c:forEach>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Please select a valid state.
+                        <c:forEach var="facility" items="${facilityList}">
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip00" class="form-label">ID</label>
+                                <input type="text" class="form-control" name="input-id" id="validationTooltip00" readonly
+                                       value="${facility.getId()}">
                             </div>
-                        </div>
-                        <div class="col-md-3 position-relative">
-                            <label for="validationTooltip07" class="form-label">Service Type</label>
-                            <select class="form-select" name="input-serviceType" id="validationTooltip07" required>
-                                <c:forEach var="serviceType" items="${serviceTypeList}">
-                                    <option value="${serviceType.getId()}" <c:if test="${facility.getServiceType().getId()==serviceType.getId()}"> selected </c:if>>${serviceType.getName()}</option>
-                                </c:forEach>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Please select a valid state.
+                            <div class="col-md-5 position-relative">
+                                <label for="validationTooltip01" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="input-name" id="validationTooltip01" required
+                                       value="${facility.getName()}">
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip02" class="form-label">Usable Area</label>
+                                <input type="text" class="form-control" name="input-usable-area" id="validationTooltip02" required
+                                       value="${facility.getUsableArea()}">
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip03" class="form-label">Floors</label>
+                                <input type="text" class="form-control" name="input-floors" id="validationTooltip03" required
+                                       value="${facility.getFloors()}">
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip04" class="form-label">Customer Maximization</label>
+                                <input type="text" class="form-control" name="input-customer-max" id="validationTooltip04" required
+                                       value="${facility.getCustomerMax()}">
+                            </div>
+                            <div class="col-md-3 position-relative">
+                                <label for="validationTooltip05" class="form-label">Cost</label>
+                                <input type="text" class="form-control" name="input-cost" id="validationTooltip05" required
+                                       value="${facility.getCost()}">
+                            </div>
+                            <div class="col-md-3 position-relative">
+                                <label for="validationTooltip06" class="form-label">Renting Type</label>
+                                <select class="form-select" name="input-rentingType" id="validationTooltip06" required>
+                                    <c:forEach var="rentingType" items="${rentingTypeList}">
+                                        <option value="${rentingType.getId()}" <c:if test="${facility.getRentingType().getId()==rentingType.getId()}"> selected </c:if>>${rentingType.getName()}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-3 position-relative">
+                                <label for="validationTooltip07" class="form-label">Service Type</label>
+                                <select class="form-select" name="input-serviceType" id="validationTooltip07" required>
+                                    <c:forEach var="serviceType" items="${serviceTypeList}">
+                                        <option value="${serviceType.getId()}" <c:if test="${facility.getServiceType().getId()==serviceType.getId()}"> selected </c:if>>${serviceType.getName()}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </c:forEach>
+
                     </form>
                 </div>
             </div>

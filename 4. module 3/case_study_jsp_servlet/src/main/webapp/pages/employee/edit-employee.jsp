@@ -33,7 +33,7 @@
     <div class="collapse navbar-collapse  w-auto  max-height-vh-100 h-100" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/dashboard.html">
+                <a class="nav-link  " href="/home">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg width="30px" height="30px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -110,7 +110,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link  " href="../pages/rtl.html">
+                <a class="nav-link  " href="/contracts">
                     <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
                             <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
@@ -200,22 +200,7 @@
             </li>
         </ul>
     </div>
-    <div class="sidenav-footer mx-3 ">
-        <div class="card card-background shadow-none card-background-mask-secondary" id="sidenavCard">
-            <div class="full-background" style="background-image: url('../../assets/img/curved-images/white-curved.jpeg')"></div>
-            <div class="card-body text-start p-3 w-100">
-                <div class="icon icon-shape icon-sm bg-white shadow text-center mb-3 d-flex align-items-center justify-content-center border-radius-md">
-                    <i class="ni ni-diamond text-dark text-gradient text-lg top-0" aria-hidden="true" id="sidenavCardIcon"></i>
-                </div>
-                <div class="docs-info">
-                    <h6 class="text-white up mb-0">Need help?</h6>
-                    <p class="text-xs font-weight-bold">Please check our docs</p>
-                    <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/soft-ui-dashboard" target="_blank" class="btn btn-white btn-sm w-100 mb-0">Documentation</a>
-                </div>
-            </div>
-        </div>
-        <a class="btn bg-gradient-primary mt-4 w-100" href="https://www.creative-tim.com/product/soft-ui-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
+
 </aside>
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
     <!-- Navbar -->
@@ -342,101 +327,104 @@
                         <h6>Employee Information</h6>
                     </div>
                     <form class="row g-3 needs-validation m-3" method="post">
-                        <div class="col-md-1 position-relative">
-                            <label for="validationTooltip00" class="form-label">ID</label>
-                            <input type="text" class="form-control" name="input-id" id="validationTooltip00" readonly
-                                   value="${employee.getId()}">
-                        </div>
-                        <div class="col-md-3 position-relative">
-                            <label for="validationTooltip01" class="form-label">Name</label>
-                            <input type="text" class="form-control" name="input-name" id="validationTooltip01" required
-                                   value="${employee.getName()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip02" class="form-label">Date of Birth</label>
-                            <input type="date" class="form-control" name="input-birthday" id="validationTooltip02" required
-                                   value="${employee.getBirthday()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip03" class="form-label">Gender</label>
-                            <select class="form-select" id="validationTooltip03" name="input-gender" required >
-                                <option  value="Male" <c:if test="${employee.getGender()=='Male'}"> selected </c:if>>Male</option>
-                                <option  value="Female" <c:if test="${employee.getGender()=='Female'}"> selected </c:if>>Female</option>
-                            </select>
-                            <%--                            <div class="invalid-tooltip">--%>
-                            <%--                                Please select a valid state.--%>
-                            <%--                            </div>--%>
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip04" class="form-label">Personal ID</label>
-                            <input type="text" class="form-control" name="input-personal-id" id="validationTooltip04" required
-                                   value="${employee.getPersonalID()}">
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip05" class="form-label">Phone Number</label>
-                            <input type="text" class="form-control" name="input-phone-number" id="validationTooltip05" required
-                                   value="${employee.getPhoneNumber()}">
-                        </div>
-                        <div class="col-md-4 position-relative">
-                            <label for="validationTooltip06" class="form-label">Address</label>
-                            <input type="text" class="form-control" name="input-address" id="validationTooltip06" required
-                                   value="${employee.getAddress()}">
-                            <div class="invalid-tooltip">
-                                Please provide a valid city.
+                        <c:forEach var="employee" items="${employeeList}">
+                            <div class="col-md-1 position-relative">
+                                <label for="validationTooltip00" class="form-label">ID</label>
+                                <input type="text" class="form-control" name="input-id" id="validationTooltip00" readonly
+                                       value="${employee.getId()}">
                             </div>
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip07" class="form-label">Degree</label>
-                            <select class="form-select" name="input-degree" id="validationTooltip07" required>
-                                <c:forEach var="degree" items="${employeeDegreeList}">
-                                    <option value="${degree.getId()}" <c:if test="${employee.getEmployeeDegree().getId()==degree.getId()}"> selected </c:if>>${degree.getName()}</option>
-                                </c:forEach>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Please select a valid state.
+                            <div class="col-md-3 position-relative">
+                                <label for="validationTooltip01" class="form-label">Name</label>
+                                <input type="text" class="form-control" name="input-name" id="validationTooltip01" required
+                                       value="${employee.getName()}">
                             </div>
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip08" class="form-label">Office</label>
-                            <select class="form-select" name="input-office" id="validationTooltip08" required>
-                                <c:forEach var="office" items="${employeeOfficeList}">
-                                    <option value="${office.getId()}" <c:if test="${employee.getEmployeeOffice().getId()==office.getId()}"> selected </c:if>>${office.getName()}</option>
-                                </c:forEach>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Please select a valid state.
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip02" class="form-label">Date of Birth</label>
+                                <input type="date" class="form-control" name="input-birthday" id="validationTooltip02" required
+                                       value="${employee.getBirthday()}">
                             </div>
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip09" class="form-label">Department</label>
-                            <select class="form-select" name="input-department" id="validationTooltip09" required>
-                                <c:forEach var="department" items="${employeeDepartmentList}">
-                                    <option value="${department.getId()}" <c:if test="${employee.getEmployeeDepartment().getId()==department.getId()}"> selected </c:if>>${department.getName()}</option>
-                                </c:forEach>
-                            </select>
-                            <div class="invalid-tooltip">
-                                Please select a valid state.
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip03" class="form-label">Gender</label>
+                                <select class="form-select" id="validationTooltip03" name="input-gender" required >
+                                    <option  value="Male" <c:if test="${employee.getGender()=='Male'}"> selected </c:if>>Male</option>
+                                    <option  value="Female" <c:if test="${employee.getGender()=='Female'}"> selected </c:if>>Female</option>
+                                </select>
+                                    <%--                            <div class="invalid-tooltip">--%>
+                                    <%--                                Please select a valid state.--%>
+                                    <%--                            </div>--%>
                             </div>
-                        </div>
-                        <div class="col-md-2 position-relative">
-                            <label for="validationTooltip10" class="form-label">Salary</label>
-                            <input type="text" class="form-control" name="input-salary" id="validationTooltip10" required
-                                   value="${employee.getSalary()}">
-                            <div class="invalid-tooltip">
-                                Please provide a valid zip.
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip04" class="form-label">Personal ID</label>
+                                <input type="text" class="form-control" name="input-personal-id" id="validationTooltip04" required
+                                       value="${employee.getPersonalID()}">
                             </div>
-                        </div>
-                        <div class="col-md-3 position-relative">
-                            <label for="validationTooltip11" class="form-label">Email</label>
-                            <input type="text" class="form-control" name="input-email" id="validationTooltip11" required
-                                   value="${employee.getEmail()}">
-                            <div class="invalid-tooltip">
-                                Please provide a valid zip.
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip05" class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" name="input-phone-number" id="validationTooltip05" required
+                                       value="${employee.getPhoneNumber()}">
                             </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary" type="submit">Submit</button>
-                        </div>
+                            <div class="col-md-4 position-relative">
+                                <label for="validationTooltip06" class="form-label">Address</label>
+                                <input type="text" class="form-control" name="input-address" id="validationTooltip06" required
+                                       value="${employee.getAddress()}">
+                                <div class="invalid-tooltip">
+                                    Please provide a valid city.
+                                </div>
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip07" class="form-label">Degree</label>
+                                <select class="form-select" name="input-degree" id="validationTooltip07" required>
+                                    <c:forEach var="degree" items="${employeeDegreeList}">
+                                        <option value="${degree.getId()}" <c:if test="${employee.getEmployeeDegree().getId()==degree.getId()}"> selected </c:if>>${degree.getName()}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip08" class="form-label">Office</label>
+                                <select class="form-select" name="input-office" id="validationTooltip08" required>
+                                    <c:forEach var="office" items="${employeeOfficeList}">
+                                        <option value="${office.getId()}" <c:if test="${employee.getEmployeeOffice().getId()==office.getId()}"> selected </c:if>>${office.getName()}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip09" class="form-label">Department</label>
+                                <select class="form-select" name="input-department" id="validationTooltip09" required>
+                                    <c:forEach var="department" items="${employeeDepartmentList}">
+                                        <option value="${department.getId()}" <c:if test="${employee.getEmployeeDepartment().getId()==department.getId()}"> selected </c:if>>${department.getName()}</option>
+                                    </c:forEach>
+                                </select>
+                                <div class="invalid-tooltip">
+                                    Please select a valid state.
+                                </div>
+                            </div>
+                            <div class="col-md-2 position-relative">
+                                <label for="validationTooltip10" class="form-label">Salary</label>
+                                <input type="text" class="form-control" name="input-salary" id="validationTooltip10" required
+                                       value="${employee.getSalary()}">
+                                <div class="invalid-tooltip">
+                                    Please provide a valid zip.
+                                </div>
+                            </div>
+                            <div class="col-md-3 position-relative">
+                                <label for="validationTooltip11" class="form-label">Email</label>
+                                <input type="text" class="form-control" name="input-email" id="validationTooltip11" required
+                                       value="${employee.getEmail()}">
+                                <div class="invalid-tooltip">
+                                    Please provide a valid zip.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
+                        </c:forEach>
+
                     </form>
                 </div>
             </div>

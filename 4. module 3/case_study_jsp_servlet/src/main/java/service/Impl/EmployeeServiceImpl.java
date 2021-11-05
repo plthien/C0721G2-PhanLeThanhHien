@@ -28,14 +28,13 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(String id) {
         employeeRepository.remove(id);
     }
 
     @Override
-    public Employee findById(int id) {
-        Employee employee = employeeRepository.findById(id);
-        return employee;
+    public List<Employee> findById(String id) {
+        return employeeRepository.findById(id);
     }
 
     @Override

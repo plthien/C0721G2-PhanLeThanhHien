@@ -12,23 +12,24 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet",urlPatterns = {"/customers"})
+@WebServlet(name = "CustomerServlet", urlPatterns = {"/customers"})
 public class CustomerServlet extends HttpServlet {
     private CustomerService customerService = new CustomerServiceImpl();
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userAction = request.getParameter("userAction");
         if (userAction == null) {
             userAction = "";
         }
-        switch (userAction){
+        switch (userAction) {
             case "create":
-                createCustomer(request,response);
+                createCustomer(request, response);
                 break;
             case "edit":
-                updateCustomer(request,response);
+                updateCustomer(request, response);
                 break;
             case "search":
-                searchCustomer(request,response);
+                searchCustomer(request, response);
                 break;
             default:
                 break;
@@ -44,13 +45,16 @@ public class CustomerServlet extends HttpServlet {
         }
         switch (userAction) {
             case "create":
-                showCreateCustomerForm(request,response);
+                showCreateCustomerForm(request, response);
                 break;
             case "edit":
-                showEditCustomerForm(request,response);
+                showEditCustomerForm(request, response);
                 break;
             case "delete":
-                deleteCustomer(request,response);
+                deleteCustomer(request, response);
+                break;
+            case "search":
+                searchCustomer(request, response);
                 break;
             default:
                 customerList(request, response);
@@ -58,11 +62,12 @@ public class CustomerServlet extends HttpServlet {
 
         }
     }
+
     public void customerList(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customerList = this.customerService.findAll();
         request.setAttribute("customerList", customerList);
         try {
-            request.getRequestDispatcher("pages/customer/customer-list.jsp").forward(request,response);
+            request.getRequestDispatcher("pages/customer/customer-list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -70,13 +75,13 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    public void showCreateCustomerForm(HttpServletRequest request, HttpServletResponse response){
+    public void showCreateCustomerForm(HttpServletRequest request, HttpServletResponse response) {
         List<CustomerType> customerTypeList = this.customerService.getCustomerType();
 
-        request.setAttribute("customerTypeList",customerTypeList);
+        request.setAttribute("customerTypeList", customerTypeList);
 
         try {
-            request.getRequestDispatcher("pages/customer/create-customer.jsp").forward(request,response);
+            request.getRequestDispatcher("pages/customer/create-customer.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -85,7 +90,7 @@ public class CustomerServlet extends HttpServlet {
 
     }
 
-    public void createCustomer(HttpServletRequest request, HttpServletResponse response){
+    public void createCustomer(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
@@ -95,7 +100,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("input-address");
         String email = request.getParameter("input-email");
 
-        int customerTypeID = Integer.parseInt(request.getParameter("input-customerType")) ;
+        int customerTypeID = Integer.parseInt(request.getParameter("input-customerType"));
 
 
         Customer customer = new Customer();
@@ -124,16 +129,16 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    public void showEditCustomerForm(HttpServletRequest request, HttpServletResponse response){
+    public void showEditCustomerForm(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
-        Customer customer =  this.customerService.findById(id);
+        List<Customer> customerList = this.customerService.findById(id);
 
         List<CustomerType> customerTypeList = this.customerService.getCustomerType();
 
-        request.setAttribute("customerTypeList",customerTypeList);
-        request.setAttribute("customer",customer);
+        request.setAttribute("customerTypeList", customerTypeList);
+        request.setAttribute("customerList", customerList);
         try {
-            request.getRequestDispatcher("/pages/customer/edit-customer.jsp").forward(request,response);
+            request.getRequestDispatcher("/pages/customer/edit-customer.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -142,7 +147,7 @@ public class CustomerServlet extends HttpServlet {
 
     }
 
-    public void updateCustomer(HttpServletRequest request, HttpServletResponse response){
+    public void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
@@ -152,7 +157,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("input-address");
         String email = request.getParameter("input-email");
 
-        int customerTypeID = Integer.parseInt(request.getParameter("input-customerType")) ;
+        int customerTypeID = Integer.parseInt(request.getParameter("input-customerType"));
 
 
         CustomerType customerType = new CustomerType();
@@ -178,7 +183,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    public void deleteCustomer(HttpServletRequest request, HttpServletResponse response){
+    public void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         this.customerService.remove(id);
         try {
@@ -188,12 +193,16 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    public void searchCustomer(HttpServletRequest request, HttpServletResponse response){
-        String name = request.getParameter("searchName");
-        List<Customer> customerList = this.customerService.findByName(name);
-        request.setAttribute("customerList",customerList);
+    public void searchCustomer(HttpServletRequest request, HttpServletResponse response) {
+        String search = request.getParameter("searchName");
+        List<Customer> customerList = this.customerService.findById(search);
+
+        if (customerList.isEmpty()) {
+            customerList = this.customerService.findByName(search);
+        }
+        request.setAttribute("customerList", customerList);
         try {
-            request.getRequestDispatcher("/pages/customer/customer-list.jsp").forward(request,response);
+            request.getRequestDispatcher("/pages/customer/customer-list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

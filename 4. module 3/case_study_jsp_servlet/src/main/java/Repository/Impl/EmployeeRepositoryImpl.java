@@ -28,7 +28,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 employeeDegree = new EmployeeDegree();
                 employeeOffice = new EmployeeOffice();
                 employeeDepartment = new EmployeeDepartment();
-                employee.setId(resultSet.getInt("id"));
+                employee.setId(resultSet.getString("id"));
                 employee.setName(resultSet.getString("name"));
                 employee.setBirthday(resultSet.getString("birthday"));
                 employee.setGender(resultSet.getString("gender"));
@@ -118,7 +118,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
             preparedStatement.setInt(9, employee.getEmployeeDegree().getId());
             preparedStatement.setInt(10, employee.getEmployeeOffice().getId());
             preparedStatement.setInt(11, employee.getEmployeeDepartment().getId());
-            preparedStatement.setInt(12, employee.getId());
+            preparedStatement.setString(12, employee.getId());
 
             int rowAffect = preparedStatement.executeUpdate();
 
@@ -140,10 +140,10 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(String id) {
         try {
             CallableStatement callableStatement = BaseRepository.connection.prepareCall("{call delete_employee(?)}");
-            callableStatement.setInt(1,id);
+            callableStatement.setString(1,id);
             callableStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -151,23 +151,26 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     @Override
-    public Employee findById(int id) {
-        Employee employee = null;
-        EmployeeDegree employeeDegree =null;
-        EmployeeOffice employeeOffice = null;
-        EmployeeDepartment employeeDepartment = null;
+    public List<Employee> findById(String id) {
+        List<Employee> employeeList = new ArrayList<>();
+
         try {
             CallableStatement  callableStatement = BaseRepository.connection.prepareCall("{call get_employee_by_id(?)}");
-            callableStatement.setInt(1,id);
+            callableStatement.setString(1,id);
 
             ResultSet resultSet = callableStatement.executeQuery();
+
+            Employee employee = null;
+            EmployeeDegree employeeDegree =null;
+            EmployeeOffice employeeOffice = null;
+            EmployeeDepartment employeeDepartment = null;
             while (resultSet.next()) {
                 employee = new Employee();
                 employeeDegree = new EmployeeDegree();
                 employeeOffice = new EmployeeOffice();
                 employeeDepartment = new EmployeeDepartment();
 
-                employee.setId(resultSet.getInt("id"));
+                employee.setId(resultSet.getString("id"));
                 employee.setName(resultSet.getString("name"));
                 employee.setBirthday(resultSet.getString("birthday"));
                 employee.setGender(resultSet.getString("gender"));
@@ -178,17 +181,21 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 employee.setSalary(resultSet.getDouble("salary"));
 
                 employeeDegree.setId(resultSet.getInt("degree_id"));
+                employeeDegree.setName(resultSet.getString("degree_name"));
                 employeeOffice.setId(resultSet.getInt("office_id"));
+                employeeOffice.setName(resultSet.getString("office_name"));
                 employeeDepartment.setId(resultSet.getInt("department_id"));
+                employeeDepartment.setName(resultSet.getString("department_name"));
 
                 employee.setEmployeeDegree(employeeDegree);
                 employee.setEmployeeOffice(employeeOffice);
                 employee.setEmployeeDepartment(employeeDepartment);
+                employeeList.add(employee);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return employee;
+        return employeeList;
     }
 
     @Override
@@ -209,7 +216,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
                 employeeOffice = new EmployeeOffice();
                 employeeDepartment = new EmployeeDepartment();
 
-                employee.setId(resultSet.getInt("id"));
+                employee.setId(resultSet.getString("id"));
                 employee.setName(resultSet.getString("name"));
                 employee.setBirthday(resultSet.getString("birthday"));
                 employee.setGender(resultSet.getString("gender"));

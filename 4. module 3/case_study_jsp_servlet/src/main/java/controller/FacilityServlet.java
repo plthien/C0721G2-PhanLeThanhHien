@@ -53,6 +53,9 @@ public class FacilityServlet extends HttpServlet {
             case "delete":
                 deleteFacility(request,response);
                 break;
+            case "search":
+                searchFacility(request,response);
+                break;
             default:
                 facilityList(request, response);
                 break;
@@ -127,14 +130,14 @@ public class FacilityServlet extends HttpServlet {
 
     public void showEditFacilityForm(HttpServletRequest request, HttpServletResponse response){
         String id = request.getParameter("id");
-        Facility facility =  this.facilityService.findById(id);
+        List<Facility> facilityList =  this.facilityService.findById(id);
 
         List<ServiceType> serviceTypeList = this.facilityService.getServiceType();
         List<RentingType> rentingTypeList = this.facilityService.getRentingType();
 
         request.setAttribute("serviceTypeList",serviceTypeList);
         request.setAttribute("rentingTypeList",rentingTypeList);
-        request.setAttribute("facility",facility);
+        request.setAttribute("facilityList",facilityList);
         try {
             request.getRequestDispatcher("/pages/facility/edit-facility.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -191,8 +194,13 @@ public class FacilityServlet extends HttpServlet {
     }
 
     public void searchFacility(HttpServletRequest request, HttpServletResponse response){
-        String name = request.getParameter("searchName");
-        List<Facility> facilityList = this.facilityService.findByName(name);
+        String search = request.getParameter("searchName");
+        List<Facility> facilityList = this.facilityService.findById(search);
+
+        if (facilityList.isEmpty()){
+            facilityList = this.facilityService.findByName(search);
+        }
+
         request.setAttribute("facilityList",facilityList);
         try {
             request.getRequestDispatcher("/pages/facility/facility-list.jsp").forward(request,response);

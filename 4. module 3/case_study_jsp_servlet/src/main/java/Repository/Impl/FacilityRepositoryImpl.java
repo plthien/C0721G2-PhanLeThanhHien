@@ -131,15 +131,18 @@ public class FacilityRepositoryImpl implements FacilityRepository {
     }
 
     @Override
-    public Facility findById(String id) {
-        Facility facility = null;
-        ServiceType serviceType = null;
-        RentingType rentingType = null;
+    public List<Facility> findById(String id) {
+        List<Facility> facilityList = new ArrayList<>();
+
         try {
             PreparedStatement preparedStatement = BaseRepository.connection.prepareStatement("{call get_facility_by_id(?)}");
             preparedStatement.setString(1, id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
+
+            Facility facility = null;
+            ServiceType serviceType = null;
+            RentingType rentingType = null;
             while (resultSet.next()) {
                 facility = new Facility();
                 serviceType = new ServiceType();
@@ -152,17 +155,21 @@ public class FacilityRepositoryImpl implements FacilityRepository {
                 facility.setCost(resultSet.getDouble("cost"));
                 facility.setCustomerMax(resultSet.getInt("customer_max"));
                 serviceType.setId(resultSet.getInt("service_type_id"));
+                serviceType.setName(resultSet.getString("service_type_name"));
                 rentingType.setId(resultSet.getInt("renting_by_id"));
+                rentingType.setName(resultSet.getString("renting_by_name"));
 
                 facility.setServiceType(serviceType);
                 facility.setRentingType(rentingType);
+
+                facilityList.add(facility);
 
             }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return facility;
+        return facilityList;
     }
 
     @Override

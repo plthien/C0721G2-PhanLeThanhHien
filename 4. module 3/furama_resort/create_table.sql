@@ -136,8 +136,11 @@ end;
 delimiter //
 create procedure get_employee_by_id(in p_id int)
 begin
-	select e.id, e.`name`, e.gender, e.birthday, e.email, e.address, e.personal_id, e.phone_number, e.salary, e.degree_id, e.office_id, e.department_id
+	select e.id, e.`name`, e.gender, e.birthday, e.email, e.address, e.personal_id, e.phone_number, e.salary, e.degree_id, e.office_id, e.department_id,d.degree_name, o.office_name, dp.department_name 
     from employee e 
+		join degree d on e.degree_id = d.id 
+        join office o on e.office_id = o.id
+        join department dp on e.department_id = dp.id
 	where e.id = p_id and e.`status` = 1;
 end;
 // delimiter ;
@@ -176,8 +179,9 @@ end;
 delimiter //
 create procedure get_customer_by_id(in p_id varchar(10))
 begin
-	select c.id, c.`name`, c.gender, c.birthday, c.email, c.address, c.personal_id, c.phone_number, c.customer_type_id
-    from customer c
+	select c.id, c.`name`, c.gender, c.birthday, c.email, c.address, c.personal_id, c.phone_number, c.customer_type_id, ct.customer_type_name
+    from customer c 
+		join customer_type ct on c.customer_type_id = ct.id
 	where c.id = p_id and c.`status` = 1;
 end;
 // delimiter ;
@@ -215,8 +219,10 @@ end;
 delimiter //
 create procedure get_facility_by_id(in p_id varchar(10))
 begin
-	select f.id,f.`name`,f.usable_area,f.number_of_floors,f.cost,f.customer_max,f.renting_by_id,f.service_type_id
+	select f.id,f.`name`,f.usable_area,f.number_of_floors,f.cost,f.customer_max,f.renting_by_id,f.service_type_id, st.service_type_name, r.renting_by_name
     from facility f 
+		join service_type st on f.service_type_id = st.id
+        join renting_by r on f.renting_by_id = r.id
 	where f.id = p_id and f.`status` = 1;
 end;
 // delimiter ;
@@ -229,5 +235,51 @@ begin
 		join service_type st on f.service_type_id = st.id
         join renting_by r on f.renting_by_id = r.id
 	where f.`status` = 1 and f.`name` like concat('%' , p_name , '%');
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_all_contract()
+begin
+	select ct.id, ct.customer_id,ct.employee_id,ct.facility_id,ct.check_in_date,ct.check_out_date,ct.deposit,ct.payment,c.`name`as customer_name, e.`name` as employee_name, f.`name` as facility_name
+    from contract ct
+		join customer c  on c.id=ct.customer_id
+        join employee e on e.id=ct.employee_id
+        join facility f on f.id = ct.facility_id
+	where ct.`status` = 1;
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_all_contract_detail()
+begin
+	select ctd.id, ctd.contract_id, ctd.extra_service_id, ctd.quantity, e.`name` as extra_service_name, e.unit, e.price
+    from contract_detail ctd
+		join extra_service e  on e.id = ctd.extra_service_id
+	where ctd.`status` = 1 and e.`status` = 1;
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_contract_by_id(in p_id int)
+begin
+	select ct.id, ct.customer_id,ct.employee_id,ct.facility_id,ct.check_in_date,ct.check_out_date,ct.deposit,ct.payment,c.`name`as customer_name, e.`name` as employee_name, f.`name` as facility_name
+    from contract ct
+		join customer c  on c.id=ct.customer_id
+        join employee e on e.id=ct.employee_id
+        join facility f on f.id = ct.facility_id
+	where ct.`status` = 1 and ct.id = p_id;
+end;
+// delimiter ;
+
+delimiter //
+create procedure delete_contract(in p_id int)
+begin
+	update contract c
+    set c.`status` = 0
+	where c.id = p_id;
+    update contract_detail cd
+    set cd.`status` = 0
+    where cd.contract_id = p_id;
 end;
 // delimiter ;

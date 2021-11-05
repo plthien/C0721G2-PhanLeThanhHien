@@ -15,9 +15,9 @@ public interface EmployeeRepository {
 
     void update(Employee employee);
 
-    void remove(int id);
+    void remove(String id);
 
-    Employee findById(int id);
+    List<Employee> findById(String id);
 
     List<Employee> findByName(String name);
 

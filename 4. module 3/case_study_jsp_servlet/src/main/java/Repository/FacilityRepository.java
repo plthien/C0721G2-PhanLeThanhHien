@@ -13,7 +13,7 @@ public interface FacilityRepository {
 
     void remove(String id);
 
-    Facility findById(String id);
+    List<Facility> findById(String id);
 
     List<Facility> findByName(String name);
 

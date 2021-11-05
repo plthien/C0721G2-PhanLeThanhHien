@@ -138,14 +138,17 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public Customer findById(String id) {
-        Customer customer = null;
-        CustomerType customerType = null;
+    public List<Customer> findById(String id) {
+        List<Customer> customerList = new ArrayList<>();
+
         try {
             PreparedStatement preparedStatement = BaseRepository.connection.prepareStatement("{call get_customer_by_id(?)}");
             preparedStatement.setString(1,id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
+
+            Customer customer = null;
+            CustomerType customerType = null;
             while (resultSet.next()){
                 customer = new Customer();
                 customerType = new CustomerType();
@@ -160,14 +163,16 @@ public class CustomerRepositoryImpl implements CustomerRepository {
                 customer.setAddress(resultSet.getString("address"));
 
                 customerType.setId(resultSet.getInt("customer_type_id"));
+                customerType.setName(resultSet.getString("customer_type_name"));
                 customer.setCustomerType(customerType);
+                customerList.add(customer);
 
             }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return customer;
+        return customerList;
     }
 
     @Override

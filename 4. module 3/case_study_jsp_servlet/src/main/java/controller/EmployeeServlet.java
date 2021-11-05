@@ -56,9 +56,9 @@ public class EmployeeServlet extends HttpServlet {
             case "delete":
                 deleteEmployee(request,response);
                 break;
-//            case "sort":
-//                sortUser(request,response);
-//                break;
+            case "search":
+                searchEmployee(request,response);
+                break;
             default:
                 employeeList(request, response);
                 break;
@@ -140,8 +140,8 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void showEditEmployeeForm(HttpServletRequest request, HttpServletResponse response){
-        int id = Integer.parseInt(request.getParameter("id"));
-        Employee employee =  this.employeeService.findById(id);
+        String id = request.getParameter("id");
+        List<Employee> employeeList =  this.employeeService.findById(id);
         List<EmployeeDegree> employeeDegreeList = this.employeeService.getEmployeeDegree();
         List<EmployeeOffice> employeeOfficeList = this.employeeService.getEmployeeOffice();
         List<EmployeeDepartment> employeeDepartmentList = this.employeeService.getEmployeeDepartment();
@@ -149,7 +149,7 @@ public class EmployeeServlet extends HttpServlet {
         request.setAttribute("employeeDegreeList",employeeDegreeList);
         request.setAttribute("employeeOfficeList",employeeOfficeList);
         request.setAttribute("employeeDepartmentList",employeeDepartmentList);
-        request.setAttribute("employee",employee);
+        request.setAttribute("employeeList",employeeList);
         try {
             request.getRequestDispatcher("/pages/employee/edit-employee.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -161,7 +161,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void updateEmployee(HttpServletRequest request, HttpServletResponse response){
-        int id = Integer.parseInt(request.getParameter("input-id"));
+        String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
         String gender = request.getParameter("input-gender");
@@ -206,7 +206,7 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void deleteEmployee(HttpServletRequest request, HttpServletResponse response){
-        int id = Integer.parseInt(request.getParameter("id"));
+        String id = request.getParameter("id");
         this.employeeService.remove(id);
         try {
             response.sendRedirect("/employees");
@@ -216,8 +216,13 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     public void searchEmployee(HttpServletRequest request, HttpServletResponse response){
-        String name = request.getParameter("searchName");
-        List<Employee> employeeList = this.employeeService.findByName(name);
+        String search = request.getParameter("searchName");
+        List<Employee> employeeList = this.employeeService.findById(search);
+
+        if (employeeList.isEmpty()){
+            employeeList = this.employeeService.findByName(search);
+
+        }
         request.setAttribute("employeeList",employeeList);
         try {
             request.getRequestDispatcher("/pages/employee/employee-list.jsp").forward(request,response);

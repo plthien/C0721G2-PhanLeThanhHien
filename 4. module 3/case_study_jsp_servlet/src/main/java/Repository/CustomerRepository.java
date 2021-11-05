@@ -16,7 +16,7 @@ public interface CustomerRepository {
 
     void remove(int id);
 
-    Customer findById(String id);
+    List<Customer> findById(String id);
 
     List<Customer> findByName(String name);
 
