@@ -253,7 +253,7 @@ end;
 delimiter //
 create procedure get_all_contract_detail()
 begin
-	select ctd.id, ctd.contract_id, ctd.extra_service_id, ctd.quantity, e.`name` as extra_service_name, e.unit, e.price
+	select ctd.id, ctd.contract_id, ctd.extra_service_id, ctd.quantity, e.`name` as extra_service_name, e.unit, e.price, (ctd.quantity*e.price) as total
     from contract_detail ctd
 		join extra_service e  on e.id = ctd.extra_service_id
 	where ctd.`status` = 1 and e.`status` = 1;
@@ -281,5 +281,15 @@ begin
     update contract_detail cd
     set cd.`status` = 0
     where cd.contract_id = p_id;
+end;
+// delimiter ;
+
+delimiter //
+create procedure get_contract_detail_by_id(in p_id int)
+begin
+	select c.id, c.quantity, c.contract_id, e.id as extra_service_id , e.`name`, e.unit, e.price, (c.quantity*e.price) as total
+    from contract_detail c 
+        join extra_service e on e.id = c.extra_service_id
+	where c.`status` = 1 and c.id = p_id and e.`status` = 1;
 end;
 // delimiter ;

@@ -3,6 +3,7 @@ package controller;
 import bean.*;
 import service.CustomerService;
 import service.Impl.CustomerServiceImpl;
+import utils.Validate;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -91,6 +92,12 @@ public class CustomerServlet extends HttpServlet {
     }
 
     public void createCustomer(HttpServletRequest request, HttpServletResponse response) {
+        String personalIDMess = null;
+        String phoneNumberMess = null;
+        String emailMess = null;
+        String idMess = null;
+        boolean flag = true;
+
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
@@ -102,6 +109,24 @@ public class CustomerServlet extends HttpServlet {
 
         int customerTypeID = Integer.parseInt(request.getParameter("input-customerType"));
 
+        if (!Validate.checkPersonalID(personalID)) {
+            personalIDMess = "Personal ID is invalid!";
+            flag = false;
+        }
+        if (!Validate.checkPhoneNumber(phoneNumber)) {
+            phoneNumberMess = "Phone Number is invalid!";
+            flag = false;
+        }
+
+        if (!Validate.checkEmail(email)) {
+            emailMess = "Email is invalid!";
+            flag = false;
+        }
+
+        if (!Validate.checkIDCustomer(id)) {
+            idMess = "Id is invalid!";
+            flag = false;
+        }
 
         Customer customer = new Customer();
         CustomerType customerType = new CustomerType();
@@ -115,18 +140,26 @@ public class CustomerServlet extends HttpServlet {
         customer.setAddress(address);
         customer.setEmail(email);
 
-
         customerType.setId(customerTypeID);
-
 
         customer.setCustomerType(customerType);
 
-        this.customerService.save(customer);
-        try {
-            response.sendRedirect("/customers");
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!flag) {
+            request.setAttribute("personalIDMess", personalIDMess);
+            request.setAttribute("phoneNumberMess", phoneNumberMess);
+            request.setAttribute("emailMess", emailMess);
+            request.setAttribute("idMess", idMess);
+            request.setAttribute("customer", customer);
+            showCreateCustomerForm(request, response);
+        } else {
+            this.customerService.save(customer);
+            try {
+                response.sendRedirect("/customers");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public void showEditCustomerForm(HttpServletRequest request, HttpServletResponse response) {
@@ -148,6 +181,11 @@ public class CustomerServlet extends HttpServlet {
     }
 
     public void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
+        String phoneNumberMess = null;
+        String emailMess = null;
+        String personalIDMess = null;
+        boolean flag = true;
+
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
         String birthday = request.getParameter("input-birthday");
@@ -159,6 +197,19 @@ public class CustomerServlet extends HttpServlet {
 
         int customerTypeID = Integer.parseInt(request.getParameter("input-customerType"));
 
+        if (!Validate.checkPersonalID(personalID)) {
+            personalIDMess = "Personal ID is invalid!";
+            flag = false;
+        }
+        if (!Validate.checkPhoneNumber(phoneNumber)) {
+            phoneNumberMess = "Phone Number is invalid!";
+            flag = false;
+        }
+
+        if (!Validate.checkEmail(email)) {
+            emailMess = "Email is invalid!";
+            flag = false;
+        }
 
         CustomerType customerType = new CustomerType();
         Customer customer = new Customer();
@@ -175,12 +226,21 @@ public class CustomerServlet extends HttpServlet {
 
         customer.setCustomerType(customerType);
 
-        this.customerService.update(customer);
-        try {
-            response.sendRedirect("/customers");
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!flag) {
+            request.setAttribute("personalIDMess", personalIDMess);
+            request.setAttribute("phoneNumberMess", phoneNumberMess);
+            request.setAttribute("emailMess", emailMess);
+            request.setAttribute("customer", customer);
+            showEditCustomerForm(request, response);
+        } else {
+            this.customerService.update(customer);
+            try {
+                response.sendRedirect("/customers");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {

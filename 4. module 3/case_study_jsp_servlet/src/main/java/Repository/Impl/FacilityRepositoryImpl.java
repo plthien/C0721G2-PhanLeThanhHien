@@ -13,7 +13,7 @@ public class FacilityRepositoryImpl implements FacilityRepository {
         List<Facility> facilityList = new ArrayList<>();
 
         try {
-            CallableStatement callableStatement = BaseRepository.connection.prepareCall("{call get_all_facility()}");
+            CallableStatement callableStatement =BaseRepository.connection.prepareCall("{call get_all_facility()}");
             ResultSet resultSet = callableStatement.executeQuery();
 
             Facility facility = null;

@@ -3,6 +3,7 @@ package controller;
 import bean.*;
 import service.FacilityService;
 import service.Impl.FacilityServiceImpl;
+import utils.Validate;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -93,16 +94,73 @@ public class FacilityServlet extends HttpServlet {
     }
 
     public void createCustomer(HttpServletRequest request, HttpServletResponse response) {
+        String customerMaxMess = null;
+        String costMess = null;
+        String floorsMess = null;
+        String usableAreaMess = null;
+        String idMess = null;
+        boolean flag = true;
+
+        double usableArea = 0d;
+        int floors = 0;
+        int customerMax = 0;
+        double cost = 0d;
+
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
-        double usableArea = Double.parseDouble(request.getParameter("input-usable-area"));
-        int floors = Integer.parseInt(request.getParameter("input-floors"));
-        int customerMax = Integer.parseInt(request.getParameter("input-customer-max"));
-        double cost = Double.parseDouble(request.getParameter("input-cost"));
+
+        try {
+            usableArea = Double.parseDouble(request.getParameter("input-usable-area"));
+            if (usableArea <= 0) {
+                usableAreaMess = "Usable Area is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e ){
+            usableAreaMess = "Usable Area is invalid!";
+            flag = false;
+        }
+
+        try {
+            floors = Integer.parseInt(request.getParameter("input-floors"));
+            if (floors < 0){
+                floorsMess = "Floors is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            floorsMess = "Floors is invalid!";
+            flag = false;
+        }
+
+        try {
+            customerMax = Integer.parseInt(request.getParameter("input-customer-max"));
+            if (customerMax <= 0){
+                customerMaxMess = "Customer Maximization is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            customerMaxMess = "Customer Maximization is invalid!";
+            flag = false;
+        }
+
+        try {
+            cost = Double.parseDouble(request.getParameter("input-cost"));
+            if (cost < 0){
+                costMess = "Cost is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            costMess = "Cost is invalid!";
+            flag = false;
+        }
+
+        if (!Validate.checkIDFacility(id)) {
+            idMess = "Id is invalid!";
+            flag = false;
+        }
+
 
         int rentingTypeID = Integer.parseInt(request.getParameter("input-rentingType"));
         int serviceTypeID = Integer.parseInt(request.getParameter("input-serviceType"));
-
 
         Facility facility = new Facility();
         ServiceType serviceType = new ServiceType();
@@ -120,18 +178,28 @@ public class FacilityServlet extends HttpServlet {
         facility.setServiceType(serviceType);
         facility.setRentingType(rentingType);
 
-        this.facilityService.save(facility);
-        try {
-            response.sendRedirect("/facilities");
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!flag) {
+            request.setAttribute("customerMaxMess", customerMaxMess);
+            request.setAttribute("costMess", costMess);
+            request.setAttribute("floorsMess", floorsMess);
+            request.setAttribute("usableAreaMess", usableAreaMess);
+            request.setAttribute("idMess", idMess);
+            request.setAttribute("facility",facility);
+            showCreateFacilityForm(request, response);
+        } else {
+            this.facilityService.save(facility);
+            try {
+                response.sendRedirect("/facilities");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public void showEditFacilityForm(HttpServletRequest request, HttpServletResponse response){
         String id = request.getParameter("id");
         List<Facility> facilityList =  this.facilityService.findById(id);
-
         List<ServiceType> serviceTypeList = this.facilityService.getServiceType();
         List<RentingType> rentingTypeList = this.facilityService.getRentingType();
 
@@ -151,10 +219,63 @@ public class FacilityServlet extends HttpServlet {
     public void updateFacility(HttpServletRequest request, HttpServletResponse response){
         String id = request.getParameter("input-id");
         String name = request.getParameter("input-name");
-        double usableArea = Double.parseDouble(request.getParameter("input-usable-area"));
-        int floors = Integer.parseInt(request.getParameter("input-floors"));
-        int customerMax = Integer.parseInt(request.getParameter("input-customer-max"));
-        double cost = Double.parseDouble(request.getParameter("input-cost"));
+
+        String customerMaxMess = null;
+        String costMess = null;
+        String floorsMess = null;
+        String usableAreaMess = null;
+        boolean flag = true;
+
+        double usableArea = 0d;
+        int floors = 0;
+        int customerMax = 0;
+        double cost = 0d;
+
+
+        try {
+            usableArea = Double.parseDouble(request.getParameter("input-usable-area"));
+            if (usableArea <= 0) {
+                usableAreaMess = "Usable Area is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e ){
+            usableAreaMess = "Usable Area is invalid!";
+            flag = false;
+        }
+
+        try {
+            floors = Integer.parseInt(request.getParameter("input-floors"));
+            if (floors < 0){
+                floorsMess = "Floors is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            floorsMess = "Floors is invalid!";
+            flag = false;
+        }
+
+        try {
+            customerMax = Integer.parseInt(request.getParameter("input-customer-max"));
+            if (customerMax <= 0){
+                customerMaxMess = "Customer Maximization is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            customerMaxMess = "Customer Maximization is invalid!";
+            flag = false;
+        }
+
+        try {
+            cost = Double.parseDouble(request.getParameter("input-cost"));
+            if (cost < 0){
+                costMess = "Cost is invalid!";
+                flag = false;
+            }
+        } catch (NumberFormatException e){
+            costMess = "Cost is invalid!";
+            flag = false;
+        }
+
 
         int rentingTypeID = Integer.parseInt(request.getParameter("input-rentingType"));
         int serviceTypeID = Integer.parseInt(request.getParameter("input-serviceType"));
@@ -175,12 +296,22 @@ public class FacilityServlet extends HttpServlet {
         facility.setServiceType(serviceType);
         facility.setRentingType(rentingType);
 
-        this.facilityService.update(facility);
-        try {
-            response.sendRedirect("/facilities");
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (!flag) {
+            request.setAttribute("customerMaxMess", customerMaxMess);
+            request.setAttribute("costMess", costMess);
+            request.setAttribute("floorsMess", floorsMess);
+            request.setAttribute("usableAreaMess", usableAreaMess);
+            request.setAttribute("facility",facility);
+            showEditFacilityForm(request, response);
+        } else {
+            this.facilityService.update(facility);
+            try {
+                response.sendRedirect("/facilities");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
     public void deleteFacility(HttpServletRequest request, HttpServletResponse response){

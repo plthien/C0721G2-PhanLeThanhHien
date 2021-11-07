@@ -45,23 +45,24 @@ public class ContractServiceImpl implements ContractService {
     }
 
     @Override
+    public void removeContractDetail(String id) {
+        contractRepository.removeContractDetail(id);
+    }
+
+    @Override
     public List<Contract> findById(String id) {
         return contractRepository.findById(id);
     }
 
     @Override
-    public List<Employee> getEmployee() {
-        return contractRepository.getEmployee();
+    public List<ContractDetail> findContractDetailById(String id) {
+        return contractRepository.findContractDetailById(id);
     }
 
     @Override
-    public List<Customer> getCustomer() {
-        return contractRepository.getCustomer();
+    public List<ExtraService> getExtraService() {
+        return contractRepository.getExtraService();
     }
 
-    @Override
-    public List<Facility> getFacility() {
-        return contractRepository.getFacility();
-    }
 
 }

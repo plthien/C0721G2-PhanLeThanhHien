@@ -40,6 +40,9 @@ public class ContractServlet extends HttpServlet {
             case "search":
                 searchContract(request,response);
                 break;
+            case "createDetail":
+                createContractDetail(request,response);
+                break;
             default:
                 break;
 
@@ -61,6 +64,15 @@ public class ContractServlet extends HttpServlet {
                 break;
             case "delete":
                 deleteContract(request,response);
+                break;
+            case "contractDetail":
+                contractDetailList(request,response);
+                break;
+            case "createDetail":
+                showCreateContractDetailForm(request,response);
+                break;
+            case "deleteContractDetail":
+                deleteContractDetail(request,response);
                 break;
             default:
                 contractList(request, response);
@@ -210,6 +222,79 @@ public class ContractServlet extends HttpServlet {
             request.getRequestDispatcher("/pages/contract/contract-list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void contractDetailList(HttpServletRequest request, HttpServletResponse response){
+        String id = request.getParameter("id");
+        String idContract = request.getParameter("idContract");
+
+        List<ContractDetail> contractDetailList = this.contractService.findContractDetailById(id);
+
+        request.setAttribute("contractDetailList",contractDetailList);
+        request.setAttribute("idContract",idContract);
+        try {
+            request.getRequestDispatcher("/pages/contract/contract-detail.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void showCreateContractDetailForm(HttpServletRequest request, HttpServletResponse response){
+        String idContract = request.getParameter("id");
+
+        List<ExtraService> extraServiceList = this.contractService.getExtraService();
+
+        request.setAttribute("idContract",idContract);
+        request.setAttribute("extraServiceList",extraServiceList);
+
+        try {
+            request.getRequestDispatcher("/pages/contract/create-contract-detail.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void createContractDetail(HttpServletRequest request, HttpServletResponse response){
+        String iDContract = request.getParameter("inputIDContract");
+        String iDExtraService = request.getParameter("inputIDExtraService");
+        int quantity =Integer.parseInt(request.getParameter("inputQuantity")) ;
+
+        Contract contract = new Contract();
+        contract.setId(iDContract);
+
+        ExtraService extraService = new ExtraService();
+        extraService.setId(iDExtraService);
+
+        ContractDetail contractDetail = new ContractDetail();
+        contractDetail.setContract(contract);
+        contractDetail.setExtraService(extraService);
+        contractDetail.setQuantity(quantity);
+
+        this.contractService.saveContractDetail(contractDetail);
+
+        try {
+            response.sendRedirect("/contracts");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteContractDetail(HttpServletRequest request, HttpServletResponse response){
+        String id = request.getParameter("id");
+        this.contractService.removeContractDetail(id);
+
+        try {
+            response.sendRedirect("/contracts");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -369,11 +369,7 @@
                    data-toggle="tooltip" data-original-title="Add Employee">
                     Add new Contract
                 </a>
-                <a href="/contracts?userAction=createDetail"
-                   class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light"
-                   data-toggle="tooltip" data-original-title="Add Employee">
-                    Add new Contract Detail
-                </a>
+
             </div>
         </div>
         <div class="row">
@@ -455,7 +451,7 @@
                                             <c:forEach var="contractDetail" items="${contractDetailList}">
                                                 <c:if test="${contract.getId() == contractDetail.getContract().getId()}">
                                                     <p class="text-secondary text-xs font-weight-bold text-center"><a
-                                                            href="">${contractDetail.getId()}</a></p>
+                                                            href="/contracts?userAction=contractDetail&id=${contractDetail.getId()}&idContract=${contract.getId()}">${contractDetail.getId()}</a></p>
                                                 </c:if>
                                             </c:forEach>
                                         </td>
@@ -467,6 +463,11 @@
                                                class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light"
                                                data-toggle="tooltip" data-original-title="Edit Employee">
                                                 Edit
+                                            </a>
+                                            <a href="/contracts?userAction=createDetail&id=${contract.getId()}"
+                                               class="text-secondary font-weight-bold text-xs badge badge-sm bg-gradient-light"
+                                               data-toggle="tooltip" data-original-title="Add Employee">
+                                                Add CD
                                             </a>
                                             <a href="/contracts?userAction=delete&id=${contract.getId()}"
                                                onclick="return confirm('Do you want to delete ${contract.getId()} ?')"

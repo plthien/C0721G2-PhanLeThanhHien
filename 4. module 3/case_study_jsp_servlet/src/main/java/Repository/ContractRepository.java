@@ -19,11 +19,13 @@ public interface ContractRepository {
 
     void remove(String id);
 
+    void removeContractDetail(String id);
+
     List<Contract> findById(String id);
 
-    List<Employee> getEmployee();
+    List<ContractDetail> findContractDetailById(String id);
 
-    List<Customer> getCustomer();
+    List<ExtraService> getExtraService();
 
-    List<Facility> getFacility();
+
 }

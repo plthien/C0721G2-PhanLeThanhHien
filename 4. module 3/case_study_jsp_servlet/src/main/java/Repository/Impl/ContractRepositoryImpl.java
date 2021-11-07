@@ -70,10 +70,11 @@ public class ContractRepositoryImpl implements ContractRepository {
                 contract = new Contract();
                 extraService = new ExtraService();
 
-                contractDetail.setId(resultSet.getInt("id"));
+                contractDetail.setId(resultSet.getString("id"));
                 contractDetail.setQuantity(resultSet.getInt("quantity"));
+                contractDetail.setTotal(resultSet.getDouble("total"));
                 contract.setId(resultSet.getString("contract_id"));
-                extraService.setId(resultSet.getInt("extra_service_id"));
+                extraService.setId(resultSet.getString("extra_service_id"));
                 extraService.setName(resultSet.getString("extra_service_name"));
                 extraService.setUnit(resultSet.getString("unit"));
                 extraService.setPrice(resultSet.getDouble("price"));
@@ -127,7 +128,31 @@ public class ContractRepositoryImpl implements ContractRepository {
 
     @Override
     public void saveContractDetail(ContractDetail contractDetail) {
+        Connection connection = BaseRepository.connection;
+        try {
+            connection.setAutoCommit(false);
+            PreparedStatement preparedStatement =
+                    connection.prepareStatement("insert into contract_detail(contract_id,extra_service_id,quantity) " +
+                            " values(?,?,?) ");
+            preparedStatement.setString(1,contractDetail.getContract().getId());
+            preparedStatement.setString(2,contractDetail.getExtraService().getId());
+            preparedStatement.setInt(3,contractDetail.getQuantity());
 
+            int rowAffect = preparedStatement.executeUpdate();
+            if (rowAffect == 1){
+                connection.commit();
+            } else {
+                connection.rollback();
+            }
+            connection.setAutoCommit(true);
+        } catch (SQLException throwables) {
+            try {
+                connection.rollback();
+                System.out.println(throwables.getMessage());
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -184,6 +209,17 @@ public class ContractRepositoryImpl implements ContractRepository {
     }
 
     @Override
+    public void removeContractDetail(String id) {
+        try {
+            PreparedStatement preparedStatement = BaseRepository.connection.prepareStatement(" update contract_detail set `status`=0 where id=?");
+            preparedStatement.setString(1,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Contract> findById(String id) {
         List<Contract> contractList = new ArrayList<>();
 
@@ -233,17 +269,69 @@ public class ContractRepositoryImpl implements ContractRepository {
     }
 
     @Override
-    public List<Employee> getEmployee() {
-        return null;
+    public List<ContractDetail> findContractDetailById(String id) {
+        List<ContractDetail> contractDetailList = new ArrayList<>();
+
+        try {
+           CallableStatement callableStatement = BaseRepository.connection.prepareCall("{call get_contract_detail_by_id(?)}");
+           callableStatement.setString(1,id);
+           ResultSet resultSet = callableStatement.executeQuery();
+
+           ContractDetail contractDetail = null;
+           ExtraService extraService = null;
+           Contract contract = null;
+           while (resultSet.next()){
+               contractDetail = new ContractDetail();
+               extraService = new ExtraService();
+               contract = new Contract();
+
+               contractDetail.setId(resultSet.getString("id"));
+               contractDetail.setQuantity(resultSet.getInt("quantity"));
+               contractDetail.setTotal(resultSet.getDouble("total"));
+
+               contract.setId(resultSet.getString("contract_id"));
+
+               extraService.setId(resultSet.getString("extra_service_id"));
+               extraService.setName(resultSet.getString("name"));
+               extraService.setUnit(resultSet.getString("unit"));
+               extraService.setPrice(resultSet.getDouble("price"));
+
+               contractDetail.setExtraService(extraService);
+               contractDetail.setContract(contract);
+
+               contractDetailList.add(contractDetail);
+
+           }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return contractDetailList;
     }
 
     @Override
-    public List<Customer> getCustomer() {
-        return null;
+    public List<ExtraService> getExtraService() {
+        List<ExtraService> extraServiceList = new ArrayList<>();
+
+        try {
+            PreparedStatement preparedStatement = BaseRepository.connection.prepareStatement("select * from extra_service where `status`=1");
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            ExtraService extraService = null;
+            while (resultSet.next()){
+                extraService = new ExtraService();
+                extraService.setId(resultSet.getString("id"));
+                extraService.setName(resultSet.getString("name"));
+                extraService.setUnit(resultSet.getString("unit"));
+                extraService.setPrice(resultSet.getDouble("price"));
+
+                extraServiceList.add(extraService);
+
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return extraServiceList;
     }
 
-    @Override
-    public List<Facility> getFacility() {
-        return null;
-    }
 }

@@ -1,26 +1,29 @@
 package bean;
 
 public class ContractDetail {
-    private int id;
+    private String id;
     private Contract contract;
     private ExtraService extraService;
     private  int quantity;
+    private double total;
 
     public ContractDetail() {
     }
 
-    public ContractDetail(int id, Contract contract, ExtraService extraService, int quantity) {
+    public ContractDetail(String id, Contract contract, ExtraService extraService, int quantity, double total) {
         this.id = id;
         this.contract = contract;
         this.extraService = extraService;
         this.quantity = quantity;
+        this.total = total;
     }
 
-    public int getId() {
+
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -46,5 +49,13 @@ public class ContractDetail {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 }
