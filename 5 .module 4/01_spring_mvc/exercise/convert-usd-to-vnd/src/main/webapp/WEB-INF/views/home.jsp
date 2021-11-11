@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <td><label for="rate">Rate:</label></td>
-                <td><input type="text" value="23000" id="rate" name="rate"></td>
+                <td><input type="text" value="${rate}" id="rate" name="rate"></td>
             </tr>
             <tr>
                 <td></td>
