@@ -17,6 +17,11 @@ create table department(
 id int auto_increment primary key,
 department_name varchar(20)
 );
+create table `user`(
+username varchar(45) primary key,
+`password` varchar(45),
+`status` int default 1
+);
 
 create table employee(
 id int auto_increment primary key,
@@ -30,12 +35,14 @@ salary double,
 degree_id int,
 office_id int,
 department_id int,
+username varchar(45),
 address varchar(120),
 `status` int default 1,
 
 foreign key(degree_id) references degree(id),
 foreign key(office_id) references office(id),
-foreign key(department_id) references department(id)
+foreign key(department_id) references department(id),
+foreign key(username) references `user`(username)
 
 );
 
@@ -121,6 +128,8 @@ foreign key(extra_service_id) references extra_service(id)
 
 );
 
+
+
 delimiter //
 create procedure get_all_employee()
 begin
@@ -187,7 +196,7 @@ end;
 // delimiter ;
 
 delimiter //
-create procedure delete_customer(in p_id int)
+create procedure delete_customer(in p_id varchar(10))
 begin
 	update customer c
     set c.`status` = 0
@@ -241,7 +250,7 @@ end;
 delimiter //
 create procedure get_all_contract()
 begin
-	select ct.id, ct.customer_id,ct.employee_id,ct.facility_id,ct.check_in_date,ct.check_out_date,ct.deposit,ct.payment,c.`name`as customer_name, e.`name` as employee_name, f.`name` as facility_name
+	select ct.id, ct.customer_id,ct.employee_id,ct.facility_id,date_format(ct.check_in_date,'%d/%m/%Y') as check_in_date ,date_format(ct.check_out_date,'%d/%m/%Y') as check_out_date,ct.deposit,ct.payment,c.`name`as customer_name, e.`name` as employee_name, f.`name` as facility_name
     from contract ct
 		join customer c  on c.id=ct.customer_id
         join employee e on e.id=ct.employee_id

@@ -393,7 +393,7 @@
                         </div>
                         <div class="col-md-2 position-relative">
                             <label for="validationTooltip02" class="form-label">Checkin Date</label>
-                            <input type="date" class="form-control" name="inputCheckinDate" id="validationTooltip02"
+                            <input type="date" placeholder="dd/mm/yyyy" class="form-control" name="inputCheckinDate" id="validationTooltip02"
                                    required>
                         </div>
                         <div class="col-md-2 position-relative">

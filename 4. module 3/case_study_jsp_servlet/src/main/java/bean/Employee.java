@@ -6,17 +6,27 @@ public class Employee extends Person {
     private EmployeeOffice employeeOffice;
     private EmployeeDegree employeeDegree;
     private EmployeeDepartment employeeDepartment;
+    private User user;
 
     public Employee() {
     }
 
-    public Employee(String name, String birthday, String gender, String personalID, String phoneNumber, String email, String address, String id, double salary, EmployeeOffice employeeOffice, EmployeeDegree employeeDegree, EmployeeDepartment employeeDepartment) {
+    public Employee(String name, String birthday, String gender, String personalID, String phoneNumber, String email, String address, String id, double salary, EmployeeOffice employeeOffice, EmployeeDegree employeeDegree, EmployeeDepartment employeeDepartment, User user) {
         super(name, birthday, gender, personalID, phoneNumber, email, address);
         this.id = id;
         this.salary = salary;
         this.employeeOffice = employeeOffice;
         this.employeeDegree = employeeDegree;
         this.employeeDepartment = employeeDepartment;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getId() {

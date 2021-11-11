@@ -124,11 +124,11 @@ public class CustomerRepositoryImpl implements CustomerRepository {
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(String id) {
         try {
             CallableStatement callableStatement = BaseRepository.connection.prepareCall("{call delete_customer(?)}");
 
-            callableStatement.setInt(1,id);
+            callableStatement.setString(1,id);
             callableStatement.executeUpdate();
 
         } catch (SQLException throwables) {

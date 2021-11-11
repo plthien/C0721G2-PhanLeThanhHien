@@ -244,7 +244,7 @@ public class CustomerServlet extends HttpServlet {
     }
 
     public void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("id"));
+        String id = request.getParameter("id");
         this.customerService.remove(id);
         try {
             response.sendRedirect("/customers");

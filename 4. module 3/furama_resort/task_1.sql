@@ -165,3 +165,6 @@ values('KH-1001',1,'DV-1003','2015-12-12','2015-12-15',30,200);
 
 insert into contract_detail(contract_id, extra_service_id, quantity)
 values(10,1,4),(10,2,4);
+
+insert into `user`(username,`password`)
+values('123','123');
