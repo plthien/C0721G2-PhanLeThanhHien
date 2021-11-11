@@ -15,12 +15,10 @@ public class ConvertController {
     }
 
     @GetMapping("/convert")
-    public String convert(@RequestParam("usd") String usd, @RequestParam("rate") String rate , Model model) {
-        double usdD = Double.parseDouble(usd);
-        double rateD = Double.parseDouble(rate);
-        double vnd = usdD* rateD;
+    public String convert(@RequestParam double usd, @RequestParam double rate , Model model) {
+        double vnd = usd* rate;
         model.addAttribute("vnd", vnd);
-        model.addAttribute("usd", usdD);
+        model.addAttribute("usd", usd);
         return "home";
 
     }
