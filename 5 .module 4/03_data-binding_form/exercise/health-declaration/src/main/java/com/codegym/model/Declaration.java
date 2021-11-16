@@ -1,7 +1,6 @@
 package com.codegym.model;
 
 public class Declaration {
-    private Integer id;
     private String name;
     private String dateOfBirth;
     private String gender;
@@ -33,8 +32,7 @@ public class Declaration {
     public Declaration() {
     }
 
-    public Declaration( Integer id,String name, String dateOfBirth, String gender, String nationality, String idCard, String vehicle, String idVehicle, String idSeat, String departureDate, String comingDate, String destination, String city, String district, String commune, String address, String phoneNumber, String email, boolean fever, boolean cough, boolean sultry, boolean soreThroat, boolean vomiting, boolean diarrhea, boolean skinHemorrhage, boolean skinRash, boolean slaughter, boolean contact) {
-        this.id = id;
+    public Declaration(String name, String dateOfBirth, String gender, String nationality, String idCard, String vehicle, String idVehicle, String idSeat, String departureDate, String comingDate, String destination, String city, String district, String commune, String address, String phoneNumber, String email, boolean fever, boolean cough, boolean sultry, boolean soreThroat, boolean vomiting, boolean diarrhea, boolean skinHemorrhage, boolean skinRash, boolean slaughter, boolean contact) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
@@ -62,14 +60,6 @@ public class Declaration {
         this.skinRash = skinRash;
         this.slaughter = slaughter;
         this.contact = contact;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
