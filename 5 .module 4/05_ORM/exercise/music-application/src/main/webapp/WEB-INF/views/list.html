@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Music App</h3>
+<a th:href="@{music/create}">
+    Add new Song
+</a>
+
+<div class="notify">
+    <div th:if="${success}">
+        <span th:text="${success}"></span>
+    </div>
+</div>
+<table id = "songs">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Singer</th>
+        <th>Kind of Music</th>
+        <th>Path</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="song : ${songs}">
+        <td th:text="${song.getName()}"></td>
+        <td th:text="${song.getSinger()}"></td>
+        <td th:text="${song.getKindOfMusic()}"></td>
+        <td>
+            <audio controls th:src="@{'/audio/'+ ${song.getPath()}}" ></audio>
+        </td>
+        <td><a th:href="@{music/edit/{id}(id=${song.getId()})}">Edit</a></td>
+        <td><a th:href="@{music/delete/{id}(id=${song.getId()})}" th:onclick="return confirm('Do you want to delete it')">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

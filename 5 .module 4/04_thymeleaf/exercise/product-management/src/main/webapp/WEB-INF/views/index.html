@@ -4,11 +4,14 @@
 </head>
 <body>
 <h3>Products</h3>
-<p>
-    <a th:href="@{/products/create}">
-        Add new Product
-    </a>
-</p>
+        <a th:href="@{/products/create}">
+            Add new Product
+        </a>
+
+        <form th:action="@{/products/search}" method="post">
+            <input type="text" name="name" placeholder="Type name">
+            <button type="submit">Search</button>
+        </form>
 <div class="notify">
     <div th:if="${success}">
         <span th:text="${success}"></span>
