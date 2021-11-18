@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${blog.getName()}"></title>
+</head>
+<body>
+<a href="/blogs">Back to Blog List</a>
+<h1>Edit blog</h1>
+<p th:if="${message}" th:text="${message}"></p>
+<form th:action="@{/blogs/edit}" th:object="${blog}" method="post">
+    <table>
+        <tr>
+            <td>
+                <input type="text" hidden th:field="*{id}" th:value="${blog.getId()}">
+            </td>
+        </tr>
+        <tr>
+            <th><label for="name">Name:</label></th>
+            <td><input type="text" id="name" th:field="*{name}" th:value="${blog.getName()}" ></td>
+        </tr>
+        <tr>
+            <th><label for="summary">Summary:</label></th>
+            <td><textarea id="summary" cols="50" rows="5" th:field="*{summary}"  th:text="${blog.getSummary()}"></textarea></td>
+        </tr>
+        <tr>
+            <th><label for="content">Content:</label></th>
+            <td><textarea id="content" cols="50" rows="10" th:field="*{content}" th:text="${blog.getContent()}"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="submit">Save</button></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
