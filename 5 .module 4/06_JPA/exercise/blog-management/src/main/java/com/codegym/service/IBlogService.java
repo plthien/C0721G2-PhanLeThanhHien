@@ -3,6 +3,7 @@ package com.codegym.service;
 import com.codegym.model.Blog;
 
 import java.util.List;
+import java.util.UUID;
 
 public interface IBlogService {
 
@@ -10,7 +11,7 @@ public interface IBlogService {
 
     void save(Blog blog);
 
-    Blog findById(Integer id);
+    Blog findById(UUID id);
 
     void delete(Blog blog);
 

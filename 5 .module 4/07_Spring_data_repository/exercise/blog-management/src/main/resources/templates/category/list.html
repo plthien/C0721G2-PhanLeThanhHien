@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<a href="/categories/create"> Create new Category</a>
+<h1>Categories</h1>
+<p th:if="${message}" th:text="${message}"></p>
+<table border="1" >
+    <tr>
+        <th>No.</th>
+        <th>Name</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    <th:block th:each="category,loopState : ${categories}">
+        <tr>
+            <td th:text="${loopState.count}"></td>
+            <td th:text="${category.getName()}"></td>
+            <td><a th:href="@{/categories/edit/{id}(id=${category.getId()})}">Edit</a></td>
+            <td><a th:href="@{/categories/delete/{id}(id=${category.getId()})}" onclick=" return confirm('Do you want to delete it ?')">Delete</a></td>
+        </tr>
+    </th:block>
+</table>

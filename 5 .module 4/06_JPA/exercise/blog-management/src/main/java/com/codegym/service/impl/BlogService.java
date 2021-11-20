@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class BlogService implements IBlogService {
@@ -24,7 +25,7 @@ public class BlogService implements IBlogService {
     }
 
     @Override
-    public Blog findById(Integer id) {
+    public Blog findById(UUID id) {
         return iBlogRepository.findById(id).orElse(null);
     }
 

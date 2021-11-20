@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.UUID;
 
 @Controller
 @RequestMapping("/blogs")
@@ -41,7 +42,7 @@ public class BlogController {
     }
 
     @GetMapping("/detail/{id}")
-    public ModelAndView viewBlog(@PathVariable("id") Integer id){
+    public ModelAndView viewBlog(@PathVariable("id") UUID id){
         Blog blog = iBlogService.findById(id);
         ModelAndView modelAndView = new ModelAndView("/detail");
         modelAndView.addObject("blog",blog);
@@ -49,7 +50,7 @@ public class BlogController {
     }
 
     @GetMapping("/edit/{id}")
-    public ModelAndView showEditForm(@PathVariable("id") Integer id){
+    public ModelAndView showEditForm(@PathVariable("id") UUID id){
         Blog blog = iBlogService.findById(id);
         ModelAndView modelAndView = new ModelAndView("/edit");
         modelAndView.addObject("blog",blog);
@@ -66,7 +67,7 @@ public class BlogController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteBlog(@PathVariable("id")Integer id, RedirectAttributes redirectAttributes){
+    public String deleteBlog(@PathVariable("id")UUID id, RedirectAttributes redirectAttributes){
         iBlogService.delete(iBlogService.findById(id));
         redirectAttributes.addFlashAttribute("message","Delete Blog successfully!");
         return "redirect:/blogs";

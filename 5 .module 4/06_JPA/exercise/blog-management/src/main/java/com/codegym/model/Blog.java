@@ -1,12 +1,17 @@
 package com.codegym.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 public class Blog {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Column(columnDefinition = "BINARY(16)")
+    private UUID id;
     private String name;
     private String summary;
     @Column(name = "content", columnDefinition = "Varchar(5000)")
@@ -15,18 +20,18 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(Integer id, String name, String summary, String content) {
+    public Blog(UUID id, String name, String summary, String content) {
         this.id = id;
         this.name = name;
         this.summary = summary;
         this.content = content;
     }
 
-    public Integer getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
