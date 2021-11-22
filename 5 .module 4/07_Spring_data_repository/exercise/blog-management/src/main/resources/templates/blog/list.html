@@ -13,9 +13,12 @@
 </form>
 <form>
     <label>Filter by Category</label>
-    <select onchange="this.form.submit()" th:name="categoryId" th:value="${categoryId}"  >
-        <option value="" th:text="All"></option>
-        <option th:each="category: ${categories}" th:value="${category.getId()}" th:text="${category.getName()}"></option>
+    <select onchange="this.form.submit()" th:name="categoryId">
+        <option th:value="all" th:text="All"></option>
+        <th:block th:each="category: ${categories}">
+            <option th:value="${category.getId()}" th:text="${category.getName()}" th:selected="${category.getId() == categoryId} "></option>
+
+        </th:block>
     </select>
 </form>
 <h1>Blogs</h1>
@@ -48,9 +51,9 @@
     </th:block>
 </table>
 <div>
-    <a th:if="${blogs.hasPrevious()}" th:href="@{/blogs(page=${blogs.number - 1})}" >Previous</a>
-    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
-    <a th:if="${blogs.hasNext()}" th:href="@{/blogs(page=${blogs.number + 1})}" >Next</a>
+    <a th:if="${blogs.hasPrevious()}" th:href="@{/blogs(page=${blogs.number - 1},categoryId=${categoryId},title=${title})}" >Previous</a>
+    <span th:text="${blogs.number+1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:if="${blogs.hasNext()}" th:href="@{/blogs(page=${blogs.number + 1},categoryId=${categoryId},title=${title})}" >Next</a>
 </div>
 
 </body>

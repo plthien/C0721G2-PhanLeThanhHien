@@ -33,21 +33,22 @@ public class BlogController {
         return iCategoryService.findAll();
     }
 
-    @GetMapping()
+    @GetMapping("")
     public String showBlogs(@RequestParam(value = "page", defaultValue = "0") int page,
                             Optional<String>  title,
                             Optional<String> categoryId,
                             Model model) {
         Sort sort = Sort.by("creationTime").ascending();
-        if (!title.isPresent()) {
-            if (categoryId.isPresent()) {
-                model.addAttribute("blogs", iBlogService.findAllBlogByCategoryId(categoryId.get(), PageRequest.of(page, 5)));
+        int pageSize = 5;
+        if (!title.isPresent() || title.get().equals("")) {
+            if (categoryId.isPresent() ) {
+                model.addAttribute("blogs", iBlogService.findAllBlogByCategoryId(categoryId.get(), PageRequest.of(page, pageSize)));
                 model.addAttribute("categoryId", categoryId.get());
-            } else {
-                model.addAttribute("blogs", iBlogService.findAll(PageRequest.of(page, 5, sort)));
+            } else  {
+                model.addAttribute("blogs", iBlogService.findAll(PageRequest.of(page, pageSize, sort)));
             }
         }else {
-            model.addAttribute("blogs",iBlogService.findAllBlogByTitle(title.get(),PageRequest.of(page, 5, sort)));
+            model.addAttribute("blogs",iBlogService.findAllBlogByTitle(title.get(),PageRequest.of(page, pageSize, sort)));
             model.addAttribute("title",title.get());
         }
 
