@@ -3,6 +3,7 @@ package com.codegym.shoppingcart.model;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Cart {
     private Map<Product,Integer> products = new HashMap<>();
 
@@ -43,6 +44,18 @@ public class Cart {
             Integer newQuantity = itemEntry.getValue() + 1;
             products.replace(itemEntry.getKey(),newQuantity);
         }
+    }
+
+    public void minusProduct(Product product){
+            Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+            Integer newQuantity = itemEntry.getValue() - 1;
+            products.replace(itemEntry.getKey(),newQuantity);
+
+    }
+
+    public void deleteProduct(Product product){
+        products.remove(product);
+
     }
 
     public Integer countProductQuantity(){

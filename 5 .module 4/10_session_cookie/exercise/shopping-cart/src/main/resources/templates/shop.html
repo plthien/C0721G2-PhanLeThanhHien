@@ -31,8 +31,11 @@
             <div class="span6">Welcome!<strong> User</strong></div>
             <div class="span6">
                 <div class="pull-right">
-                    <a th:href="@{/shopping-cart}"><span class="btn btn-mini btn-primary"><i
-                            class="icon-shopping-cart icon-white"></i>Your cart </span> </a>
+                    <a class="btn btn-primary btn-mini" style="position: relative" th:href="@{/shopping-cart}">
+                        <i class="icon-shopping-cart icon-white"></i>Your Cart
+                        <span style="position: absolute; top: 0;left: 100% ;background-color: red; transform: translate(-50%,-50%); border: 50rem" class="badge"
+                              th:if="${cart.countProductQuantity()}" th:text="${cart.countProductQuantity()}" ></span>
+                    </a>
                 </div>
             </div>
         </div>

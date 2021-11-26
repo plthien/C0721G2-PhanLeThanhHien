@@ -1,11 +1,9 @@
 package com.codegym.shoppingcart.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
-@Entity(name = "product")
+@Entity(name = "products")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +11,8 @@ public class Product {
     private String name;
     private double price;
     private String description;
+    @OneToMany(mappedBy = "product")
+    private List<OrderDetail>orderDetails;
 
     public Product() {
     }

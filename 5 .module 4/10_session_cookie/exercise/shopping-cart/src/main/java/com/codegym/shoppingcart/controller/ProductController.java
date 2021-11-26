@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
 
@@ -30,16 +31,30 @@ public class ProductController {
     }
 
     @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
+    public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart,
+                            @RequestParam("action") String action,
+                            RedirectAttributes redirectAttributes) {
         Optional<Product> productOptional = iProductService.findById(id);
         if (!productOptional.isPresent()) {
             return "/error.404";
         }
-        if (action.equals("show")) {
+        if (action.equals("plus")) {
             cart.addProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
+
+        if (action.equals("minus")) {
+            cart.minusProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+
+        if (action.equals("delete")) {
+            cart.deleteProduct(productOptional.get());
+            return "redirect:/shopping-cart";
+        }
+
         cart.addProduct(productOptional.get());
+        redirectAttributes.addFlashAttribute("cart",cart);
         return "redirect:/shop";
     }
 
