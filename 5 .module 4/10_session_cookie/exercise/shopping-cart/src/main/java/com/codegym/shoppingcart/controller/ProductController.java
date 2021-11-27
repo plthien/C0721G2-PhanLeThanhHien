@@ -3,6 +3,7 @@ package com.codegym.shoppingcart.controller;
 import com.codegym.shoppingcart.model.Cart;
 import com.codegym.shoppingcart.model.Product;
 import com.codegym.shoppingcart.service.IProductService;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,7 @@ public class ProductController {
 
     @GetMapping("/add/{id}")
     public String addToCart(@PathVariable Long id, @ModelAttribute Cart cart,
-                            @RequestParam("action") String action,
+                            @RequestParam(value = "action", defaultValue = "") String action,
                             RedirectAttributes redirectAttributes) {
         Optional<Product> productOptional = iProductService.findById(id);
         if (!productOptional.isPresent()) {
@@ -47,7 +48,6 @@ public class ProductController {
             cart.minusProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
-
         if (action.equals("delete")) {
             cart.deleteProduct(productOptional.get());
             return "redirect:/shopping-cart";

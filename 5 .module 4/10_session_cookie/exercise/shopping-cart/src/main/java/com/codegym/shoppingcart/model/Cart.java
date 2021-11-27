@@ -54,7 +54,8 @@ public class Cart {
     }
 
     public void deleteProduct(Product product){
-        products.remove(product);
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        products.remove(itemEntry.getKey());
 
     }
 

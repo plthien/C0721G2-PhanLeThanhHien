@@ -70,27 +70,6 @@
                                 class="btn btn-large btn-success">Login</span></a>
                         <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login"
                              aria-hidden="false">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
-                                <h3>Login Block</h3>
-                            </div>
-                            <div class="modal-body">
-                                <form class="form-horizontal loginFrm">
-                                    <div class="control-group">
-                                        <input type="text" id="inputEmail" placeholder="Email">
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="password" id="inputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="control-group">
-                                        <label class="checkbox">
-                                            <input type="checkbox"> Remember me
-                                        </label>
-                                    </div>
-                                </form>
-                                <button type="submit" class="btn btn-success">Sign in</button>
-                                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                            </div>
                         </div>
                     </li>
                 </ul>
@@ -154,118 +133,96 @@
                 </ul>
                 <h3> SHOPPING CART <a th:href="@{/shop}" class="btn btn-large pull-right"><i
                         class="icon-arrow-left"></i> Continue Shopping </a></h3>
+                <p th:if="${message}" th:text="${message}" style="color: green"></p>
                 <hr class="soft"/>
+
+                <table class="table table-bordered" th:object="${cart}">
+                    <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Quantity/Update</th>
+                        <th>Price</th>
+                        <th>Discount</th>
+                        <th>Tax</th>
+                        <th>Total</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="product: ${cart.products}">
+                        <td><img width="60" th:src="@{/bootstrap/themes/images/products/4.jpg}" alt=""/></td>
+                        <td th:text="${product.getKey().name}"></td>
+                        <td>
+                            <div class="input-append"><input class="span1" style="max-width:34px"
+                                                             th:value="${product.getValue()}"
+                                                             id="appendedInputButtons" size="16" type="text">
+                                <a class="btn" type="button"
+                                   th:href="@{/add/__${product.getKey().id}__(action='minus')}"><i class="icon-minus"></i></a>
+                                <a class="btn" type="button"
+                                   th:href="@{/add/__${product.getKey().id}__(action='plus')}"><i class="icon-plus"></i></a>
+                                <a class="btn btn-danger" type="button"
+                                   th:href="@{/add/__${product.getKey().id}__(action='delete')}"><i class="icon-remove icon-white"></i>
+                                </a>
+                            </div>
+                        </td>
+                        <td th:text="${product.getKey().price}"></td>
+                        <td></td>
+                        <td></td>
+                        <td th:text="${product.getValue()*product.getKey().price}"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" style="text-align:right"><strong>TOTAL =</strong></td>
+                        <td class="label label-important" style="display:block"><strong
+                                th:text="${cart.countTotalPayment()}"></strong></td>
+                    </tr>
+                    </tbody>
+                </table>
                 <table class="table table-bordered">
                     <tr>
-                        <th> I AM ALREADY REGISTERED</th>
+                        <th> CUSTOMER INFORMATION</th>
                     </tr>
                     <tr>
                         <td>
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" th:object="${customer}" th:action="@{/payment}">
                                 <div class="control-group">
-                                    <label class="control-label" for="inputUsername">Username</label>
+                                    <label class="control-label" for="inputName">Name</label>
                                     <div class="controls">
-                                        <input type="text" id="inputUsername" placeholder="Username">
+                                        <input type="text" id="inputName" th:field="*{name}" required>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword1">Password</label>
+                                    <label class="control-label" for="inputPhoneNumber">Phone number</label>
                                     <div class="controls">
-                                        <input type="password" id="inputPassword1" placeholder="Password">
+                                        <input type="text" id="inputPhoneNumber" th:field="*{phoneNumber}" required>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputAddress">Delivery Address</label>
+                                    <div class="controls">
+                                        <input type="text" id="inputAddress" th:field="*{address}" required>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Email</label>
+                                    <div class="controls">
+                                        <input type="text" id="inputEmail" th:field="*{email}">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                        <button type="submit" class="btn">Sign in</button>
-                                        OR <a href="register.html" class="btn">Register Now!</a>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="controls">
-                                        <a href="forgetpass.html" style="text-decoration:underline">Forgot password
-                                            ?</a>
+                                        <button type="submit" class="btn">Payment</button>
                                     </div>
                                 </div>
                             </form>
                         </td>
                     </tr>
                 </table>
-                <form th:action="@{/shop}" th:object="${cart}" method="post">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Name</th>
-                            <th>Quantity/Update</th>
-                            <th>Price</th>
-                            <th>Discount</th>
-                            <th>Tax</th>
-                            <th>Total</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="product: ${cart.products}">
-                            <td><img width="60" th:src="@{/bootstrap/themes/images/products/4.jpg}" alt=""/></td>
-                            <td th:text="${product.getKey().name}"></td>
-                            <td>
-                                <div class="input-append"><input class="span1" style="max-width:34px" th:value="${product.getValue()}"
-                                                                 id="appendedInputButtons" size="16" type="text">
-                                    <a class="btn" type="button" th:href="@{/add/__${product.getKey().id}__(action='minus')}"><i class="icon-minus"></i></a>
-                                    <a class="btn" type="button" th:href="@{/add/__${product.getKey().id}__(action='plus')}"><i class="icon-plus"></i></a>
-                                    <a class="btn btn-danger" type="button" th:href="@{/add/__${product.getKey().id}__(action='delete')}"><i class="icon-remove icon-white"></i>
-                                    </a>
-                                </div>
-                            </td>
-                            <td th:text="${product.getKey().price}"></td>
-                            <td></td>
-                            <td></td>
-                            <td th:text="${cart.countTotalPayment()}"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="6" style="text-align:right"><strong>TOTAL ($228 - $50 + $31) =</strong></td>
-                            <td class="label label-important" style="display:block"><strong> $155.00 </strong></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </form>
-
-                <a href="login.html" class="btn btn-large pull-right">Payment</a>
-
             </div>
         </div>
     </div>
 </div>
 
 <!-- MainBody End ============================= -->
-<!--<p>-->
-<!--    <a href="/shop">Shop</a>-->
-<!--</p>-->
-<!--<h1>Your Cart</h1>-->
-<!--<form th:action="@{/shop}" th:object="${cart}" method="post">-->
-<!--    <h3>Total Items: <span th:text="${cart.countItemQuantity()}"></span></h3>-->
-<!--    <h3>Total Products: <span th:text="${cart.countProductQuantity()}"></span></h3>-->
-<!--    <table border="1">-->
-<!--        <tr>-->
-<!--            <th>Item</th>-->
-<!--            <th>Quantity</th>-->
-<!--            <th>Price</th>-->
-<!--        </tr>-->
-<!--        <tr th:each="product: ${cart.products}">-->
-<!--            <td th:text="${product.getKey().name}"></td>-->
-<!--            <td>-->
-<!--                <a id="decrease_button" th:text="${'-'}"></a>-->
-<!--                <span th:text="${product.getValue()}"></span>-->
-<!--                <a id="increase_button" th:href="@{/add/__${product.getKey().id}__(action='show')}"-->
-<!--                   th:text="${'+'}"></a>-->
-<!--            </td>-->
-<!--            <td th:text="${product.getKey().price}"></td>-->
-<!--        </tr>-->
-<!--        <tr>-->
-<!--            <td>Total</td>-->
-<!--            <td></td>-->
-<!--            <td th:text="${cart.countTotalPayment()}"></td>-->
-<!--        </tr>-->
-<!--    </table>-->
-<!--</form>-->
+
 </body>
 </html>
