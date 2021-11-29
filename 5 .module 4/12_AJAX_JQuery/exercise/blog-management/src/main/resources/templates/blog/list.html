@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+<a href="/blogs/create"> Create new Blog</a>
+<form id="search">
+    <label for="title">Search by Title</label>
+    <input type="text" id="title" th:name="title" th:value="${title}">
+    <button type="submit">Search</button>
+</form>
+<form>
+    <label>Filter by Category</label>
+    <select onchange="this.form.submit()" th:name="categoryId">
+        <option th:value="all" th:text="All"></option>
+        <th:block th:each="category: ${categories}">
+            <option th:value="${category.getId()}" th:text="${category.getName()}"
+                    th:selected="${category.getId() == categoryId} "></option>
+
+        </th:block>
+    </select>
+</form>
+<h1>Blogs</h1>
+<p th:if="${message}" th:text="${message}"></p>
+<table border="1" id="tableSearch">
+    <tr>
+        <th>No.</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Summary</th>
+        <th>Creation Time</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Detail</th>
+
+    </tr>
+    <th:block th:each="blog,loopState : ${blogs.content}">
+        <tr>
+            <td th:text="${loopState.count}"></td>
+            <td th:text="${blog.getTitle()}"></td>
+            <td th:text="${blog.getAuthor()}"></td>
+            <td th:text="${blog.getCategory().getName()}"></td>
+            <td th:text="${blog.getSummary()}"></td>
+            <td th:text="${blog.getCreationTime()}"></td>
+            <td><a th:href="@{/blogs/edit/{id}(id=${blog.getId()})}">Edit</a></td>
+            <td><a th:href="@{/blogs/delete/{id}(id=${blog.getId()})}"
+                   onclick=" return confirm('Do you want to delete it ?')">Delete</a></td>
+            <td><a th:href="@{/blogs/detail/{id}(id=${blog.getId()})}">Detail</a></td>
+        </tr>
+    </th:block>
+</table>
+<br>
+<div>
+    <button id="loadMore" >Load more</button>
+    <input type="text" th:value="${blogs.number + 1}" hidden>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#search").submit(function (event) {
+            let title = $("input").val();
+            $.ajax({
+                type: "GET",
+                url: "/blogs/search/" + title,
+                dataType: "HTMl",
+                success: function (data) {
+                    $("#tableSearch").html(data);
+                }
+            })
+            event.preventDefault();
+        });
+    });
+
+    // function getBlog(blog) {
+    //     return 1;
+    //     // return `<tr><td >${blog.title}</td><td >${blog.author}</td>` +
+    //     //     `<td >${blog.summary}</td><td >${blog.creationTime}</td></tr>`;
+    //         // `<td><a th:href="@{/blogs/edit/{id}(id=${blog.id})}">Edit</a></td>`+
+    //         // `<td><a th:href="@{/blogs/delete/{id}(id=${blog.id})}" onclick=" return confirm('Do you want to delete it ?')">Delete</a></td>`+
+    //         // `<td><a th:href="@{/blogs/detail/{id}(id=${blog.id})}">Detail</a></td></tr>`;
+    // }
+
+    $(document).ready(function () {
+        $("#loadMore").click(function (event) {
+            let page = $(this).next().val();
+            $.ajax({
+                type: "GET",
+                url: "/blogs/" + page,
+                dataType: "HTML",
+                success: function (blogs) {
+                    $("#tableSearch").html(blogs);
+                    // let content = '    <tr>\n' +
+                    //     '        <td>Title</td>\n' +
+                    //     '        <td>Author</td>\n' +
+                    //     '        <td>Category</td>\n' +
+                    //     '        <td>Summary</td>\n' +
+                    //     '        <td>Creation Time</td>\n' +
+                    //     '        <td>Edit</td>\n' +
+                    //     '        <td>Delete</td>\n' +
+                    //     '        <td>Detail</td>\n' +
+                    //     '    </tr>';
+                    // for (let i = 0; i < blogs.size(); i++) {
+                    //     content += getBlog(blogs.get(i));
+                    // }
+                    // document.getElementById('tableSearch').innerHTML = content;
+                }
+            })
+        })
+    })
+
+
+</script>
+</body>
+</html>

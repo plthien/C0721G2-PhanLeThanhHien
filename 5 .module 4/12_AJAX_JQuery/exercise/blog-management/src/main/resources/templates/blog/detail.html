@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${blog.getTitle()}"></title>
+</head>
+<body>
+<a href="/blogs">Back to Blog List</a>
+
+<h1 th:text="${blog.getCategory().getName()} + ':' +  ${blog.getTitle()}"></h1>
+<p th:text="${blog.getContent()}"></p>
+<p th:text="${blog.getAuthor()}"></p>
+</body>
+</html>
