@@ -74,14 +74,6 @@
         });
     });
 
-    // function getBlog(blog) {
-    //     return 1;
-    //     // return `<tr><td >${blog.title}</td><td >${blog.author}</td>` +
-    //     //     `<td >${blog.summary}</td><td >${blog.creationTime}</td></tr>`;
-    //         // `<td><a th:href="@{/blogs/edit/{id}(id=${blog.id})}">Edit</a></td>`+
-    //         // `<td><a th:href="@{/blogs/delete/{id}(id=${blog.id})}" onclick=" return confirm('Do you want to delete it ?')">Delete</a></td>`+
-    //         // `<td><a th:href="@{/blogs/detail/{id}(id=${blog.id})}">Detail</a></td></tr>`;
-    // }
 
     $(document).ready(function () {
         $("#loadMore").click(function (event) {
@@ -92,20 +84,6 @@
                 dataType: "HTML",
                 success: function (blogs) {
                     $("#tableSearch").html(blogs);
-                    // let content = '    <tr>\n' +
-                    //     '        <td>Title</td>\n' +
-                    //     '        <td>Author</td>\n' +
-                    //     '        <td>Category</td>\n' +
-                    //     '        <td>Summary</td>\n' +
-                    //     '        <td>Creation Time</td>\n' +
-                    //     '        <td>Edit</td>\n' +
-                    //     '        <td>Delete</td>\n' +
-                    //     '        <td>Detail</td>\n' +
-                    //     '    </tr>';
-                    // for (let i = 0; i < blogs.size(); i++) {
-                    //     content += getBlog(blogs.get(i));
-                    // }
-                    // document.getElementById('tableSearch').innerHTML = content;
                 }
             })
         })

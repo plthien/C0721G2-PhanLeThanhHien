@@ -44,22 +44,13 @@ public class BlogController {
     }
 
     @GetMapping("/{page}")
-    public ResponseEntity<List<Blog>> loadMoreBlogs(@PathVariable(value = "page") int page,
+    public String loadMoreBlogs(@PathVariable(value = "page") int page,
                                         Model model) {
         Sort sort = Sort.by("creationTime").ascending();
         int pageSize = 5;
-        System.out.println("test" + page);
-        List<Blog> blogs = iBlogService.findAll(PageRequest.of(page, pageSize, sort)).getContent();
-        System.out.println("check method");
-        if (blogs.size() > 0){
-            System.out.println("check ok");
-
-            return new ResponseEntity<>(blogs, HttpStatus.OK);
-        } else {
-            System.out.println("check no");
-
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
+        Page<Blog> blogs = iBlogService.findAll(PageRequest.of(page, pageSize, sort));
+        model.addAttribute("blogs",blogs.getContent());
+        return "blog/search";
 
     }
 
