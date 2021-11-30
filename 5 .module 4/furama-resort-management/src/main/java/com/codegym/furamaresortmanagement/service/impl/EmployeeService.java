@@ -34,16 +34,12 @@ public class EmployeeService implements IEmployeeService {
         return iEmployeeRepository.findEmployeeByKeyword(pageable,keyword);
     }
 
-    @Override
-    public List<EmployeeOffice> findAllOffice() {
-        return iEmployeeRepository.findAllOffice();
-    }
 
     @Override
     public Page<Employee> findEmployeeByOfficeId(int page, int size, String sortField, String sortDirection, Integer officeId) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(page,size,sort);
-        return  iEmployeeRepository.findAllByEmployeeOfficeId(pageable,officeId);
+        return  iEmployeeRepository.findAllByEmployeeOffice_Id(pageable,officeId);
     }
 }

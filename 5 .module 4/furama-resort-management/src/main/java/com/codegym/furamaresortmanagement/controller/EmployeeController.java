@@ -2,15 +2,13 @@ package com.codegym.furamaresortmanagement.controller;
 
 import com.codegym.furamaresortmanagement.model.Employee;
 import com.codegym.furamaresortmanagement.model.EmployeeOffice;
+import com.codegym.furamaresortmanagement.service.IEmployeeOfficeService;
 import com.codegym.furamaresortmanagement.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -22,9 +20,12 @@ public class EmployeeController {
     @Autowired
     private IEmployeeService iEmployeeService;
 
+    @Autowired
+    private IEmployeeOfficeService iEmployeeOfficeService;
+
     @ModelAttribute("offices")
     public List<EmployeeOffice> offices() {
-        return iEmployeeService.findAllOffice();
+        return iEmployeeOfficeService.findAllOffice();
     }
 
     @GetMapping()
@@ -38,7 +39,7 @@ public class EmployeeController {
         int size = 5;
         Page<Employee> employeePage;
         if (!keyword.isPresent() || keyword.get().equals("")) {
-            if (officeId.isPresent()) {
+            if (officeId.isPresent() && officeId.get() != 0) {
                 employeePage = iEmployeeService.findEmployeeByOfficeId(page, size, sortField, sortDirection, officeId.get());
                 model.addAttribute("officeId",officeId.get());
             } else {
@@ -54,4 +55,5 @@ public class EmployeeController {
         model.addAttribute("reverseSortDir", sortDirection.equals("asc") ? "desc" : "asc");
         return "employee/list";
     }
+
 }

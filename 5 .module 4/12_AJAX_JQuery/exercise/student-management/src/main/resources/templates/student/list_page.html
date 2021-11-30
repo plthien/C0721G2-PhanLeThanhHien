@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List student</title>
+</head>
+<body>
+<!--~ fragment-->
+<!--insert, include và replace-->
+<div th:insert="~{student/common_student :: headerStudent}">
+</div>
+<h2>List student</h2>
+<form action="/search" method="get">
+    <input name="searchName">
+    <button type="submit">Search By Name</button>
+</form>
+<a href="/create">Create new student</a>
+<!--    $ khi muốn lấy giá trị từ Controller-->
+<p style="color: green" th:text="${msg}"></p>
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th>Gender</th>
+        <th>Rank</th>
+        <th>Class room</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="studentObj,loop : ${studentPage.content}">
+        <td th:text="${loop.index + 1}"></td>
+        <td th:text="${studentObj.id}"></td>
+        <td th:text="${studentObj.name}"></td>
+        <td th:text="${studentObj.dateOfBirth}"></td>
+        <td th:switch="${studentObj.gender}">
+            <span th:case="0">Female</span>
+            <span th:case="1">Male</span>
+            <span th:case="*">None</span>
+        </td>
+
+        <td>
+            <span th:if="${studentObj.grade <= 4}">Bad</span>
+            <span th:if="${studentObj.grade > 4 && studentObj.grade <= 7}">Good</span>
+            <span th:if="${studentObj.grade > 7}">Ver good</span>
+        </td>
+        <td th:text="${studentObj.classRoom.nameClass}"></td>
+        <!--            @ sử dụng cho đường dẫn URL -> Giúp sử dụng các biểu thức khác trong URL-->
+        <td><a th:href="@{/detail/{idStudent}(idStudent=${studentObj.id})}">Detail student PV</a></td>
+    </tr>
+</table>
+<span>
+    <a th:if="${studentPage.hasPrevious()}" th:href="@{/list-page(page=${studentPage.number -1})}">
+        Previous
+    </a>
+    </span>
+<span>
+    <a th:if="${studentPage.hasNext()}" th:href="@{/list-page(page=${studentPage.number +1 })}">
+        Next
+    </a>
+    </span>
+<p>
+<!--    Vòng lặp hiển thị tất cả các trong hiện có-->
+    <span th:each="pageNo: ${#numbers.sequence(0,studentPage.totalPages - 1)}">
+        <a th:href="@{/list-page(page = ${pageNo})}" th:text="${pageNo}"></a>
+    </span>
+</p>
+
+
+<div th:replace="~{student/common_student :: footerStudent}">
+</div>
+</body>
+</html>

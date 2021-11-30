@@ -11,7 +11,6 @@ public interface IEmployeeService {
 
     Page<Employee> findEmployeeByKeyword(int page, int size, String sortField, String sortDirection, String keyword);
 
-    List<EmployeeOffice> findAllOffice();
 
     Page<Employee> findEmployeeByOfficeId(int page, int size, String sortField, String sortDirection, Integer officeId);
 }

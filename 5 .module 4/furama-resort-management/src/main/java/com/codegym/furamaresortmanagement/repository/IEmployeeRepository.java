@@ -14,12 +14,9 @@ import java.util.List;
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee,Integer> {
 
-    @Query(value="select * from employees where match(`name`,gender,address,email,personal_id,phone_number) against(:keyword) ", nativeQuery=true)
+    @Query(value="select * from employees where match(address,email,gender,`name`,personal_id,phone_number) against(:keyword) ", nativeQuery=true)
     Page<Employee> findEmployeeByKeyword(Pageable pageable, @Param("keyword") String keyword);
 
-    @Query(value="select * from employee_office",nativeQuery=true)
-    List<EmployeeOffice> findAllOffice();
-
-    @Query(value=" select * from employees where employee_office_id=:officeId",nativeQuery=true)
-    Page<Employee> findAllByEmployeeOfficeId(Pageable pageable,@Param("officeId") Integer officeId);
+//    @Query(value=" select * from employees where employee_office_id = :officeId",nativeQuery=true)
+    Page<Employee> findAllByEmployeeOffice_Id(Pageable pageable,@Param("officeId") Integer officeId);
 }

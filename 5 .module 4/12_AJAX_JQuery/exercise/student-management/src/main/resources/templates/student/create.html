@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create new student</title>
+</head>
+<body>
+    <div th:replace="~{student/common_student :: headerStudent}">
+    </div>
+    <h2>Create student</h2>
+
+    <form action="/create" method="post" th:object="${student}">
+
+        <p>Name: </p>
+        <input type="text" th:field="*{name}" />
+        <p style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        <p>Date of birth: </p>
+        <input type="date" th:field="*{dateOfBirth}"/>
+        <select th:field="*{classRoom}">
+            <!--  Phải là id để DataBinder nó mapping được-->
+            <option th:each="classRoom : ${classRooms}"
+                    th:value="${classRoom.id}"
+                    th:text="${classRoom.nameClass}">
+            </option>
+        </select>
+
+        <input type="submit" value="Create new" />
+
+    </form>
+
+    <div th:replace="~{student/common_student :: footerStudent}">
+    </div>
+</body>
+</html>

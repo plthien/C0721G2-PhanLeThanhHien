@@ -41,8 +41,8 @@
             <td th:text="${smartphone.producer}"></td>
             <td th:text="${smartphone.model}"></td>
             <td th:text="${smartphone.price}"></td>
-            <td><a class="deleteSmartphone" th:href="${smartphone.getId()}">Delete</a></td>
-            <td><a class="updateSmartphone" th:href="${smartphone.getId()}">Update</a></td>
+            <td><button class="deleteSmartphone" th:onclick="'javascript:deletePhone(\''+ ${smartphone.id}+'\')'">Delete</button></td>
+            <td><a class="updateSmartphone" th:href="${smartphone.id}">Update</a></td>
         </tr>
     </th:block>
 </table>
@@ -80,10 +80,11 @@
 
     function getSmartphone(smartphone) {
         return `<tr><td >${smartphone.producer}</td><td >${smartphone.model}</td><td >${smartphone.price}</td>` +
-            `<td><a class="deleteSmartphone" href="${smartphone.id}">Delete</a></td><td><a class="updateSmartphone" href="${smartphone.id}">Update</a></td></tr>`;
+            `<td><button class="deleteSmartphone" onclick="deletePhone(${smartphone.id})">Delete</button></td><td><a class="updateSmartphone" href="${smartphone.id}">Update</a></td></tr>`;
     }
 
     function successHandler() {
+        console.log("tét");
         $.ajax({
             type: "GET",
             //tên API
@@ -107,21 +108,30 @@
     }
 
 
-    $(document).ready(function () {
-        $(".deleteSmartphone").click(function (event) {
-            let smartphone = $(this);
-            let smartphoneId = $(this).attr("href");
-            console.log(smartphoneId);
-            $.ajax({
-                type: "delete",
-                url: "/smartphones/" + smartphoneId,
-                success: function (data) {
-                    smartphone.parent().parent().remove();
-                }
-            });
-            event.preventDefault();
+    // $(document).ready(function () {
+    //     $(".deleteSmartphone").click(function (event) {
+    //         let smartphone = $(this);
+    //         let smartphoneId = $(this).attr("href");
+    //         console.log(smartphoneId);
+    //         $.ajax({
+    //             type: "delete",
+    //             url: "/smartphones/" + smartphoneId,
+    //             success: function (data) {
+    //                 smartphone.parent().parent().remove();
+    //             }
+    //         });
+    //         event.preventDefault();
+    //     });
+    // })
+
+    function deletePhone(id){
+        $.ajax({
+            type: "delete",
+            url: "/smartphones/" + id,
+            success: successHandler
         });
-    })
+        event.preventDefault();
+    }
 
     $(document).ready(function () {
         $(".updateSmartphone").click(function (event) {

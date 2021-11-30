@@ -1,0 +1,61 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Create new student</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div th:replace="~{student/common_student :: headerStudent}">
+</div>
+<h2>Create student</h2>
+<p id="result"></p>
+<p>Name: </p>
+<input type="text" id="name"/><span id="error-name"></span>
+<p>Date of birth: </p>
+<input type="date" id="dateOfBirth"/>
+<select id="classRoom">
+    <!--  Phải là id để DataBinder nó mapping được-->
+    <option th:each="classRoom : ${classRooms}"
+            th:value="${classRoom.id}"
+            th:text="${classRoom.nameClass}">
+    </option>
+</select>
+
+<input type="button" value="Create new" id="btnClick"/>
+
+<div th:replace="~{student/common_student :: footerStudent}">
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $('#btnClick').click(function (event) {
+            var name = document.getElementById("name").value;
+            var dateOfBirth = document.getElementById("dateOfBirth").value;
+            var classRoom = document.getElementById("classRoom").value;
+            var objectJson = {"name": name, "dateOfBirth": dateOfBirth, "classRoom": classRoom};
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "post",
+                url: "/rest/create-json",
+                data: JSON.stringify(objectJson), // parse biến json -> 1 đối tượng json
+                success: function (student) {
+                  var content ="";
+                  content +="<span>Student was create</span>";
+                  content+=" "+ student.name;
+                  document.getElementById("result").innerHTML = content;
+                },
+                error: function (error) {
+                    var err = JSON.parse(error.responseText);
+                    $.each( err, function( key, value) {
+                        $('#error-'+key).text(value)
+                    });
+                }
+            })
+        })
+    })
+</script>
+</html>
