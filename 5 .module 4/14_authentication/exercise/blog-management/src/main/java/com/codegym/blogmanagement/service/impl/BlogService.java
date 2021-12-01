@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -40,11 +41,17 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> findAllBlogByCategoryId(String id, Pageable pageable) {
-        return iBlogRepository.findAllByCategory_Id(id,pageable)  ;
+        return iBlogRepository.findAllBlogByCategoryId(id,pageable)  ;
     }
 
     @Override
     public Page<Blog> findAllBlogByTitle(String title, Pageable pageable) {
         return iBlogRepository.findBlogByTitleContaining(title,pageable);
+    }
+
+    @Override
+    public List<Blog> findAllBlogByTitle(String title) {
+        return iBlogRepository.findAllByTitleContaining(title);
+
     }
 }

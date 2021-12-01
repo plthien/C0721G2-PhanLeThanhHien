@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>No.</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Summary</th>
+        <th>Creation Time</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>Detail</th>
+
+    </tr>
+    <th:block th:each="blog,loopState : ${blogs}">
+        <tr>
+            <td th:text="${loopState.count}"></td>
+            <td th:text="${blog.getTitle()}"></td>
+            <td th:text="${blog.getAuthor()}"></td>
+            <td th:text="${blog.getCategory().getName()}"></td>
+            <td th:text="${blog.getSummary()}"></td>
+            <td th:text="${blog.getCreationTime()}"></td>
+            <td><a th:href="@{/blogs/edit/{id}(id=${blog.getId()})}">Edit</a></td>
+            <td><a th:href="@{/blogs/delete/{id}(id=${blog.getId()})}"
+                   onclick=" return confirm('Do you want to delete it ?')">Delete</a></td>
+            <td><a th:href="@{/blogs/detail/{id}(id=${blog.getId()})}">Detail</a></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>

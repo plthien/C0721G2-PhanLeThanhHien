@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -33,27 +35,22 @@ public class BlogController {
         return iCategoryService.findAll();
     }
 
-    @GetMapping("")
-    public String showBlogs(@RequestParam(value = "page", defaultValue = "0") int page,
-                            Optional<String>  title,
-                            Optional<String> categoryId,
-                            Model model) {
+    @GetMapping()
+    public String viewPage(Model model){
         Sort sort = Sort.by("creationTime").ascending();
         int pageSize = 5;
-        System.out.println(page);
-        if (!title.isPresent() || title.get().equals("")) {
-            if (categoryId.isPresent() && !categoryId.get().equals("all") && !categoryId.get().equals("") ) {
-                model.addAttribute("blogs", iBlogService.findAllBlogByCategoryId(categoryId.get(), PageRequest.of(page, pageSize)));
-                model.addAttribute("categoryId", categoryId.get());
-            } else  {
-                model.addAttribute("blogs", iBlogService.findAll(PageRequest.of(page, pageSize, sort)));
-            }
-        }else {
-            model.addAttribute("blogs",iBlogService.findAllBlogByTitle(title.get(),PageRequest.of(page, pageSize, sort)));
-            model.addAttribute("title",title.get());
-        }
-
+        model.addAttribute("blogs", iBlogService.findAll(PageRequest.of(0, pageSize, sort)));
         return "blog/list";
+    }
+
+    @GetMapping("/{page}")
+    public String loadMoreBlogs(@PathVariable(value = "page") int page,
+                                        Model model) {
+        Sort sort = Sort.by("creationTime").ascending();
+        int pageSize = 5;
+        Page<Blog> blogs = iBlogService.findAll(PageRequest.of(page, pageSize, sort));
+        model.addAttribute("blogs",blogs.getContent());
+        return "blog/search";
 
     }
 
@@ -102,6 +99,14 @@ public class BlogController {
         modelAndView.addObject("blog", blog);
         modelAndView.addObject("message", "Update Blog successfully!");
         return modelAndView;
+    }
+
+    @GetMapping("/search/{title}")
+    public String searchBlog(@PathVariable("title") String title,
+                             Model model) {
+        model.addAttribute("blogs", iBlogService.findAllBlogByTitle(title));
+        model.addAttribute("title", title);
+        return "blog/search";
     }
 
 }

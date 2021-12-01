@@ -48,9 +48,9 @@
                   content+=" "+ student.name;
                   document.getElementById("result").innerHTML = content;
                 },
-                error: function (error) {
-                    var err = JSON.parse(error.responseText);
-                    $.each( err, function( key, value) {
+                error: function (data) {
+                    var error = JSON.parse(data.responseText);
+                    $.each( error, function( key, value) {
                         $('#error-'+key).text(value)
                     });
                 }
