@@ -23,10 +23,11 @@ public class UserService implements IUserService {
 
     @Override
     @Transactional
-    public AppUser save(UserRegistrationDto userRegistrationDto) {
+    public AppUser saveRegistrationUser(UserRegistrationDto userRegistrationDto) {
         Role role = new Role("ROLE_USER");
-        return iUserRepository.save(new AppUser(userRegistrationDto.getEmail(),
-                userRegistrationDto.getPassword(), new HashSet<>(Collections.singletonList(role))));
+        AppUser appUser = new AppUser(userRegistrationDto.getEmail(),
+                userRegistrationDto.getPassword(), new HashSet<>(Collections.singletonList(role)));
+        return iUserRepository.save(appUser);
     }
 
     @Override

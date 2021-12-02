@@ -56,7 +56,7 @@ public class UserRegistrationController {
 
         String password = bCryptPasswordEncoder.encode(userRegistrationDto.getPassword());
         userRegistrationDto.setPassword(password);
-        iUserService.save(userRegistrationDto);
+        iUserService.saveRegistrationUser(userRegistrationDto);
 
         return "redirect:/registration?success";
 
