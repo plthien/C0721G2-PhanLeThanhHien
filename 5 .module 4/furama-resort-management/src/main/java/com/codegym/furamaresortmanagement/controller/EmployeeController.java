@@ -56,4 +56,13 @@ public class EmployeeController {
         return "employee/list";
     }
 
+//    @GetMapping("/office/{officeId}")
+//    public ModelAndView filterEmployeeByOfficeID(@PathVariable("officeId")Integer officeId,
+//                                                 @RequestParam(name = "page", defaultValue = "0") int page,
+//                                                 @RequestParam(value = "sortField", defaultValue = "name") String sortField,
+//                                                 @RequestParam(value = "sortDirection", defaultValue = "asc") String sortDirection,
+//                                                 Optional<String> keyword){
+//
+//    }
+
 }

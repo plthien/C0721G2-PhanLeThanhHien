@@ -1,6 +1,6 @@
 package com.codegym.springsecurity.config;
 
-import com.codegym.springsecurity.service.impl.UserService;
+import com.codegym.springsecurity.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,62 +9,74 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+
+import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
-    private UserService userService;
+    private UserServiceImpl userServiceImpl;
+
+    @Autowired
+    private DataSource dataSource;
 
     //Sử dụng thuật toán Bcrypt để mã hóa password.
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         // Khi tạo mới tài khoản thì cần mã hóa mật khẩu trước khi lưu vào DB
         // String password = bCryptPasswordEncoder.encode("123123");
-        return bCryptPasswordEncoder;
+
+        return new BCryptPasswordEncoder();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        super.configure(auth);
-        auth.userDetailsService(userService).passwordEncoder(passwordEncoder());
+        auth.userDetailsService(userServiceImpl).passwordEncoder(passwordEncoder());
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
+        //Chuyen trang 403 neu k co quyen
+        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
 
-        // Các trang không yêu cầu login
-        http.authorizeRequests().antMatchers("/", "/login", "/logout", "/registration").permitAll();
 
 
         // Cấu hình cho Login Form.
-        http.authorizeRequests().and().formLogin()//
+        http.authorizeRequests()
+                // Các trang không yêu cầu login
+                .antMatchers("/", "/login", "/logout", "/registration").permitAll()
+                .and().formLogin()//
                 // Submit URL của trang login
-                .loginProcessingUrl("/j_spring_security") // Submit URL
+                .loginProcessingUrl("/j_spring_security") // Submit form URL
                 .loginPage("/login")//
-                .defaultSuccessUrl("/userInfo")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
+                .defaultSuccessUrl("/profile")//
+                .failureUrl("/login?error")//
+                .usernameParameter("email")//
                 .passwordParameter("password")
                 // Cấu hình cho Logout Page.
-                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login");
-        http.authorizeRequests().antMatchers("/blogs","/blogs/create").hasRole("ADMIN");
+                .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
+                //phan quyen
+                .and().authorizeRequests().antMatchers("/blogs", "/blogs/create").hasRole("ADMIN");
+//                .anyRequest().authenticated();
+
 
         // Cấu hình Remember Me.
         http.authorizeRequests().and() //
                 .rememberMe().tokenRepository(this.persistentTokenRepository()) //
-                .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
+                .tokenValiditySeconds(24 * 60 * 60); // 24h
 
     }
 
+    // luu token remember-me vào database
     @Bean
     public PersistentTokenRepository persistentTokenRepository() {
-        InMemoryTokenRepositoryImpl memory = new InMemoryTokenRepositoryImpl();
-        return memory;
+        JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
+        tokenRepository.setDataSource(dataSource);
+        return tokenRepository;
     }
 }
