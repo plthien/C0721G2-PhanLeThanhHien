@@ -21,7 +21,7 @@
     <link th:rel="stylesheet" th:href="@{/assets/css/soft-ui-dashboard-pro.css}">
 </head>
 <body class="g-sidenav-show  bg-gray-100">
-<div th:replace="~{employee/asideAndFooter::asideEmployee}"></div>
+<div th:replace="~{customer/asideAndFooter::asideCustomer}"></div>
 
 <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
     <!-- Navbar -->
@@ -32,14 +32,14 @@
                 <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                     <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                     </li>
-                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Employee</li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Customer</li>
                 </ol>
-                <h6 class="font-weight-bolder mb-0">Employee</h6>
+                <h6 class="font-weight-bolder mb-0">Customer List</h6>
             </nav>
             <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                 <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                     <form class="input-group m-0">
-                        <input id="searchEmployee" th:name="keyword" th:value="${keyword}" type="text"
+                        <input id="searchCustomer" th:name="keyword" th:value="${keyword}" type="text"
                                class="form-control " style="width: 310px"
                                placeholder="Type name, gender, email, address, IdCard...">
                         <button id="buttonSearch" type="submit" class="input-group-text text-body"><i
@@ -62,20 +62,21 @@
         <div class="row mb-3">
             <div class="col-2">
                 <form>
-                    <select class="form-select" aria-label="Default select example" onchange="this.form.submit()" th:name="officeId">
-                        <option th:value="0">Position</option>
-                        <th:block th:each="office: ${offices}">
-                            <option th:value="${office.getId()}" th:text="${office.getName()}"
-                                    th:selected="${office.getId() == officeId} "></option>
+                    <select class="form-select" aria-label="Default select example" onchange="this.form.submit()" th:name="customerTypeId">
+                        <option th:value="0">Customer Type</option>
+                        <th:block th:each="type: ${customerType}">
+                            <option th:value="${type.getId()}" th:text="${type.getName()}"
+                                    th:selected="${type.getId() == customerTypeId} "></option>
                         </th:block>
                     </select>
                 </form>
 
             </div>
             <div class="col-10 text-end ">
-                <a th:href="@{/employees/create}"
-                   class="text-secondary mb-0 font-weight-bold text-xs badge badge-sm bg-gradient-light">
-                    Add new Employee
+                <a th:href="@{/customers/create}"
+                   class="text-secondary mb-0 font-weight-bold text-xs badge badge-sm bg-gradient-light"
+                   data-toggle="tooltip" data-original-title="Add Employee">
+                    Add new Customer
                 </a>
             </div>
         </div>
@@ -83,27 +84,25 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Employee table</h6>
+                        <h6>Customer table</h6>
                         <p th:if="${message}" th:text="${message}" style="font-size: 80%" class="text-success"></p>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
-                            <table class="table align-items-center mb-0 " id="employeeTable">
+                            <table class="table align-items-center mb-0 " id="customerTable">
                                 <thead>
                                 <tr>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-3 ">
-                                        <a th:href="@{/employees(page=${employees.number}, sortField='id',sortDirection=${reverseSortDir},keyword=${keyword},officeId=${officeId})}">ID</a>
+                                        <a th:href="@{/customers(page=${customers.number}, sortField='id',sortDirection=${reverseSortDir},keyword=${keyword},customerTypeId=${customerTypeId})}">ID</a>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">
-                                        <a th:href="@{/employees(page=${employees.number}, sortField='name',sortDirection=${reverseSortDir},keyword=${keyword},officeId=${officeId})}">Name</a>
+                                        <a th:href="@{/customers(page=${customers.number}, sortField='name',sortDirection=${reverseSortDir},keyword=${keyword},customerTypeId=${customerTypeId})}">Name</a>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center ">
-                                        <a th:href="@{/employees(page=${employees.number}, sortField='date_of_birth',sortDirection=${reverseSortDir},keyword=${keyword},officeId=${officeId})}">Date
+                                        <a th:href="@{/customers(page=${customers.number}, sortField='date_of_birth',sortDirection=${reverseSortDir},keyword=${keyword},customerTypeId=${customerTypeId})}">Date
                                             of Birth</a></th>
-                                    </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center">
-                                        <a th:href="@{/employees(page=${employees.number}, sortField='gender',sortDirection=${reverseSortDir},keyword=${keyword},officeId=${officeId})}">Gender</a>
-                                    </th>
+                                        <a th:href="@{/customers(page=${customers.number}, sortField='gender',sortDirection=${reverseSortDir},keyword=${keyword},customerTypeId=${customerTypeId})}">Gender</a>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 text-center">
                                         Personal ID
@@ -113,14 +112,7 @@
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Address
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">
-                                        <a th:href="@{/employees(page=${employees.number}, sortField='salary',sortDirection=${reverseSortDir},keyword=${keyword},officeId=${officeId})}">Salary</a>
-                                    </th>
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Degree
-                                    </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">
-                                        Function
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder p-2 ">Customer Type
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center p-2">
                                         Action
@@ -128,65 +120,55 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="employee: ${employees.content}">
-                                    <td class="align-middle p-3">
+
+                                <tr th:each="customer: ${customers.content}">
+                                    <td class="align-middle p-3" >
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getId()}"></span>
+                                              th:text="${customer.getId()}"></span>
                                     </td>
                                     <td class="p-2">
                                         <div class="d-flex py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm" th:text="${employee.getName()}"></h6>
+                                                <h6 class="mb-0 text-sm" th:text="${customer.getName()}"></h6>
                                                 <p class="text-xs text-secondary mb-0"
-                                                   th:text="${employee.getEmail()}"></p>
+                                                   th:text="${customer.getEmail()}"></p>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getBirthday()}"></span>
+                                              th:text="${customer.getBirthday()}"></span>
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getGender()}"></span>
+                                              th:text="${customer.getGender()}"></span>
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getPersonalID()}"></span>
+                                              th:text="${customer.getPersonalID()}"></span>
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getPhoneNumber()}"></span>
+                                              th:text="${customer.getPhoneNumber()}"></span>
                                     </td>
                                     <td class="align-middle p-2">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getAddress()}"></span>
+                                              th:text="${customer.getAddress()}"></span>
                                     </td>
                                     <td class="align-middle p-2">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getSalary()}"></span>
-                                    </td>
-                                    <td class="align-middle p-2">
-                                        <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getEmployeeDegree().getName()}"></span>
-                                    </td>
-                                    <td class="p-2">
-                                        <p class="text-xs font-weight-bold mb-0"
-                                           th:text="${employee.getEmployeeDepartment().getName()}"></p>
-                                        <p class="text-xs text-secondary mb-0"
-                                           th:text="${employee.getEmployeeOffice().getName()}"></p>
+                                              th:text="${customer.getCustomerType().getName()}"></span>
                                     </td>
                                     <td class="align-middle p-2 text-center">
-                                        <a th:href="@{/employees/edit{id}(id=${employee.getId()})}"
-                                           class="btn bg-gradient-success"
-                                           data-toggle="tooltip" data-original-title="Edit Employee">
+                                        <a th:href="@{/customers/edit{id}(id=${customer.getId()})}"
+                                           class="btn bg-gradient-success">
                                             Edit
                                         </a>
-                                        <button type="button" class="btn bg-gradient-danger " data-bs-toggle="modal" th:data-bs-target="'#modal' + ${employee.getId()} ">
+                                        <button type="button" class="btn bg-gradient-danger " data-bs-toggle="modal" th:data-bs-target="'#modal' + ${customer.getId()} ">
                                             Delete
                                         </button>
                                         <!-- Modal -->
-                                        <div class="modal fade" th:id="'modal' + ${employee.getId()} " tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" th:id="'modal' + ${customer.getId()} " tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -196,12 +178,12 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Do you want to delete <span th:text="${employee.getName()}" ></span> have ID: <span th:text="${employee.getId()}"></span> ?
+                                                        Do you want to delete <span th:text="${customer.getName()}" ></span> have ID: <span th:text="${customer.getId()}"></span> ?
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn bg-gradient-success" data-bs-dismiss="modal">No</button>
                                                         <button type="button" class="btn bg-gradient-danger"><a
-                                                                th:href="@{/employees/delete{id}(id=${employee.getId()})}">Yes</a></button>
+                                                                th:href="@{/customers/delete{id}(id=${customer.getId()})}">Yes</a></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -210,19 +192,19 @@
                                 </tr>
                                 </tbody>
                             </table>
-<!--                            pagination-->
+                            <!--pagination-->
                             <nav aria-label="Page navigation example" class="float-end mx-2">
                                 <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" th:if="${employees.hasPrevious()}"
-                                                             th:href="@{/employees(page=${employees.number - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},officeId=${officeId})}"><i
+                                    <li class="page-item"><a class="page-link" th:if="${customers.hasPrevious()}"
+                                                             th:href="@{/customers(page=${customers.number - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},customerTypeId=${customerTypeId})}"><i
                                             class="fas fa-backward"></i></a></li>
-                                    <li class="page-item" th:if="${employees.totalPages!=0}"
-                                        th:each="pageNo: ${#numbers.sequence(1,employees.totalPages)}">
+                                    <li class="page-item" th:if="${customers.totalPages!=0}"
+                                        th:each="pageNo: ${#numbers.sequence(1,customers.totalPages)}">
                                         <a class="page-link" th:text="${pageNo}"
-                                           th:href="@{employees(page=${pageNo - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},officeId=${officeId})}"></a>
+                                           th:href="@{customers(page=${pageNo - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},customerTypeId=${customerTypeId})}"></a>
                                     </li>
-                                    <li class="page-item"><a class="page-link" th:if="${employees.hasNext()}"
-                                                             th:href="@{/employees(page=${employees.number + 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},officeId=${officeId})}"><i
+                                    <li class="page-item"><a class="page-link" th:if="${customers.hasNext()}"
+                                                             th:href="@{/customers(page=${customers.number + 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},customerTypeId=${customerTypeId})}"><i
                                             class="fas fa-forward"></i></a></li>
                                 </ul>
                             </nav>
@@ -231,13 +213,14 @@
                 </div>
             </div>
         </div>
-        <div th:replace="~{employee/asideAndFooter::footer}"></div>
+        <div th:replace="~{customer/asideAndFooter::footer}"></div>
     </div>
 
 </main>
 <script th:src="@{/assets/js/core/bootstrap.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    var inputSearch = document.getElementById("searchEmployee");
+    var inputSearch = document.getElementById("searchCustomer");
     inputSearch.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             event.preventDefault();
@@ -245,5 +228,6 @@
         }
     });
 </script>
+
 </body>
 </html>

@@ -30,7 +30,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="product : ${products}">
+    <tr th:each="product,loop : ${products}">
         <td th:text="${product.getName()}"></td>
         <td th:text="${product.getPrice()}"></td>
         <td th:text="${product.getDescription()}"></td>

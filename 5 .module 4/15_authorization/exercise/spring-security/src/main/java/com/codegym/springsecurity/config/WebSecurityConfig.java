@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Cấu hình cho Login Form.
         http.authorizeRequests()
                 // Các trang không yêu cầu login
-                .antMatchers("/", "/login", "/logout", "/registration").permitAll()
+                .antMatchers("/", "/login", "/logout", "/registration","/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png").permitAll()
                 .and().formLogin()//
                 // Submit URL của trang login
                 .loginProcessingUrl("/j_spring_security") // Submit form URL
@@ -61,8 +61,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Cấu hình cho Logout Page.
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
                 //phan quyen
-                .and().authorizeRequests().antMatchers("/blogs", "/blogs/create").hasRole("ADMIN");
-//                .anyRequest().authenticated();
+                .and().authorizeRequests().antMatchers("/blogs", "/blogs/create").hasRole("ADMIN")
+                .anyRequest().authenticated();
 
 
         // Cấu hình Remember Me.

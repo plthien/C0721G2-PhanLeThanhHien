@@ -9,7 +9,6 @@ import org.springframework.validation.Validator;
 import javax.persistence.*;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
 
 @Entity(name = "borrowing_card")
@@ -21,7 +20,7 @@ public class BorrowingCard implements Validator {
             strategy = "com.codegym.bookmanagement.model.CustomIdGenerator",
             parameters = {
                     @Parameter(name = CustomIdGenerator.INCREMENT_PARAM, value = "1"),
-                    @Parameter(name = CustomIdGenerator.VALUE_PREFIX_PARAMETER, value = ""),
+                    @Parameter(name = CustomIdGenerator.VALUE_PREFIX_PARAMETER, value = "BK-"),
                     @Parameter(name = CustomIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%05d")})
     private String id;
 
