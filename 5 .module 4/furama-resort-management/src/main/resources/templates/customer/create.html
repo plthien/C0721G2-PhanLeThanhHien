@@ -120,11 +120,6 @@
                                    th:field="*{email}">
                             <div class="text-danger" style="font-size: 70%" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
                         </div>
-                        <div class="col-md-1 position-relative">
-                            <input type="text" class="form-control"  id="validationTooltip12"
-                                   hidden
-                                   th:field="*{status}">
-                        </div>
                         <div class="col-12">
                             <button class="btn btn-primary" type="submit">Save</button>
                         </div>

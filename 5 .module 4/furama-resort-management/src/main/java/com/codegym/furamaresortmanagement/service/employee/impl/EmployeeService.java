@@ -64,4 +64,9 @@ public class EmployeeService implements IEmployeeService {
     public List<Employee> findAll() {
         return iEmployeeRepository.findAll();
     }
+
+    @Override
+    public Employee findEmployeeByEmail(String email) {
+        return iEmployeeRepository.findByEmailEquals(email);
+    }
 }

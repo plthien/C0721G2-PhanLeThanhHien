@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -33,4 +34,8 @@ public interface ICustomerRepository extends JpaRepository<Customer,String> {
     @Modifying
     @Query(value="update customers set `status` = 0 where id =:id", nativeQuery=true)
     void removeCustomerById(@Param("id") String id);
+
+    @Query(value="select * from customers where `status` = 1",nativeQuery=true)
+    List<Customer> findAll();
+
 }

@@ -11,6 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class FacilityService implements IFacilityService {
@@ -54,5 +56,10 @@ public class FacilityService implements IFacilityService {
     @Override
     public Facility findById(String id) {
         return iFacilityRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<Facility> findAll() {
+        return iFacilityRepository.findAll();
     }
 }

@@ -62,12 +62,9 @@
         <div class="row mb-3">
             <div class="col-2">
                 <form>
-                    <div class="col-md-2 position-relative">
-                        <label for="searchDate" class="form-label">Date</label>
-                        <input type="datetime-local" class="form-control" id="searchDate" onchange="this.form.submit()"
-                               required
-                               th:name="dateSearch" th:value="${dateSearch}">
-                    </div>
+                    <label for="searchDate" class="form-label" >Filter with Date:</label>
+                    <input type="date" class="form-control" id="searchDate" onchange="this.form.submit()"
+                           th:name="dateSearch" th:value="${dateSearch}">
                 </form>
 
             </div>
@@ -95,24 +92,30 @@
                                             ID</a>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0">
-                                        <a th:href="@{/contracts(page=${contracts.number}, sortField='check_in_date',sortDirection=${reverseSortDir},keyword=${keyword},dateSearch=${dateSearch})}">
-                                           Check In Date </a>
+                                        <a th:href="@{/contracts(page=${contracts.number}, sortField='checkInDate',sortDirection=${reverseSortDir},keyword=${keyword},dateSearch=${dateSearch})}">
+                                            Check In Date </a>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center px-0">
-                                        <a th:href="@{/contracts(page=${contracts.number}, sortField='check_out_date',sortDirection=${reverseSortDir},keyword=${keyword},dateSearch=${dateSearch})}">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  px-0">
+                                        <a th:href="@{/contracts(page=${contracts.number}, sortField='checkOutDate',sortDirection=${reverseSortDir},keyword=${keyword},dateSearch=${dateSearch})}">
                                             Check Out Date</a>
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center px-0">Employee</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center px-0">Customer</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 ">Facility</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  px-0">
+                                        Employee
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder  px-0">
+                                        Customer
+                                    </th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 ">
+                                        Facility
+                                    </th>
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 ">
                                         Contract Details
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 ">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 text-center ">
                                         Deposit
                                     </th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 ">
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder px-0 text-center">
                                         Total
                                     </th>
                                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center px-0">
@@ -134,76 +137,90 @@
                                         <span class="text-secondary text-xs font-weight-bold"
                                               th:text="${contract.getCheckOutDate()}"></span>
                                     </td>
-                                    <td class="align-middle px-0  text-center">
+                                    <td class="align-middle px-0  ">
                                         <div class="d-flex py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm" th:text="${contract.getEmployee().getName()}"></h6>
+                                                <h6 class="mb-0 text-sm"
+                                                    th:text="${contract.getEmployee().getName()}"></h6>
                                                 <p class="text-xs text-secondary mb-0"
                                                    th:text="${contract.getEmployee().getId()}"></p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="align-middle px-0  text-center">
+                                    <td class="align-middle px-0 ">
                                         <div class="d-flex py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm" th:text="${contract.getCustomer().getName()}"></h6>
+                                                <h6 class="mb-0 text-sm"
+                                                    th:text="${contract.getCustomer().getName()}"></h6>
                                                 <p class="text-xs text-secondary mb-0"
                                                    th:text="${contract.getCustomer().getId()}"></p>
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="align-middle px-0  text-center">
+                                    <td class="align-middle px-0 ">
                                         <div class="d-flex py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm" th:text="${contract.getFacility().getName()}"></h6>
+                                                <h6 class="mb-0 text-sm"
+                                                    th:text="${contract.getFacility().getName()}"></h6>
                                                 <p class="text-xs text-secondary mb-0"
                                                    th:text="${contract.getFacility().getId()}"></p>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="align-middle px-0  text-center">
-                                        <th:block class="text-secondary text-xs font-weight-bold" th:each="contractDetail: ${contractDetails}">
-                                            <p th:if="${contractDetail.getContract().getId()} == contract.getId()"><a
-                                                    th:href="@{/contractDetails}" th:text="${contractDetail.getId()}"></a></p>
+                                        <th:block class="text-secondary text-xs font-weight-bold"
+                                                  th:each="contractDetail: ${contractDetails}">
+                                            <p style="font-size: 70%"
+                                                    th:if="${contractDetail.getContract().getId() == contract.getId()}"><a
+                                                    th:href="@{/contracts/contractDetails{id}(id=${contractDetail.getId()})}"
+                                                    th:text="${contractDetail.getId()}"></a></p>
                                         </th:block>
                                     </td>
-<!--                                    <td class="align-middle py-0  text-center ">-->
-<!--                                        <span class="text-secondary text-xs font-weight-bold"-->
-<!--                                              th:text="${facility.getBasicCost()}"></span>-->
-<!--                                    </td>-->
-<!--                                    <td class="align-middle px-0  text-center ">-->
-<!--                                        <span class="text-secondary text-xs font-weight-bold"-->
-<!--                                              th:text="${facility.getServiceType().getName()}"></span>-->
-<!--                                    </td>-->
-<!--                                    <td class="align-middle px-0  text-center">-->
-<!--                                        <span class="text-xs font-weight-bold"-->
-<!--                                              th:text="${facility.getRentingType().getName()}"></span>-->
-<!--                                    </td>-->
+                                    <td class="align-middle py-0  text-center ">
+                                        <span class="text-secondary text-xs font-weight-bold"
+                                              th:text="${contract.getDeposit()}"></span>
+                                    </td>
+                                    <td class="align-middle px-0  text-center ">
+                                        <span class="text-secondary text-xs font-weight-bold"
+                                              th:text="${contract.getTotal()}"></span>
+                                    </td>
                                     <td class="align-middle px-0 text-center">
+                                        <a th:href="@{/contracts/createContractDetails{id}(id=${contract.getId()})}"
+                                           class="btn bg-gradient-success mt-1" >
+                                            Add
+                                        </a>
                                         <a th:href="@{/contracts/edit{id}(id=${contract.getId()})}"
-                                           class="btn bg-gradient-success">
+                                           class="btn bg-gradient-success" >
                                             Edit
                                         </a>
-                                        <button type="button" class="btn bg-gradient-danger " data-bs-toggle="modal" th:data-bs-target="'#modal' + ${contract.getId()} ">
+                                        <button type="button" class="btn bg-gradient-danger  " data-bs-toggle="modal"
+                                                th:data-bs-target="'#modal' + ${contract.getId()} ">
                                             Delete
                                         </button>
                                         <!-- Modal -->
-                                        <div class="modal fade" th:id="'modal' + ${contract.getId()} " tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" th:id="'modal' + ${contract.getId()} " tabindex="-1"
+                                             role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title font-weight-normal" id="exampleModalLabel">Delete confirm</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                        <h5 class="modal-title font-weight-normal"
+                                                            id="exampleModalLabel">Delete confirm</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        Do you want to delete <span th:text="${contract.getId()}" ></span> have ID: <span th:text="${contract.getId()}"></span> ?
+                                                        Do you want to delete contract have ID: <span
+                                                            th:text="${contract.getId()}"></span> ?
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn bg-gradient-success" data-bs-dismiss="modal">No</button>
+                                                        <button type="button" class="btn bg-gradient-success"
+                                                                data-bs-dismiss="modal">No
+                                                        </button>
                                                         <button type="button" class="btn bg-gradient-danger"><a
-                                                                th:href="@{/contracts/delete{id}(id=${contract.getId()})}">Yes</a></button>
+                                                                th:href="@{/contracts/delete{id}(id=${contract.getId()})}">Yes</a>
+                                                        </button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,14 +230,14 @@
                                 </tbody>
                             </table>
                             <!--                            pagination-->
-                            <nav aria-label="Page navigation example" class="float-end mx-2">
-                                <ul class="pagination">
+                            <nav aria-label="Page navigation example" class="float-end mx-2   ">
+                                <ul class="pagination ">
                                     <li class="page-item"><a class="page-link" th:if="${contracts.hasPrevious()}"
                                                              th:href="@{/contracts(page=${contracts.number - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},dateSearch=${dateSearch})}"><i
                                             class="fas fa-backward"></i></a></li>
                                     <li class="page-item" th:if="${contracts.totalPages!=0}"
                                         th:each="pageNo: ${#numbers.sequence(1,contracts.totalPages)}">
-                                        <a class="page-link" th:text="${pageNo}"
+                                        <a class="page-link" th:text="${pageNo}" th:style="${contracts.number == (pageNo - 1)} ? 'background-color: #e5e5e5'"
                                            th:href="@{contracts(page=${pageNo - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},dateSearch=${dateSearch})}"></a>
                                     </li>
                                     <li class="page-item"><a class="page-link" th:if="${contracts.hasNext()}"
@@ -233,7 +250,7 @@
                 </div>
             </div>
         </div>
-        <div th:replace="~{contarct/asideAndFooter::footer}"></div>
+        <div th:replace="~{contract/asideAndFooter::footer}"></div>
     </div>
 
 </main>

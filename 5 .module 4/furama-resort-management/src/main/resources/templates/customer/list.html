@@ -200,7 +200,7 @@
                                             class="fas fa-backward"></i></a></li>
                                     <li class="page-item" th:if="${customers.totalPages!=0}"
                                         th:each="pageNo: ${#numbers.sequence(1,customers.totalPages)}">
-                                        <a class="page-link" th:text="${pageNo}"
+                                        <a class="page-link" th:text="${pageNo}" th:style="${customers.number == (pageNo - 1)} ? 'background-color: #e5e5e5'"
                                            th:href="@{customers(page=${pageNo - 1},sortField=${sortField},sortDirection=${sortDirection},keyword=${keyword},customerTypeId=${customerTypeId})}"></a>
                                     </li>
                                     <li class="page-item"><a class="page-link" th:if="${customers.hasNext()}"

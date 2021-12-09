@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -32,5 +33,8 @@ public interface IFacilityRepository extends JpaRepository<Facility, String> {
 
     @Query(value="select * from facilities where id=:id and `status` = 1", nativeQuery=true)
     Optional<Facility> findById(@Param("id") String id);
+
+    @Query(value="select * from facilities where `status` = 1", nativeQuery=true)
+    List<Facility> findAll();
 
 }

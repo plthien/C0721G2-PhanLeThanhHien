@@ -21,8 +21,12 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
     implementation group: 'org.webjars', name: 'bootstrap', version: '5.0.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity5'
+
 }
 
 test {

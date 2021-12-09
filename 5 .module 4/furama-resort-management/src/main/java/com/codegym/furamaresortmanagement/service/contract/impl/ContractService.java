@@ -11,7 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Service
 @Transactional
@@ -20,11 +20,11 @@ public class ContractService implements IContractService {
     private IContractRepository iContractRepository;
 
     @Override
-    public Page<Contract> findContractByDate(int page, int size, String sortField, String sortDirection, LocalDateTime localDateTime) {
+    public Page<Contract> findContractByDate(int page, int size, String sortField, String sortDirection, LocalDate localDate) {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(page,size,sort);
-        return iContractRepository.findAllByCheckInDateOrCheckOutDateEquals(localDateTime,localDateTime,pageable);
+        return iContractRepository.findAllByCheckInDateOrCheckOutDateEqualsAndStatusIs(localDate,localDate,1,pageable);
     }
 
     @Override
@@ -40,8 +40,23 @@ public class ContractService implements IContractService {
         Sort sort = sortDirection.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortField).ascending() :
                 Sort.by(sortField).descending();
         Pageable pageable = PageRequest.of(page,size,sort);
-        return iContractRepository.findAllByCustomer_NameOrCustomer_Id(keyword,keyword,pageable);
+        return iContractRepository.findAllByCustomer_NameContainingOrCustomer_IdContainingAndStatusIs(keyword,keyword,1,pageable);
 
 
+    }
+
+    @Override
+    public void saveContract(Contract contract) {
+        iContractRepository.save(contract);
+    }
+
+    @Override
+    public Contract findContractById(Long id) {
+        return iContractRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void deleteContract(Long id) {
+        iContractRepository.removeContractByID(id);
     }
 }

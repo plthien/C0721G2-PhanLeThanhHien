@@ -21,4 +21,6 @@ public interface IEmployeeService {
     void deleteEmployee(int id);
 
     List<Employee> findAll();
+
+    Employee findEmployeeByEmail(String email);
 }

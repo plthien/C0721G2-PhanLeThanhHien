@@ -3,6 +3,8 @@ package com.codegym.furamaresortmanagement.service.facility;
 import com.codegym.furamaresortmanagement.model.facility.Facility;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface IFacilityService {
     Page<Facility> findFacilityByServiceType(int page, int size, String sortField, String sortDirection, Integer serviceTypeId);
 
@@ -15,4 +17,6 @@ public interface IFacilityService {
     void deleteFacility(String id);
 
     Facility findById(String id);
+
+    List<Facility> findAll();
 }
