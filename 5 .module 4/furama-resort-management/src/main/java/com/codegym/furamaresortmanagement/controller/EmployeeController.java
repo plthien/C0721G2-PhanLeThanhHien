@@ -1,5 +1,6 @@
 package com.codegym.furamaresortmanagement.controller;
 
+import com.codegym.furamaresortmanagement.model.Person;
 import com.codegym.furamaresortmanagement.model.employee.Employee;
 import com.codegym.furamaresortmanagement.model.employee.EmployeeDegree;
 import com.codegym.furamaresortmanagement.model.employee.EmployeeDepartment;

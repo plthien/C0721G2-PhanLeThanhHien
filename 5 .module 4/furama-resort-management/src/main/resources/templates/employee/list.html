@@ -46,14 +46,8 @@
                                 class="fas fa-search" aria-hidden="true"></i></button>
                     </form>
                 </div>
-                <ul class="navbar-nav  justify-content-end">
-                    <li class="nav-item d-flex align-items-center">
-                        <a href="javascript:;" class="nav-link text-body font-weight-bold px-0">
-                            <i class="fa fa-user me-sm-1"></i>
-                            <span class="d-sm-inline d-none">Sign In</span>
-                        </a>
-                    </li>
-                </ul>
+                <ul th:replace="~{home/profile::userInfo}"></ul>
+
             </div>
         </div>
     </nav>
@@ -144,7 +138,7 @@
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"
-                                              th:text="${employee.getBirthday()}"></span>
+                                              th:text="${#temporals.format(employee.getBirthday(),'dd-MM-yyyy')}"></span>
                                     </td>
                                     <td class="align-middle p-2 text-center">
                                         <span class="text-secondary text-xs font-weight-bold"

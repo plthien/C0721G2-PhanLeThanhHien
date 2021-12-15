@@ -22,6 +22,7 @@ public class UserLoginController {
 
     @GetMapping("/profile")
     public String showProfile(Model model, Principal principal){
+
         String email = principal.getName();
         Employee employee = iEmployeeService.findEmployeeByEmail(email);
         model.addAttribute("employee",employee);

@@ -1,5 +1,6 @@
 package com.codegym.furamaresortmanagement.config;
 
+import com.codegym.furamaresortmanagement.accessdenied.CustomAccessDeniedHandler;
 import com.codegym.furamaresortmanagement.service.employee.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -9,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
@@ -41,15 +43,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
         http.csrf().disable();
-        //Chuyen trang 403 neu k co quyen
-        http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
-
 
 
         // Cấu hình cho Login Form.
         http.authorizeRequests()
                 // Các trang không yêu cầu login
-                .antMatchers("/", "/login", "/logout", "/registration","/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png").permitAll()
+                .antMatchers("/", "/login", "/logout","/**/*.js", "/**/*.css", "/**/*.jpg", "/**/*.png").permitAll()
                 .and().formLogin()//
                 // Submit URL của trang login
                 .loginProcessingUrl("/j_spring_security") // Submit form URL
@@ -61,8 +60,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Cấu hình cho Logout Page.
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login")
                 //phan quyen
-                .and().authorizeRequests().antMatchers("/employee/**").hasRole("ADMIN")
-                .anyRequest().authenticated();
+                .and().authorizeRequests().antMatchers("/employees/**").hasRole("ADMIN")
+                .and().authorizeRequests().antMatchers("/customers/**","/facilities/**","/contracts/**").hasAnyRole("USER","ADMIN")
+                .anyRequest().authenticated()
+                .and().exceptionHandling().accessDeniedHandler(accessDeniedHandler());
+
 
 
         // Cấu hình Remember Me.
@@ -78,5 +80,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         JdbcTokenRepositoryImpl tokenRepository = new JdbcTokenRepositoryImpl();
         tokenRepository.setDataSource(dataSource);
         return tokenRepository;
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
     }
 }

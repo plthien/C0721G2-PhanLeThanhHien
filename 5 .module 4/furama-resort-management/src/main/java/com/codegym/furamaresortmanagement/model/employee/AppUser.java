@@ -12,8 +12,18 @@ public class AppUser {
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles;
+    @OneToOne(mappedBy = "appUser")
+    private Employee employee;
 
     public AppUser() {
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
     public String getEmail() {
