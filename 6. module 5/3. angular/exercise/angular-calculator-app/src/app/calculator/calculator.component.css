@@ -1,0 +1,31 @@
+table, td, th {
+  border-collapse: collapse;
+  border: 0.5px solid gray;
+}
+td,th {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+}
+input {
+  border: none;
+  width: 250px;
+  height: 60px;
+  font-size: 2.0em;
+  text-align: right;
+  outline: none;
+}
+button {
+  border: none;
+  background: none;
+  width: 60px;
+  height: 60px;
+  font-size: 1.2em;
+}
+
+.item:hover{
+  border:1px solid #666;
+  opacity:0.8;
+  -moz-opacity:0.8;
+  filter:alpha(opacity=8);
+}
