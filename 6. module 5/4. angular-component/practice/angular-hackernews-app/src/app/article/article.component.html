@@ -1,0 +1,8 @@
+<h2 style="margin-top: 100px">Today's article</h2>
+<hr>
+<div *ngFor="let art of articles">
+  <a href="{{art.url}}" target="_blank">{{art.title}}</a>: <app-like></app-like>
+</div>
+<hr>
+
+
