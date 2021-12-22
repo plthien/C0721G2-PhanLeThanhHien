@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="col-4">
+    <div class="card mt-5">
+      <h5 class="card-header">Register Form</h5>
+      <div class="card-body">
+        <form class="form-group" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" class="form-control" formControlName="email">
+            <small *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+            <small *ngIf="userForm.controls.email.dirty && userForm.controls.email.errors?.email"
+                   class="text-warning fst-italic">Please enter a valid e-mail address!</small>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" class="form-control" formControlName="password">
+            <small *ngIf="userForm.controls.password.touched && userForm.controls.password.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+            <small *ngIf="userForm.controls.password.dirty && userForm.controls.password.errors?.minlength"
+                   class="text-warning fst-italic">Please enter a valid password.
+              Acceptable passwords are at least 6 characters long</small>
+          </div>
+          <div>
+            <label for="cPassword">Confirm password:</label>
+            <input type="password" name="cPassword" id="cPassword" class="form-control" formControlName="cPassword">
+            <small *ngIf="userForm.controls.cPassword.touched && userForm.controls.cPassword.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+            <small *ngIf="userForm.controls.cPassword.touched && userForm.value.password!==userForm.value.cPassword &&
+                        userForm.value.cPassword!==''"
+                   class="text-warning fst-italic">Confirm password must be equal to password!</small>
+          </div>
+          <div class="form-group">
+            <label>Country:</label>
+            <select class="form-control" name="country" formControlName="country">
+              <option value="Viet Nam">Viet Nam</option>
+              <option value="American">American</option>
+              <option value="China">China</option>
+            </select>
+            <small *ngIf="userForm.controls.country.touched && userForm.controls.country.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+          </div>
+          <div>
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" class="form-control" formControlName="age">
+            <small *ngIf="userForm.controls.age.touched && userForm.controls.age.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+            <small *ngIf="userForm.controls.age.touched && userForm.controls.age.errors?.min"
+                   class="text-warning fst-italic">Age must greater than 18!</small>
+          </div>
+          <div>
+            Gender:
+          </div>
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success">
+              <input type="radio" name="gender" value="Male" formControlName="gender" >Male
+            </label>
+            <label class="btn btn-warning">
+              <input type="radio" name="gender" value="Female" formControlName="gender">Female
+            </label>
+          </div>
+          <div>
+            <label for="phoneNumber">Phone number:</label>
+            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+            <small *ngIf="userForm.controls.phoneNumber.touched && userForm.controls.phoneNumber.errors?.required"
+                   class="text-warning fst-italic">Please fill out this field!</small>
+            <small *ngIf="userForm.controls.phoneNumber.touched && userForm.controls.phoneNumber.errors?.pattern"
+                   class="text-warning fst-italic">The phone number must start with +84 and have 9 or 10 digits number! </small>
+          </div>
+          <button type="submit" class="btn btn-primary mt-2">Register</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
