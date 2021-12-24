@@ -7,29 +7,33 @@
           <div>
             <label for="email">Email:</label>
             <input type="text" name="email" id="email" class="form-control" formControlName="email">
-            <small *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"
+<!--            <small *ngIf="userForm.controls.email.touched && userForm.controls.email.errors?.required"-->
+<!--                   class="text-warning fst-italic">Please fill out this field!</small>-->
+            <small *ngIf="userForm.get('email').touched && userForm.get('email').errors?.required"
                    class="text-warning fst-italic">Please fill out this field!</small>
             <small *ngIf="userForm.controls.email.dirty && userForm.controls.email.errors?.email"
                    class="text-warning fst-italic">Please enter a valid e-mail address!</small>
           </div>
-          <div>
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" class="form-control" formControlName="password">
-            <small *ngIf="userForm.controls.password.touched && userForm.controls.password.errors?.required"
-                   class="text-warning fst-italic">Please fill out this field!</small>
-            <small *ngIf="userForm.controls.password.dirty && userForm.controls.password.errors?.minlength"
-                   class="text-warning fst-italic">Please enter a valid password.
-              Acceptable passwords are at least 6 characters long</small>
+          <div formGroupName="pwGroup">
+            <div>
+              <label for="password">Password:</label>
+              <input type="password" name="password" id="password" class="form-control" formControlName="password">
+              <small *ngIf="userForm.get('pwGroup.password').touched && userForm.get('pwGroup.password').errors?.required"
+                     class="text-warning fst-italic">Please fill out this field!</small>
+              <small *ngIf="userForm.get('pwGroup.password').dirty && userForm.get('pwGroup.password').errors?.minlength"
+                     class="text-warning fst-italic">Please enter a valid password.
+                Acceptable passwords are at least 6 characters long</small>
+            </div>
+            <div>
+              <label for="cPassword">Confirm password:</label>
+              <input type="password" name="cPassword" id="cPassword" class="form-control" formControlName="cPassword">
+<!--              <small *ngIf="userForm.get('pwGroup.cPassword').touched && userForm.get('pwGroup.cPassword').errors?.required"-->
+<!--                     class="text-warning fst-italic">Please fill out this field!</small>-->
+              <small *ngIf="userForm.get('pwGroup.cPassword').touched && userForm.get('pwGroup').errors?.passwordnotmatch"
+                class="text-warning fst-italic">Confirm password must be equal to password!</small>
+            </div>
           </div>
-          <div>
-            <label for="cPassword">Confirm password:</label>
-            <input type="password" name="cPassword" id="cPassword" class="form-control" formControlName="cPassword">
-            <small *ngIf="userForm.controls.cPassword.touched && userForm.controls.cPassword.errors?.required"
-                   class="text-warning fst-italic">Please fill out this field!</small>
-            <small *ngIf="userForm.controls.cPassword.touched && userForm.value.password!==userForm.value.cPassword &&
-                        userForm.value.cPassword!==''"
-                   class="text-warning fst-italic">Confirm password must be equal to password!</small>
-          </div>
+
           <div class="form-group">
             <label>Country:</label>
             <select class="form-control" name="country" formControlName="country">
