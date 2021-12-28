@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2a908c6-11be-4b50-8c5b-14f929b19d67" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../9. connect-backend/exercise/angular-name-card/src/data/todo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/furama-resort-danang/src/app/data/employee.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case-study/furama-resort-danang/src/assets/img/bg_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/01_spring_mvc/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/01_spring_mvc/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/02_spring_controller/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/02_spring_controller/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/05_ORM/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/05_ORM/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/09_AOP/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/09_AOP/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/13_i18n/exercise/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/13_i18n/exercise/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../5 .module 4/furama-resort-management/src/main/resources/templates/employee/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../5 .module 4/furama-resort-management/src/main/resources/templates/employee/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MODULE 5.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../MODULE 5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/employee/employee-list/employee-list.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/employee/employee-list/employee-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/employee/employee-list/employee-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/employee/employee-list/employee-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/navbar/navbar.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/app/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/angular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/angular2-logo-red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/angular2-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/cover.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/faces/marc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/gears.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/html.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/logo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/logo2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/logo@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/new_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/sidebar-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/sidebar-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/sidebar-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/sidebar-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/img/tim_80x80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/assets/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/models/employee-degree.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/models/employee-department.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/models/employee-office.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/models/employee.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-da-nang/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/browserslist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/e2e/protractor.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/e2e/src/app.e2e-spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/e2e/src/app.po.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/e2e/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/employee/employee-list/employee-list.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/employee/employee-list/employee-list.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/employee/employee-list/employee-list.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/employee/employee-list/employee-list.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/footer/footer.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/footer/footer.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/footer/footer.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/footer/footer.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/model/employee-degree.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/model/employee-department.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/model/employee-office.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/model/employee.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/navbar/navbar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/navbar/navbar.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/navbar/navbar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/navbar/navbar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/sidebar/sidebar.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/sidebar/sidebar.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/sidebar/sidebar.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/app/sidebar/sidebar.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/angular.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/angular2-logo-red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/angular2-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/apple-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/cover.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/faces/marc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/gears.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/html.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/logo2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/mask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/new_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/sidebar-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/sidebar-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/sidebar-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/sidebar-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/img/tim_80x80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_alerts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_angular-modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_cards.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_checkboxes.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_example-pages.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_fixed-plugin.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_footers.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_images.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_input-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_misc.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_mixins.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_navbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_popover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_popups.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_radios.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_responsive.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_ripples.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_sidebar-and-main-panel.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_tabs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_togglebutton.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/cards/_card-plain.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/cards/_card-profile.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/cards/_card-stats.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_animations.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_breakpoints.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_colored-shadows.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_drawer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_hover.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_navbar-colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_navs.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_sidebar-color.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_transparency.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_utilities.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/mixins/_vendor-prefixes.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/plugins/_animate.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/plugins/_chartist.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/plugins/_perfect-scrollbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_body.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_bootstrap-material-design-base.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_bootstrap-material-design.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_brand.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_buttons.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_card.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_code.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_colors-map.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_colors.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_custom-forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_drawer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_dropdown.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_forms.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_layout.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_list-group.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_menu.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_modals.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_pagination.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_shadow.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_snackbar.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_spacing.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_state.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_tables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_tooltip.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/core/variables/_type.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/assets/scss/material-dashboard.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/styles.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case-study/furama-resort-danan/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mindmap_module5.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../mindmap_module5.xmind" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="22rPfRV9r7b546Ewzv4R4qcoLf5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2a908c6-11be-4b50-8c5b-14f929b19d67" name="Default Changelist" comment="" />
+      <created>1640592835881</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1640592835881</updated>
+      <workItem from="1640592837014" duration="54000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1640592890417">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1640592890417" />
+  </component>
+</project>

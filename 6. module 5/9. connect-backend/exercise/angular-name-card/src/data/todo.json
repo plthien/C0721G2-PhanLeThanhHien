@@ -1,0 +1,23 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "lam bai tap",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "content": "lam bai thuc hanh",
+      "complete": true
+    },
+    {
+      "id": 3,
+      "content": "lam case study",
+      "complete": false
+    },{
+      "id": 4,
+      "content": "hoc tieng anh",
+      "complete": false
+    }
+  ]
+}

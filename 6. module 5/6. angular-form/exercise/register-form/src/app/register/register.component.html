@@ -69,7 +69,7 @@
             <small *ngIf="userForm.controls.phoneNumber.touched && userForm.controls.phoneNumber.errors?.required"
                    class="text-warning fst-italic">Please fill out this field!</small>
             <small *ngIf="userForm.controls.phoneNumber.touched && userForm.controls.phoneNumber.errors?.pattern"
-                   class="text-warning fst-italic">The phone number must start with +84 and have 9 or 10 digits number! </small>
+                   class="text-warning fst-italic">The phone number must start with +84 and have 9 digits number! </small>
           </div>
           <button type="submit" class="btn btn-primary mt-2">Register</button>
         </form>
